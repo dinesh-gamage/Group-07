@@ -367,19 +367,6 @@ textarea.form-control {
 }
 
 /******************************************************************************************************************************************/
-
-.dropdown-click{
-    width: 100%;
-}
-.dropdown-click-btn{
-    width: 100%;
-    padding: 2px 0 10px 100px;
-    height: 50px;
-    background-color: lightgray;
-    border-radius: 50px;
-    box-shadow:  2px 2px 0px rgba(0,0,0,0.75);
-    cursor: pointer;
-}
 .text_justify{text-align: justify;}
 .align-right{float: right}
 .hl-location{
@@ -442,6 +429,12 @@ textarea.form-control {
 }
 .opasity50{
     opacity: 0.5;
+}
+.hl-btn{
+    width: 100%;
+    background-color: transparent;
+    text-align: center;
+    color: #397df7;
 }
 /*************************************************************************************/
 
