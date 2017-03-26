@@ -1,4 +1,11 @@
 <!--  about -->
+<div class="hl-float opasity50">
+    <span class="vertical-text-box" >
+        <h6 class="vertical-text">About Us</h6>
+    </span>
+</div>
+<a href="#top" ><i class="hl-float-top fa fa-arrow-circle-up" style="color: #397df7;" ></i></a>
+
 <div id="about" class="about-main-block">
     <div class="container">
         <div class="section">

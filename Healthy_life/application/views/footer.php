@@ -26,7 +26,18 @@
     <script type="text/javascript" src="<?php echo base_url()."assets/js/price-slider.js"?>"></script> <!-- price slider / filter js-->
     <script type="text/javascript" src="<?php echo base_url()."assets/js/jquery.magnific-popup.min.js"?>"></script> <!-- magnify popup js -->
     <script type="text/javascript" src="<?php echo base_url()."assets/js/bootstrap-datepicker.js"?>"></script> <!-- date picker js -->
-    <script type="text/javascript" src="<?php echo base_url()."assets/js/theme.js"?>"></script> <!-- custom js -->  
+    <script type="text/javascript" src="<?php echo base_url()."assets/js/theme.js"?>"></script> <!-- custom js -->
+<script type="text/javascript">$(window).scroll(function() {
+
+    if ($(this).scrollTop()>0)
+     {
+        $('.hl-float-top').fadeIn();
+     }
+    else
+     {
+      $('.hl-float-top').fadeOut();
+     }
+ });</script>
     <!-- end  jquery -->
 
 </body>

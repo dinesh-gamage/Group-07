@@ -1,5 +1,5 @@
 <!--  banner -->
-<div class="container">
+<!--div class="container">
     <div class="row">
         <div class="col-m-12 col-sm-12">
             <div class="hl-location">
@@ -7,7 +7,14 @@
             </div>
         </div>
     </div>
+</div-->
+<div class="hl-float opasity50">
+    <span class="vertical-text-box" >
+        <h6 class="vertical-text">Home Page</h6>
+    </span>
 </div>
+<a href="#top" ><i class="hl-float-top fa fa-arrow-circle-up" style="color: #397df7;" ></i></a>
+
 <div id="home-banner" class="home-banner-main">
     <div class="item" style="background-image: url('<?php echo base_url().'assets/images/bg/home-banner-bg.jpg'?>')">      
         <div class="overlay-home"></div>    
@@ -103,5 +110,9 @@
             </div>
         </div>
     </div>
+    <div>
+    
 </div>
+</div>
+
 <!-- end about -->
