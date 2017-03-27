@@ -4,7 +4,7 @@
         <h6 class="vertical-text">Doctors</h6>
     </span>
 </div>
-<a href="#top" ><i class="hl-float-top fa fa-arrow-circle-up" style="color: #397df7;" ></i></a>
+<!--a href="#top" ><i class="hl-float-top fa fa-arrow-circle-up" style="color: #397df7;" ></i></a-->
 
 <div id="specialist" class="specialist-main-block dr-style-one">
     <div class="container">      

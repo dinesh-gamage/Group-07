@@ -13,7 +13,7 @@
         <h6 class="vertical-text">Home Page</h6>
     </span>
 </div>
-<a href="#top" ><i class="hl-float-top fa fa-arrow-circle-up" style="color: #397df7;" ></i></a>
+<!--a href="#top" ><i class="hl-float-top fa fa-arrow-circle-up" style="color: #397df7;" ></i></a-->
 
 <div id="home-banner" class="home-banner-main">
     <div class="item" style="background-image: url('<?php echo base_url().'assets/images/bg/home-banner-bg.jpg'?>')">      

@@ -1,4 +1,7 @@
 <!-- footer Block -->
+<!--div class="container">
+    <a href="#top" ><i class="hl-float-top fa fa-arrow-circle-up" style="color: #397df7;" ></i></a>
+</div-->
 <div id="footer" class="footer-main-block">
     <div class="container">
         <div class="row">
@@ -27,7 +30,7 @@
     <script type="text/javascript" src="<?php echo base_url()."assets/js/jquery.magnific-popup.min.js"?>"></script> <!-- magnify popup js -->
     <script type="text/javascript" src="<?php echo base_url()."assets/js/bootstrap-datepicker.js"?>"></script> <!-- date picker js -->
     <script type="text/javascript" src="<?php echo base_url()."assets/js/theme.js"?>"></script> <!-- custom js -->
-<script type="text/javascript">$(window).scroll(function() {
+<!--script type="text/javascript">$(window).scroll(function() {
 
     if ($(this).scrollTop()>0)
      {
@@ -37,7 +40,7 @@
      {
       $('.hl-float-top').fadeOut();
      }
- });</script>
+ });</script-->
     <!-- end  jquery -->
 
 </body>

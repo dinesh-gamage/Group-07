@@ -92,7 +92,9 @@
                                 <ul>
                                     <li> <a href="<?php echo base_url()."Index1"?>">Home</a> </li>
                                     <li> <a href="<?php echo base_url()."About"?>">About Us</a> </li>
-                                    <li> <a href="#">Pages</a>
+                                    <li> <a href="<?php echo base_url()."DoctorStyle1"?>">Doctors</a> </li>
+                                    <li> <a href="<?php echo base_url()."Register"?>">Register</a> </li>
+                                    <!--li> <a href="#">Pages</a>
                                         <ul>    
                                             <li><a href="<?php echo base_url()."DoctorStyle1"?>">Doctor Style 1</a></li>
                                             <li><a href="<?php echo base_url()."DoctorSingle"?>">Doctor Single</a></li>   
@@ -101,15 +103,19 @@
                                             <li><a href="<?php echo base_url()."ServicesDetails"?>">Services Details</a></li>
                                             <li><a href="<?php echo base_url()."PricingPlans"?>">Pricing Plans</a></li>
                                             <li><a href="<?php echo base_url()."Career"?>">Career</a></li>
-                                            <li><a href="<?php echo base_url()."Faq"?>">Faq</a></li>
+                                            
                                             <li><a href="<?php echo base_url()."Appointment"?>">Appointment</a></li>
                                         </ul>
-                                    </li>                
-                                    <li><a href="<?php echo base_url()."PortfolioWithTitle"?>">Gallery</a></li>
+                                    </li-->                
+                                    <!--li><a href="<?php echo base_url()."PortfolioWithTitle"?>">Gallery</a></li-->
                                     <li><a href="<?php echo base_url()."BlogLeftSidebar"?>">Blog</a></li>
+                                    <!--li><a href="<?php echo base_url()."Faq"?>">Faq</a></li-->
                                     <li><a href="<?php echo base_url()."ContactStyle2"?>">Contact</a></li>
+                                    <!--li></li>
+                                    <span class="btn btn-info"><a href="<?php echo base_url()."ContactStyle2"?>"><h3>Log in</h3></a></span-->
                                 </ul>
                             </div>
+                            
                         </div>
                     </div>
                     <!--div class="col-md-2 col-sm-1 hidden-xs">
@@ -119,4 +125,7 @@
         </div>
     </div> 
     </div> 
+    
+    <a href="<?php echo base_url()."Login"?>"><div class="hl-float-login" >Log in <!--hr style="color:white; height:3px;"> Register--></div></a>
+
 <!--  end navigation -->

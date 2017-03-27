@@ -402,14 +402,45 @@ textarea.form-control {
 	text-align:center;
 	box-shadow: 2px 2px 3px #999;
     padding: 60px 0px 60px 15px;
-    z-index: 99;  
+    z-index: 9999999;  
 }
+.hl-float-login{
+	position:fixed;
+	width:100px;
+	/*height:300px;*/
+	top:50px;
+	right:0px;
+	background-color:#397df7;
+	color: #fff;
+	border-radius:30px 0 0 30px ;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+    padding: 10px 0px 10px 15px;
+    z-index: 9999999;
+    cursor: pointer;
+}
+
+/*.hl-float-register{
+	position:fixed;
+	width:100px;
+	/*height:300px;
+	top:95px;
+	right:0px;
+	background-color:#397df7;
+	color: #fff;
+	border-radius:30px 0 0 30px ;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+    padding: 10px 0px 10px 15px;
+    z-index: 99;  
+}*/
 .hl-float-top{
-    position:fixed;
+    position:relative;
 	/*width:55px;
 	height:50px;*/
 	bottom:110px;
 	right:20px;
+    left: 98%;
 	/*background-color:#fff;
 	border-radius: 50px;*/
     z-index: 99; 
@@ -431,10 +462,14 @@ textarea.form-control {
     opacity: 0.5;
 }
 .hl-btn{
-    width: 100%;
-    background-color: transparent;
-    text-align: center;
-    color: #397df7;
+    color: #fff;
+    background-color: #397df7;
+    border-color: #2e6da4;
+}
+.hl-btn:hover {
+  color: #0000cc;
+  background-color: #fff;
+  border-color: #397df7;
 }
 /*************************************************************************************/
 
