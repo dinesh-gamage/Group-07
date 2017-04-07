@@ -1,0 +1,15 @@
+dayClick: function(date, jsEvent, view) {
+                if(view.name == 'month'){
+                    $('#calendar').fullCalendar('gotoDate', date); 
+                    $('#calendar').fullCalendar('changeView', 'agendaDay');
+                    if(view.name == 'agendaDay'){
+                    $('#ModalAdd').modal('hide');
+                }
+                }
+                    
+            },
+            eventAfterAllRender: function(dayClick){
+                if(view.name == 'agendaDay'){
+                    $('#ModalAdd').modal('hide');
+                }
+            },
