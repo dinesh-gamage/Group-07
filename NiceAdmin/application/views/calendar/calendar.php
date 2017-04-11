@@ -187,7 +187,7 @@
 			header: {
 				left: 'prev,next today',
 				center: 'title',
-				right: 'month,agendaWeek,agendaDay,listWeek'
+				right: 'month,agendaWeek,agendaDay,listWeek' //listMonth
 			},
             dayClick: function(date, jsEvent, view) {
                 if(view.name == 'month') {
