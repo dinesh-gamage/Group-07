@@ -1,0 +1,1416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="173b1537-1a21-4f72-943a-3d41edb32003" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/.editorconfig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/cache/.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/cache/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/config/autoload.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/config/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/config/constants.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/config/database.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/config/doctypes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/config/foreign_chars.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/config/hooks.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/config/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/config/memcached.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/config/migration.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/config/mimes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/config/profiler.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/config/routes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/config/smileys.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/config/user_agents.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/BasicTable.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/Buttons.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/Charts.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/FormComponent.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/FormValidation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/General.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/Grids.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/Index1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/Login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/Profile.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/Welcome.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/Widgets.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/core/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/helpers/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/hooks/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/language/english/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/language/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/libraries/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/logs/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/models/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/third_party/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/basic_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/buttons.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/chart.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/errors/cli/error_404.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/errors/cli/error_db.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/errors/cli/error_exception.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/errors/cli/error_general.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/errors/cli/error_php.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/errors/cli/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/errors/html/error_404.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/errors/html/error_db.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/errors/html/error_exception.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/errors/html/error_general.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/errors/html/error_php.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/errors/html/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/errors/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/form_component.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/form_validation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/general.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/grids.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/index1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/profile.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/readme.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/welcome_message.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/widgets.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/Chart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/Chart.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/component.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/docs/Chart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/docs/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/docs/prettify.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/docs/prettify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/docs/prettify.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/docs/styles.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/docs/styles.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/samples/bar.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/samples/doughnut.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/samples/line.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/samples/pie.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/samples/polarArea.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/samples/radar.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/samples/sixup.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/site/assets/6charts.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/site/assets/Chart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/site/assets/effects.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/site/assets/excanvas.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/site/assets/html.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/site/assets/simple.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/site/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/site/styles.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/CHANGES.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/build-config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/ckeditor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/contents.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/af.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/ar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/bg.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/bn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/bs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/ca.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/cs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/cy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/da.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/de.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/el.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/en-au.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/en-ca.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/en-gb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/en.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/eo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/es.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/et.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/eu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/fa.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/fi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/fo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/fr-ca.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/fr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/gl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/gu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/he.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/hi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/hr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/hu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/is.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/it.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/ja.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/ka.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/km.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/ko.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/ku.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/lt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/lv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/mk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/mn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/ms.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/nb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/nl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/no.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/pl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/pt-br.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/pt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/ro.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/ru.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/sk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/sl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/sr-latn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/sr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/sv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/th.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/tr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/ug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/uk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/vi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/lang/zh.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/_translationstatus.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/da.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/de.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/el.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/en.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/es.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/et.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/he.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/it.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/no.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/about/dialogs/about.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/about/dialogs/logo_ckeditor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/clipboard/dialogs/paste.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/dialog/dialogDefinition.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/fakeobjects/images/spacer.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/image/dialogs/image.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/image/images/noimage.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/link/dialogs/anchor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/link/dialogs/link.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/link/images/anchor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/magicline/images/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/pastefromword/filter/default.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/scayt/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/scayt/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/scayt/dialogs/options.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/scayt/dialogs/toolbar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/_translationstatus.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/ca.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/cs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/cy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/de.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/el.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/en.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/eo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/et.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/fa.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/fi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/fr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/he.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/hr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/it.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/ku.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/lv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/nb.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/nl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/no.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/sk.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/sv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/tr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/ug.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/specialchar/dialogs/specialchar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/table/dialogs/table.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/tabletools/dialogs/tableCell.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/wsc/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/wsc/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/wsc/dialogs/ciframe.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/wsc/dialogs/tmpFrameset.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/wsc/dialogs/wsc.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/plugins/wsc/dialogs/wsc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/ajax.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/api.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/appendto.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/assets/inlineall/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/assets/outputxhtml/outputxhtml.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/assets/posteddata.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/assets/sample.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/assets/sample.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/assets/uilanguages/languages.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/divreplace.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/inlineall.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/inlinebycode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/plugins/dialog/assets/my_dialog.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/plugins/dialog/dialog.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/plugins/enterkey/enterkey.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/plugins/htmlwriter/assets/outputforflash/outputforflash.fla" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/plugins/htmlwriter/assets/outputforflash/outputforflash.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/plugins/htmlwriter/assets/outputforflash/swfobject.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/plugins/htmlwriter/outputforflash.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/plugins/htmlwriter/outputhtml.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/plugins/magicline/magicline.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/plugins/toolbar/toolbar.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/plugins/wysiwygarea/fullpage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/readonly.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/replacebyclass.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/replacebycode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/sample.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/sample.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/sample_posteddata.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/tabindex.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/uicolor.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/uilanguages.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/samples/xhtmlstyle.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/dialog.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/dialog_ie.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/dialog_ie7.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/dialog_ie8.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/dialog_iequirks.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/dialog_opera.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/editor.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/editor_gecko.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/editor_ie.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/editor_ie7.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/editor_ie8.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/editor_iequirks.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/images/arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/images/close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/images/mini.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/skins/moono/readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/ckeditor/styles.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/GPL-LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/MIT-LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/changelog.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/agenda-views.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/basic-views.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/cupertino/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/cupertino/images/ui-bg_flat_15_cd0a0a_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/cupertino/images/ui-bg_glass_100_e4f1fb_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/cupertino/images/ui-bg_glass_50_3baae3_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/cupertino/images/ui-bg_glass_80_d7ebf9_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/cupertino/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/cupertino/images/ui-bg_highlight-hard_70_000000_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/cupertino/images/ui-bg_highlight-soft_100_deedf7_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/cupertino/images/ui-bg_highlight-soft_25_ffef8f_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/cupertino/images/ui-icons_2694e8_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/cupertino/images/ui-icons_2e83ff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/cupertino/images/ui-icons_3d80b3_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/cupertino/images/ui-icons_72a7cf_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/cupertino/images/ui-icons_ffffff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/cupertino/theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/default.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/external-dragging.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/gcal.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/json-events.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/json.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/selectable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/demos/theme.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/fullcalendar/fullcalendar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/fullcalendar/fullcalendar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/fullcalendar/fullcalendar.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/fullcalendar/fullcalendar.print.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/fullcalendar/gcal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/jquery/jquery-1.8.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/fullcalendar/jquery/jquery-ui-1.8.23.custom.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-easy-pie-chart/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-easy-pie-chart/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-easy-pie-chart/examples/excanvas.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-easy-pie-chart/examples/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-easy-pie-chart/examples/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-easy-pie-chart/img/easy-pie-chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/CONTRIBUTING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/blueimp-file-upload.jquery.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/cors/postmessage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/cors/result.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/css/jquery.fileupload-ui-noscript.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/css/jquery.fileupload-ui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/img/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/img/progressbar.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/js/cors/jquery.postmessage-transport.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/js/cors/jquery.xdr-transport.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/js/jquery.fileupload-fp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/js/jquery.fileupload-ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/js/jquery.fileupload.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/js/jquery.iframe-transport.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/js/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/js/vendor/canvas-to-blob.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/js/vendor/jquery.ui.widget.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/js/vendor/load-image.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/js/vendor/tmpl.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/gae-go/app.yaml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/gae-go/app/main.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/gae-go/static/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/gae-go/static/robots.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/gae-python/app.yaml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/gae-python/main.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/gae-python/static/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/gae-python/static/robots.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/node/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/node/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/node/public/files/thumbnail/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/node/server.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/node/tmp/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/php/UploadHandler.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/php/files/.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/php/files/gr.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/php/files/style-responsive.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/server/php/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/test/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-file-upload/test/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-knob/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-knob/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-knob/js/jquery.knob.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/animated-overlay.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-bg_diagonals-thick_18_b81900_40x40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-bg_diagonals-thick_20_666666_40x40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-bg_flat_10_000000_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-bg_glass_100_f6f6f6_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-bg_glass_100_fdf5ce_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-bg_glass_75_dadada_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-bg_gloss-wave_35_f6a828_500x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-icons_222222_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-icons_228ef1_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-icons_2e83ff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-icons_454545_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-icons_888888_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-icons_cd0a0a_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-icons_ef8c08_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-icons_ffd27a_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/images/ui-icons_ffffff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/jquery-ui-1.10.1.custom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/jquery-ui-1.10.1.custom.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/jquery-ui-1.10.1.custom.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/jquery-ui-1.10.2.custom.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/jquery-ui/jquery-ui-1.9.2.custom.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/component.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/_template.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/area-as-line.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/area.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/bar-colors.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/bar-no-axes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/bar.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/days.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/decimal-custom-hover.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/diagonal-xlabels-bar.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/diagonal-xlabels.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/donut-colors.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/donut-formatter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/donut.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/dst.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/events.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/goals.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/lib/example.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/lib/example.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/lib/prettify.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/lib/prettify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/months-no-smooth.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/negative.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/no-grid.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/non-continuous.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/non-date.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/quarters.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/stacked_bars.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/timestamps.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/updating.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/weeks.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/examples/years.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/grunt.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/less/morris.core.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/lib/morris.area.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/lib/morris.bar.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/lib/morris.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/lib/morris.donut.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/lib/morris.grid.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/lib/morris.hover.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/lib/morris.line.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/morris.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/morris.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/morris.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/raphael-min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/lib/area/area_spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/lib/bar/bar_spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/lib/bar/colours.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/lib/commas_spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/lib/donut/donut_spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/lib/grid/auto_grid_lines_spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/lib/grid/set_data_spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/lib/grid/y_label_format_spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/lib/hover_spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/lib/label_series_spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/lib/line/line_spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/lib/pad_spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/lib/parse_time_spec.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/specs.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/support/placeholder.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/vendor/chai-1.3.0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/vendor/chai-jquery-1.1.0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/vendor/jquery-1.8.2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/vendor/mocha-1.6.0.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/vendor/mocha-1.6.0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/vendor/raphael-2.1.0.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/vendor/sinon-1.5.0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/morris.js-0.4.3/spec/vendor/sinon-chai-2.1.2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/elegant-icons-style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/font-awesome.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/font-awesome.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/jquery-jvectormap-1.2.2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/jquery-ui-1.10.4.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/line-icons.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/owl.carousel.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/style-responsive.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/widgets.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/xcharts.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/fonts/ElegantIcons.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/fonts/ElegantIcons.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/fonts/ElegantIcons.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/fonts/ElegantIcons.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/fonts/FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/Germany.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/India.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/Russia.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/Spain.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/arrow-up.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/avatar-mini.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/avatar-mini2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/avatar-mini3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/avatar-mini4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/avatar1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/avatar1_small.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/bg-1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/chart-texture.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/chat-avatar.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/chat-avatar2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/customSelect-arrow.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/geekslabs.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/icons/line-icon-c.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/icons/line-icon-hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/icons/line-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/icons/search-line-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/icons/social.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/icons/weather-hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/icons/weather.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/left-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/logo-big.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/mail-avatar.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/profile-avatar.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/profile-widget-avatar.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/right-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/sample-img-1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/sample-img-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/sample-img-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/search-icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/user.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/user22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/additional-methods.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/bootstrap-switch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/bootstrap-wysiwyg-custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/bootstrap-wysiwyg.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/calendar-custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/chartjs-custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/charts-flot.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/charts-other.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/charts-xcharts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/charts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/dynamic-table.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/easy-pie-chart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/excanvas.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/form-component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/form-validation-script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/fullcalendar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/fullcalendar.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/ga.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/gdp-data.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/gritter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/html5shiv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery-1.8.3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery-jvectormap-1.2.2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery-jvectormap-world-mill-en.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery-ui-1.10.4.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery-ui-1.9.2.custom.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.autosize.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.customSelect.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.flot.pie.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.hotkeys.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.localscroll.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.nicescroll.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.placeholder.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.rateit.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.scrollTo.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.slimscroll.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.smartWizard.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.sparkline-11.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.sparkline.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.stepy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.tagsinput.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/jquery.validate.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/lte-ie7.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/moment.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/morris-script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/morris.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/owl.carousel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/scripts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/sliders.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/sparkline-chart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/sparklines.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/js/xcharts.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/composer.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/contributing.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/license.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/readme.rst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/Benchmark.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/CodeIgniter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/Common.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/Config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/Controller.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/Exceptions.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/Hooks.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/Input.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/Lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/Loader.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/Log.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/Model.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/Output.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/Router.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/Security.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/URI.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/Utf8.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/compat/hash.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/compat/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/compat/mbstring.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/compat/password.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/compat/standard.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/core/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/DB.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/DB_cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/DB_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/DB_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/DB_query_builder.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/DB_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/DB_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/cubrid/cubrid_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/cubrid/cubrid_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/cubrid/cubrid_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/cubrid/cubrid_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/cubrid/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/ibase/ibase_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/ibase/ibase_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/ibase/ibase_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/ibase/ibase_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/ibase/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/mssql/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/mssql/mssql_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/mssql/mssql_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/mssql/mssql_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/mssql/mssql_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/mysql/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/mysql/mysql_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/mysql/mysql_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/mysql/mysql_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/mysql/mysql_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/mysqli/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/mysqli/mysqli_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/mysqli/mysqli_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/mysqli/mysqli_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/mysqli/mysqli_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/oci8/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/oci8/oci8_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/oci8/oci8_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/oci8/oci8_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/oci8/oci8_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/odbc/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/odbc/odbc_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/odbc/odbc_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/odbc/odbc_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/odbc/odbc_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/pdo_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/pdo_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/pdo_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/pdo_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_4d_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_4d_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_cubrid_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_cubrid_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_dblib_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_dblib_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_firebird_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_firebird_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_ibm_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_ibm_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_informix_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_informix_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_mysql_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_mysql_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_oci_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_oci_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_odbc_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_odbc_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_pgsql_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_pgsql_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_sqlite_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_sqlite_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_sqlsrv_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/pdo/subdrivers/pdo_sqlsrv_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/postgre/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/postgre/postgre_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/postgre/postgre_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/postgre/postgre_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/postgre/postgre_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/sqlite/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/sqlite/sqlite_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/sqlite/sqlite_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/sqlite/sqlite_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/sqlite/sqlite_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/sqlite3/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/sqlite3/sqlite3_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/sqlite3/sqlite3_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/sqlite3/sqlite3_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/sqlite3/sqlite3_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/sqlsrv/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/sqlsrv/sqlsrv_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/sqlsrv/sqlsrv_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/sqlsrv/sqlsrv_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/drivers/sqlsrv/sqlsrv_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/database/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/fonts/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/fonts/texb.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/array_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/captcha_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/cookie_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/date_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/directory_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/download_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/email_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/file_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/form_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/html_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/inflector_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/language_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/number_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/path_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/security_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/smiley_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/string_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/text_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/typography_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/url_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/helpers/xml_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/language/english/calendar_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/language/english/date_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/language/english/db_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/language/english/email_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/language/english/form_validation_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/language/english/ftp_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/language/english/imglib_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/language/english/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/language/english/migration_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/language/english/number_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/language/english/pagination_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/language/english/profiler_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/language/english/unit_test_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/language/english/upload_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/language/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Cache/Cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Cache/drivers/Cache_apc.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Cache/drivers/Cache_dummy.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Cache/drivers/Cache_file.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Cache/drivers/Cache_memcached.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Cache/drivers/Cache_redis.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Cache/drivers/Cache_wincache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Cache/drivers/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Cache/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Calendar.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Cart.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Email.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Encrypt.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Encryption.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Form_validation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Ftp.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Image_lib.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Javascript.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Javascript/Jquery.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Javascript/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Migration.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Pagination.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Parser.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Profiler.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Session/Session.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Session/SessionHandlerInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Session/Session_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Session/drivers/Session_database_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Session/drivers/Session_files_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Session/drivers/Session_memcached_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Session/drivers/Session_redis_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Session/drivers/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Session/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Trackback.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Typography.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Unit_test.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Upload.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/User_agent.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Xmlrpc.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Xmlrpcs.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Zip.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/.buildinfo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/DCO.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_downloads/ELDocs.tmbundle.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_images/appflowchart.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_images/smile.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/ajax-loader.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/basic.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/ci-icon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/comment-bright.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/comment-close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/comment.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/css/badge_only.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/css/citheme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/css/theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/doctools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/down-pressed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/down.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/file.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/fonts/FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/images/ci-icon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/js/oldtheme.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/js/theme.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/minus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/plus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/pygments.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/searchtools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/underscore.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/up-pressed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/up.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_static/websupport.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/changelog.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/contributing/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/database/caching.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/database/call_function.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/database/configuration.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/database/connecting.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/database/db_driver_reference.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/database/examples.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/database/forge.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/database/helpers.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/database/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/database/metadata.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/database/queries.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/database/query_builder.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/database/results.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/database/transactions.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/database/utilities.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/documentation/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/alternative_php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/ancillary_classes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/autoloader.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/caching.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/cli.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/common_functions.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/compatibility_functions.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/controllers.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/core_classes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/creating_drivers.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/creating_libraries.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/credits.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/drivers.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/environments.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/errors.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/helpers.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/hooks.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/libraries.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/managing_apps.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/models.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/profiling.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/requirements.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/reserved_names.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/routing.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/security.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/styleguide.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/urls.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/views.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/general/welcome.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/genindex.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/array_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/captcha_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/cookie_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/date_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/directory_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/download_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/email_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/file_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/form_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/html_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/inflector_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/language_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/number_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/path_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/security_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/smiley_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/string_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/text_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/typography_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/url_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/helpers/xml_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/downloads.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/troubleshooting.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_120.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_130.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_131.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_132.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_133.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_140.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_141.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_150.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_152.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_153.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_154.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_160.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_161.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_162.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_163.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_170.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_171.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_172.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_200.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_201.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_202.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_203.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_210.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_211.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_212.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_213.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_214.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_220.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_221.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_222.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_223.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_300.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_301.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_302.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_303.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_304.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_305.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_306.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_310.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_311.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_312.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_313.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrade_b11.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/installation/upgrading.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/benchmark.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/caching.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/calendar.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/cart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/config.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/email.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/encrypt.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/encryption.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/file_uploading.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/form_validation.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/ftp.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/image_lib.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/input.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/javascript.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/language.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/loader.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/migration.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/output.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/pagination.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/parser.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/security.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/sessions.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/table.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/trackback.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/typography.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/unit_testing.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/uri.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/user_agent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/xmlrpc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/libraries/zip.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/license.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/objects.inv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/overview/appflow.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/overview/at_a_glance.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/overview/features.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/overview/getting_started.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/overview/goals.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/overview/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/overview/mvc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/search.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/searchindex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/tutorial/conclusion.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/tutorial/create_news_items.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/tutorial/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/tutorial/news_section.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/tutorial/static_pages.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/addEvent.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/bdd.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/calendar.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/css/fullcalendar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/editEventDate.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/editevent.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/events.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/js/fullcalendar.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/js/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/js/moment.min.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Healthy_life/application/views/header.php" afterPath="$PROJECT_DIR$/Healthy_life/application/views/header.php" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="clinic@localhost [2]" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Group-07" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="calendar.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NiceAdmin/application/views/calendar/calendar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="256" column="0" lean-forward="false" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
+              <folding>
+                <marker date="1491563940286" expanded="true" signature="6781:9306" ph="{...}" />
+                <marker date="1491563940286" expanded="true" signature="8779:9299" ph="{...}" />
+                <marker date="1491563940286" expanded="true" signature="9041:9293" ph="{&quot;url&quot;: 'editEventDate.php'...}" />
+                <marker date="1491563940286" expanded="true" signature="9171:9288" ph="{...}" />
+                <marker date="1491563940286" expanded="true" signature="9193:9223" ph="{...}" />
+                <marker date="1491563940286" expanded="true" signature="9227:9282" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Calendar.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/NiceAdmin/application/controllers/Calendar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-102">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editEventDate.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FullCalendar-BS3-PHP-Mmaster/editEventDate.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1458796928000" expanded="true" signature="256:317" ph="UPDATE event... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/NiceAdmin/application/views/calendar/calendar.php" />
+        <option value="$PROJECT_DIR$/NiceAdmin/application/controllers/Calendar.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="754" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-07" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-07" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-07" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-07" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NiceAdmin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-07" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-07" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NiceAdmin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-07" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-07" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NiceAdmin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-07" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-07" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NiceAdmin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="calendar" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-07" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-07" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NiceAdmin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL&#10;H2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="173b1537-1a21-4f72-943a-3d41edb32003" name="Default" comment="" />
+      <created>1491560563674</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1491560563674</updated>
+      <workItem from="1491560566840" duration="3080000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3080000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14714494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="7.320644E-4" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="115" column="3" lean-forward="true" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FullCalendar-BS3-PHP-Mmaster/editEventDate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1458796928000" expanded="true" signature="256:317" ph="UPDATE event... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NiceAdmin/application/views/calendar/calendar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="256" column="0" lean-forward="false" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
+          <folding>
+            <marker date="1491563940286" expanded="true" signature="6781:9306" ph="{...}" />
+            <marker date="1491563940286" expanded="true" signature="8779:9299" ph="{...}" />
+            <marker date="1491563940286" expanded="true" signature="9041:9293" ph="{&quot;url&quot;: 'editEventDate.php'...}" />
+            <marker date="1491563940286" expanded="true" signature="9171:9288" ph="{...}" />
+            <marker date="1491563940286" expanded="true" signature="9193:9223" ph="{...}" />
+            <marker date="1491563940286" expanded="true" signature="9227:9282" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NiceAdmin/application/controllers/Calendar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

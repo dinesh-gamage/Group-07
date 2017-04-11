@@ -1,17 +1,17 @@
 <!-- 
-+===============================================================================================================================================+
-                                                    **********************************************
-                                                        HEALTHY LIFE - CLIIC MANAGEMENT SYSTEM 
-                                                    **********************************************
++==========================================================================================================================+
+                                        **********************************************
+                                            HEALTHY LIFE - CLIIC MANAGEMENT SYSTEM 
+                                        **********************************************
 |   Version     : 1.0
 |   Year        : 2017
 |   Author      : Dinesh Gamage , Kosala Peris, Tharindu Abeywickrama, Harsha Dhananjaya, Pasan Malith, Veena Nanayakkara
 |   Copyright   : Alrights Received by Healthy Life developing team of UCSC (2013/2014)
 
 
-|   Template : Lamadic - Health and Medical HTML Template | Version : 1.0.0 | Author : Healthy Life developing team of UCSC (2013/2014)
+|   Template : Lamadic - Health and Medical HTML Template | Version : 1.0.0 | Author : 
 
-+===============================================================================================================================================+
++==========================================================================================================================+
 -->
 
 <!DOCTYPE html >
