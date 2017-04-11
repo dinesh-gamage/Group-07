@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<?php
+if (isset($this->session->userdata['logged_in'])) {
+$username = ($this->session->userdata['logged_in']['username']);
+$email = ($this->session->userdata['logged_in']['email']);
+} else{
+    header("location: http://localhost/Third_Year_Project/Admin/user_authentication/user_login_process");
+}
+?>
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -266,14 +276,27 @@
                             </li>
                         </ul>
                     </li>
+
+                   
+                   <!--  <a href="#" class="btn btn-info btn-sm">
+                      <span class="glyphicon glyphicon-user"></span> Register 
+                    </a> -->
+
+                    <!-- <a href="<?php echo site_url('Login');?>" class="btn btn-info btn-sm">
+                      <span class="glyphicon glyphicon-user"></span> Login 
+                    </a> -->
+                    
                     <!-- alert notification end-->
                     <!-- user login dropdown start-->
+
+
+                    
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="<?php echo base_url()."asserts/img/avatar1_small.jpg"?>">
+                                <img alt="" src="<?php echo base_url().$picture?>">
                             </span>
-                            <span class="username">Jenifer Smith</span>
+                            <span class="username"><?php echo $username; ?></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
@@ -291,7 +314,7 @@
                                 <a href="#"><i class="icon_chat_alt"></i> Chats</a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url()."Login"?>"><i class="icon_key_alt"></i> Log Out</a>
+                                <a href="<?php echo base_url()."user_authentication/logout"?>"><i class="icon_key_alt"></i> Log Out</a>
                             </li>
                             <li>
                                 <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
@@ -300,7 +323,9 @@
                                 <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> 
+
+
                     <!-- user login dropdown end -->
                 </ul>
                 <!-- notificatoin dropdown end-->
