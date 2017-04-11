@@ -58,7 +58,11 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
+<<<<<<< HEAD:Admin/application/config/autoload.php
+$autoload['libraries'] = array('session','database');
+=======
 $autoload['libraries'] = array('database');
+>>>>>>> bb63227fff53f2c9b5bb68efb34806e7f405e1a4:NiceAdmin/application/config/autoload.php
 
 /*
 | -------------------------------------------------------------------
@@ -89,7 +93,11 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
+<<<<<<< HEAD:Admin/application/config/autoload.php
+$autoload['helper'] = array("url",'form');
+=======
 $autoload['helper'] = array("url","form");
+>>>>>>> bb63227fff53f2c9b5bb68efb34806e7f405e1a4:NiceAdmin/application/config/autoload.php
 
 /*
 | -------------------------------------------------------------------
