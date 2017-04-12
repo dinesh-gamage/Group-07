@@ -113,6 +113,7 @@
                                     <li><a href="<?php echo base_url()."ContactStyle2"?>">Contact</a></li>
                                     <!--li></li>
                                     <span class="btn btn-info"><a href="<?php echo base_url()."ContactStyle2"?>"><h3>Log in</h3></a></span-->
+                                      <li><a href="<?php echo base_url()."gotopatientregistration"?>">Patient registration</a></li>
                                 </ul>
                             </div>
                             
