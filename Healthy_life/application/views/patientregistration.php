@@ -19,13 +19,16 @@
                             </div-->
                             <form class="book-form" method="post" action="http://thegenius.co/lamadic-html/version1/index-appointment.php">
                                 <div class="form-group">                   
-                                    <input type="text" class="form-control" id="uname" name="uname" placeholder="Enter Your User Name/ID" required>
+                                    <input type="text" class="form-control" id="pid" name="pid" placeholder="Enter Your User ID" required>
+                                </div>
+                                <div class="form-group">                   
+                                    <input type="text" class="form-control" id="uname" name="uname" placeholder="Enter Your User Name" required>
                                 </div>
                                 <div class="form-group">                   
                                     <input type="password" class="form-control" id="password" name="password" placeholder="Enter your Password" required>
                                 </div>
                                 <div class="form-group">                   
-                                    <input type="password" class="form-control" id="password1" name="password1" placeholder="Retype your Password" required>
+                                    <input type="password" class="form-control" id="password1" name="password1 " placeholder="Retype your Password" required>
                                 </div>
                                 
                                 <div class = "form-group">
