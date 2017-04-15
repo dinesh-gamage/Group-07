@@ -31,3 +31,19 @@ input[type=radio] + label>img {
   transition: 500ms all;
 }
 
+.correct{
+    width: 100%;
+    background-color: lightgreen;
+    border-left: 4px solid green;
+    color: green;
+    margin-bottom: 2px;
+    padding-left: 5px; 
+}
+.incorrect{
+    width: 100%;
+    background-color: lightpink;
+    border-left: 4px solid red;
+    color: red;
+    margin-bottom: 2px;
+    padding-left: 5px; 
+}

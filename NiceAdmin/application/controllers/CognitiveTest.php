@@ -231,11 +231,15 @@ class CognitiveTest extends CI_Controller {
 
         $result = $this->cognitive_test_model->add_questions($data);
         if ($result == TRUE) {
-            //$data['message_display'] = 'Question added Successfully !';
-            $this->load->view('cognitive_test/add_ques');//, $data);
+            $data['message_display'] = 'Question added Successfully !';
+            $data['questions'] = $this->cognitive_test_model->all_ques();
+            $this->load->view('header');
+            $this->load->view('cognitive_test/add_ques', $data);
         } else {
-            //$data['message_display'] = 'question added failed!';
-            $this->load->view('cognitive_test/add_ques');//, $data);
+            $data['message_display'] = 'question added failed!';
+            $data['questions'] = $this->cognitive_test_model->all_ques();
+            $this->load->view('header');
+            $this->load->view('cognitive_test/add_ques', $data);
         }
 
     }

@@ -244,7 +244,10 @@
                                         if($ques->type == "B"){
                                     ?>
                                     <a href="#" id="pop">
-                                    <img src="<?php echo base_url($ques->question); ?>" class="img-thumbnail" width="100px" height="100px" />
+                                        
+                                        <img src="<?php echo base_url($ques->question); ?>" class="img-thumbnail" width="100px" height="100px" />
+                                         <!--span class="centertext"><!?php echo $ques->question_id; ?></span-->   
+                                        
                                     </a>
                                         
                                     <?php

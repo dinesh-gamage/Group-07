@@ -31,6 +31,37 @@ class cognitive_test_model extends CI_Model{
         $query = $this->db->get();
         return $query->result();
     }
+    
+    public function viewBQuestion(){
+        $this->db->select('*');
+        $this->db->from('cognitive_test');
+        $this->db->where('type','B');
+        $this->db->order_by('question','ASC');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    
+    public function viewAQuestion(){
+        $this->db->select('*');
+        $this->db->from('cognitive_test');
+        $this->db->where('type','A');
+        $this->db->order_by('question','ASC');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    
+    public function add_marks($data){
+        $this->db->insert('patient_mark',$data);
+    }
+    public function viewMarks(){
+        $this->db->select('*');
+        $this->db->from('patient_mark');
+        //$this->db->where('type','A');
+        $this->db->order_by('question_id','ASC');
+        $query = $this->db->get();
+        return $query->result();
+        
+    }
 }
 
 ?>

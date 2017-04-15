@@ -11,16 +11,16 @@
                 
                 <div class="col-md-2">
                     <div class="panel panel-info">
-                        <div class="panel-heading">Select Test</div>
+                        <div class="panel-heading">Select Question (A)</div>
                         <div class="panel-body">
                             <?php 
-                                foreach($questions as $ques):
+                                foreach($quizA as $ques):
                                     //echo $ques->question_id;
                                     $id = $ques->question_id;
                             ?>
                             
                             <li>
-                            <a href="<?php echo base_url() ?>CogTestQuiz/getQuestion<?php echo $id ?>"><?php echo $id; ?> </a>
+                            <a href="<?php echo base_url() ?>CogTestQuiz/getQuestion/<?php echo $id ?>"><?php echo $id; ?> </a>
                             </li>
                             <?php
                                 endforeach;
@@ -29,6 +29,59 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="col-md-2">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">Select Question (B)</div>
+                        <div class="panel-body">
+                            <?php 
+                                foreach($quizB as $ques):
+                                    //echo $ques->question_id;
+                                    $id = $ques->question_id;
+                            ?>
+                            
+                            <li>
+                            <a href="<?php echo base_url() ?>CogTestQuiz/getQuestion/<?php echo $id ?>"><?php echo $id; ?> </a>
+                            </li>
+                            <?php
+                                endforeach;
+                            ?>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-2">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">Patient Answers</div>
+                        <div class="panel-body">
+                            <h3>Test - A</h3>
+                            
+                            
+                            <h3>Test - B</h3>
+                            <?php
+                                foreach($marks as $patient_mark):
+                                $firstLetter = $patient_mark->question_id[0];
+                                if($firstLetter =='B'){
+                                    $mrks = $patient_mark->marks;
+                                    if($mrks == 1){
+                                        $status = "Correct";
+                                        echo "<div class='correct'>";
+                                        echo $patient_mark->question_id."-".$status." (".$mrks.")";
+                                        echo "</div>";
+                                    }else{
+                                        $status = "Incorrect";
+                                        echo "<div class='incorrect'>";
+                                        echo $patient_mark->question_id."-".$status." (".$mrks.")";
+                                        echo "</div>";
+                                    }
+                                }
+                                endforeach;
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </section>
