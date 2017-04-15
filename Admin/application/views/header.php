@@ -293,9 +293,9 @@ $email = ($this->session->userdata['logged_in']['email']);
                     
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="profile-ava">
+                           <!-- <span class="profile-ava">
                                 <img alt="" src="<?php echo base_url().$picture?>">
-                            </span>
+                            </span>-->
                             <span class="username"><?php echo $username; ?></span>
                             <b class="caret"></b>
                         </a>
@@ -405,6 +405,13 @@ $email = ($this->session->userdata['logged_in']['email']);
                           <li><a class="" href="blank">Blank Page</a></li>
                           <li><a class="" href="404.html">404 Error</a></li>
                       </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class=""></i>
+                          <span><a class="" href="<?php echo base_url()."gotosetgoal"?>">Goal setting</a></span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
                   </li>
                   
               </ul>

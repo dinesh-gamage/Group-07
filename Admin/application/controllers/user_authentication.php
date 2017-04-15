@@ -73,7 +73,7 @@ $data = array(
 'speciality' => $this->input->post('spec'),
 'email' => $this->input->post('email_value'),
 'telephone' => $this->input->post('contact'),
-'profile_pic' => 'uploads/'.$picture
+//'profile_pic' => 'uploads/'.$picture
 
 );
 
@@ -119,10 +119,10 @@ $session_data = array(
 
 );
 
-$pic = array('picture' => $result[0]->profile_pic );
+//$pic = array('picture' => $result[0]->profile_pic );
 // Add user data in session
 $this->session->set_userdata('logged_in', $session_data);
-$this->load->view('header', $pic);
+$this->load->view('header');
 $this->load->view('index1');
 }
 } else {
@@ -148,4 +148,4 @@ $this->load->view('login_form', $data);
 
 }
 
-?>
+?>  
