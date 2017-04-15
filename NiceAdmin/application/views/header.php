@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
+<!--?php
 if (isset($this->session->userdata['logged_in'])) {
 $username = ($this->session->userdata['logged_in']['username']);
 $email = ($this->session->userdata['logged_in']['email']);
 } else{
-    header("location: http://localhost/Third_Year_Project/Admin/user_authentication/user_login_process");
+    header("location: http://localhost/project/Group-07/NiceAdmin/user_authentication/user_login_process");
 }
-?>
+?-->
 
   <head>
     <meta charset="utf-8">
@@ -21,9 +21,10 @@ $email = ($this->session->userdata['logged_in']['email']);
     <title>Creative - Bootstrap Admin Template</title>
 
     <!-- Bootstrap CSS -->    
-    <link href="<?php echo base_url()."asserts/css/bootstrap.min.css"?>" rel="stylesheet">
+    <!--link href="<!?php echo base_url()."asserts/css/bootstrap.min.css"?>" rel="stylesheet">
     <!-- bootstrap theme -->
-    <link href="<?php echo base_url()."asserts/css/bootstrap-theme.css"?>" rel="stylesheet">
+    <!--link href="<!?php echo base_url()."asserts/css/bootstrap-theme.css"?>" rel="stylesheet"-->
+    <link href="<?php echo base_url()."asserts/css/custom.css"?>" rel="stylesheet">
     <!--external css-->
     <!-- font icon -->
     <link href="<?php echo base_url()."asserts/css/elegant-icons-style.css"?>" rel="stylesheet" />
@@ -43,6 +44,7 @@ $email = ($this->session->userdata['logged_in']['email']);
     <link href="<?php echo base_url()."asserts/css/style-responsive.css"?>" rel="stylesheet" />
 	<link href="<?php echo base_url()."asserts/css/xcharts.min.css"?>" rel=" stylesheet">	
 	<link href="<?php echo base_url()."asserts/css/jquery-ui-1.10.4.min.css"?>" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- =======================================================
         Theme Name: NiceAdmin
         Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -287,16 +289,16 @@ $email = ($this->session->userdata['logged_in']['email']);
                     </a> -->
                     
                     <!-- alert notification end-->
-                    <!-- user login dropdown start-->
+                    <!-- user login dropdown start->
 
 
                     
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="<?php echo base_url().$picture?>">
+                                <img alt="" src="<1?php echo base_url().$picture?>">
                             </span>
-                            <span class="username"><?php echo $username; ?></span>
+                            <span class="username"><!?php echo $username; ?></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
@@ -314,7 +316,7 @@ $email = ($this->session->userdata['logged_in']['email']);
                                 <a href="#"><i class="icon_chat_alt"></i> Chats</a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url()."user_authentication/logout"?>"><i class="icon_key_alt"></i> Log Out</a>
+                                <a href="<!?php echo base_url()."user_authentication/logout"?>"><i class="icon_key_alt"></i> Log Out</a>
                             </li>
                             <li>
                                 <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
@@ -344,6 +346,18 @@ $email = ($this->session->userdata['logged_in']['email']);
                           <span>Dashboard</span>
                       </a>
                   </li>
+                  <li><a class="" href="<?php echo base_url()."Calendar"?>">Calendar</a></li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Cognitive Test</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="<?php echo base_url()."CognitiveTest"?>">Add Questions</a></li>                          
+                          <li><a class="" href="<?php echo base_url()."CogTestQuiz"?>">Start Quiz</a></li>
+                      </ul>
+                  </li>    
 				  <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_document_alt"></i>
@@ -410,5 +424,7 @@ $email = ($this->session->userdata['logged_in']['email']);
               </ul>
               <!-- sidebar menu end-->
           </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       </aside>
       <!--sidebar end-->

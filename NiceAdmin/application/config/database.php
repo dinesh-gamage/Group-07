@@ -78,11 +78,7 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-<<<<<<< HEAD:Admin/application/config/database.php
-	'database' => 'health',
-=======
 	'database' => 'clinic',
->>>>>>> bb63227fff53f2c9b5bb68efb34806e7f405e1a4:NiceAdmin/application/config/database.php
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
