@@ -1,651 +1,215 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-		  <div class="row">
-				<div class="col-lg-12">
-					<h3 class="page-header"><i class="fa fa-file-text-o"></i> Form elements</h3>
-					<ol class="breadcrumb">
-						<li><i class="fa fa-home"></i><a href="<?php echo base_url()."Index1"?>">Home</a></li>
-						<li><i class="icon_document_alt"></i>Forms</li>
-						<li><i class="fa fa-file-text-o"></i>Form elements</li>
-					</ol>
-				</div>
-			</div>
+              <!--start breadcrum-->
               <div class="row">
-                  <div class="col-lg-12">
-                      <section class="panel">
-                          <header class="panel-heading">
-                             Form Elements
-                          </header>
-                          <div class="panel-body">
-                              <form class="form-horizontal " method="get">
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Default</label>
-                                      <div class="col-sm-10">
-                                          <input type="text" class="form-control">
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Help text</label>
-                                      <div class="col-sm-10">
-                                          <input type="text" class="form-control">
-                                          <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Rounder</label>
-                                      <div class="col-sm-10">
-                                          <input type="text" class="form-control round-input">
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Input focus</label>
-                                      <div class="col-sm-10">
-                                          <input class="form-control" id="focusedInput" type="text" value="This is focused...">
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Disabled</label>
-                                      <div class="col-sm-10">
-                                          <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Placeholder</label>
-                                      <div class="col-sm-10">
-                                          <input type="text"  class="form-control" placeholder="placeholder">
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Password</label>
-                                      <div class="col-sm-10">
-                                          <input type="password"  class="form-control" placeholder="">
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-lg-2 control-label">Static control</label>
-                                      <div class="col-lg-10">
-                                          <p class="form-control-static">email@example.com</p>
-                                      </div>
-                                  </div>
-                              </form>
-                          </div>
-                      </section>
-                      <section class="panel">
-                          <div class="panel-body">
-                              <form class="form-horizontal " method="get">
-                                  <div class="form-group has-success">
-                                      <label class="control-label col-lg-2" for="inputSuccess">Input with success</label>
-                                      <div class="col-lg-10">
-                                          <input type="text" class="form-control" id="inputSuccess">
-                                      </div>
-                                  </div>
-                                  <div class="form-group has-warning">
-                                      <label class="control-label col-lg-2" for="inputWarning">Input with warning</label>
-                                      <div class="col-lg-10">
-                                          <input type="text" class="form-control" id="inputWarning">
-                                      </div>
-                                  </div>
-                                  <div class="form-group has-error">
-                                      <label class="control-label col-lg-2" for="inputError">Input with error</label>
-                                      <div class="col-lg-10">
-                                          <input type="text" class="form-control" id="inputError">
-                                      </div>
-                                  </div>
-                              </form>
-                          </div>
-                      </section>
-                      <section class="panel">
-                          <div class="panel-body">
-                              <form class="form-horizontal " method="get">
-                                  <div class="form-group">
-                                      <label class="control-label col-lg-2" for="inputSuccess">Control sizing</label>
-                                      <div class="col-lg-10">
-                                          <input class="form-control input-lg m-bot15" type="text" placeholder=".input-lg">
-                                          <input class="form-control m-bot15" type="text" placeholder="Default input">
-                                          <input class="form-control input-sm m-bot15" type="text" placeholder=".input-sm">
-
-                                          <select class="form-control input-lg m-bot15">
-                                              <option>Option 1</option>
-                                              <option>Option 2</option>
-                                              <option>Option 3</option>
-                                          </select>
-                                          <select class="form-control m-bot15">
-                                              <option>Option 1</option>
-                                              <option>Option 2</option>
-                                              <option>Option 3</option>
-                                          </select>
-                                          <select class="form-control input-sm m-bot15">
-                                              <option>Option 1</option>
-                                              <option>Option 2</option>
-                                              <option>Option 3</option>
-                                          </select>
-                                      </div>
-                                  </div>
-                              </form>
-                          </div>
-                      </section>
-                      <section class="panel">
-                          <div class="panel-body">
-                              <form class="form-horizontal " method="get">
-                                  <div class="form-group">
-                                      <label class="control-label col-lg-2" for="inputSuccess">Checkboxes and radios</label>
-                                      <div class="col-lg-10">
-                                          <div class="checkbox">
-                                              <label>
-                                                  <input type="checkbox" value="">
-                                                  Option one is this and that&mdash;be sure to include why it's great
-                                              </label>
-                                          </div>
-
-                                          <div class="checkbox">
-                                              <label>
-                                                  <input type="checkbox" value="">
-                                                  Option one is this and that&mdash;be sure to include why it's great option one
-                                              </label>
-                                          </div>
-
-                                          <div class="radio">
-                                              <label>
-                                                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                                  Option one is this and that&mdash;be sure to include why it's great
-                                              </label>
-                                          </div>
-                                          <div class="radio">
-                                              <label>
-                                                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                                  Option two can be something else and selecting it will deselect option one
-                                              </label>
-                                          </div>
-
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="control-label col-lg-2" for="inputSuccess">Inline checkboxes</label>
-                                      <div class="col-lg-10">
-                                          <label class="checkbox-inline">
-                                              <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
-                                          </label>
-                                          <label class="checkbox-inline">
-                                              <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
-                                          </label>
-                                          <label class="checkbox-inline">
-                                              <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
-                                          </label>
-
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="control-label col-lg-2" for="inputSuccess">Selects</label>
-                                      <div class="col-lg-10">
-                                          <select class="form-control m-bot15">
-                                              <option>1</option>
-                                              <option>2</option>
-                                              <option>3</option>
-                                              <option>4</option>
-                                              <option>5</option>
-                                          </select>
-
-                                          <select multiple class="form-control">
-                                              <option>1</option>
-                                              <option>2</option>
-                                              <option>3</option>
-                                              <option>4</option>
-                                              <option>5</option>
-                                          </select>
-                                      </div>
-                                  </div>
-
-                                  <div class="form-group">
-                                      <label class="control-label col-lg-2" for="inputSuccess">Column sizing</label>
-                                      <div class="col-lg-10">
-                                          <div class="row">
-                                              <div class="col-lg-2">
-                                                  <input type="text" class="form-control" placeholder=".col-lg-2">
-                                              </div>
-                                              <div class="col-lg-3">
-                                                  <input type="text" class="form-control" placeholder=".col-lg-3">
-                                              </div>
-                                              <div class="col-lg-4">
-                                                  <input type="text" class="form-control" placeholder=".col-lg-4">
-                                              </div>
-                                          </div>
-
-                                      </div>
-                                  </div>
-
-                              </form>
-                          </div>
-                      </section>
-                  </div>
+                    <div class="col-lg-12">
+                        <h3 class="page-header"><i class="fa fa-file-text-o"></i> Form elements</h3>
+                        <ol class="breadcrumb">
+                            <li><i class="fa fa-home"></i><a href="<?php echo base_url()."Index1"?>">Home</a></li>
+                            <li><i class="icon_document_alt"></i>Forms</li>
+                            <li><i class="fa fa-file-text-o"></i>Form elements</li>
+                        </ol>
+                    </div>
               </div>
-              <!-- Basic Forms & Horizontal Forms-->
-              
-              <div class="row">
-                  <div class="col-lg-6">
-                      <section class="panel">
-                          <header class="panel-heading">
-                              Basic Forms
-                          </header>
-                          <div class="panel-body">
-                              <form role="form">
-                                  <div class="form-group">
-                                      <label for="exampleInputEmail1">Email address</label>
-                                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="exampleInputPassword1">Password</label>
-                                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="exampleInputFile">File input</label>
-                                      <input type="file" id="exampleInputFile">
-                                      <p class="help-block">Example block-level help text here.</p>
-                                  </div>
-                                  <div class="checkbox">
-                                      <label>
-                                          <input type="checkbox"> Check me out
-                                      </label>
-                                  </div>
-                                  <button type="submit" class="btn btn-primary">Submit</button>
-                              </form>
-
-                          </div>
-                      </section>
-                  </div>
-                  <div class="col-lg-6">
-                      <section class="panel">
-                          <header class="panel-heading">
-                              Horizontal Forms
-                          </header>
-                          <div class="panel-body">
-                              <form class="form-horizontal" role="form">
-                                  <div class="form-group">
-                                      <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
-                                      <div class="col-lg-10">
-                                          <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
-                                          <p class="help-block">Example block-level help text here.</p>
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
-                                      <div class="col-lg-10">
-                                          <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <div class="col-lg-offset-2 col-lg-10">
-                                          <div class="checkbox">
-                                              <label>
-                                                  <input type="checkbox"> Remember me
-                                              </label>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <div class="col-lg-offset-2 col-lg-10">
-                                          <button type="submit" class="btn btn-danger">Sign in</button>
-                                      </div>
-                                  </div>
-                              </form>
-                          </div>
-                      </section>
-                      <section class="panel">
-
-                          <div class="panel-body">
-                              <a href="#myModal" data-toggle="modal" class="btn btn-primary">
-                                  Form in Modal
-                              </a>
-                              <a href="#myModal-1" data-toggle="modal" class="btn  btn-warning">
-                                  Form in Modal 2
-                              </a>
-                              <a href="#myModal-2" data-toggle="modal" class="btn  btn-danger">
-                                  Form in Modal 3
-                              </a>
-
-                              <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
-                                  <div class="modal-dialog">
-                                      <div class="modal-content">
-                                          <div class="modal-header">
-                                              <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                                              <h4 class="modal-title">Form Tittle</h4>
-                                          </div>
-                                          <div class="modal-body">
-
-                                              <form role="form">
-                                                  <div class="form-group">
-                                                      <label for="exampleInputEmail1">Email address</label>
-                                                      <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Enter email">
-                                                  </div>
-                                                  <div class="form-group">
-                                                      <label for="exampleInputPassword1">Password</label>
-                                                      <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
-                                                  </div>
-                                                  <div class="form-group">
-                                                      <label for="exampleInputFile">File input</label>
-                                                      <input type="file" id="exampleInputFile3">
-                                                      <p class="help-block">Example block-level help text here.</p>
-                                                  </div>
-                                                  <div class="checkbox">
-                                                      <label>
-                                                          <input type="checkbox"> Check me out
-                                                      </label>
-                                                  </div>
-                                                  <button type="submit" class="btn btn-primary">Submit</button>
-                                              </form>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal-1" class="modal fade">
-                                  <div class="modal-dialog">
-                                      <div class="modal-content">
-                                          <div class="modal-header">
-                                              <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                                              <h4 class="modal-title">Form Tittle</h4>
-                                          </div>
-                                          <div class="modal-body">
-
-                                              <form class="form-horizontal" role="form">
-                                                  <div class="form-group">
-                                                      <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
-                                                      <div class="col-lg-10">
-                                                          <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                                                      </div>
-                                                  </div>
-                                                  <div class="form-group">
-                                                      <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
-                                                      <div class="col-lg-10">
-                                                          <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                                                      </div>
-                                                  </div>
-                                                  <div class="form-group">
-                                                      <div class="col-lg-offset-2 col-lg-10">
-                                                          <div class="checkbox">
-                                                              <label>
-                                                                  <input type="checkbox"> Remember me
-                                                              </label>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                                  <div class="form-group">
-                                                      <div class="col-lg-offset-2 col-lg-10">
-                                                          <button type="submit" class="btn btn-info">Sign in</button>
-                                                      </div>
-                                                  </div>
-                                              </form>
-
-                                          </div>
-
-                                      </div>
-                                  </div>
-                              </div>
-                              <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal-2" class="modal fade">
-                                  <div class="modal-dialog">
-                                      <div class="modal-content">
-                                          <div class="modal-header">
-                                              <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                                              <h4 class="modal-title">Form Tittle</h4>
-                                          </div>
-                                          <div class="modal-body">
-                                              <form class="form-inline" role="form">
-                                                  <div class="form-group">
-                                                      <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                                      <input type="email" class="form-control sm-input" id="exampleInputEmail5" placeholder="Enter email">
-                                                  </div>
-                                                  <div class="form-group">
-                                                      <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                                      <input type="password" class="form-control sm-input" id="exampleInputPassword5" placeholder="Password">
-                                                  </div>
-                                                  <div class="checkbox">
-                                                      <label>
-                                                          <input type="checkbox"> Remember me
-                                                      </label>
-                                                  </div>
-                                                  <button type="submit" class="btn btn-success">Sign in</button>
-                                              </form>
-
-                                          </div>
-
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </section>
-                  </div>
-              </div>
-              <!-- Inline form-->
-              <div class="row">
-                  <div class="col-lg-12">
-                      <section class="panel">
-                          <header class="panel-heading">
-                              Inline form
-                          </header>
-                          <div class="panel-body">
-                              <form class="form-inline" role="form">
-                                  <div class="form-group">
-                                      <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                      <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                      <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-                                  </div>
-                                  <div class="checkbox">
-                                      <label>
-                                          <input type="checkbox"> Remember me
-                                      </label>
-                                  </div>
-                                  <button type="submit" class="btn btn-primary">Sign in</button>
-                              </form>
-
-                          </div>
-                      </section>
-
-                  </div>
-              </div>
+              <!--end breadcrum-->
 
               <div class="row">
-                  <div class="col-lg-12">                      
-
-                      <div class="row">
-                          <div class="col-lg-6">
-                              <section class="panel">
-                                  <header class="panel-heading">
-                                      Color Pickers & Date Pickers
-                                  </header>
-                                  <div class="panel-body">
-                                      <form class="form-horizontal " action="#">
-                                          <!--date picker start-->
-
-                                          <div class="form-group">
-                                              <label class="control-label col-sm-4">Default Datepicker</label>
-                                              <div class="col-sm-6">
-                                                  <input id="cp1" type="text" value="28-10-2013" size="16" class="form-control">
+                  <div class="col-lg-10 col-lg-offset-1">
+                      <ul class="nav nav-pills">
+                          <li class="active"><a data-toggle="pill" href="#case">Case History</a></li>
+                          <li><a data-toggle="pill" href="#menu1">Menu 1</a></li>
+                          <li><a data-toggle="pill" href="#menu2">Menu 2</a></li>
+                      </ul>
+                      <div class="tab-content">
+                          <!--start pill content 1-->
+                          <!-- start of case history in speech disorder -->
+                          <div id="case" class="tab-pane fade in active">
+                              <br>
+                              <div class="progress">
+                                  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <!--form id="regiration_form" novalidate action="action.php"  method="post"-->
+                              <?php
+                                $attri = array(
+                                    'id'=>'regiration_form',
+                                );
+                              echo  form_open('FormComponent/set_casehistory',$attri)?>
+                                  <!--start fieldset one-->
+                                  <fieldset>
+                                    <?php foreach($speechpatient as $spatient):?>
+                                      <h4>Step 1: Create your account</h4>
+                                      <div class="row">
+                                          <!--main column1-->
+                                          <div class="col-xs-6" style="border-right: 2px red solid">
+                                              <div class="row">
+                                                  <div class="col-lg-8 col-lg-offset-1">
+                                                      <div class="form-group">
+                                                          <label >Reg.No</label>
+                                                          <input type="text" class="form-control" id="reg" value="<?php echo $spatient->patient_id;?>" name="reg" placeholder="Reg.No">
+                                                      </div>
+                                                  </div>
                                               </div>
-                                          </div>
-                                          <div class="form-group">
-                                              <label class="control-label col-sm-4">Starts with years view</label>
-                                              <div class="col-sm-6">
-
-
-                                                  <div class="input-append date" id="dpYears" data-date="18-06-2013"
-                                                       data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                                                      <input class="form-control" size="16" type="text" value="28-06-2013" readonly>
-                                                      <span class="add-on"><i class="icon-calendar"></i></span>
+                                              <div class="row">
+                                                  <div class="col-lg-8 col-lg-offset-1">
+                                                      <div class="form-group">
+                                                          <label >Name</label>
+                                                          <input type="text" class="form-control" name="name" value="<?php echo $spatient->patien_name;?>" id="name" placeholder="Name">
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-lg-8 col-lg-offset-1">
+                                                      <div class="form-group">
+                                                          <label >DOB</label>
+                                                          <input type="text" class="form-control" id="dob" name="dob" value="<?php echo $spatient->dob;?>" placeholder="DOB">
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-lg-8 col-lg-offset-1">
+                                                      <div class="form-group">
+                                                          <label>Age of referral</label>
+                                                          <input type="text" class="form-control" id="age" name="age" value="<?php echo $spatient->age;?>" placeholder="Age">
+                                                      </div>
                                                   </div>
                                               </div>
                                           </div>
-
-                                          <div class="form-group">
-                                              <label class="control-label col-sm-4"> Date Ranges</label>
-                                              <div class="col-sm-6">
-                                                  <div class="input-prepend">
-                                                      <input id="reservation" type="text" class=" form-control" />
+                                          <!--end main column1-->
+                                          <!--main column2-->
+                                          <div class="col-xs-6 ">
+                                              <div class="row">
+                                                  <div class="col-lg-8 col-lg-offset-3">
+                                                      <div class="form-group">
+                                                          <label >Date</label>
+                                                          <input type="text" class="form-control" id="date" value="<?php echo $spatient->regitration_date;?>" name="date" placeholder="Date">
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-lg-8 col-lg-offset-3">
+                                                      <div class="form-group">
+                                                          <label >Language used</label>
+                                                          <input type="text" class="form-control" value="<?php echo $spatient->language;?>" id="language" name="lan" placeholder="Language">
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-lg-8 col-lg-offset-3">
+                                                      <div class="form-group">
+                                                          <label >Telephone Number</label>
+                                                          <input type="text" class="form-control" id="tel" value="<?php echo $spatient->telephone;?>" name="tel" placeholder="Tele">
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-lg-8 col-lg-offset-3">
+                                                      <div class="form-group">
+                                                          <label for="exampleInputPassword1">Gender</label>
+                                                          <input type="text" class="form-control" name="gender" value="<?php if($spatient->gender==1){echo "Male";}else{echo "Female";};?>" id="gender" placeholder="Gender">
+                                                      </div>
                                                   </div>
                                               </div>
                                           </div>
-                                          <!--date picker end-->
-
-                                          <!--color picker start-->
-                                          <div class="form-group">
-                                              <label class="control-label col-sm-4">Default</label>
-
-                                              <div class="col-sm-5">
-                                                  <input type="text" value="#CCCCCC" class="cp1 form-control">
-                                              </div>
-                                          </div>
-                                          <div class="form-group">
-                                              <label class="control-label col-sm-4">RGBA</label>
-
-                                              <div class="col-sm-5">
-                                                  <input type="text" data-color-format="rgba" value="rgb(255,255,255,1)" class="cp2 form-control">
-                                              </div>
-                                          </div>
-
-                                          <!--color picker end-->
-
-                                      </form>
-
-
-                                  </div>
-                              </section>
-                              <section class="panel">
-                                  <header class="panel-heading">
-                                      Tags Input
-                                  </header>
-                                  <div class="panel-body">
-                                      <input name="tagsinput" id="tagsinput" class="tagsinput" value="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" />
-                                  </div>
-                              </section>
-                          </div>
-                          <div class="col-lg-6">
-                              <section class="panel">
-                                  <header class="panel-heading">
-                                      Custom Checkbox & Radio
-                                  </header>
-                                  <div class="panel-body">
-                                      <form action="#" method="get" accept-charset="utf-8">
-                                          <div class="checkboxes">
-                                              <label class="label_check" for="checkbox-01">
-                                                  <input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" checked /> I agree to the terms &#38; conditions.
-                                              </label>
-                                              <label class="label_check" for="checkbox-02">
-                                              <input name="sample-checkbox-02" id="checkbox-02" value="1" type="checkbox" /> Please send me regular updates. </label>
-                                              <label class="label_check" for="checkbox-03">
-                                              <input name="sample-checkbox-02" id="checkbox-03" value="1" type="checkbox" /> This is nice checkbox.</label>
-
-                                          </div>
-                                          <div class="radios">
-                                              <label class="label_radio" for="radio-01">
-                                                  <input name="sample-radio" id="radio-01" value="1" type="radio" checked /> This is option A...
-                                              </label>
-                                              <label class="label_radio" for="radio-02">
-                                                  <input name="sample-radio" id="radio-02" value="1" type="radio" /> and this is option B...
-                                              </label>
-                                              <label class="label_radio" for="radio-03">
-                                                  <input name="sample-radio" id="radio-03" value="1" type="radio" /> or simply choose option C
-                                              </label>
-                                          </div>
-                                      </form>
-                                  </div>
-
-                              </section>
-
-                              <section class="panel">
-                                  <header class="panel-heading">
-                                      Switch
-                                  </header>
-                                  <div class="panel-body">
-                                      <div class="row m-bot15">
-                                          <div class="col-sm-6 text-center">
-                                              <input type="checkbox" checked="" data-toggle="switch" />
-                                          </div>
-                                          <div class="col-sm-6 text-center">
-                                              <input type="checkbox" data-toggle="switch" />
-                                          </div>
+                                          <!--end main column2-->
                                       </div>
-                                      <div class="row m-bot15">
-                                          <div class="col-sm-6 text-center">
-                                              <div class="switch switch-square"
-                                                   data-on-label="<i class=' icon-ok'></i>"
-                                                   data-off-label="<i class='icon-remove'></i>">
-                                                  <input type="checkbox" />
+                                      <input type="button" name="next1" id="next1" class="next btn btn-info" style="float: right" value="Next" />
+                                    <?php endforeach;?>
+                                  </fieldset>
+                                  <!--end fieldset one-->
+
+                                  <!--start fieldset 2-->
+                                  <fieldset>
+                                      <h2> Step 2: Add Personnel Details</h2>
+                                      <div class="row">
+                                          <!--main column1-->
+                                          <div class="col-xs-6" style="border-right: 2px red solid">
+                                              <div class="row">
+                                                  <div class="col-lg-8 col-lg-offset-1">
+                                                      <div class="form-group">
+                                                          <label >Father</label>
+                                                          <input type="text" class="form-control" id="father" name="father" placeholder="Father">
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-lg-8 col-lg-offset-1">
+                                                      <div class="form-group">
+                                                          <label>Mother</label>
+                                                          <input type="text" class="form-control" id="mother" name="mother" placeholder="Mother">
+                                                      </div>
+                                                  </div>
                                               </div>
                                           </div>
-                                          <div class="col-sm-6 text-center">
-                                              <div class="switch switch-square"
-                                                   data-on-label="<i class=' icon-ok'></i>"
-                                                   data-off-label="<i class='icon-remove'></i>">
-                                                  <input type="checkbox" checked="" />
+                                          <!--end main column1-->
+                                          <!--main column2-->
+                                          <div class="col-xs-6 ">
+                                              <div class="row">
+                                                  <div class="col-lg-8 col-lg-offset-3">
+                                                      <div class="form-group">
+                                                          <label >No.of Siblings</label>
+                                                          <input type="text" class="form-control" id="sibl" name="sibl" placeholder="No.of Siblings">
+                                                      </div>
+                                                  </div>
                                               </div>
                                           </div>
+                                          <!--end main column2-->
                                       </div>
                                       <div class="row">
-                                          <div class="col-sm-6 text-center">
-                                              <input type="checkbox" disabled data-toggle="switch" />
-                                          </div>
-                                          <div class="col-sm-6 text-center">
-                                              <input type="checkbox" checked disabled data-toggle="switch" />
-                                          </div>
-                                      </div>
-                                  </div>
-                              </section>
-
-
-                          </div>
-                      </div>
-
-                      <div class="row">
-                        <!-- Bootsrep Editor -->
-                        <div class="col-lg-12">
-                            <section class="panel">
-                                  <header class="panel-heading">
-                                      Bootsrep Editor
-                                  </header>
-                                  <div class="panel-body">    
-                                    <div id="editor" class="btn-toolbar" data-role="editor-toolbar" data-target="#editor"></div>
-                                    </div>
-                            </section>
-                          </div>
-                          <!-- CKEditor -->
-                          <div class="col-lg-12">
-                              <section class="panel">
-                                  <header class="panel-heading">
-                                      CKEditor
-                                  </header>
-                                  <div class="panel-body">
-                                      <div class="form">
-                                          <form action="#" class="form-horizontal">
+                                          <div class="col-lg-8">
                                               <div class="form-group">
-                                                  <label class="control-label col-sm-2">CKEditor</label>
-                                                  <div class="col-sm-10">
-                                                      <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
-                                                  </div>
+                                                  <label >Home Situation</label>
+                                                  <textarea type="text" class="form-control" name="homes" placeholder=""></textarea>
                                               </div>
-                                          </form>
+                                          </div>
                                       </div>
-                                  </div>
-                              </section>
+                                      <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+                                      <input type="button" name="next"  id="next2" class="next btn btn-info" value="Next" />
+                                  </fieldset>
+                                  <!--end fieldset 2-->
+                                  <!--start fieldset 3-->
+                                  <fieldset>
+                                      <h2>Step 3: Contact Information</h2>
+                                      <div class="form-group">
+                                          <label for="mob">Mobile Number</label>
+                                          <input type="text" class="form-control" id="mob" name="mob" placeholder="Mobile Number">
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="address">Address</label>
+                                          <textarea  class="form-control" name="address" placeholder="Communication Address"></textarea>
+                                      </div>
+                                      <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+                                      <input type="submit" name="submit" class="submit btn btn-success" value="Submit" />
+                                  </fieldset>
+                                  <!--end fieldset 3-->
+                              <?php echo $this->session->flashdata('msgsuccess'); ?>
+                              <?php echo form_close();?>
                           </div>
+                          <!-- end of case history in speech disorder row-->
+                          <!--end pill content 1-->
+
+                          <!--start pill content 2-->
+                          <div id="menu1" class="tab-pane fade">
+                            content2
+                          </div>
+                          <!--end pill content 2-->
+
+                          <!--start pill content 3-->
+                          <div id="menu2" class="tab-pane fade">
+                              content3
+                          </div>
+                          <!--end pill content 3-->
+
                       </div>
                   </div>
               </div>
+
+
               <!-- page end-->
           </section>
       </section>
       <!--main content end-->
-      <div class="text-right">
-        <div class="credits">
-            <!-- 
-                All the links in the footer should remain intact. 
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
-            -->
-            <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-    </div>
+
   </section>
   <!-- container section end -->
     <!-- javascripts -->
@@ -677,6 +241,92 @@
     <script src="<?php echo base_url()."asserts/js/form-component.js"?>"></script>
     <!-- custome script for all page -->
     <script src="<?php echo base_url()."asserts/js/scripts.js"?>"></script>
+
+      <script >
+          /*$(document).ready(function(){
+              var current = 1,current_step,next_step,steps,one;
+              steps = $("fieldset").length;
+              setProgressBar(current);
+              $(".next").click(function() {
+                  var cur = $(this).parent();
+                  var nex = $(this).parent().next();
+                  $.ajax({
+                      type: "post",
+                      url: "http://[::1]/Third_Year_Project/NiceAdmin/FormComponent",
+                      cache: false,
+                      data: {id: "one"},
+                      success: function () {
+                          alert("two");
+                          current_step = cur;
+                          next_step = nex;
+                          next_step.show();
+                          current_step.hide();
+                          setProgressBar(++current);
+                      }
+
+                  });
+              });
+              $(".previous").click(function() {
+                  var cur = $(this).parent();
+                  var nex =  $(this).parent().prev();
+                  $.ajax({
+                      type: "post",
+                      url: "http://[::1]/Third_Year_Project/NiceAdmin/FormComponent",
+                      cache: false,
+                      data: {id: "one"},
+                      success: function () {
+                          alert("prev");
+                          current_step = cur;
+                          next_step =nex;
+                          next_step.show();
+                          current_step.hide();
+                          setProgressBar(--current);
+                      }
+
+                  });
+              });
+
+              function setProgressBar(curStep){
+                  var percent = parseFloat(100 / steps) * curStep;
+                  percent = percent.toFixed();
+                  $(".progress-bar")
+                      .css("width",percent+"%")
+                      .html(percent+"%");
+              }
+          });*/
+          $(document).ready(function() {
+              var current = 1, current_step, next_step, steps, one;
+              steps = $("fieldset").length;
+              setProgressBar(current);
+              $(".next").click(function () {
+                  alert("two");
+                  current_step = $(this).parent();
+                  next_step = $(this).parent().next();
+                  next_step.show();
+                  current_step.hide();
+                  setProgressBar(++current);
+              });
+              $(".previous").click(function () {
+                  alert("prev");
+                  current_step = $(this).parent();
+                  next_step = $(this).parent().prev();
+                  next_step.show();
+                  current_step.hide();
+                  setProgressBar(--current);
+              });
+
+              function setProgressBar(curStep) {
+                  var percent = parseFloat(100 / steps) * curStep;
+                  percent = percent.toFixed();
+                  $(".progress-bar")
+                      .css("width", percent + "%")
+                      .html(percent + "%");
+              }
+          });
+
+
+
+      </script>
 
 
   </body>

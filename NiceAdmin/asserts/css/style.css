@@ -2388,10 +2388,9 @@ div[data-role="editor-toolbar"] {
 
   
 
-}
+
 
 }
-
 .panel.panel-default.panel-heading {
 
   background: #97d3c5;   
@@ -3004,7 +3003,7 @@ div[data-role="editor-toolbar"] {
 
 }
 
-* /Widget-Content */
+/*Widget-Content */
 
 
 
@@ -3360,7 +3359,7 @@ div[data-role="editor-toolbar"] {
 
 /*-----	map-----*/
 
-* Google maps */
+/* Google maps */
 
 
 

@@ -1,15 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!--?php
-if (isset($this->session->userdata['logged_in'])) {
-$username = ($this->session->userdata['logged_in']['username']);
-$email = ($this->session->userdata['logged_in']['email']);
-} else{
-    header("location: http://localhost/project/Group-07/NiceAdmin/user_authentication/user_login_process");
-}
-?-->
-
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,10 +11,9 @@ $email = ($this->session->userdata['logged_in']['email']);
     <title>Creative - Bootstrap Admin Template</title>
 
     <!-- Bootstrap CSS -->    
-    <!--link href="<!?php echo base_url()."asserts/css/bootstrap.min.css"?>" rel="stylesheet">
+    <link href="<?php echo base_url()."asserts/css/bootstrap.min.css"?>" rel="stylesheet">
     <!-- bootstrap theme -->
-    <!--link href="<!?php echo base_url()."asserts/css/bootstrap-theme.css"?>" rel="stylesheet"-->
-    <link href="<?php echo base_url()."asserts/css/custom.css"?>" rel="stylesheet">
+    <link href="<?php echo base_url()."asserts/css/bootstrap-theme.css"?>" rel="stylesheet">
     <!--external css-->
     <!-- font icon -->
     <link href="<?php echo base_url()."asserts/css/elegant-icons-style.css"?>" rel="stylesheet" />
@@ -44,27 +33,43 @@ $email = ($this->session->userdata['logged_in']['email']);
     <link href="<?php echo base_url()."asserts/css/style-responsive.css"?>" rel="stylesheet" />
 	<link href="<?php echo base_url()."asserts/css/xcharts.min.css"?>" rel=" stylesheet">	
 	<link href="<?php echo base_url()."asserts/css/jquery-ui-1.10.4.min.css"?>" rel="stylesheet">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url()."asserts/css/calender.css"?>">
+      <style type="text/css">
+          #regiration_form fieldset:not(:first-of-type) {
+              display: none;
+          }
+          #searchid {
+              width: 130px;
+              -webkit-transition: width 0.4s ease-in-out;
+              transition: width 0.4s ease-in-out;
+          }
+          #searchid:focus {
+              width: 100%;
+          }
+      </style>
+
     <!-- =======================================================
         Theme Name: NiceAdmin
         Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
         Author: BootstrapMade
         Author URL: https://bootstrapmade.com
     ======================================================= -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
   </head>
 
   <body>
   <!-- container section start -->
   <section id="container" class="">
      
-      
+
       <header class="header dark-bg">
             <div class="toggle-nav">
                 <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
             </div>
 
             <!--logo start-->
-            <a href="<?php echo base_url()."Index1"?>" class="logo">Nice <span class="lite">Admin</span></a>
+            <a href="<?php echo base_url()."Index1"?>" class="logo">Nice<span class="lite">Admin</span></a>
             <!--logo end-->
 
             <div class="nav search-row" id="top_menu">
@@ -81,230 +86,41 @@ $email = ($this->session->userdata['logged_in']['email']);
 
             <div class="top-nav notification-row">                
                 <!-- notificatoin dropdown start-->
-                <ul class="nav pull-right top-menu">
-                    
-                    <!-- task notificatoin start -->
-                    <li id="task_notificatoin_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="icon-task-l"></i>
-                            <span class="badge bg-important">6</span>
-                        </a>
-                        <ul class="dropdown-menu extended tasks-bar">
-                            <div class="notify-arrow notify-arrow-blue"></div>
-                            <li>
-                                <p class="blue">You have 6 pending letter</p>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="task-info">
-                                        <div class="desc">Design PSD </div>
-                                        <div class="percent">90%</div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                            <span class="sr-only">90% Complete (success)</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="task-info">
-                                        <div class="desc">
-                                            Project 1
-                                        </div>
-                                        <div class="percent">30%</div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                                            <span class="sr-only">30% Complete (warning)</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="task-info">
-                                        <div class="desc">Digital Marketing</div>
-                                        <div class="percent">80%</div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                            <span class="sr-only">80% Complete</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="task-info">
-                                        <div class="desc">Logo Designing</div>
-                                        <div class="percent">78%</div>
-                                    </div>
-                                    <div class="progress progress-striped">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 78%">
-                                            <span class="sr-only">78% Complete (danger)</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="task-info">
-                                        <div class="desc">Mobile App</div>
-                                        <div class="percent">50%</div>
-                                    </div>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar"  role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
-                                            <span class="sr-only">50% Complete</span>
-                                        </div>
-                                    </div>
-
-                                </a>
-                            </li>
-                            <li class="external">
-                                <a href="#">See All Tasks</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- task notificatoin end -->
-                    <!-- inbox notificatoin start-->
-                    <li id="mail_notificatoin_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="icon-envelope-l"></i>
-                            <span class="badge bg-important">5</span>
-                        </a>
-                        <ul class="dropdown-menu extended inbox">
-                            <div class="notify-arrow notify-arrow-blue"></div>
-                            <li>
-                                <p class="blue">You have 5 new messages</p>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="photo"><img alt="avatar" src="<?php echo base_url()."asserts/img/avatar-mini.jpg"?>"></span>
-                                    <span class="subject">
-                                    <span class="from">Greg  Martin</span>
-                                    <span class="time">1 min</span>
-                                    </span>
-                                    <span class="message">
-                                        I really like this admin panel.
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="photo"><img alt="avatar" src="<?php echo base_url()."asserts/img/avatar-mini2.jpg"?>"></span>
-                                    <span class="subject">
-                                    <span class="from">Bob   Mckenzie</span>
-                                    <span class="time">5 mins</span>
-                                    </span>
-                                    <span class="message">
-                                     Hi, What is next project plan?
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="photo"><img alt="avatar" src="<?php echo base_url()."asserts/img/avatar-mini3.jpg"?>"></span>
-                                    <span class="subject">
-                                    <span class="from">Phillip   Park</span>
-                                    <span class="time">2 hrs</span>
-                                    </span>
-                                    <span class="message">
-                                        I am like to buy this Admin Template.
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="photo"><img alt="avatar" src="<?php echo base_url()."asserts/img/avatar-mini4.jpg"?>"></span>
-                                    <span class="subject">
-                                    <span class="from">Ray   Munoz</span>
-                                    <span class="time">1 day</span>
-                                    </span>
-                                    <span class="message">
-                                        Icon fonts are great.
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">See all messages</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- inbox notificatoin end -->
+                <ul class="nav pull-right top-menu" >
                     <!-- alert notification start-->
                     <li id="alert_notificatoin_bar" class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 
                             <i class="icon-bell-l"></i>
-                            <span class="badge bg-important">7</span>
+                            <span class="badge bg-important"><div class="countnewpatient"></div></span>
                         </a>
-                        <ul class="dropdown-menu extended notification">
+                        <ul class="dropdown-menu extended notification" >
                             <div class="notify-arrow notify-arrow-blue"></div>
                             <li>
-                                <p class="blue">You have 4 new notifications</p>
+                                <p class="blue">You have <span class="countnewpatient"></span> new notifications</p>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <span class="label label-primary"><i class="icon_profile"></i></span> 
-                                    Friend Request
-                                    <span class="small italic pull-right">5 mins</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="label label-warning"><i class="icon_pin"></i></span>  
-                                    John location.
-                                    <span class="small italic pull-right">50 mins</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="label label-danger"><i class="icon_book_alt"></i></span> 
-                                    Project 3 Completed.
-                                    <span class="small italic pull-right">1 hr</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="label label-success"><i class="icon_like"></i></span> 
-                                    Mick appreciated your work.
-                                    <span class="small italic pull-right"> Today</span>
-                                </a>
-                            </li>                            
-                            <li>
-                                <a href="#">See all notifications</a>
-                            </li>
+                            <div style="height:250px;overflow-y: scroll;" id="newpatient">
+                                <!--content is load using ajax getnewpatient function .content is in Header controller and load data using index model'sget_new_patient function
+                                    this content is loading continuously.....................
+                                -->
+                            </div>
                         </ul>
                     </li>
-
-                   
-                   <!--  <a href="#" class="btn btn-info btn-sm">
-                      <span class="glyphicon glyphicon-user"></span> Register 
-                    </a> -->
-
-                    <!-- <a href="<?php echo site_url('Login');?>" class="btn btn-info btn-sm">
-                      <span class="glyphicon glyphicon-user"></span> Login 
-                    </a> -->
-                    
                     <!-- alert notification end-->
-                    <!-- user login dropdown start->
-
-
-                    
+                    <!-- user login dropdown start-->
+                    <?php foreach($doc_data as $doc_row):?>
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="<1?php echo base_url().$picture?>">
+                                <img alt="" src="<?php echo $doc_row->doc_img?>" class="img-responsive" style="height:40px;width: 40px;">
                             </span>
-                            <span class="username"><!?php echo $username; ?></span>
+                            <span class="username"><?php echo $doc_row->doc_name?></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
                             <li class="eborder-top">
-                                <a href="#"><i class="icon_profile"></i> My Profile</a>
+                                <a href="<?php base_url()?>Profile"><i class="icon_profile"></i> My Profile</a>
                             </li>
                             <li>
                                 <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
@@ -316,7 +132,7 @@ $email = ($this->session->userdata['logged_in']['email']);
                                 <a href="#"><i class="icon_chat_alt"></i> Chats</a>
                             </li>
                             <li>
-                                <a href="<!?php echo base_url()."user_authentication/logout"?>"><i class="icon_key_alt"></i> Log Out</a>
+                                <a href="<?php base_url()?>Profile/logout" onclick="<?php base_url()?>Profile/logout"><i class="icon_key_alt"></i> Log Out</a>
                             </li>
                             <li>
                                 <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
@@ -325,9 +141,8 @@ $email = ($this->session->userdata['logged_in']['email']);
                                 <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
                             </li>
                         </ul>
-                    </li> 
-
-
+                    </li>
+                    <?php endforeach;?>
                     <!-- user login dropdown end -->
                 </ul>
                 <!-- notificatoin dropdown end-->
@@ -346,18 +161,6 @@ $email = ($this->session->userdata['logged_in']['email']);
                           <span>Dashboard</span>
                       </a>
                   </li>
-                  <li><a class="" href="<?php echo base_url()."Calendar"?>">Calendar</a></li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" class="">
-                          <i class="icon_document_alt"></i>
-                          <span>Cognitive Test</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="<?php echo base_url()."CognitiveTest"?>">Add Questions</a></li>                          
-                          <li><a class="" href="<?php echo base_url()."CogTestQuiz"?>">Start Quiz</a></li>
-                      </ul>
-                  </li>    
 				  <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_document_alt"></i>
@@ -424,7 +227,49 @@ $email = ($this->session->userdata['logged_in']['email']);
               </ul>
               <!-- sidebar menu end-->
           </div>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       </aside>
       <!--sidebar end-->
+      <script >
+          function loadpatient(one) {
+              var pid = one;
+              alert(pid);
+              $.ajax({
+                  type: "post",
+                  url: "http://[::1]/Third_Year_Project/NiceAdmin/Index1",
+                  cache: false,
+                  data: {pid: pid},
+                  success: function (data) {
+                      window.location.href = "<?php echo base_url('FormComponent');?>";
+                  }
+              });
+          }
+
+          $(document).ready(function (){
+              setInterval(getnewpatient, 1000);
+          });
+          $(document).ready(function (){
+              setInterval(countnewpatient, 10);
+          });
+          function getnewpatient(){
+              $.ajax({
+                  type: "post",
+                  url: "http://[::1]/Third_Year_Project/NiceAdmin/Header/newpatient",
+                  cache: false,
+                  data: {pid: "one"},
+                  success: function (data) {
+                        $('#newpatient').html(data)
+                  }
+              });
+          }
+          function countnewpatient(){
+              $.ajax({
+                  type: "post",
+                  url: "http://[::1]/Third_Year_Project/NiceAdmin/Header/count_new_patient",
+                  cache: false,
+                  data: {pid: "one"},
+                  success: function (data) {
+                      $('.countnewpatient').html(data)
+                  }
+              });
+          }
+      </script>

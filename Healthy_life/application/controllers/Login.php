@@ -18,10 +18,26 @@ class Login extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+    public function __construct(){
+        parent::__construct();
+        $this->load->model('loginmodel');
+    }
 	public function index()
 	{
 		$this->load->view('header');
 		$this->load->view('login');
 		$this->load->view('footer');
 	}
+    public function check_patient(){
+        $username = $this->input->post('uname');
+        $password = $this->input->post('password');
+
+        if(($this->loginmodel->get_patient($username,$password))==1){
+            $this->session->set_userdata('patient_session', $username);
+            echo "true";
+        }else{
+           echo "false";
+        }
+
+    }
 }
