@@ -39,7 +39,9 @@ class Calendar extends CI_Controller {
     }
     
     public function index(){
+        $data1['doc_data'] = $this->profilemodel->get_doc_data();
         $data['events'] = $this->calendarmodel->cal();
+        $this->load->view('header',$data1);
         $this->load->view('calendar/calendar',$data);
         
     }

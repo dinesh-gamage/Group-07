@@ -18,8 +18,15 @@ class General extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+    public function __construct(){
+        parent::__construct();
+
+    }
 	public function index()
 	{
+        $data1['newpatient'] = $this->indexmodel->get_new_patients();
+        $data1['doc_data'] = $this->profilemodel->get_doc_data();
+        $this->load->view('header',$data1);
 		$this->load->view('general');
 	}
 }

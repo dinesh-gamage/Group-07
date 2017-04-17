@@ -1,59 +1,62 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-//session_start();
 
 class Login extends CI_Controller {
 
-	function __construct(){
-		parent::__construct();
+	/**
+	 * Index Page for this controller.
+	 *
+	 * Maps to the following URL
+	 * 		http://example.com/index.php/welcome
+	 *	- or -
+	 * 		http://example.com/index.php/welcome/index
+	 *	- or -
+	 * Since this controller is set as the default controller in
+	 * config/routes.php, it's displayed at http://example.com/
+	 *
+	 * So any other public methods not prefixed with an underscore will
+	 * map to /index.php/welcome/<method_name>
+	 * @see https://codeigniter.com/user_guide/general/urls.html
+	 */
+    var $data;
+    public function Login(){
+        parent::__construct();
+        $this->output->set_header('Last-Modified: ' . gmdate("D, d M Y H:i:s") . ' GMT');
+        $this->output->set_header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
+        $this->output->set_header('Pragma: no-cache');
+        $this->output->set_header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 
-		$this->load->library('form_validation');
-        // Load database
-		$this->load->model('login_database');
-	}
+    }
+    public function check($user,$pass){
+            $this->db->select('doctor_id','doc_name','password');
+            $this->db->from('doctors');
+            $this->db->where('doc_name',$user);
+            $this->db->where('password',$pass);
+            $query = $this->db->get();
+            return $query->num_rows();
 
+    }
 	public function index()
-	{
-		$this->load->view('login');
-	}
+    {
+        $this->form_validation->set_rules('username', 'Username', 'trim|required');
+        $this->form_validation->set_rules('pass', 'Password', 'trim|required');
+        if ($this->form_validation->run() == TRUE) {
+            $username = $this->input->post('username');
+            $password = $this->input->post('pass');
+            if ($this->input->post('login')) {
+                if ($this->check($username, $password) == 1) {
+                    $this->session->set_userdata('doc_session', $username);
+                    redirect(base_url('Index1'));
+                }else{
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Invalid username and password!</div>');
+                    redirect(base_url('login/index'));
+                }
+            }else{
+                redirect('login/index');
+            }
+        }else {
+            $this->load->view('login');
+        }
 
-	public function login(){
-
-	 	//$this->form_validation->set_rules('username', 'username', 'trim|required|xss_clean');
-		//$this->form_validation->set_rules('password', 'password', 'trim|required|xss_clean');
-
-		
-			/*if(isset($this->session->userdata['logged_in'])){
-				$this->load->view('index1');
-			}else{
-				$this->load->view('login');
-			}*/
-     	
-			$data = array(
-			'username' => $this->input->post('username'),
-			'password' => $this->input->post('password')
-			);
-			$result = $this->login_database->login($data);
-			if ($result == true) {
-
-				$username = $this->input->post('username');
-				$result = $this->login_database->read_user_information($username);
-				if ($result != false) {
-					$session_data = array(
-					'username' => $result[0]->user_name,
-					'email' => $result[0]->email,
-					);
-				// Add user data in session
-				$this->session->set_userdata('logged_in', $session_data);
-				$this->load->view('header', $data);
-				$this->load->view('index1');
-				}
-			} else {
-				$data = array(
-				'error_message' => 'Invalid Username or Password'
-				);
-				$this->load->view('login', $data);
-			}
-		
-	}
+    }
 }

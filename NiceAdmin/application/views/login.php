@@ -29,49 +29,42 @@
     <![endif]-->
 </head>
 
-  <body class="login-img3-body">
-
+  <body class="" onload="javascript:window.history.forward(1);">
+     
     <div class="container">
-
-      <form class="login-form" action="<?php echo base_url()."Login/login"?>">        
+        
+        <form class="login-form" method="post">        
         <div class="login-wrap">
             <p class="login-img"><i class="icon_lock_alt"></i></p>
             <div class="input-group">
               <span class="input-group-addon"><i class="icon_profile"></i></span>
-              <input type="text" class="form-control" name="username" id="username" placeholder="Username" autofocus>
+              <input type="text" class="form-control" name="username" placeholder="Username" required="required" autofocus >
             </div>
             <div class="input-group">
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                <input type="password" class="form-control" name="pass" placeholder="Password" required="required">
             </div>
-            <p>
-                <?php
-                if (isset($error_message)) {
-                echo $error_message;
-                }?>
-    
-            </p>
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"> Remember me
                 <span class="pull-right"> <a href="#"> Forgot Password?</a></span>
             </label>
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Login me</button>
-            <!--<button class="btn btn-info btn-lg btn-block" type="submit">Signup</button>-->
+            <?php echo $this->session->flashdata('msg'); ?>
+            <input class="btn btn-primary btn-lg btn-block" name="login" value="Login" type="submit"/>
+            
         </div>
       </form>
-    <div class="text-right">
-            <div class="credits">
-                <!-- 
-                    All the links in the footer should remain intact. 
-                    You can delete the links only if you purchased the pro version.
-                    Licensing information: https://bootstrapmade.com/license/
-                    Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
-                -->
-                <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-            </div>
-        </div>
+        
     </div>
 
-
+    <script type="text/javascript" language="javascript">
+        function disableBackButton()
+        {
+            window.history.forward()
+        }
+        disableBackButton();
+        window.onload=disableBackButton();
+        window.onpageshow=function(evt) { if(evt.persisted) disableBackButton() }
+        window.onunload=function() { void(0) }
+    </script>
   </body>
 </html>
