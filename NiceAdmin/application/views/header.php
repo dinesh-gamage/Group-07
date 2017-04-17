@@ -347,6 +347,8 @@ $email = ($this->session->userdata['logged_in']['email']);
                       </a>
                   </li>
                   <li><a class="" href="<?php echo base_url()."Calendar"?>">Calendar</a></li>
+                  <li><a class="" href="<?php echo base_url()."CognitiveTest"?>">Add Questions</a></li>                          
+                          <li><a class="" href="<?php echo base_url()."CogTestQuiz"?>">Start Quiz</a></li>
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_document_alt"></i>
@@ -354,8 +356,7 @@ $email = ($this->session->userdata['logged_in']['email']);
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="<?php echo base_url()."CognitiveTest"?>">Add Questions</a></li>                          
-                          <li><a class="" href="<?php echo base_url()."CogTestQuiz"?>">Start Quiz</a></li>
+                          
                       </ul>
                   </li>    
 				  <li class="sub-menu">
