@@ -14,13 +14,12 @@ class CogTestQuiz extends CI_Controller {
         $data['quizA'] = $this->cognitive_test_model->viewAQuestion();
         $data['quizB'] = $this->cognitive_test_model->viewBQuestion();
         $data['marks'] = $this->cognitive_test_model->viewMarks();
-        $this->load->view('header',$data1);
+        $this->load->view('main/header',$data1);
 		$this->load->view('cognitive_test/cognitive_test_quiz',$data);
 	}
     public function getQuestion(){
         $data['questions'] = $this->cognitive_test_model->all_ques();
         $data['question_id'] = $this->uri->segment(3);
-        //$this->load->view('header');
 		$this->load->view('cognitive_test/cognitive_test_quiz_view',$data);
         
     }
@@ -48,7 +47,7 @@ class CogTestQuiz extends CI_Controller {
             $data['quizA'] = $this->cognitive_test_model->viewAQuestion();
             $data['quizB'] = $this->cognitive_test_model->viewBQuestion();
             $data['marks'] = $this->cognitive_test_model->viewMarks();
-            $this->load->view('header',$data1);
+            $this->load->view('main/header',$data1);
             $this->load->view('cognitive_test/cognitive_test_quiz', $data);
         } else {
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
@@ -56,7 +55,7 @@ class CogTestQuiz extends CI_Controller {
             $data['quizA'] = $this->cognitive_test_model->viewAQuestion();
             $data['quizB'] = $this->cognitive_test_model->viewBQuestion();
             $data['marks'] = $this->cognitive_test_model->viewMarks();
-            $this->load->view('header',$data1);
+            $this->load->view('main/header',$data1);
             $this->load->view('cognitive_test/cognitive_test_quiz', $data);
         }
     }

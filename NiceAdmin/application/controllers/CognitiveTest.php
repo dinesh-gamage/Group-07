@@ -14,7 +14,7 @@ class CognitiveTest extends CI_Controller {
 	{
         $data1['doc_data'] = $this->profilemodel->get_doc_data();
         $data['questions'] = $this->cognitive_test_model->all_ques();
-		$this->load->view('header',$data1);
+		$this->load->view('main/header',$data1);
 		$this->load->view('cognitive_test/add_ques',$data);
 	}
     
@@ -235,13 +235,13 @@ class CognitiveTest extends CI_Controller {
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $data['message_display'] = 'Question added Successfully !';
             $data['questions'] = $this->cognitive_test_model->all_ques();
-            $this->load->view('header',$data1);
+            $this->load->view('main/header',$data1);
             $this->load->view('cognitive_test/add_ques', $data);
         } else {
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $data['message_display'] = 'question added failed!';
             $data['questions'] = $this->cognitive_test_model->all_ques();
-            $this->load->view('header',$data1);
+            $this->load->view('main/header',$data1);
             $this->load->view('cognitive_test/add_ques', $data);
         }
 

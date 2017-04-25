@@ -1,4 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <!--main content start-->
 <section id="main-content">
     <section class="wrapper">            
@@ -17,7 +16,7 @@
 
 
         <div class="row">
-            <?php
+            <!--?php
 
                 foreach($records as $patient) {
                     $tmpl = array(
@@ -54,7 +53,7 @@
             <div class="col-lg-9 col-md-12">	
                 <div class="panel panel-default">
 
-                    <?php echo form_open("index1/delete");?>
+                    <1?php echo form_open("index1/delete");?>
                         <div class="panel-heading">
                             <div class="col-xs-4"><h2><i class="fa fa-flag-o red"></i><strong>Patient Records</strong></h2></div>
                             <div class="col-xs-4">
@@ -72,18 +71,18 @@
                         <div class="panel-body">
                                 <div class="table-responsive">
                                     <div class="data">
-                                        <?php echo $this->table->generate(); ?>
+                                        <!--?php echo $this->table->generate(); ?>
                                     </div>
 
                                 </div
                         </div>
                         <div class="panel-footer" style="height:70px;">
-                            <?php echo $pagination;?>
+                            <1?php echo $pagination;?>
                         </div>
-                    <?php echo form_close();?>
+                    <1?php echo form_close();?>
                 </div>
 
-            </div><!--/col-->
+            </div---><!--/col-->
 
     </section>
 
@@ -247,7 +246,7 @@
                 }else{
                     var jsonString = JSON.stringify(id);
                     $.ajax({
-                        url:'<?php echo site_url('Index1/delete');?>',
+                        url:'<1?php echo site_url('Index1/delete');?>',
                         method:'POST',
                         data:{id:jsonString},
                         success:function(){
@@ -281,7 +280,7 @@
         alert(i);
         $.ajax({
 
-            url: "<?php echo base_url('Index1/index'); ?>",
+            url: "<1?php echo base_url('Index1/index'); ?>",
             type: "POST",
             dataType: 'json',
             data: {searchitem:i},

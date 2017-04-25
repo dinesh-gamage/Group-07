@@ -3,21 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Index1 extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
     var $page_number;
     var $tmpl;
     var $usr;
@@ -61,7 +46,7 @@ class Index1 extends CI_Controller {
         //Set config options
         $config["per_page"] = 1;
         $config['use_page_numbers'] = TRUE;
-        $config['base_url'] = "http://localhost/Third_Year_Project/NiceAdmin/Index1/index/";//Link to use for pagination
+        $config['base_url'] = "http://localhost/project/Group-07/NiceAdmin/Index1/index/";//Link to use for pagination
         $config['uri_segment'] =3;
         //Add bootstrap html to config
         $config = $this -> bs_pagination($config);
@@ -77,8 +62,7 @@ class Index1 extends CI_Controller {
         $data['pagination'] = $this->pagination->create_links();
 
         $this->load->library('table');
-        $this->load->view('header',$data1);
-
+        $this->load->view('main/header',$data1);
         $this->load->view('index1',$data);
         if(isset($_POST['pid'])){
             $this->session->set_userdata('current_patient', $_POST['pid']);

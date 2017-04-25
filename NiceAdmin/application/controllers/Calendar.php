@@ -7,6 +7,14 @@ class Calendar extends CI_Controller {
         $this->load->model('calendarmodel');
     }
     
+    public function index(){
+        $data1['doc_data'] = $this->profilemodel->get_doc_data();
+        $data['events'] = $this->calendarmodel->cal();
+        $this->load->view('main/header',$data1);
+        $this->load->view('calendar/calendar',$data);
+        
+    }
+    
     public function edit_data(){
         $del = $this->input->post('delete');
         if(isset($del)){
@@ -38,13 +46,7 @@ class Calendar extends CI_Controller {
             redirect(base_url('Calendar'));
     }
     
-    public function index(){
-        $data1['doc_data'] = $this->profilemodel->get_doc_data();
-        $data['events'] = $this->calendarmodel->cal();
-        $this->load->view('header',$data1);
-        $this->load->view('calendar/calendar',$data);
-        
-    }
+    
     
     
 }

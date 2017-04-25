@@ -42,7 +42,7 @@ class Register extends CI_Controller {
             }
         }
 
-        $this->load->view('header',$data1);
+        $this->load->view('main/header',$data1);
         $this->load->view('register',$this->data);
     }
     

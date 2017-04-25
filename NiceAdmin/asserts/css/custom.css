@@ -47,3 +47,75 @@ input[type=radio] + label>img {
     margin-bottom: 2px;
     padding-left: 5px; 
 }
+.patient{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 2px;
+    border-bottom: 1px solid lightgray;
+}
+.padding10top{
+    padding-top: 10px;
+}
+.modalButton{
+    width: 100%;
+    height: 40px;
+    background-color: lightblue;
+    color: blue;
+    border-radius: 5px;
+}
+.marginBottom3{
+    margin-bottom: 3px;
+}
+.profile_sm{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+.col-icon-box{
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: lightgray;
+    opacity: 0.75;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+    border-radius: 10px;
+}
+
+.col-icon-box:hover .overlay {
+    width: 100%;
+}
+
+.text {
+    text-align: center;
+    white-space: nowrap; 
+    color: blue;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.white_back{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: white;
+    margin-top: 10px;
+}
