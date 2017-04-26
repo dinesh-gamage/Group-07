@@ -24,6 +24,16 @@ class cognitive_test_model extends CI_Model{
         }
     }
     
+    
+    public function getTestByType($type){
+        $condition = "type =" . "'" . $type . "'";
+        $this->db->select('*');
+        $this->db->from('cognitive_test');
+        $this->db->where($condition);
+        $query = $this->db->get();
+        return $query->result();
+    }
+    
     public function all_ques(){
         $this->db->select('*');
         $this->db->from('cognitive_test');
@@ -53,10 +63,11 @@ class cognitive_test_model extends CI_Model{
     public function add_marks($data){
         $this->db->insert('patient_mark',$data);
     }
-    public function viewMarks(){
+    public function viewMarks($patient_id){
+        $condition = "patient_id =" . "'" . $patient_id . "'";
         $this->db->select('*');
         $this->db->from('patient_mark');
-        //$this->db->where('type','A');
+        $this->db->where($condition);
         $this->db->order_by('question_id','ASC');
         $query = $this->db->get();
         return $query->result();

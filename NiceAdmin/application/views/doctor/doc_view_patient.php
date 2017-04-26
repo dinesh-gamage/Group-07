@@ -1778,7 +1778,7 @@
                                         <div class="white_back">
                                 
                                             <h2 class="text-center">Reference form</h2><hr>
-                                            <form action="<?php echo site_url('Form2');?>" method="post">
+                                            <form action="<?php echo site_url('Form2');?>" method="post" target="_blank">
                                                 
                                                 <div class="form-group col-sm-6">
                                                     <label for="date">Date:</label>
@@ -1817,7 +1817,68 @@
                     </div>
   
 <!-- cognitive test -->
-                <div id="cognitiveTest" style="display: none" ></div>
+                <div id="cognitiveTest" style="display: none" >
+                    <div class="white_back container">
+                        
+                        <h3 class="text-center">Cognitive Test</h3><hr>
+                        
+                        <form name="myform" id="myform" action="<?php echo base_url() ?>CogTestQuiz/getTest/" method="post" target="_blank" >
+                            <div class="form-group">
+                                <label for="title" class="col-sm-4 control-label text-center">Select Test Type</label>
+                                <div class="col-sm-4">
+                                    <select name="testType" class="form-control" id="color" required>
+                                        <option value="A">Test A</option>
+                                        <option value="B">Test B</option>
+                                    </select>
+                                </div>
+                                <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
+                                <div class="col-sm-4">
+                                    <button type="button" id="start" class="btn btn-info" onclick="javascript: submit()" >Start Test Now</button>
+                                </div>
+                            </div>
+                            <div class="form-group"></div>
+                        </form>
+                        
+                    </div>
+                    <div class="white_back container">
+                        
+                        <h3 class="text-center">Cognitive Test Marks</h3><hr>
+                        
+                        <div id="cognitive_marks">
+                           
+                            <div class="panel panel-info">
+                                <div class="panel-heading">Patient Answers</div>
+                                <div class="panel-body">
+                                    <h3>Test - A</h3>
+
+
+                                    <h3>Test - B</h3>
+                                    <?php
+                                        foreach($marks as $patient_mark):
+                                        $firstLetter = $patient_mark->question_id[0];
+                                        if($firstLetter =='B'){
+                                            $mrks = $patient_mark->marks;
+                                            if($mrks == 1){
+                                                $status = "Correct";
+                                                echo "<div class='correct'>";
+                                                echo $patient_mark->question_id."-".$status." (".$mrks.")";
+                                                echo "</div>";
+                                            }else{
+                                                $status = "Incorrect";
+                                                echo "<div class='incorrect'>";
+                                                echo $patient_mark->question_id."-".$status." (".$mrks.")";
+                                                echo "</div>";
+                                            }
+                                        }
+                                        endforeach;
+                                    ?>
+                                </div>
+                            </div>
+                
+                        </div>
+                        
+                    </div>
+                </div>
 
 <!-- discharge -->
                 <div id="discharge" style="display: none" ></div>
@@ -2000,6 +2061,21 @@
         }
     endforeach;
 ?>
+
+
+<script src="<?php echo base_url("js/jquery-1.10.2.js"); ?>" type="text/javascript"></script>
+
+<script type="text/javascript">
+$("#start").click(function() {
+    $.ajax({
+        type: "POST",
+        url: "<?php echo site_url('CogTestQuiz/ViewMarks'); ?>",
+        success: function(data) {
+            $("#cognitive_marks").html(data);
+        }
+    });
+});
+</script>
 
 <!-- javascript functions for tile navigation -->
 <script>

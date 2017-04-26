@@ -11,12 +11,14 @@ class DoctorView extends CI_Controller {
         parent::__construct();
         $this->load->model('doc_model');
         $this->load->model('indexmodel');
+        $this->load->model('calendarmodel');
         $this->session->userdata('doc_session');
     }
     
     
 	public function index()
 	{
+        $data['events'] = $this->calendarmodel->cal();
         $data['patients'] = $this->doc_model->getAllPatients();
         $data1['doc_data'] = $this->profilemodel->get_doc_data();
         
@@ -413,7 +415,7 @@ class DoctorView extends CI_Controller {
             if(!empty($this->input->post('goal1')))
             {
                     
-                $array1 = array(
+                $data[] = array(
                   'patient_id' => $this->input->post('patientid') ,
                   'doc_name' => $this->input->post('doc_name') ,
                   'date' => $this->input->post('date') ,
@@ -425,7 +427,7 @@ class DoctorView extends CI_Controller {
             }
             if(!empty($this->input->post('goal2'))){
                 
-                $array2 =    array(
+                $data[] = array(
                       'patient_id' => $this->input->post('patientid') ,
                       'doc_name' => $this->input->post('doc_name') ,
                       'date' => $this->input->post('date') ,
@@ -437,7 +439,7 @@ class DoctorView extends CI_Controller {
             }
             if(!empty($this->input->post('goal3'))){
                    
-               $array3 = array(
+               $data[] = array(
                   'patient_id' => $this->input->post('patientid') ,
                   'doc_name' => $this->input->post('doc_name') ,
                   'date' => $this->input->post('date') ,
@@ -448,7 +450,7 @@ class DoctorView extends CI_Controller {
 
             }
         if(!empty($this->input->post('goal4'))){
-            $array4 =array(
+            $data[] = array(
               'patient_id' => $this->input->post('patientid') ,
               'doc_name' => $this->input->post('doc_name') ,
               'date' => $this->input->post('date') ,
@@ -459,7 +461,7 @@ class DoctorView extends CI_Controller {
         }
         if(!empty($this->input->post('goal5'))){
         
-            $array5 =array(
+            $data[] = array(
               'patient_id' => $this->input->post('patientid') ,
               'doc_name' => $this->input->post('doc_name') ,
               'date' => $this->input->post('date') ,
@@ -468,7 +470,7 @@ class DoctorView extends CI_Controller {
               'goal' => $this->input->post('goal5') 
            );
         }
-           $data = array($array1,$array2,$array3,$array4,$array5);
+
 
         $this->db->insert_batch('goals', $data); 
         
@@ -485,6 +487,44 @@ class DoctorView extends CI_Controller {
         $this->load->view('doctor/doc_view_patient',$data);
 
     }
+    public function edit_data(){
+        $del = $this->input->post('delete');
+        if(isset($del)){
+            $id = $this->input->post('id');
+            $this->calendarmodel->delete($id);
+            redirect(base_url('DoctorView'));
+        }else{
+            $color = $this->input->post('color');
+            $title = $this->input->post('title');
+            $id = $this->input->post('id');
+            $this->calendarmodel->update_data($id,$color,$title);
+            redirect(base_url('DoctorView'));
+        }
+    }
+    public function edit_event(){
+        $id = $this->input->post('id');
+        $start = $this->input->post('start');
+        $end = $this->input->post('end');
+        $title =$this->input->post('title');
+        $one = $this->calendarmodel->update_event($id,$start,$end,$title);
+        if($one){
+            echo true;
+        }
+//        redirect(base_url('DoctorView'));
+        
+    }
+    public function add_data(){
+            $start = $this->input->post('start');
+            $end = $this->input->post('end');
+            $color = $this->input->post('color');
+            $title = $this->input->post('title');
+            $this->calendarmodel->add_data($start,$end,$color,$title);
+            redirect(base_url('DoctorView'));
+    }
+    
+    
+    
+    
 
 }
 ?>

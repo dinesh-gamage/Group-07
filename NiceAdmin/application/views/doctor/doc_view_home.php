@@ -30,88 +30,25 @@
         </div>
 
         <div class="row">
-<!-- paging -->
-            <div class="col-lg-6">
-                <?php
-                    foreach($records as $patient) {
-                        $tmpl = array(
-                            'table_open' => '<table border="0" class="table table-bordered table-hover">',
-                            'heading_row_start' => "<tr  >",
-                            'heading_row_end' => '</tr>',
-                            'heading_cell_start' => '<th>',
-                            'heading_cell_end' => '</th>',
-                            'row_start' => "<tr>",
-                            'row_end' => '</tr>',
-                            'cell_start' => '<td>',
-                            'cell_end' => '</td>',
-                            'row_alt_start' => '<tr>',
-                            'row_alt_end' => '</tr>',
-                            'cell_alt_start' => '<td>',
-                            'cell_alt_end' => '</td>',
-                            'table_close' => '</table>'
-                        );
-                        $this->table->set_template($tmpl);
-                        $this->table->set_heading(
-                            ' ',
-                            'Patient ID',
-                            'Patient Name'
-                        );
-                        $this->table->add_row(
-                            array('data' =>"<input type='checkbox' name='userid[]' class='chk' value=''/>"),
-                            array('data' => $patient->patient_id),
-                            array('data' => $patient->patient_name),
-                            array('data' =>"<div class='btn btn-primary'  onclick='lordpatienthistory(0);' style='border-radius: 0px;'  >View</div>")
-                        );
-                    }
-                ?>
-
-                <div class="col-lg-12 col-lg-12">	
-                    <div class="panel panel-default">
-
-                        <?php echo form_open("index1/delete");?>
-                            <div class="panel-heading">
-                                <div class="col-xs-4"><h2><i class="fa fa-flag-o red"></i><strong>Patient Records</strong></h2></div>
-                                <div class="col-xs-4">
-                                    <select class="form-control" id="disease" onchange="search();">
-                                        <option name="disease" value="fever">Fever</option>
-                                        <option name="disease" value="mental">Mental Disorders</option>
-                                        <option name="disease" value="speech">Speech Disorders</option>
-                                        <option name="disease" value="man">Man</option>
-                                    </select>
-                                </div>
-                                <div class="panel-actions col-xs-4" style="float: right;">
-                                    <button type="submit" class="btn btn-md btn-primary " name="del" id="del" ><span class="glyphicon glyphicon-trash"></span></button>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <div class="data">
-                                        <?php echo $this->table->generate(); ?>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="panel-footer" style="height:70px;">
-                                <?php echo $pagination;?>
-                            </div>
-                        <?php echo form_close();?>
-                        </div>
-
+            <div class="col-lg-2">
+                <div class="col-sm-2 col-icon-box " onclick="viewNewPatients()" >
+                    <img src="<?php echo base_url()."asserts/images/icons/new_patient.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    <div class="overlay">
+                        <div class="text">New Patient</div>
                     </div>
-
+                </div>
+                <div class="col-sm-2 col-icon-box "  onclick="viewProPatients()">
+                    <img src="<?php echo base_url()."asserts/images/icons/progressing_patient.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    <div class="overlay">
+                        <div class="text">Progressing<br> Patients</div>
+                    </div>
+                </div>
             </div>
-            
-<!-- calendar -->
-            <div class="col-lg-6">
-                
-            </div>
-            
-<!-- patients -->
-            <div class="col-lg-3">
-                <div class="panel panel-info">
-                    <div class="panel-heading">New Patients</div>
-                    <div class="panel-body">
-                        <?php
+            <div class="col-lg-4">
+                <div class="white_back container">
+                    <div id="newPatientList">
+                        <h4 class="text-center">New Patients</h4><hr>
+                         <?php
                             foreach($patients as $patient):
                                 if ($patient->status == '0'){
                         ?>
@@ -140,13 +77,9 @@
                                 }
                             endforeach;
                         ?>
-                    </div>                
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="panel panel-success">
-                    <div class="panel-heading">2<sup>nd</sup> visit </div>
-                    <div class="panel-body">
+                    </div>   
+                    <div id="proPatientList" style="display: none" >
+                        <h4 class="text-center">Progressing Patients</h4><hr>
                         <?php
                             foreach($patients as $patient):
                                 if ($patient->status == '1'){
@@ -176,12 +109,309 @@
                                 }
                             endforeach;
                         ?>
-                    </div>                
+                    </div> 
                 </div>
+            </div>
+<!-- paging -->
+           
+            
+<!-- calendar -->
+            
+            
+<!-- patients -->
+            
+            
+            
+            <!--calender -->
+            <div class="col-lg-6">
+               
+               <div class="white_back">
+                    <div id="calendar" class="col-centered"></div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <!--form class="form-horizontal" method="POST" action="<!?php echo base_url()."Calendar/add_data";?>"-->
+                      <?php 
+                        $attri = array(
+                            'class'=>'form-horizontal'
+                        );
+                        echo form_open('DoctorView/add_data',$attri);?>
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Add Event</h4>
+                      </div>
+                      <div class="modal-body">
+
+                          <div class="form-group">
+                            <label for="title" class="col-sm-2 control-label">Title</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="color" class="col-sm-2 control-label">Color</label>
+                            <div class="col-sm-10">
+                              <select name="color" class="form-control" id="color">
+                                  <option value="" >Choose</option>
+                                  <option style="color:#0071c5;" value="#0071c5">&#9724; Dark blue</option>
+                                  <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
+                                  <option style="color:#008000;" value="#008000">&#9724; Green</option>						  
+                                  <option style="color:#FFD700;" value="#FFD700">&#9724; Yellow</option>
+                                  <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
+                                  <option style="color:#FF0000;" value="#FF0000">&#9724; Red</option>
+                                  <option style="color:#000;" value="#000">&#9724; Black</option>
+
+                                </select>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="start" class="col-sm-2 control-label">Start date</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="start" class="form-control" id="start" readonly>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="end" class="col-sm-2 control-label">End date</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="end" class="form-control" id="end" readonly>
+                            </div>
+                          </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" name='save' class="btn btn-primary">Save changes</button>
+                      </div>
+                    <?php echo form_close();?>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <?php 
+                        $attri = array(
+                            'class'=>'form-horizontal'
+                        );
+                        echo form_open('DoctorView/edit_data',$attri);?>
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Edit Event</h4>
+                      </div>
+                      <div class="modal-body">
+
+                          <div class="form-group">
+                            <label for="title" class="col-sm-2 control-label">Title</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="color" class="col-sm-2 control-label">Color</label>
+                            <div class="col-sm-10">
+                              <select name="color" class="form-control" id="color">
+                                  <option value="">Choose</option>
+                                  <option style="color:#0071c5;" value="#0071c5">&#9724; Dark blue</option>
+                                  <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
+                                  <option style="color:#008000;" value="#008000">&#9724; Green</option>						  
+                                  <option style="color:#FFD700;" value="#FFD700">&#9724; Yellow</option>
+                                  <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
+                                  <option style="color:#FF0000;" value="#FF0000">&#9724; Red</option>
+                                  <option style="color:#000;" value="#000">&#9724; Black</option>
+
+                                </select>
+                            </div>
+                          </div>
+                            <div class="form-group"> 
+                                <div class="col-sm-offset-2 col-sm-10">
+                                  <div class="checkbox">
+                                    <label class="text-danger"><input type="checkbox"  name="delete"> Delete event</label>
+                                  </div>
+                                </div>
+                            </div>
+
+                          <input type="hidden" name="id" class="form-control" id="id">
+
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                      </div>
+                    <!--/form-->
+                    <?php echo form_close();?>
+                    </div>
+                  </div>
+                </div>
+
+    <script src="<?php echo base_url() ?>scripts/fullcalendar/lib/moment.min.js"></script>
+    <script src="<?php echo base_url() ?>scripts/fullcalendar/fullcalendar.min.js"></script>
+    <script src="<?php echo base_url() ?>scripts/fullcalendar/gcal.js"></script>
+    
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	
+	<!-- FullCalendar -->
+	<script src='js/moment.min.js'></script>
+	<script src='js/fullcalendar.min.js'></script>
+	
+	<script>
+
+	$(document).ready(function() {
+		
+		$('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay,listWeek' //listMonth
+			},
+            dayClick: function(date, jsEvent, view) {
+                if(view.name == 'month') {
+                    
+                    $('#calendar').fullCalendar('changeView', 'agendaDay');
+                    $('#calendar').fullCalendar('gotoDate', date);
+                    
+                }   
+            },
+            
+			defaultDate: Date(),//'2016-01-12',
+			editable: true,
+			eventLimit: true, // allow "more" link when too many events
+			selectable: true,
+			selectHelper: true,
+			select: function(start, end ) {
+				        $('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD HH:mm:ss'));
+				        $('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD HH:mm:ss'));
+				        $('#ModalAdd').modal('show');
+			},
+			eventRender: function(event, element) {
+				element.bind('dblclick', function() {
+					$('#ModalEdit #id').val(event.id);
+					$('#ModalEdit #title').val(event.title);
+					$('#ModalEdit #color').val(event.color);
+					$('#ModalEdit').modal('show');
+				});
+			},
+            
+			eventDrop: function(event, delta, revertFunc) { // si changement de position
+                
+                   
+				edit(event);
+
+			},
+			eventResize: function(event,dayDelta,minuteDelta,revertFunc) { // si changement de longueur
+                
+				edit(event);
+
+	},
+			events: [
+			<?php foreach($events as $event): 
+			
+				$start = explode(" ", $event->start);
+				$end = explode(" ", $event->end);
+				if($start[1] == '00:00:00'){
+					$start = $start[0];
+				}else{
+					$start = $start;
+				}
+				if($end[1] == '00:00:00'){
+					$end = $end[0];
+				}else{
+					$end = $end;
+				}
+			?>
+				{
+					id: '<?php echo $event->id; ?>',
+					title: '<?php echo $event->title; ?>',
+					start: '<?php echo $event->start; ?>',
+					end: '<?php echo $event->end; ?>',
+					color: '<?php echo $event->color; ?>',
+				},
+			<?php endforeach; ?>
+			]
+        });
+
+		function edit(event){
+			start = event.start.format('YYYY-MM-DD HH:mm:ss');
+			if(event.end){
+				end = event.end.format('YYYY-MM-DD HH:mm:ss');
+			}else{
+				end = start;
+			}
+
+			id =  event.id;
+            title = event.title;
+			$.ajax({
+			 url: 'http://[::1]/project/Group-07/NiceAdmin/DoctorView/edit_event',
+			 type: "POST",
+			 data: {id:id,end:end,start:start,title:title},
+			 success: function(rep) {
+					if(rep){
+						swal('congratulations!', 'Event updated Successfully','success');
+                        //alert('saved');
+					}else{
+						swal('Oops... sorry','Event update failed','error');
+					}
+				}
+			});
+		}
+		
+
+	});
+    //knob
+    $(function () {
+        $(".knob").knob({
+            'draw': function () {
+                $(this.i).val(this.cv + '%')
+            }
+        })
+    });
+
+    //carousel
+    $(document).ready(function () {
+        $("#owl-slider").owlCarousel({
+            navigation: true,
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            singleItem: true
+
+        });
+    });
+
+    //custom select box
+
+    $(function () {
+        $('select.styled').customSelect();
+    });
+
+
+
+</script>
+            
+            
             </div>
 
 
         </div>
     </div>
 </section>
+<script>
+    function viewNewPatients() {
+        $("#newPatientList").show();  
+        $("#proPatientList").hide();   
+    }
+    function viewProPatients() {
+        $("#proPatientList").show();
+        $("#newPatientList").hide(); 
+    }
+</script>
 <!--/section-->

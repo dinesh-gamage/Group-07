@@ -12,76 +12,7 @@
     </div>
 
     <div class="row">
-        <?php
-
-            foreach($records as $patient) {
-                $tmpl = array(
-                    'table_open' => '<table border="0" class="table table-bordered table-hover">',
-                    'heading_row_start' => "<tr  >",
-                    'heading_row_end' => '</tr>',
-                    'heading_cell_start' => '<th>',
-                    'heading_cell_end' => '</th>',
-                    'row_start' => "<tr>",
-                    'row_end' => '</tr>',
-                    'cell_start' => '<td>',
-                    'cell_end' => '</td>',
-                    'row_alt_start' => '<tr>',
-                    'row_alt_end' => '</tr>',
-                    'cell_alt_start' => '<td>',
-                    'cell_alt_end' => '</td>',
-                    'table_close' => '</table>'
-                );
-                $this->table->set_template($tmpl);
-                $this->table->set_heading(
-                    ' ',
-                    'Patient ID',
-                    'Patient Name'
-                );
-                $this->table->add_row(
-                    array('data' =>"<input type='checkbox' name='userid[]' class='chk' value=''/>"),
-                    array('data' => $patient->patient_id),
-                    array('data' => $patient->patient_name),
-                    array('data' =>"<div class='btn btn-primary'  onclick='lordpatienthistory(0);' style='border-radius: 0px;'  >View</div>")
-                );
-            }
-        ?>
-
-        <div class="col-lg-6 col-md-12">	
-            <div class="panel panel-default">
-
-                <?php echo form_open("index1/delete");?>
-                    <div class="panel-heading">
-                        <div class="col-xs-4"><h2><i class="fa fa-flag-o red"></i><strong>Patient Records</strong></h2></div>
-                        <div class="col-xs-4">
-                            <select class="form-control" id="disease" onchange="search();">
-                                <option name="disease" value="fever">Fever</option>
-                                <option name="disease" value="mental">Mental Disorders</option>
-                                <option name="disease" value="speech">Speech Disorders</option>
-                                <option name="disease" value="man">Man</option>
-                            </select>
-                        </div>
-                        <div class="panel-actions col-xs-4" style="float: right;">
-                            <button type="submit" class="btn btn-md btn-primary " name="del" id="del" ><span class="glyphicon glyphicon-trash"></span></button>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <div class="table-responsive">
-                            <div class="data">
-                                <?php echo $this->table->generate(); ?>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="panel-footer" style="height:70px;">
-                        <?php echo $pagination;?>
-                    </div>
-                <?php echo form_close();?>
-                </div>
-
-            </div>
-        <div class="col-lg-6">
-            
-        </div>
+        
     </div>
 </section>
 
@@ -94,26 +25,6 @@
    alert("two");
 
 });*/
-$(document).ready(function () {
-    $('.calendertable .cal').click(function(){
-        var day_num = $(this).find('.daynumber').html();
-        var day_data = prompt("Enter:");
-        if(day_data!==null){
-            $.ajax({
-                url:window.location,
-                type:'POST',
-                data:{
-                    day:day_num,
-                    data:day_data
-                },
-                success:function(msg){
-                    location.reload();
-                }
-
-            });
-        }
-    });
-});  
 
 
 </script>
@@ -159,78 +70,78 @@ $(document).ready(function () {
 <script>
 
 //knob
-    $(function () {
-        $(".knob").knob({
-            'draw': function () {
-                $(this.i).val(this.cv + '%')
-            }
-        })
-    });
+//    $(function () {
+//        $(".knob").knob({
+//            'draw': function () {
+//                $(this.i).val(this.cv + '%')
+//            }
+//        })
+//    });
 
     //carousel
-    $(document).ready(function () {
-        $("#owl-slider").owlCarousel({
-            navigation: true,
-            slideSpeed: 300,
-            paginationSpeed: 400,
-            singleItem: true
-
-        });
-    });
+//    $(document).ready(function () {
+//        $("#owl-slider").owlCarousel({
+//            navigation: true,
+//            slideSpeed: 300,
+//            paginationSpeed: 400,
+//            singleItem: true
+//
+//        });
+//    });
 
     //custom select box
-
-    $(function () {
-        $('select.styled').customSelect();
-    });
+//
+//    $(function () {
+//        $('select.styled').customSelect();
+//    });
 
     /* ---------- Map ---------- */
-    $(function () {
-        $('#map').vectorMap({
-            map: 'world_mill_en',
-            series: {
-                regions: [{
-                        values: gdpData,
-                        scale: ['#000', '#000'],
-                        normalizeFunction: 'polynomial'
-                    }]
-            },
-            backgroundColor: '#eef3f7',
-            onLabelShow: function (e, el, code) {
-                el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
-            }
-        });
-    });
+//    $(function () {
+//        $('#map').vectorMap({
+//            map: 'world_mill_en',
+//            series: {
+//                regions: [{
+//                        values: gdpData,
+//                        scale: ['#000', '#000'],
+//                        normalizeFunction: 'polynomial'
+//                    }]
+//            },
+//            backgroundColor: '#eef3f7',
+//            onLabelShow: function (e, el, code) {
+//                el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+//            }
+//        });
+//    });
 
-    function check(){
-        $(document).ready(function(){
-            $('#del').prop("disabled", true);
-            $('input:checkbox').click(function() {
-                if ($(this).is(':checked')) {
-                    $('#del').prop("disabled", false);
-                } else {
-                    if ($('.chk').filter(':checked').length < 1){
-                        $('#del').attr('disabled',true);}
-                }
-            });
-        });
-
-    }
-    check();
-    function lordpatienthistory(pid){
-        alert(pid);
-        $.ajax({
-            type: "post",
-            url: "http://[::1]/Third_Year_Project/NiceAdmin/FormComponent/index",
-            data: {pid: pid},
-            success: function () {
-                alert("prev");
-                window.location.href = "<?php echo base_url('FormComponent');?>";
-            }
-
-        });
-
-    }
+//    function check(){
+//        $(document).ready(function(){
+//            $('#del').prop("disabled", true);
+//            $('input:checkbox').click(function() {
+//                if ($(this).is(':checked')) {
+//                    $('#del').prop("disabled", false);
+//                } else {
+//                    if ($('.chk').filter(':checked').length < 1){
+//                        $('#del').attr('disabled',true);}
+//                }
+//            });
+//        });
+//
+//    }
+//    check();
+//    function lordpatienthistory(pid){
+//        alert(pid);
+//        $.ajax({
+//            type: "post",
+//            url: "http://[::1]/Third_Year_Project/NiceAdmin/FormComponent/index",
+//            data: {pid: pid},
+//            success: function () {
+//                alert("prev");
+//                window.location.href = "<1?php echo base_url('FormComponent');?>";
+//            }
+//
+//        });
+//
+//    }
 
     /*function deleteitem(){
         $(document).ready(function(){
@@ -261,17 +172,17 @@ $(document).ready(function () {
         })
 
     }*/
-    $("#del").on('change', function(e) {
-        alert("one");
-        $.ajax({
-            type: "POST",
-            url: '<?=base_url("controller_name/function_name") ?>',
-            data: {name: "John",location:"Boston"},
-            success: function(response) {
-                alert("Data Saved: " + response);
-            }
-        });
-    });
+//    $("#del").on('change', function(e) {
+//        alert("one");
+//        $.ajax({
+//            type: "POST",
+//            url: '<1?=base_url("controller_name/function_name") ?>',
+//            data: {name: "John",location:"Boston"},
+//            success: function(response) {
+//                alert("Data Saved: " + response);
+//            }
+//        });
+//    });
     /*function search(){
         var i = $( "#disease option:selected" ).attr('value');
         alert(i);
