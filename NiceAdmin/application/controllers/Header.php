@@ -25,7 +25,7 @@ class Header extends CI_Controller{
                             <li  >
                                     <a id="newpatient" onclick="loadpatient( '.$newpatient->patient_id.');">
                                         <span class="label label-primary"><i class="icon_profile"></i></span>
-                                        '.$newpatient->patient_name.'
+                                        '.$newpatient->patien_name.'
                                         <span class="small italic pull-right">5 mins</span>
                                     </a>
                                 </li>

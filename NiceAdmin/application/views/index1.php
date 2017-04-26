@@ -1,124 +1,121 @@
-<!--main content start-->
-<section id="main-content">
-    <section class="wrapper">            
-        <!--overview start-->
-        <div class="row">
-            <div class="col-lg-12">
-                <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
-                <ol class="breadcrumb">
-                    <li><i class="fa fa-home"></i><a href="<?php echo base_url() . "Index1" ?>">Home</a></li>
-                    <li><i class="fa fa-laptop"></i>Dashboard</li>						  	
-                </ol>
-            </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<section class="wrapper">            
+    <!--overview start-->
+    <div class="row">
+        <div class="col-lg-12">
+            <!--h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3-->
+            <ol class="breadcrumb">
+                <li><i class="fa fa-home"></i><a href="<?php echo base_url() . "Index1" ?>">Home</a></li>
+                <li><i class="fa fa-laptop"></i>Dashboard</li>						  	
+            </ol>
         </div>
+    </div>
 
+    <div class="row">
+        <?php
 
+            foreach($records as $patient) {
+                $tmpl = array(
+                    'table_open' => '<table border="0" class="table table-bordered table-hover">',
+                    'heading_row_start' => "<tr  >",
+                    'heading_row_end' => '</tr>',
+                    'heading_cell_start' => '<th>',
+                    'heading_cell_end' => '</th>',
+                    'row_start' => "<tr>",
+                    'row_end' => '</tr>',
+                    'cell_start' => '<td>',
+                    'cell_end' => '</td>',
+                    'row_alt_start' => '<tr>',
+                    'row_alt_end' => '</tr>',
+                    'cell_alt_start' => '<td>',
+                    'cell_alt_end' => '</td>',
+                    'table_close' => '</table>'
+                );
+                $this->table->set_template($tmpl);
+                $this->table->set_heading(
+                    ' ',
+                    'Patient ID',
+                    'Patient Name'
+                );
+                $this->table->add_row(
+                    array('data' =>"<input type='checkbox' name='userid[]' class='chk' value=''/>"),
+                    array('data' => $patient->patient_id),
+                    array('data' => $patient->patient_name),
+                    array('data' =>"<div class='btn btn-primary'  onclick='lordpatienthistory(0);' style='border-radius: 0px;'  >View</div>")
+                );
+            }
+        ?>
 
+        <div class="col-lg-6 col-md-12">	
+            <div class="panel panel-default">
 
-        <div class="row">
-            <!--?php
-
-                foreach($records as $patient) {
-                    $tmpl = array(
-                        'table_open' => '<table border="0" class="table table-bordered table-hover">',
-                        'heading_row_start' => "<tr  >",
-                        'heading_row_end' => '</tr>',
-                        'heading_cell_start' => '<th>',
-                        'heading_cell_end' => '</th>',
-                        'row_start' => "<tr>",
-                        'row_end' => '</tr>',
-                        'cell_start' => '<td>',
-                        'cell_end' => '</td>',
-                        'row_alt_start' => '<tr>',
-                        'row_alt_end' => '</tr>',
-                        'cell_alt_start' => '<td>',
-                        'cell_alt_end' => '</td>',
-                        'table_close' => '</table>'
-                    );
-                    $this->table->set_template($tmpl);
-                    $this->table->set_heading(
-                        ' ',
-                        'Patient ID',
-                        'Patient Name'
-                    );
-                    $this->table->add_row(
-                        array('data' =>"<input type='checkbox' name='userid[]' class='chk' value=''/>"),
-                        array('data' => $patient->patient_id),
-                        array('data' => $patient->patien_name),
-                        array('data' =>"<div class='btn btn-primary'  onclick='lordpatienthistory(0);' style='border-radius: 0px;'  >View</div>")
-                    );
-                }
-            ?>
-
-            <div class="col-lg-9 col-md-12">	
-                <div class="panel panel-default">
-
-                    <1?php echo form_open("index1/delete");?>
-                        <div class="panel-heading">
-                            <div class="col-xs-4"><h2><i class="fa fa-flag-o red"></i><strong>Patient Records</strong></h2></div>
-                            <div class="col-xs-4">
-                                <select class="form-control" id="disease" onchange="search();">
-                                    <option name="disease" value="fever">Fever</option>
-                                    <option name="disease" value="mental">Mental Disorders</option>
-                                    <option name="disease" value="speech">Speech Disorders</option>
-                                    <option name="disease" value="man">Man</option>
-                                </select>
+                <?php echo form_open("index1/delete");?>
+                    <div class="panel-heading">
+                        <div class="col-xs-4"><h2><i class="fa fa-flag-o red"></i><strong>Patient Records</strong></h2></div>
+                        <div class="col-xs-4">
+                            <select class="form-control" id="disease" onchange="search();">
+                                <option name="disease" value="fever">Fever</option>
+                                <option name="disease" value="mental">Mental Disorders</option>
+                                <option name="disease" value="speech">Speech Disorders</option>
+                                <option name="disease" value="man">Man</option>
+                            </select>
+                        </div>
+                        <div class="panel-actions col-xs-4" style="float: right;">
+                            <button type="submit" class="btn btn-md btn-primary " name="del" id="del" ><span class="glyphicon glyphicon-trash"></span></button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <div class="data">
+                                <?php echo $this->table->generate(); ?>
                             </div>
-                            <div class="panel-actions col-xs-4" style="float: right;">
-                                <button type="submit" class="btn btn-md btn-primary " name="del" id="del" ><span class="glyphicon glyphicon-trash"></span></button>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                                <div class="table-responsive">
-                                    <div class="data">
-                                        <!--?php echo $this->table->generate(); ?>
-                                    </div>
 
-                                </div
                         </div>
-                        <div class="panel-footer" style="height:70px;">
-                            <1?php echo $pagination;?>
-                        </div>
-                    <1?php echo form_close();?>
+                    </div>
+                    <div class="panel-footer" style="height:70px;">
+                        <?php echo $pagination;?>
+                    </div>
+                <?php echo form_close();?>
                 </div>
 
-            </div---><!--/col-->
-
-    </section>
+            </div>
+        <div class="col-lg-6">
+            
+        </div>
+    </div>
+</section>
 
 </section>
 <!--main content end-->
-</section>
-<!-- container section start -->
 
 <!-- javascripts -->
 <script  >
-  /* $(document).ready(function (){
-       alert("two");
-       
-   });*/
-    $(document).ready(function () {
-        $('.calendertable .cal').click(function(){
-            var day_num = $(this).find('.daynumber').html();
-            var day_data = prompt("Enter:");
-            if(day_data!==null){
-                $.ajax({
-                    url:window.location,
-                    type:'POST',
-                    data:{
-                        day:day_num,
-                        data:day_data
-                    },
-                    success:function(msg){
-                        location.reload();
-                    }
-                    
-                });
-            }
-        });
-    });  
-   
-   
+/* $(document).ready(function (){
+   alert("two");
+
+});*/
+$(document).ready(function () {
+    $('.calendertable .cal').click(function(){
+        var day_num = $(this).find('.daynumber').html();
+        var day_data = prompt("Enter:");
+        if(day_data!==null){
+            $.ajax({
+                url:window.location,
+                type:'POST',
+                data:{
+                    day:day_num,
+                    data:day_data
+                },
+                success:function(msg){
+                    location.reload();
+                }
+
+            });
+        }
+    });
+});  
+
+
 </script>
 <script src="<?php echo base_url() . "asserts/js/jquery.js" ?>"></script>
 <script src="<?php echo base_url() . "asserts/js/jquery-ui-1.10.4.min.js" ?>"></script>
@@ -161,7 +158,7 @@
 <script src="<?php echo base_url() . "asserts/js/jquery.slimscroll.min.js" ?>"></script>
 <script>
 
-    //knob
+//knob
     $(function () {
         $(".knob").knob({
             'draw': function () {

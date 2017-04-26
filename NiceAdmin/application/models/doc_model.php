@@ -122,26 +122,51 @@ class doc_model extends CI_Model{
         
     }
     
-    public function get_all_family(){
-        $query  = $this->db->get('family_medical_history');
-       return $query->result();
+    public function get_family_by_patient_id($patient_id){
+        
+        $condition = "patient_id =" . "'" . $patient_id . "'";
+        $this->db->select('*');
+        $this->db->from('family_medical_history');
+        $this->db->where($condition);
+        $query = $this->db->get();
+        return $query->result();
     }
     
-    public function get_all_comm(){
-        $query  = $this->db->get('communication_skills');
-       return $query->result();
+    public function get_comm_by_patient_id($patient_id){
+        
+        $condition = "patient_id =" . "'" . $patient_id . "'";
+        $this->db->select('*');
+        $this->db->from('communication_skills');
+        $this->db->where($condition);
+        $query = $this->db->get();
+        return $query->result();
     }
-    public function get_all_mortor(){
-        $query  = $this->db->get('mortor_skills');
-       return $query->result();
+    public function get_mortor_by_patient_id($patient_id){
+        
+        $condition = "patient_id =" . "'" . $patient_id . "'";
+        $this->db->select('*');
+        $this->db->from('mortor_skills');
+        $this->db->where($condition);
+        $query = $this->db->get();
+        return $query->result();
     }
-    public function get_all_cog(){
-        $query  = $this->db->get('cognetive_comm_development');
-       return $query->result();
+    public function get_cog_by_patient_id($patient_id){
+        
+        $condition = "patient_id =" . "'" . $patient_id . "'";
+        $this->db->select('*');
+        $this->db->from('cognetive_comm_development');
+        $this->db->where($condition);
+        $query = $this->db->get();
+        return $query->result();
     }
-    public function get_all_notes(){
-        $query  = $this->db->get('case_notes');
-       return $query->result();
+    public function get_notes_by_patient_id($patient_id){
+        
+        $condition = "patient_id =" . "'" . $patient_id . "'";
+        $this->db->select('*');
+        $this->db->from('case_notes');
+        $this->db->where($condition);
+        $query = $this->db->get();
+        return $query->result();
     }
     
     

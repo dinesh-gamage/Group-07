@@ -1,5 +1,4 @@
 <?php
-//session_start(); //we need to start session in order to access it through CI
 
 Class Login extends CI_Controller {
 
@@ -98,8 +97,7 @@ Class Login extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE) {
             if(isset($this->session->userdata['logged_in'])){
-                $this->load->view('main/header');
-                $this->load->view('index1');
+                redirect('/DoctorView/');
             }else{
                 $this->load->view('login/login_form');
             }
@@ -132,8 +130,7 @@ Class Login extends CI_Controller {
                     // Add user data in session
                     $this->session->set_userdata('logged_in', $session_data);
                     $data1['doc_data'] = $this->profilemodel->get_doc_data();                    
-                    $this->load->view('main/header', $data1);
-                    $this->load->view('index1');
+                    redirect('/DoctorView/');
                 }
             } else {
                 $data = array(

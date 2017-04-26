@@ -15,6 +15,7 @@
 <!DOCTYPE html >
 <html lang="en-US">
 <head>
+    
     <?php
         if (isset($this->session->userdata['logged_in'])) 
         {
@@ -26,7 +27,8 @@
             redirect('/Login');;
         }
     ?>
-    <title> Healthy Life </title>
+    
+    <title> Healthy Life / Doctor </title>
     
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -36,19 +38,20 @@
     <meta name="MobileOptimized" content="320" />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>scripts/fullcalendar/fullcalendar.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."asserts/css/custom.css"?>" />
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."asserts/css/sweetalert.css"?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."asserts/css/font-awesome.min.css"?>" /> 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."asserts/css/owl.carousel.css"?>" />
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url()."asserts/css/widgets.css"?>" />
+	<!--<link rel="stylesheet" type="text/css" href="<1?php echo base_url()."asserts/css/widgets.css"?>" />-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."asserts/css/style.css"?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."asserts/css/style-responsive.css"?>" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()."asserts/css/jquery-ui-1.10.4.min.css"?>" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."asserts/css/elegant-icons-style.css"?>" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."asserts/css/xcharts.min.css"?>" />	
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url()."asserts/css/jquery-jvectormap-1.2.2.css"?>" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."asserts/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css"?>" rel="stylesheet" type="text/css" media="screen"/>
+    <!--<link rel="stylesheet" type="text/css" href="<1?php echo base_url()."asserts/css/xcharts.min.css"?>" />	
+	<link rel="stylesheet" type="text/css" href="<1?php echo base_url()."asserts/css/jquery-jvectormap-1.2.2.css"?>" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="<1?php echo base_url()."asserts/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css"?>" rel="stylesheet" type="text/css" media="screen"/>
+-->
     <!--link href="<-?php echo base_url()."asserts/css/bootstrap.min.css"?>" rel="stylesheet" /-->
     <!--link href="<-?php echo base_url()."asserts/css/bootstrap-theme.css"?>" rel="stylesheet" /-->
     
@@ -73,8 +76,6 @@
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/fullcalendar.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/gcal.js"></script>
     
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/sweetalert.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/sweetalert.min.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-ui-1.10.4.min.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-1.8.3.min.js" ?>"></script>
@@ -202,6 +203,7 @@
 
   </script>
     
+    
 
 
   </head>
@@ -312,7 +314,7 @@
                                 <a href="#"><i class="icon_chat_alt"></i> Chats</a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url()."Login/logout"?>"><i class="icon_key_alt"></i> Log Out</a>
+                                <a href="<?php echo base_url()."user_authentication/logout"?>"><i class="icon_key_alt"></i> Log Out</a>
                             </li>
                             <li>
                                 <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
@@ -330,22 +332,22 @@
         <!--header end-->
 
         <!--sidebar start-->
-        <aside>
+        <!--aside>
             <div id="sidebar"  class="nav-collapse ">
                 <!-- sidebar menu start-->
-                <ul class="sidebar-menu">                
+                <!--ul class="sidebar-menu">                
                     <li class="active">
-                        <a class="" href="<?php echo base_url()."Index1"?>">
+                        <a class="" href="<-?php echo base_url()."Index1"?>">
                             <i class="icon_house_alt"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
 
-                    <li><a class="" href="<?php echo base_url()."Calendar"?>">Calendar</a></li>
-                    <li><a class="" href="<?php echo base_url()."CognitiveTest"?>">Add Questions</a></li>                          
-                    <li><a class="" href="<?php echo base_url()."CogTestQuiz"?>">Start Quiz</a></li> 
-                    <li><a class="" href="<?php echo base_url()."FormComponent"?>">Form Elements</a></li>                          
-                    <li><a class="" href="<?php echo base_url()."FormValidation"?>">Form Validation</a></li>
+                    <li><a class="" href="<-?php echo base_url()."Calendar"?>">Calendar</a></li>
+                    <li><a class="" href="<-?php echo base_url()."CognitiveTest"?>">Add Questions</a></li>                          
+                    <li><a class="" href="<-?php echo base_url()."CogTestQuiz"?>">Start Quiz</a></li> 
+                    <li><a class="" href="<-?php echo base_url()."FormComponent"?>">Form Elements</a></li>                          
+                    <li><a class="" href="<-?php echo base_url()."FormValidation"?>">Form Validation</a></li>
 
                          
                     <li class="sub-menu">
@@ -355,19 +357,19 @@
                             <span class="menu-arrow arrow_carrot-right"></span>
                         </a>
                         <ul class="sub">
-                            <li><a class="" href="<?php echo base_url()."General"?>">Elements</a></li>
-                            <li><a class="" href="<?php echo base_url()."Buttons"?>">Buttons</a></li>
-                            <li><a class="" href="<?php echo base_url()."Grids"?>">Grids</a></li>
+                            <li><a class="" href="<-?-php echo base_url()."General"?>">Elements</a></li>
+                            <li><a class="" href="<-?php echo base_url()."Buttons"?>">Buttons</a></li>
+                            <li><a class="" href="<--?php echo base_url()."Grids"?>">Grids</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a class="" href="<?php echo base_url()."Widgets"?>">
+                        <a class="" href="<-?php echo base_url()."Widgets"?>">
                             <i class="icon_genius"></i>
                             <span>Widgets</span>
                         </a>
                     </li>
                     <li>                     
-                        <a class="" href="<?php echo base_url()."Charts"?>">
+                        <a class="" href="<-?php echo base_url()."Charts"?>">
                             <i class="icon_piechart"></i>
                             <span>Charts</span>
 
@@ -382,7 +384,7 @@
                             <span class="menu-arrow arrow_carrot-right"></span>
                         </a>
                         <ul class="sub">
-                            <li><a class="" href="<?php echo base_url()."BasicTable"?>">Basic Table</a></li>
+                            <li><a class="" href="<-?php echo base_url()."BasicTable"?>">Basic Table</a></li>
                         </ul>
                     </li>
 
@@ -393,8 +395,8 @@
                             <span class="menu-arrow arrow_carrot-right"></span>
                         </a>
                         <ul class="sub">                          
-                            <li><a class="" href="<?php echo base_url()."Profile"?>">Profile</a></li>
-                            <li><a class="" href="<?php echo base_url()."Login"?>"><span>Login Page</span></a></li>
+                            <li><a class="" href="<-?php echo base_url()."Profile"?>">Profile</a></li>
+                            <li><a class="" href="<-?php echo base_url()."Login"?>"><span>Login Page</span></a></li>
                             <li><a class="" href="blank">Blank Page</a></li>
                             <li><a class="" href="404.html">404 Error</a></li>
                         </ul>
@@ -402,6 +404,6 @@
 
                 </ul>
                 <!-- sidebar menu end-->
-            </div>
-        </aside>
+            <!--/div>
+        </aside-->
         <!--sidebar end-->
