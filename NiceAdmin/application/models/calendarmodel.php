@@ -24,7 +24,7 @@ class Calendarmodel extends CI_Model{
         $this->db->update('events',$data);
         
     }
-    public function update_event($id,$start,$end){
+    public function update_event($id,$start,$end,$title){
         $data = array(
             'title'=>$title,
             'start'=>$start,

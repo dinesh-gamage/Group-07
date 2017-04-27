@@ -100,7 +100,7 @@ input[type=radio] + label>img {
 
 .text {
     text-align: center;
-    white-space: nowrap; 
+    white-space: nowrap;
     color: blue;
     font-size: 20px;
     position: absolute;
@@ -118,6 +118,7 @@ input[type=radio] + label>img {
     padding: 15px;
     background-color: white;
     margin-top: 10px;
+    clear: both;
 }
 
 .header_top_bar{
