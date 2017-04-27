@@ -126,6 +126,6 @@
     </div> 
     </div> 
     
-    <a href="<?php echo base_url()."Login"?>"><div class="hl-float-login" >Log in <!--hr style="color:white; height:3px;"> Register--></div></a>
+   
 
 <!--  end navigation -->
