@@ -1831,7 +1831,7 @@
                                         <option value="B">Test B</option>
                                     </select>
                                 </div>
-                                <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
+                                <input type="hidden" name="patientid" id="patientcogid" value="<?php echo $patient_id; ?>" />
                                 <div class="col-sm-4">
                                     <button type="button" id="start" class="btn btn-info" onclick="javascript: submit()" >Start Test Now</button>
                                 </div>
@@ -1848,30 +1848,8 @@
                            
                             <div class="panel panel-info">
                                 <div class="panel-heading">Patient Answers</div>
-                                <div class="panel-body">
-                                    <h3>Test - A</h3>
-
-
-                                    <h3>Test - B</h3>
-                                    <?php
-                                        foreach($marks as $patient_mark):
-                                        $firstLetter = $patient_mark->question_id[0];
-                                        if($firstLetter =='B'){
-                                            $mrks = $patient_mark->marks;
-                                            if($mrks == 1){
-                                                $status = "Correct";
-                                                echo "<div class='correct'>";
-                                                echo $patient_mark->question_id."-".$status." (".$mrks.")";
-                                                echo "</div>";
-                                            }else{
-                                                $status = "Incorrect";
-                                                echo "<div class='incorrect'>";
-                                                echo $patient_mark->question_id."-".$status." (".$mrks.")";
-                                                echo "</div>";
-                                            }
-                                        }
-                                        endforeach;
-                                    ?>
+                                <div class="panel-body" id="cogtestmarks">
+                                    
                                 </div>
                             </div>
                 
@@ -2115,6 +2093,27 @@ $("#start").click(function() {
         $("#discharge").show();  
         $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient").hide();   
     }
-   
+      $(document).ready(function (){
+                setInterval(getMarks, 100);
+            });
+    function getMarks(){
+    $(document).ready(function(){
+        var id = $('#patientcogid').attr("value");
+        $.ajax({
+			 url: 'http://[::1]/project/Group-07/NiceAdmin/CogTestQuiz/getMarks/',
+			 type: "POST",
+			 data: {id:id},
+			 success: function(data) {
+                    $('#cogtestmarks').html(data);
+             }
+			});
+        
+        
+        
+        
+        
+        
+    });
+    }
     
 </script>

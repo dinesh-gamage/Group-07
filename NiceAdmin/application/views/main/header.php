@@ -279,7 +279,7 @@
                                     <a href="#"><i class="icon_chat_alt"></i> Chats</a>
                                 </li>
                                 <li>
-                                    <a href="<?php base_url()?>Profile/logout" onclick="<?php base_url()?>Profile/logout"><i class="icon_key_alt"></i> Log Out</a>
+                                    <a href="<?php base_url()?>Login/logout" onclick="<?php base_url()?>Login/logout"><i class="icon_key_alt"></i> Log Out</a>
                                 </li>
                                 <li>
                                     <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
