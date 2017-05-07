@@ -143,7 +143,7 @@ $sess_array = array(
 );
 $this->session->unset_userdata('logged_in', $sess_array);
 $data['message_display'] = 'Successfully Logout';
-$this->load->view('login_form', $data);
+$this->load->view('login/login_form', $data);
 }
 
 }

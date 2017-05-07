@@ -9,6 +9,22 @@ class doc_model extends CI_Model{
         $query = $this->db->get();
         return $query->result();
     }
+    public function getAllGoals(){
+        $this->db->select('*');
+        $this->db->from('goals');
+        //$this->db->order_by('type');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    
+    public function getAllGoalsByID($patient_id){
+        $condition = "patient_id =" . "'" . $patient_id . "'";
+        $this->db->select('*');
+        $this->db->from('goals');
+        $this->db->where($condition);
+        $query = $this->db->get();
+        return $query->result();
+    }
     
     public function add_family_history($data)
     {
@@ -167,6 +183,35 @@ class doc_model extends CI_Model{
         $this->db->where($condition);
         $query = $this->db->get();
         return $query->result();
+    }
+    
+    public function add_doc_notes($data){
+        $this->db->insert('doc_notes',$data);
+            if ($this->db->affected_rows() > 0) {
+                    return true;
+                }else {
+                    return false;
+                }
+    }
+    
+    public function get_All_references(){
+        //$condition = "patient_id =" . "'" . $patient_id . "'";
+        $this->db->select('*');
+        $this->db->from('reference');
+        //$this->db->where($condition);
+        $query = $this->db->get();
+        return $query->result();
+    }
+    
+    public function get_doc_notes_by_id($patient_id){
+        $condition = "patient_id ="."'".$patient_id."'";
+        $this->db->select('*');
+        $this->db->from('doc_notes');
+        $this->db->where($condition);
+        $this->db->order_by('date','ASC');
+        $query = $this->db->get();
+        return $query->result();
+        
     }
     
     

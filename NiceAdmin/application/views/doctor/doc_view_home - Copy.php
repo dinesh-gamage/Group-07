@@ -6,7 +6,6 @@
             $name = ($this->session->userdata['logged_in']['name']);
             $picture = ($this->session->userdata['logged_in']['picture']);
             $status = ($this->session->userdata['logged_in']['status']);
-            $doctorID = ($this->session->userdata['logged_in']['doctorId']);
             
             if($status != 'Doctor'){
                 redirect('/Login');
@@ -179,8 +178,7 @@
                               <input type="text" name="end" class="form-control" id="end" readonly>
                             </div>
                           </div>
-                                <input type="hidden" name="doctorName" value="<?php echo $doctorID; ?>" />
-                          
+
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -317,7 +315,6 @@
 	},
 			events: [
 			<?php foreach($events as $event): 
-                if ($event->doctor_id == $doctorID){
 			
 				$start = explode(" ", $event->start);
 				$end = explode(" ", $event->end);
@@ -339,9 +336,7 @@
 					end: '<?php echo $event->end; ?>',
 					color: '<?php echo $event->color; ?>',
 				},
-			<?php 
-                }
-                    endforeach; ?>
+			<?php endforeach; ?>
 			]
         });
 

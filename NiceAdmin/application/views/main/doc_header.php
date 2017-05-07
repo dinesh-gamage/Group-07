@@ -27,7 +27,7 @@
             redirect('/Login');;
         }
     ?>
-    
+    <?php date_default_timezone_set("Asia/Colombo");?>
     <title> Healthy Life / Doctor </title>
     
     <meta charset="utf-8" />
@@ -53,7 +53,7 @@
 	<link rel="stylesheet" type="text/css" href="<1?php echo base_url()."asserts/css/jquery-jvectormap-1.2.2.css"?>" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="<1?php echo base_url()."asserts/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css"?>" rel="stylesheet" type="text/css" media="screen"/>
 -->
-    <!--link href="<-?php echo base_url()."asserts/css/bootstrap.min.css"?>" rel="stylesheet" /-->
+    <!--\link href="<-?php echo base_url()."asserts/css/bootstrap.min.css"?>" rel="stylesheet" /-->
     <!--link href="<-?php echo base_url()."asserts/css/bootstrap-theme.css"?>" rel="stylesheet" /-->
     
     <style type="text/css">
