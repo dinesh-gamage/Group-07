@@ -77,6 +77,8 @@
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/fullcalendar.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/gcal.js"></script>
     
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/sweetalert.min.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-ui-1.10.4.min.js" ?>"></script>

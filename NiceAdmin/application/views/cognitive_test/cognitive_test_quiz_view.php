@@ -3,8 +3,10 @@
         <title>Cognitive Test</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="<?php echo base_url()."asserts/css/custom.css"?>" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url()."asserts/css/sweetalert.css"?>" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url() . "asserts/js/sweetalert.min.js" ?>"></script>
 
     </header>
     <body>
@@ -15,6 +17,59 @@
                         
                             
                         <div class="col-md-12">
+                            <?php
+                                $wrong = 0;
+                                $total = 0;
+                                foreach ($marks as $marks):
+                                if($marks->marks == 0)
+                                {
+                                    $wrong += 1; 
+                                    $total += 1; 
+                                    
+                                    if($total <= 5)
+                                    {
+                                        if($wrong == 3)
+                                        {
+                            ?>
+                            <script> //alert('3 wrong answers within 5'); 
+                            
+                                swal({
+                                    title: "Stop Test?",
+                                    text: "3 wrong answers within 5!",
+                                    type: "warning",
+                                    showCancelButton: true,
+                                    confirmButtonColor: "#DD6B55",
+                                    confirmButtonText: "Yes, Stop test!",
+                                    closeOnConfirm: false
+                                },
+                                     function(){
+                                    //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                    window.close();
+                                });
+                            </script>
+                            <?php
+                                        }
+                                        
+                                    }elseif($total == 5 && $wrong < 3)
+                                    {
+                                        $wrong = 1;
+                                        $total = 1;
+                                    }
+                                }else
+                                {
+                                    if($wrong > 0)
+                                    {
+                                        $total += 1;
+                                        if($total == 5 && $wrong < 3)
+                                        {
+                                            $wrong = 0;
+                                            $total = 0;
+                                        }
+                                    }
+                                }
+              
+                                endforeach;
+                            ?>
                             <?php
                                 
                                 $quest=array();

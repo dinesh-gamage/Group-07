@@ -487,9 +487,10 @@ class DoctorView extends CI_Controller {
         $goals = $this->doc_model->getAllGoalsByID($patient_id);
         
         foreach ($goals as $goals):
-
-        $goal = $this->input->post('goalname');
-        $marks = $this->input->post('Goal 03');
+        
+        $sequ = $goals->sequence;
+        $goal = $this->input->post('goal'.$sequ);
+        $marks = $this->input->post('mark'.$sequ);
         $data[] = array(
             'patient_id' =>  $patient_id,
             'goal' => $goal,
@@ -509,7 +510,7 @@ class DoctorView extends CI_Controller {
         $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
         $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
         $data['patient_id'] = $patient_id;
-        $data['successMessage'] = 'Goals added Successfully !';
+        $data['successMessage'] = 'Marks added Successfully !';
         $data['patients'] = $this->doc_model->getAllPatients();
         $data['goals'] = $this->doc_model->getAllGoals();
         $data1['doc_data'] = $this->profilemodel->get_doc_data();
