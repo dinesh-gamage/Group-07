@@ -21,12 +21,28 @@
     <div class="contentContainer">
     <!--overview start-->
         <div class="row">
-            <div class="col-lg-12">
-<!--                    <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>-->
-                <ol class="breadcrumb">
-                    <li><i class="fa fa-home"></i><a href="<?php echo base_url() . "Index1" ?>">Home</a></li>
-                    <li><i class="fa fa-laptop"></i>All Patients</li>					  	
-                </ol>
+            <div class="col-lg-12 topbar">
+                <div class="col-lg-9">
+                    <ol class="breadcrumb">
+                        <li><i class="fa fa-home"></i><a href="<?php echo base_url() . "DoctorView" ?>">Home</a></li>
+                    <li><i class="fa fa-laptop"></i>All Patients</li>
+                    </ol>
+                </div>
+                <div class="col-lg-3">
+                    <?php 
+                        $attri = array('class'=>'form-horizontal');
+                        echo form_open('DoctorView/search_doc_home',$attri); 
+                    ?>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search Patient" name="search" />
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    <?php echo form_close(); ?>
+                </div>
             </div>
         </div>
 
@@ -44,8 +60,42 @@
                         <div class="text">Progressing<br> Patients</div>
                     </div>
                 </div>
+                <div class="col-sm-2 col-icon-box "  onclick="viewDisPatients()">
+                    <img src="<?php echo base_url()."asserts/images/icons/dischargd_patients.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    <div class="overlay">
+                        <div class="text">Discharged<br> Patients</div>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-4">
+                <div id="search_doc_view" >
+                    <?php 
+                        foreach ($patientByID as $patient):
+                    ?>
+                        <div class="white_back container" >
+                            <form name="myform" id="myform" action="<?php echo base_url() ?>/DoctorView/getPatient/" method="post">
+                                <input type="hidden" name="patientid" id="id" value="<?php echo $patient->patient_id; ?>" />
+                                <div class="patient">
+                                    <div class="col-lg-8">
+                                        <?php 
+                                            echo "<div class=\"col-sm-8 padding10top\">";
+                                                echo $patient->patient_name;
+                                            echo "</div>";
+                                            //echo str_repeat("&nbsp;", 6); 
+                                            echo "<div class=\"col-sm-4 padding10top\">";
+                                                echo $patient->regitration_date;
+                                            echo "</div>";
+                                        ?>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <button type="button" class="btn btn-info" onclick="javascript: submit()" >View</button>
+                                    </div>
+                                </div>                                    
+                            </form>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                
                 <div class="white_back container">
                     <div id="newPatientList">
                         <h4 class="text-center">New Patients</h4><hr>
@@ -110,7 +160,39 @@
                                 }
                             endforeach;
                         ?>
-                    </div> 
+                    </div>
+                    <div id="disPatientList" style="display: none" >
+                        <h4 class="text-center">Discharged Patients</h4><hr>
+                        <?php
+                            foreach($patients as $patient):
+                                if ($patient->status == '2'){
+                        ?>
+
+                            <form name="myform" id="myform" action="<?php echo base_url() ?>/DoctorView/getPatient/" method="post">
+                                <input type="hidden" name="patientid" id="id" value="<?php echo $patient->patient_id; ?>" />
+                                <div class="patient">
+                                    <div class="col-lg-8">
+                                        <?php 
+                                            echo "<div class=\"col-sm-8 padding10top\">";
+                                                echo $patient->patient_name;
+                                            echo "</div>";
+                                            //echo str_repeat("&nbsp;", 6); 
+                                            echo "<div class=\"col-sm-4 padding10top\">";
+                                                echo $patient->regitration_date;
+                                            echo "</div>";
+                                        ?>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <button type="button" class="btn btn-default" onclick="javascript: submit()" >View</button>
+                                    </div>
+                                </div>                                    
+                            </form>
+
+                        <?php
+                                }
+                            endforeach;
+                        ?>
+                    </div>
                 </div>
             </div>
 <!-- paging -->
@@ -412,11 +494,18 @@
 <script>
     function viewNewPatients() {
         $("#newPatientList").show();  
-        $("#proPatientList").hide();   
+        $("#proPatientList,#disPatientList").hide();   
     }
     function viewProPatients() {
         $("#proPatientList").show();
-        $("#newPatientList").hide(); 
+        $("#newPatientList,#disPatientList").hide(); 
     }
+    function viewDisPatients() {
+        $("#disPatientList").show();
+        $("#newPatientList,#proPatientList").hide(); 
+    }
+    
+    
 </script>
 <!--/section-->
+<script src="<?php echo base_url() . "asserts/js/bootstrap.min.js" ?>"></script>
