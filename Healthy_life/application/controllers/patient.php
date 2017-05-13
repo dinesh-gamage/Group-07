@@ -25,6 +25,8 @@ class patient extends CI_Controller {
 		$doctor = $this->input->post('doctor');
 		$timeslot = $this->input->post('timeslot');
 		
+		echo $clinic;
+		echo $doctor;
         $data = array('clinic'=>$clinic,'doctor'=>$doctor,'timeslot'=>$timeslot);
 
         

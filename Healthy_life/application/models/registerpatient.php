@@ -17,7 +17,7 @@ class Registerpatient extends CI_Model{
         $data = array(
             'patient_id'=>$pid,
             'password'=>$pass,
-            'patien_name'=>$name,
+            'user_name'=>$name,
             'regitration_date'=>$date,
             'address'=>$addr,
             'gender'=>$gen,

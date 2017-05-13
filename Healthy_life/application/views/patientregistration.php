@@ -118,7 +118,7 @@
             var pgur =  $('#gur').val();
             var prel =  $('#rel').val();
             var pref =  $('#ref').val();
-            var ppass =  $('#pass').val();
+            var ppass = $('#pass').val();
             var pdiv =  $('#div').val();
             var pdate =  $('#date').val();
             var paddre =  $('#address').val();
@@ -126,7 +126,7 @@
 
             $.ajax({
                 type: "post",
-                url: "http://[::1]/Third_Year_Project/Healthy_life/index.php/Index1/reg_patient/",
+                url: "http://localhost/Gp/Group-07/Healthy_life/index.php/Index1/reg_patient",
                 cache: false,
                 data: {regbtn: "regbtn",pname:pname,age:page,dob:pdob,tel:ptel,lan:plan,gender:pgen,sch:psch,address:paddre,gur:pgur,rel:prel,ref:pref,pass:ppass,div:pdiv,date:pdate},
                 success: function (data) {

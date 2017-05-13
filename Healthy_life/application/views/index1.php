@@ -8,11 +8,7 @@
         </div>
     </div>
 </div-->
-<div class="hl-float opasity50">
-    <span class="vertical-text-box" >
-        <h6 class="vertical-text">Home Page</h6>
-    </span>
-</div>
+
 <!--a href="#top" ><i class="hl-float-top fa fa-arrow-circle-up" style="color: #397df7;" ></i></a-->
 
 <div id="home-banner" class="home-banner-main">
@@ -76,7 +72,7 @@
                         <span><i class="flaticon-notes hidden-xs"></i>Log In here</span>
                     </div>
 
-                    <div class="book-form">
+                   <!--  <div class="book-form" >
                           <div class="book-form" >
                                 <div class="form-group">                   
                                     <input type="text" class="form-control" id="uname" name="uname" placeholder="Enter Your User Name/ID" required>
@@ -86,11 +82,50 @@
                                 </div>
                                                   
                                 <button type="submit" id="loginbtn" class="btn btn-default">Log In</button>
-                                <li> <a href="<?php echo base_url()."gotopatientregistration"?>"> signup </a> </li>
-                                <li> <a href="<?php echo base_url()."forgetpassword"?>"> forget password </a> </li>
+                                <li> <a href="<?php //echo base_url()."gotopatientregistration"?>"> signup </a> </li>
+                                <li> <a href="<?php //echo base_url()."forgetpassword"?>"> forget password </a> </li>
                             </div>
 
 
+                    </div> -->
+
+                    <?php
+                    if (isset($logout_message)) {
+                    echo "<div class='message'>";
+                    echo $logout_message;
+                    echo "</div>";
+                    }
+                    ?>
+                    <?php
+                    if (isset($message_display)) {
+                    echo "<div class='message'>";
+                    echo $message_display;
+                    echo "</div>";
+                    }
+                    ?>
+
+                    <div id="main">
+                        <div id="login">
+                            <h2>Login Here</h2>
+                            <hr/>
+                            <?php echo form_open('user_authentication/user_login_process'); ?>
+                            <?php
+                            echo "<div class='error_msg'>";
+                            if (isset($error_message)) {
+                            echo $error_message;
+                            }
+                            echo validation_errors();
+                            echo "</div>";
+                            ?>
+                            <label>UserName :</label>
+                            <input type="text" name="username" id="name" placeholder="username"/><br /><br />
+                            <label>Password :</label>
+                            <input type="password" name="password" id="password" placeholder="**********"/><br/><br />
+                            <input type="submit" value=" Login " name="submit"/><br />
+                             <a href="<?php echo base_url() ?>index.php/user_authentication/user_registration_show">To SignUp Click Here</a> 
+                            <?php echo form_close(); ?>
+
+                        </div>
                     </div>
                    
                 </div>
