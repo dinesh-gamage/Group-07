@@ -17,7 +17,7 @@ class CogTestQuiz extends CI_Controller {
         $this->load->view('main/header',$data1);
 		$this->load->view('cognitive_test/cognitive_test_quiz',$data);
 	}
-    public function getMarks(){
+    public function getMarksB(){
          $patient_id = $this->input->post('id');
          $marks = $this->cognitive_test_model->viewMarks($patient_id);
                                     
@@ -40,6 +40,31 @@ class CogTestQuiz extends CI_Controller {
                                         endforeach;
                                    
     }
+    
+    public function getMarksA(){
+         $patient_id = $this->input->post('id');
+         $marks = $this->cognitive_test_model->viewMarks($patient_id);
+                                    
+                                       foreach($marks as $patient_mark):
+                                        $firstLetter = $patient_mark->question_id[0];
+                                        if($firstLetter =='A'){
+                                            $mrks = $patient_mark->marks;
+                                            if($mrks == 1){
+                                                echo 
+                                                 '<div class="correct">
+                                                 '.$patient_mark->question_id.'- Correct - '.$mrks.'
+                                                 </div>';
+                                            }else{
+                                                echo
+                                                 '<div class="incorrect">
+                                                 '.$patient_mark->question_id.'- Incorrect -'.$mrks.'
+                                                </div>';
+                                            }
+                                        }
+                                        endforeach;
+                                   
+    }
+    
     public function getTest(){
         $sequence = 0;
         $patient_id = $this->input->post('patientid');
@@ -47,18 +72,10 @@ class CogTestQuiz extends CI_Controller {
         $data['sequence'] = $sequence;
         $data['type'] = $type;
         $data['patient_id'] = $patient_id;
+        $data['marks'] = $this->cognitive_test_model->viewMarks($patient_id);
         $data['questions'] = $this->cognitive_test_model->getTestByType($type);
         $marks = $this->cognitive_test_model->viewMarks($patient_id);
-		
-       
-       
-        
-        
-        
-        
-        
-        
-        $this->load->view('cognitive_test/cognitive_test_quiz_view',$data);
+		$this->load->view('cognitive_test/cognitive_test_quiz_view',$data);
        
         
         
@@ -91,6 +108,7 @@ class CogTestQuiz extends CI_Controller {
             $data['sequence'] = $sequence;
             $data['type'] = $type;
             $data['patient_id'] = $patient_id;
+            $data['marks'] = $this->cognitive_test_model->viewMarks($patient_id);
             $data['questions'] = $this->cognitive_test_model->getTestByType($type);
             $data['marks'] = $this->cognitive_test_model->viewMarks($patient_id);
             $data['message_display'] = 'Mark added Successfully !';
@@ -103,6 +121,7 @@ class CogTestQuiz extends CI_Controller {
             $data['sequence'] = $sequence;
             $data['type'] = $type;
             $data['patient_id'] = $patient_id;
+            $data['marks'] = $this->cognitive_test_model->viewMarks($patient_id);
             $data['questions'] = $this->cognitive_test_model->getTestByType($type);
             $data['marks'] = $this->cognitive_test_model->viewMarks($patient_id);
             $data['message_display'] = 'Mark added failed!';

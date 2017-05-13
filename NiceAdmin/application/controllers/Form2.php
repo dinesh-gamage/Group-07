@@ -23,7 +23,6 @@ class Form2 extends CI_Controller {
         
     $pname = $this->input->post('ref');
     $date = $this->input->post('date');
-	
 		
 
 	$pdf = new PDF('P','mm','A4');
@@ -89,7 +88,21 @@ class Form2 extends CI_Controller {
     //$path = base_url().'uploads';
     $pdf->Output($this->config->item('file_path').$pname.'_'.$date.'.pdf','F');
 	$pdf->Output();
-	
+        
+        
+	$referenceData = array(
+        'patient_id' => $this->input->post('patientid'),
+        'doc_name' => $this->input->post('doc_name'),
+        'date' => $this->input->post('date'),
+        'patient_name' => $this->input->post('ref'),
+        'age' => $this->input->post('age'),
+        'clinic_no' => $this->input->post('clinic'),
+        'description' => $this->input->post('des'),
+        'path'=> './uploads/recodrs/reference_letters/'.$pname.'_'.$date.'.pdf',
+    );
+        
+        $this->db->insert('reference',$referenceData);
+        
 	}
 
 	public function getPage(){

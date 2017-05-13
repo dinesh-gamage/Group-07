@@ -27,7 +27,7 @@
             redirect('/Login');;
         }
     ?>
-    
+    <?php date_default_timezone_set("Asia/Colombo");?>
     <title> Healthy Life / Doctor </title>
     
     <meta charset="utf-8" />
@@ -53,7 +53,7 @@
 	<link rel="stylesheet" type="text/css" href="<1?php echo base_url()."asserts/css/jquery-jvectormap-1.2.2.css"?>" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="<1?php echo base_url()."asserts/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css"?>" rel="stylesheet" type="text/css" media="screen"/>
 -->
-    <!--link href="<-?php echo base_url()."asserts/css/bootstrap.min.css"?>" rel="stylesheet" /-->
+    <!--\link href="<-?php echo base_url()."asserts/css/bootstrap.min.css"?>" rel="stylesheet" /-->
     <!--link href="<-?php echo base_url()."asserts/css/bootstrap-theme.css"?>" rel="stylesheet" /-->
     
     <style type="text/css">
@@ -76,6 +76,8 @@
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/lib/moment.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/fullcalendar.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/gcal.js"></script>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/sweetalert.min.js" ?>"></script>
@@ -225,9 +227,7 @@
                 <!--  search form start -->
                 <ul class="nav top-menu">                    
                     <li>
-                        <form class="navbar-form">
-                            <input class="form-control" placeholder="Search" type="text">
-                        </form>
+
                     </li>                    
                 </ul>
                 <!--  search form end -->                
@@ -254,44 +254,8 @@
                         </ul>
                     </li>
                     <!-- alert notification end-->
-                    <!-- user login dropdown start-->
-                    <?php foreach($doc_data as $doc_row):?>
-                        <li class="dropdown">
-                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <span class="profile-ava">
-                                    <img alt="" src="<?php echo $doc_row->doc_img?>" class="img-responsive" style="height:40px;width: 40px;">
-                                </span>
-                                <span class="username"><?php echo $doc_row->doc_name?></span>
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu extended logout">
-                                <div class="log-arrow-up"></div>
-                                <li class="eborder-top">
-                                    <a href="<?php base_url()?>Profile"><i class="icon_profile"></i> My Profile</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="icon_clock_alt"></i> Timeline</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="icon_chat_alt"></i> Chats</a>
-                                </li>
-                                <li>
-                                    <a href="<?php base_url()?>Profile/logout" onclick="<?php base_url()?>Profile/logout"><i class="icon_key_alt"></i> Log Out</a>
-                                </li>
-                                <li>
-                                    <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
-                                </li>
-                                <li>
-                                    <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
-                                </li>
-                            </ul>
-                    </li>
-                    <?php endforeach;?>
-                    <!-- user login dropdown end -->
                     
+                    <!-- user login dropdown start-->                  
                     
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -304,26 +268,24 @@
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
                             <li class="eborder-top">
+<!--
+                                <div  class="profile_drop">
+                                    <div class="col-sm-6">
+                                        <img alt="" src="</?php echo base_url().$picture?>" class="profile_md">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        </?php echo $name; ?>
+                                    </div>                                
+                                </div>
+-->
+                                
                                 <a href="#"><i class="icon_profile"></i> My Profile</a>
                             </li>
+                            
                             <li>
-                                <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
+                                <a href="<?php base_url()?>Profile/logout" onclick="<?php base_url()?>Profile/logout"><i class="icon_key_alt"></i> Log Out</a>
                             </li>
-                            <li>
-                                <a href="#"><i class="icon_clock_alt"></i> Timeline</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="icon_chat_alt"></i> Chats</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url()."user_authentication/logout"?>"><i class="icon_key_alt"></i> Log Out</a>
-                            </li>
-                            <li>
-                                <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
-                            </li>
-                            <li>
-                                <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
-                            </li>
+                            
                         </ul>
                     </li> 
                     
@@ -333,79 +295,4 @@
         </header>      
         <!--header end-->
 
-        <!--sidebar start-->
-        <!--aside>
-            <div id="sidebar"  class="nav-collapse ">
-                <!-- sidebar menu start-->
-                <!--ul class="sidebar-menu">                
-                    <li class="active">
-                        <a class="" href="<-?php echo base_url()."Index1"?>">
-                            <i class="icon_house_alt"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-
-                    <li><a class="" href="<-?php echo base_url()."Calendar"?>">Calendar</a></li>
-                    <li><a class="" href="<-?php echo base_url()."CognitiveTest"?>">Add Questions</a></li>                          
-                    <li><a class="" href="<-?php echo base_url()."CogTestQuiz"?>">Start Quiz</a></li> 
-                    <li><a class="" href="<-?php echo base_url()."FormComponent"?>">Form Elements</a></li>                          
-                    <li><a class="" href="<-?php echo base_url()."FormValidation"?>">Form Validation</a></li>
-
-                         
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                            <i class="icon_desktop"></i>
-                            <span>UI Fitures</span>
-                            <span class="menu-arrow arrow_carrot-right"></span>
-                        </a>
-                        <ul class="sub">
-                            <li><a class="" href="<-?-php echo base_url()."General"?>">Elements</a></li>
-                            <li><a class="" href="<-?php echo base_url()."Buttons"?>">Buttons</a></li>
-                            <li><a class="" href="<--?php echo base_url()."Grids"?>">Grids</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="" href="<-?php echo base_url()."Widgets"?>">
-                            <i class="icon_genius"></i>
-                            <span>Widgets</span>
-                        </a>
-                    </li>
-                    <li>                     
-                        <a class="" href="<-?php echo base_url()."Charts"?>">
-                            <i class="icon_piechart"></i>
-                            <span>Charts</span>
-
-                        </a>
-
-                    </li>
-
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                            <i class="icon_table"></i>
-                            <span>Tables</span>
-                            <span class="menu-arrow arrow_carrot-right"></span>
-                        </a>
-                        <ul class="sub">
-                            <li><a class="" href="<-?php echo base_url()."BasicTable"?>">Basic Table</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                            <i class="icon_documents_alt"></i>
-                            <span>Pages</span>
-                            <span class="menu-arrow arrow_carrot-right"></span>
-                        </a>
-                        <ul class="sub">                          
-                            <li><a class="" href="<-?php echo base_url()."Profile"?>">Profile</a></li>
-                            <li><a class="" href="<-?php echo base_url()."Login"?>"><span>Login Page</span></a></li>
-                            <li><a class="" href="blank">Blank Page</a></li>
-                            <li><a class="" href="404.html">404 Error</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-                <!-- sidebar menu end-->
-            <!--/div>
-        </aside-->
-        <!--sidebar end-->
+        

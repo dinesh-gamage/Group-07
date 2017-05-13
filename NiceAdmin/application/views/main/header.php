@@ -27,7 +27,7 @@
             redirect('/Login');;
         }
     ?>
-    
+    <?php date_default_timezone_set("Asia/Colombo");?>
     <title> Healthy Life / Doctor </title>
     
     <meta charset="utf-8" />

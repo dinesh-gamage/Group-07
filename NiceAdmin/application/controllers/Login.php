@@ -123,6 +123,7 @@ Class Login extends CI_Controller {
                         'status' => $status,
                         'name' => $result[0]->doc_name,
                         'picture' => $result[0]->doc_img,
+                        'doctorId' => $result[0]->doctor_id,
 
                     );
 

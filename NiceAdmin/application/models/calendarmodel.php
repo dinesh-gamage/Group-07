@@ -6,12 +6,13 @@ class Calendarmodel extends CI_Model{
        $query  = $this->db->get('events');
        return $query->result();
    }
-  public function add_data($start,$end,$color,$title){
+  public function add_data($start,$end,$color,$title,$doctor){
       $data = array(
         'title'=>$title,
         'color'=>$color,
         'start'=>$start,
-        'end'=>$end
+        'end'=>$end,
+        'doctor_id'=>$doctor
       ); 
       return $this->db->insert('events',$data);      
   }
