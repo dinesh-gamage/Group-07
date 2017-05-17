@@ -122,7 +122,9 @@
                             <label>Password :</label>
                             <input type="password" name="password" id="password" placeholder="**********"/><br/><br />
                             <input type="submit" value=" Login " name="submit"/><br />
-                             <a href="<?php echo base_url() ?>index.php/user_authentication/user_registration_show">To SignUp Click Here</a> 
+                             <a href="<?php echo base_url() ?>index.php/user_authentication/user_registration_show">To SignUp Click Here</a> <br>
+                             <a href="<?php echo base_url() ?>index.php/user_authentication/forget_password_show">forget password</a> 
+
                             <?php echo form_close(); ?>
 
                         </div>

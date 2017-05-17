@@ -13,7 +13,19 @@ if (isset($this->session->userdata['logged_in'])) {
             <br>
             <a href="<?php echo base_url()."user_authentication/logout" ?>">logout</a>
         </div>
+        <div>
+            <?php 
+                if ($patients) {
+                    foreach ($patients as $row) {
+                        echo $row->id;
+                        echo "  ";
+                        echo $row->clinic;
+                        echo "<br/>";
+                    }
+                }
 
+            ?>
+        </div>
 
         <div class="col-lg-3 col-sm-12">
             <ul class="nav nav-pills nav-stacked">
@@ -76,28 +88,26 @@ if (isset($this->session->userdata['logged_in'])) {
                             <input type="text" class="form-control date-pick" id="appointmentdate" name="appointmentdate" placeholder="Appointment Date" required>
                         </div-->
 
-                        <textarea class="form-control" name="available" rows="2" placeholder="available time slot"></textarea>  
-                        <div class="form-group">                   
-                            <input type="text" class="form-control" id="timeslot" name="timeslot" placeholder="your time slot" required>
-                        </div>                
+                                      
                         <button type="submit" class="btn btn-default">Make appointment</button>
                         
                     </form>
                 </div>
                 <div id="cancelAppointment" class="tab-pane fade">
-                    <form class="book-form" method="post" action="http://thegenius.co/lamadic-html/version1/index-appointment.php">
-                                
-                                
+                    <form class="book-form" method="post" action="<?php echo base_url() ?>index.php/patient/delete">
+                                                            
                                 
 
 
-                                <!--div class="form-group">                   
-                                    <input type="text" class="form-control date-pick" id="appointmentdate" name="appointmentdate" placeholder="Appointment Date" required>
-                                </div-->
+                            
+
 
                                 
-                                <div class="form-group">                   
-                                    <input type="text" class="form-control" id="timeslot" name="timeslot" placeholder="appointment number" required>
+                                <div class="form-group">
+                                    
+
+                                                      
+                                    <input type="text" class="form-control" id="num" name="num" placeholder="appointment number" required>
                                 </div>                
                                 
                                 <button  type="submit " class="btn btn-default"> Delete  </button>

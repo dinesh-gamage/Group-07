@@ -31,6 +31,12 @@ $this->load->view('header');
 $this->load->view('patientregistration');
 $this->load->view('footer');
 }
+public function forget_password_show() {
+$this->load->view('header');
+$this->load->view('forgetpassword');
+$this->load->view('footer');
+}
+
 
 // Validate and store registration data in database
 public function new_user_registration() {
@@ -125,8 +131,8 @@ $session_data = array(
 // Add user data in session
 $this->session->set_userdata('logged_in', $session_data);
 //$this->load->view('header', $pic);
-$this->load->view('patient');
 $this->load->view('header');
+$this->load->view('patient');
 $this->load->view('footer');
 }
 } else {
@@ -147,8 +153,8 @@ $sess_array = array(
 );
 $this->session->unset_userdata('logged_in', $sess_array);
 //$data['message_display'] = 'Successfully Logout';
-$this->load->view('index1');
 $this->load->view('header');
+$this->load->view('index1');
 $this->load->view('footer');
 
 }
