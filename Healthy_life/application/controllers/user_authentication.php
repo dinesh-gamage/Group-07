@@ -27,8 +27,16 @@ $this->load->view('login_form');
 
 // Show registration page
 public function user_registration_show() {
-$this->load->view('registration_form');
+$this->load->view('header');
+$this->load->view('patientregistration');
+$this->load->view('footer');
 }
+public function forget_password_show() {
+$this->load->view('header');
+$this->load->view('forgetpassword');
+$this->load->view('footer');
+}
+
 
 // Validate and store registration data in database
 public function new_user_registration() {
@@ -73,7 +81,7 @@ $data = array(
 'speciality' => $this->input->post('spec'),
 'email' => $this->input->post('email_value'),
 'telephone' => $this->input->post('contact'),
-'profile_pic' => 'uploads/'.$picture
+'doc_img' => 'uploads/'.$picture
 
 );
 
@@ -97,10 +105,10 @@ $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
 if ($this->form_validation->run() == FALSE) {
 if(isset($this->session->userdata['logged_in'])){
-$this->load->view('header');
+//$this->load->view('header');
 $this->load->view('index1');
 }else{
-$this->load->view('login_form');
+$this->load->view('index1');
 }
 } else {
 $data = array(
@@ -115,24 +123,23 @@ $result = $this->login_database->read_user_information($username);
 if ($result != false) {
 $session_data = array(
 'username' => $result[0]->user_name,
-'email' => $result[0]->email,
+//'email' => $result[0]->email,
 
 );
-<<<<<<< HEAD
-=======
 
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
-$pic = array('picture' => $result[0]->profile_pic );
+//$pic = array('picture' => $result[0]->doc_img );
 // Add user data in session
 $this->session->set_userdata('logged_in', $session_data);
-$this->load->view('header', $pic);
-$this->load->view('index1');
+//$this->load->view('header', $pic);
+$this->load->view('header');
+$this->load->view('patient');
+$this->load->view('footer');
 }
 } else {
 $data = array(
 'error_message' => 'Invalid Username or Password'
 );
-$this->load->view('login_form', $data);
+$this->load->view('index1', $data);
 }
 }
 }
@@ -145,8 +152,11 @@ $sess_array = array(
 'username' => ''
 );
 $this->session->unset_userdata('logged_in', $sess_array);
-$data['message_display'] = 'Successfully Logout';
-$this->load->view('login/login_form', $data);
+//$data['message_display'] = 'Successfully Logout';
+$this->load->view('header');
+$this->load->view('index1');
+$this->load->view('footer');
+
 }
 
 }

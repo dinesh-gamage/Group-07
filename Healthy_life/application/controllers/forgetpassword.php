@@ -24,4 +24,17 @@ class forgetpassword extends CI_Controller {
 		$this->load->view('forgetpassword');
 		$this->load->view('footer');
 	}
+<<<<<<< HEAD
+=======
+	public function forget(){
+		$this->load->model('fpassword');
+		$name=$this->input->post('uname');
+		$pwd=$this->input->post('psswrd');
+		$status = $this->fpassword->forget ($name,$pwd);
+		
+
+
+
+	}
+>>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
 }

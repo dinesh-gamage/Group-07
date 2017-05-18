@@ -182,11 +182,19 @@
             function getnewpatient(){
                 $.ajax({
                     type: "post",
+<<<<<<< HEAD
                     url: "http://[::1]/new4/NiceAdmin/Header/newpatient",
                     cache: false,
                     data: {pid: "one"},
                     success: function (data) {
                         $('#newpatient').html(data);
+=======
+                    url: "http://[::1]/project/Group-07/NiceAdmin/Header/newpatient",
+                    cache: false,
+                    data: {pid: "one"},
+                    success: function (data) {
+                        $('#newpatient').html(data)
+>>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
                     }
                 });
             }
@@ -194,11 +202,19 @@
             function countnewpatient(){
                 $.ajax({
                     type: "post",
+<<<<<<< HEAD
                     url: "http://[::1]/new4/NiceAdmin/Header/count_new_patient",
                     cache: false,
                     data: {pid: "one"},
                     success: function (data) {
                         $('.countnewpatient').html(data);
+=======
+                    url: "http://[::1]/project/Group-07/NiceAdmin/Header/count_new_patient",
+                    cache: false,
+                    data: {pid: "one"},
+                    success: function (data) {
+                        $('.countnewpatient').html(data)
+>>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
                     }
                 });
             }

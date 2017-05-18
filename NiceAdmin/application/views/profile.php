@@ -3,7 +3,11 @@
         <div class="col-lg-12">
             <!--h3 class="page-header"><i class="fa fa-user-md"></i> Profile</h3-->
             <ol class="breadcrumb">
+<<<<<<< HEAD
                 <li><i class="fa fa-home"></i><a href="<?php echo base_url()."DoctorView"?>">Home</a></li>
+=======
+                <li><i class="fa fa-home"></i><a href="<?php echo base_url()."Index1"?>">Home</a></li>
+>>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
                 <li><i class="icon_documents_alt"></i>Pages</li>
                 <li><i class="fa fa-user-md"></i>Profile</li>
             </ol>
@@ -254,7 +258,11 @@ $(document).ready(function (){
       var curr = $(this).val();
       $.ajax({
           type: "post",
+<<<<<<< HEAD
           url: "http://[::1]/new4/NiceAdmin/Profile/index/",
+=======
+          url: "http://[::1]/Third_Year_Project/NiceAdmin/Profile/index/",
+>>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
           cache: false,
           data: {curpass: curr},
           success: function (data) {
@@ -288,7 +296,12 @@ $(document).ready(function (){
 
 <!-- container section end -->
 <!-- javascripts -->
+<<<<<<< HEAD
 
+=======
+<script src="<?php echo base_url()."asserts/js/jquery.js"?>"></script>
+<script src="<?php echo base_url()."asserts/js/bootstrap.min.js"?>"></script>
+>>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
 <!-- nice scroll -->
 <script src="<?php echo base_url()."asserts/js/jquery.scrollTo.min.js"?>"></script>
 <script src="<?php echo base_url()."asserts/js/jquery.nicescroll.js"?>" type="text/javascript"></script>

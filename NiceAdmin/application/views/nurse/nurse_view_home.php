@@ -18,7 +18,7 @@
     ?>
 <!--main content start-->
 <!--section id="main-content"-->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
 <section class="wrapper">
     <div class="contentContainer">
     <!--overview start-->
@@ -333,7 +333,7 @@
                 type: "POST",
                 data: {'user':i},
                 success: function(data) {
-                    
+                    alert(data);
                                     
                                         
                                         
@@ -351,7 +351,9 @@
            
     </div>
 </section>
+
 <script>
+    
     function viewNewPatients() {
         $("#newPatientList").show();  
         $("#proPatientList").hide();   

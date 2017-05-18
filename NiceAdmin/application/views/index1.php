@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+=======
+>>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
 <section class="wrapper">            
     <!--overview start-->
     <div class="row">
@@ -15,6 +18,7 @@
         
     </div>
 </section>
+<<<<<<< HEAD
 
 </section>
 <!--main content end-->
@@ -210,5 +214,8 @@
 
 </script>
 
+=======
+<script src="<?php echo base_url() . "asserts/js/bootstrap.min.js" ?>"></script>
+>>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
 </body>
 </html>
