@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" /> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:600,600i,700i" /> <!-- google fonts -->
     <link rel="icon" type="image/icon" href="<?php echo base_url()."asserts/images/favicon/favicon.ico"?>"> <!-- favicon-icon -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     
 </head>
 
@@ -126,6 +126,6 @@
     </div> 
     </div> 
     
-    <a href="<?php echo base_url()."Login"?>"><div class="hl-float-login" >Log in <!--hr style="color:white; height:3px;"> Register--></div></a>
+   
 
 <!--  end navigation -->

@@ -17,7 +17,7 @@
                             <!--div class="book-top-bar text-center">
                                 <span><i class="flaticon-notes hidden-xs"></i>Register Now</span>
                             </div-->
-                            <form class="book-form" method="post" action="http://thegenius.co/lamadic-html/version1/index-appointment.php">
+                            <div class="book-form" >
                                 <div class="form-group">                   
                                     <input type="text" class="form-control" id="uname" name="uname" placeholder="Enter Your User Name/ID" required>
                                 </div>
@@ -25,8 +25,9 @@
                                     <input type="password" class="form-control" id="password" name="password" placeholder="Enter your Password" required>
                                 </div>
                                                   
-                                <button type="submit" class="btn btn-default">Log In</button>
-                            </form> 
+                                <button type="submit" id="loginbtn" class="btn btn-default">Log In</button>
+                            </div>
+                            <div id="messagelog" class="alert alert-danger text-center"></div>
                           <br>
                           <br>
                             
@@ -84,5 +85,30 @@
                 
                 </div-->
             </div>
+    <script>
+        $(document).ready(function (){
+            $('#loginbtn').click(function(){
+                var username = $('#uname').val();
+                var pass = $('#password').val();
+                $.ajax({
+                    type:"post",
+                    url:"http://[::1]/Third_Year_Project/Healthy_life/Login/check_patient",
+                    data:{uname:username,password:pass},
+                    success:function(data){
+                        if(data=="true"){
+                            window.location.href = "<?php echo base_url('Index1');?>";
+                        }else{
+                            $('#messagelog').html('Invalid username or password!');
+                            $('#uname').val("");
+                            $('#password').val("");
+                        }
+                    }
+                });
+
+            });
+
+
+        });
+    </script>
 </div>
 
