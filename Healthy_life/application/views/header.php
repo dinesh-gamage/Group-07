@@ -42,13 +42,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" /> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:600,600i,700i" /> <!-- google fonts -->
     <link rel="icon" type="image/icon" href="<?php echo base_url()."asserts/images/favicon/favicon.ico"?>"> <!-- favicon-icon -->
-<<<<<<< HEAD
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     
-=======
-   
-      <script src="<?php echo base_url()."assets/js/jquery.min.js"?>"></script> 
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
 </head>
 
     
@@ -98,7 +93,7 @@
                                     <li> <a href="<?php echo base_url()."Index1"?>">Home</a> </li>
                                     <li> <a href="<?php echo base_url()."About"?>">About Us</a> </li>
                                     <li> <a href="<?php echo base_url()."DoctorStyle1"?>">Doctors</a> </li>
-                                    
+                                    <li> <a href="<?php echo base_url()."Register"?>">Register</a> </li>
                                     <!--li> <a href="#">Pages</a>
                                         <ul>    
                                             <li><a href="<?php echo base_url()."DoctorStyle1"?>">Doctor Style 1</a></li>
@@ -113,9 +108,9 @@
                                         </ul>
                                     </li-->                
                                     <!--li><a href="<?php echo base_url()."PortfolioWithTitle"?>">Gallery</a></li-->
-                                    
+                                    <li><a href="<?php echo base_url()."BlogLeftSidebar"?>">Blog</a></li>
                                     <!--li><a href="<?php echo base_url()."Faq"?>">Faq</a></li-->
-                                    
+                                    <li><a href="<?php echo base_url()."ContactStyle2"?>">Contact</a></li>
                                     <!--li></li>
                                     <span class="btn btn-info"><a href="<?php echo base_url()."ContactStyle2"?>"><h3>Log in</h3></a></span-->
                                 </ul>

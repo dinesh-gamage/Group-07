@@ -6,7 +6,6 @@ class Calendarmodel extends CI_Model{
        $query  = $this->db->get('events');
        return $query->result();
    }
-<<<<<<< HEAD
    public function calSpec($doc){
        $this->db->select('*');
        $this->db->where('doctor_id',$doc);
@@ -14,8 +13,6 @@ class Calendarmodel extends CI_Model{
        $query = $this->db->get();
        return $query->result();
    }
-=======
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
   public function add_data($start,$end,$color,$title,$doctor){
       $data = array(
         'title'=>$title,
@@ -45,11 +42,8 @@ class Calendarmodel extends CI_Model{
         $this->db->update('events',$data);
         
     }
-<<<<<<< HEAD
    
     
-=======
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
     public function delete($id){
         $this->db->where('id',$id);
         $this->db->delete('events');

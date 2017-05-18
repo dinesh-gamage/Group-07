@@ -26,11 +26,7 @@ class Header extends CI_Controller{
                                     <a id="newpatient" onclick="loadpatient( '.$newpatient->patient_id.');">
                                         <span class="label label-primary"><i class="icon_profile"></i></span>
                                         '.$newpatient->patient_name.'
-<<<<<<< HEAD
                                         <span class="small italic pull-right"></span>
-=======
-                                        <span class="small italic pull-right">5 mins</span>
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
                                     </a>
                                 </li>
                     ';

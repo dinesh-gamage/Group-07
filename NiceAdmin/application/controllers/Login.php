@@ -113,6 +113,8 @@ Class Login extends CI_Controller {
                 $result = $this->login_database->read_user_information($username);
                 if($result[0]->is_admin == 1){
                     $status = 'Admin';
+                }else if($result[0]->is_admin == 2){
+                    $status = 'Nurse';
                 }else{
                     $status = 'Doctor';
                 }
@@ -130,8 +132,17 @@ Class Login extends CI_Controller {
                     
                     // Add user data in session
                     $this->session->set_userdata('logged_in', $session_data);
-                    $data1['doc_data'] = $this->profilemodel->get_doc_data();                    
-                    redirect('/DoctorView/');
+                    if($status==="Doctor"){
+                        $data1['doc_data'] = $this->profilemodel->get_doc_data();                    
+                        redirect('/DoctorView/');
+                    }else if($status==="Doctor"){
+                        $data1['doc_data'] = $this->profilemodel->get_doc_data();                    
+                        redirect('/NurseView/');
+                    }else{
+                        $data1['doc_data'] = $this->profilemodel->get_doc_data();                    
+                        redirect('/AdminView/');
+                    }
+                    
                 }
             } else {
                 $data = array(

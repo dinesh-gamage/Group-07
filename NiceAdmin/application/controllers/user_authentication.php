@@ -118,10 +118,6 @@ $session_data = array(
 'email' => $result[0]->email,
 
 );
-<<<<<<< HEAD
-=======
-
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
 $pic = array('picture' => $result[0]->profile_pic );
 // Add user data in session
 $this->session->set_userdata('logged_in', $session_data);

@@ -46,11 +46,7 @@ class Profile extends CI_Controller {
                 }
             }
         }
-<<<<<<< HEAD
         $this->load->view('main/doc_header',$data1);
-=======
-        $this->load->view('main/header',$data1);
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
         $this->load->view('profile',$docDetails);
 //
         if(isset($_POST['update'])){
@@ -99,20 +95,8 @@ class Profile extends CI_Controller {
 	}
     public function logout(){
         $this->clearCache();
-<<<<<<< HEAD
         $this->session->unset_userdata('doc_sess');
         redirect('Login');
     }
     
-=======
-        $this->session->unset_userdata('doc_session');
-        redirect('Login');
-    }
-    protected function clearCache(){
-        $this->output->set_header('Last-Modified: ' . gmdate("D, d M Y H:i:s") . ' GMT');
-        $this->output->set_header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
-        $this->output->set_header('Pragma: no-cache');
-        $this->output->set_header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-    }
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
 }

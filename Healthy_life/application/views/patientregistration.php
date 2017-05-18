@@ -1,4 +1,3 @@
-<<<<<<< HEAD
  <div class="row">
      <div class="col-lg-2"></div>
      <div class="col-lg-8" style="margin-top: 10px;">
@@ -7,9 +6,6 @@
                         <span><i class="flaticon-notes hidden-xs"></i>Register Now</span>
                     </div>
                     <div class="book-form">
-=======
- <div class="book-form">
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
                         <div class="row">
                             <div class="col-xs-6">
                                 <div class="form-group">
@@ -77,14 +73,9 @@
                         <button type="submit" id="register_btn" class="btn btn-default">Send Your Request</button>
                     <div id="messagereg"></div>
                     </div>
-<<<<<<< HEAD
                 </div>
                 </div>
             </div>
-=======
-
-
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
 
 <script type="text/javascript">
     $(document).ready(function (){
@@ -115,19 +106,12 @@
         //validate phone number
         $('#tel').keyup(function(){
             var reg1 = /^[0-9]{10}$/;
-<<<<<<< HEAD
             if((reg1.test($(this).val()))){
                 $('#checktel').html('');
                 document.getElementById('register_btn').disabled = false ;
             }else if(reg1.test($(this).val()=== "")){
                 $('#checktel').html('Please Enter a Contact Number');
                 document.getElementById('register_btn').disabled = true ;
-=======
-            var reg2 = /^[0-9]{7}$/;
-            if((reg1.test($(this).val())) || (reg2.test($(this).val()))){
-                $('#checktel').html('');
-                document.getElementById('register_btn').disabled = false ;
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
             }else{
                 document.getElementById('register_btn').disabled = true ;
                 $('#checktel').html('this is not valid').css('color', 'red');
@@ -144,11 +128,7 @@
             var pgur =  $('#gur').val();
             var prel =  $('#rel').val();
             var pref =  $('#ref').val();
-<<<<<<< HEAD
             var ppass =  $('#pass').val();
-=======
-            var ppass = $('#pass').val();
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
             var pdiv =  $('#div').val();
             var pdate =  $('#date').val();
             var paddre =  $('#address').val();
@@ -156,11 +136,7 @@
 
             $.ajax({
                 type: "post",
-<<<<<<< HEAD
                 url: "http://[::1]/new4/Healthy_life/Register/reg_patient/",
-=======
-                url: "http://localhost/Gp/Group-07/Healthy_life/index.php/Index1/reg_patient",
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
                 cache: false,
                 data: {regbtn: "regbtn",pname:pname,age:page,dob:pdob,tel:ptel,lan:plan,gender:pgen,sch:psch,address:paddre,gur:pgur,rel:prel,ref:pref,pass:ppass,div:pdiv,date:pdate},
                 success: function (data) {
@@ -206,11 +182,7 @@
                             $("#messagereg").hide('blind', {}, 500)
                         }, 5000);
                         setTimeout(function() {
-<<<<<<< HEAD
                             $("#checkpass").hide('blind', {}, 0);
-=======
-                            $("#checkpass").hide('blind', {}, 0)
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
                         }, 0);
                     }
                 }

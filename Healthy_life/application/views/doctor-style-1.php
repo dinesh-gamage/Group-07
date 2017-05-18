@@ -86,8 +86,7 @@
         <div class="col-md-4 col-sm-6 margin-top-30">
           <div class="specialist-block">
             <div class="specialist-img">
-              <a href="<?php echo base_url()."DoctorSingle"?>"><img src="<?php echo base_url()."asserts/images/doc_img/speecialist-0510.jpg
-"?>" class="img-responsive" alt="specialist-4">
+              <a href="<?php echo base_url()."DoctorSingle"?>"><img src="<?php echo base_url()."asserts/images/specialist/speecialist-04.jpg"?>" class="img-responsive" alt="specialist-4">
               <div class="overlay-bg"></div></a>
             </div>
             <div class="specialist-department">

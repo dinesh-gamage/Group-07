@@ -23,14 +23,9 @@
             $email = ($this->session->userdata['logged_in']['email']);
             $name = ($this->session->userdata['logged_in']['name']);
             $picture = ($this->session->userdata['logged_in']['picture']);
-<<<<<<< HEAD
             $this->session->set_userdata('doc_sess',$name );
         } else{
             redirect('/Login');
-=======
-        } else{
-            redirect('/Login');;
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
         }
     ?>
     <?php date_default_timezone_set("Asia/Colombo");?>
@@ -43,13 +38,8 @@
     <meta name="author" content="Healthy Life developing team of UCSC (2013/2014)" />
     <meta name="MobileOptimized" content="320" />
 
-<<<<<<< HEAD
 <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />-->
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-=======
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>scripts/fullcalendar/fullcalendar.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."asserts/css/custom.css"?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."asserts/css/sweetalert.css"?>" />
@@ -66,10 +56,7 @@
 -->
     <!--\link href="<-?php echo base_url()."asserts/css/bootstrap.min.css"?>" rel="stylesheet" /-->
     <!--link href="<-?php echo base_url()."asserts/css/bootstrap-theme.css"?>" rel="stylesheet" /-->
-<<<<<<< HEAD
     <link rel="stylesheet" href="http://www.amcharts.com/lib/style.css" type="text/css">
-=======
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
     
     <style type="text/css">
         #regiration_form fieldset:not(:first-of-type) {
@@ -87,11 +74,7 @@
     
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<<<<<<< HEAD
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-=======
-    
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/lib/moment.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/fullcalendar.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/gcal.js"></script>
@@ -134,10 +117,7 @@
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/charts.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.slimscroll.min.js" ?>"></script>
     
-<<<<<<< HEAD
     
-=======
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
     <script>
           //knob
           $(function() {
@@ -207,19 +187,11 @@
             function getnewpatient(){
                 $.ajax({
                     type: "post",
-<<<<<<< HEAD
                     url: "http://[::1]/new4/NiceAdmin/Header/newpatient",
                     cache: false,
                     data: {pid: "one"},
                     success: function (data) {
                         $('#newpatient').html(data);
-=======
-                    url: "http://[::1]/project/Group-07/NiceAdmin/Header/newpatient",
-                    cache: false,
-                    data: {pid: "one"},
-                    success: function (data) {
-                        $('#newpatient').html(data)
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
                     }
                 });
             }
@@ -227,19 +199,11 @@
             function countnewpatient(){
                 $.ajax({
                     type: "post",
-<<<<<<< HEAD
                     url: "http://[::1]/new4/NiceAdmin/Header/count_new_patient",
                     cache: false,
                     data: {pid: "one"},
                     success: function (data) {
                         $('.countnewpatient').html(data);
-=======
-                    url: "http://[::1]/project/Group-07/NiceAdmin/Header/count_new_patient",
-                    cache: false,
-                    data: {pid: "one"},
-                    success: function (data) {
-                        $('.countnewpatient').html(data)
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
                     }
                 });
             }
@@ -266,13 +230,9 @@
                 <!--  search form start -->
                 <ul class="nav top-menu">                    
                     <li>
-<<<<<<< HEAD
                         <form class="navbar-form">
                             <input class="form-control" placeholder="Search" type="text">
                         </form>
-=======
-
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
                     </li>                    
                 </ul>
                 <!--  search form end -->                
@@ -299,7 +259,6 @@
                         </ul>
                     </li>
                     <!-- alert notification end-->
-<<<<<<< HEAD
                     <!-- user login dropdown start-->
                     <?php foreach($doc_data as $doc_row):?>
                     <li class="dropdown">
@@ -327,12 +286,6 @@
                     
                     
 <!--                    <li class="dropdown">
-=======
-                    
-                    <!-- user login dropdown start-->                  
-                    
-                    <li class="dropdown">
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
                                 <img alt="" src="<?php echo base_url().$picture?>" class="profile_sm">
@@ -343,7 +296,6 @@
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
                             <li class="eborder-top">
-<<<<<<< HEAD
                                 <a href="<?php echo base_url()."Profile"?>"><i class="icon_profile"></i> My Profile</a>
                             </li>
                             <li>
@@ -351,28 +303,6 @@
                             </li>
                         </ul>
                     </li> -->
-=======
-<!--
-                                <div  class="profile_drop">
-                                    <div class="col-sm-6">
-                                        <img alt="" src="</?php echo base_url().$picture?>" class="profile_md">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        </?php echo $name; ?>
-                                    </div>                                
-                                </div>
--->
-                                
-                                <a href="#"><i class="icon_profile"></i> My Profile</a>
-                            </li>
-                            
-                            <li>
-                                <a href="<?php base_url()?>Profile/logout" onclick="<?php base_url()?>Profile/logout"><i class="icon_key_alt"></i> Log Out</a>
-                            </li>
-                            
-                        </ul>
-                    </li> 
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
                     
                 </ul>
                 <!-- notificatoin dropdown end-->
@@ -380,7 +310,6 @@
         </header>      
         <!--header end-->
 
-<<<<<<< HEAD
         <!--sidebar start-->
         <!--aside>
             <div id="sidebar"  class="nav-collapse ">
@@ -457,6 +386,3 @@
             <!--/div>
         </aside-->
         <!--sidebar end-->
-=======
-        
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347

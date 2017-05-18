@@ -33,10 +33,7 @@ class Indexmodel extends CI_Model{
             $this->db->delete('patient');
     }
     function get_new_patients(){
-<<<<<<< HEAD
         $this->db->where('status',0);
-=======
->>>>>>> 9b427d403cca9d9f9964ae03fb807980c382b347
         $query = $this->db->get('patient_register');
         return $query->result();
     }
