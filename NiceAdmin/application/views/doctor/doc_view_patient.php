@@ -1,20 +1,20 @@
 <?php
-        if (isset($this->session->userdata['logged_in'])) // Check if user has logged in 
+        if (isset($this->session->userdata['logged_in'])) 
         {
             $username = ($this->session->userdata['logged_in']['username']);
             $email = ($this->session->userdata['logged_in']['email']);
             $name = ($this->session->userdata['logged_in']['name']);
             $picture = ($this->session->userdata['logged_in']['picture']);
             $status = ($this->session->userdata['logged_in']['status']);
+            $doctorID = ($this->session->userdata['logged_in']['doctorId']);
             
-            if($status != 'Doctor'){   //Check if the logged user is a doctor
+            if($status != 'Doctor'){
                 redirect('/Login');
             }
         } else{
             redirect('/Login');
         }
     ?>
-
 <section class="wrapper">
     <div class="contentContainer">
         <div class="row">
@@ -75,8 +75,8 @@
                                 <div class="white_back container" >
                                 <ul class="nav nav-pills nav-stacked">
                                     <li class="active"><a data-toggle="pill" href="#generalDetails">Genaral Details</a></li>
+                                    <li><a data-toggle="pill" href="#problemHistory">Problem/Diagnosis</a></li>
                                     <li><a data-toggle="pill" href="#caseHistoryHistory">Case History</a></li>
-                                    <li><a data-toggle="pill" href="#problemHistory">Problem</a></li>
                                     <li><a data-toggle="pill" href="#goalEvaluationHistory">Goals Evaluation</a></li>
                                     <li><a data-toggle="pill" href="#cognitiveTestHistory">Cognitive Test</a></li>
                                     <li><a data-toggle="pill" href="#meicationsHistory">Medications</a></li>
@@ -386,6 +386,13 @@
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
+                                                                    <table class="table table-condensed table-bordered">
+                                                                        <tr class="active">
+                                                                            <td><?php echo $familyHistory->doc_name; ?></td>
+                                                                            <td><?php echo $familyHistory->date; ?></td>
+                                                                            <td><?php echo $familyHistory->time; ?></td>
+                                                                        </tr>
+                                                                    </table>
                                                         <?php 
                                                             }
 
@@ -597,7 +604,14 @@
                                                                                 <td><?php echo $communication->prognosis; ?> </td>
                                                                             </tr>                                           
                                                                         </tbody>
-                                                                    </table>               
+                                                                    </table> 
+                                                                    <table class="table table-condensed table-bordered">
+                                                                        <tr class="active">
+                                                                            <td><?php echo $communication->doc_name; ?></td>
+                                                                            <td><?php echo $communication->date; ?></td>
+                                                                            <td><?php echo $communication->time; ?></td>
+                                                                        </tr>
+                                                                    </table>
 
                                                         <?php 
                                                             }
@@ -656,6 +670,13 @@
                                                                                 <td><?php echo $Motor->stereotypic_behaviors; ?> </td>
                                                                             </tr>
                                                                         </tbody>
+                                                                    </table>
+                                                                    <table class="table table-condensed table-bordered">
+                                                                        <tr class="active">
+                                                                            <td><?php echo $Motor->doc_name; ?></td>
+                                                                            <td><?php echo $Motor->date; ?></td>
+                                                                            <td><?php echo $Motor->time; ?></td>
+                                                                        </tr>
                                                                     </table>
 
 
@@ -752,6 +773,13 @@
 
                                                                         </tbody>
                                                                     </table>
+                                                                    <table class="table table-condensed table-bordered">
+                                                                        <tr class="active">
+                                                                            <td><?php echo $Cognitive->doc_name; ?></td>
+                                                                            <td><?php echo $Cognitive->date; ?></td>
+                                                                            <td><?php echo $Cognitive->time; ?></td>
+                                                                        </tr>
+                                                                    </table>
 
 
                                                         <?php 
@@ -765,22 +793,23 @@
                     <!-- display cognative skills --> 
                                                 <div id="case_noteshistory" class="tab-pane fade">
                                                     <div class="white_back">
-                                                        <h3 class="success">Case notes</h3><hr>
+                                                        <h3 class="success text-center">Case notes</h3><hr>
                                                           
                                                         <?php
                                                             foreach ($getNotes as $Notes):
                                                                 if($patient_id == $Notes->patient_id)
                                                                 {
                                                         ?>
-                                                                    <table class="table table-condensed table-bordered " >
+                                                                    <p>
+                                                                        <?php echo $Notes->note; ?>
 
-                                                                        <tbody>
-
-                                                                            <tr>
-                                                                                <td><?php echo $Notes->note; ?> </td>
-                                                                            </tr>
-
-                                                                            </tbody>
+                                                                    </p>
+                                                                    <table class="table table-condensed table-bordered">
+                                                                        <tr class="active">
+                                                                            <td><?php echo $Notes->doc_name; ?></td>
+                                                                            <td><?php echo $Notes->date; ?></td>
+                                                                            <td><?php echo $Notes->time; ?></td>
+                                                                        </tr>
                                                                     </table>
 
 
@@ -796,7 +825,55 @@
                                     </div> 
                                     
                                     <div id="problemHistory" class="tab-pane fade">
+                                        <div id="diagnosis_table">
+                                            <div class="white_back">
+                                                <h3 class="success text-center">Diagnosis</h3><hr>
+                                                
+                                            <?php
+                                                foreach ($getDiagnosis as $diagnosis):
+                                                    if($patient_id == $diagnosis->patient_id)
+                                                    {
+                                            ?>
+                                                <p><?php echo $diagnosis->diagnosis; ?> </p>
+                                                    
+                                                        <table class="table table-condensed table-bordered">
+                                                            <tr class="active">
+                                                                <td><?php echo $diagnosis->doc_name; ?></td>
+                                                                <td><?php echo $diagnosis->date; ?></td>
+                                                                <td><?php echo $diagnosis->time; ?></td>
+                                                            </tr>
+                                                        </table>
 
+                                            <?php 
+                                                }endforeach;
+                                            ?>
+                                                </div>
+                                                
+                                        </div>
+                                        <div id="problem_table">
+                                            <div class="white_back">
+                                                <h3 class="success text-center">Problem</h3><hr>
+                                                
+                                            <?php
+                                                foreach ($getDiagnosis as $problems):
+                                                    if($patient_id == $problems->patient_id)
+                                                    {
+                                            ?>
+                                                <p><?php echo $problems->problem; ?></p>
+                                                        <table class="table table-condensed table-bordered">
+                                                            <tr class="active">
+                                                                <td><?php echo $problems->doc_name; ?></td>
+                                                                <td><?php echo $problems->date; ?></td>
+                                                                <td><?php echo $problems->time; ?></td>
+                                                            </tr>
+                                                        </table>
+
+                                            <?php 
+                                                }endforeach;
+                                            ?>
+                                                </div>
+                                            
+                                        </div>
                      
                                     </div>
                                     <div id="goalEvaluationHistory" class="tab-pane fade">
@@ -890,43 +967,69 @@
                         </div>
                     </div>
                 </div>
-                
-                <div id="diagnosis" style="display: none" ></div>
-                <div id="problem" style="display: none" >
+
+                <div id="diagnosis" style="display: none" >
                     <div class="white_back">
-                        <h3 class="success">Problem</h3><hr>
-                            <div id="problem_table">
+                        <h3 class="success text-center">Diagnosis</h3><hr>
+                            <div id="diagnosis_table">
                         <?php
-                            foreach ($getNotes as $Notes):
-                                if($patient_id == $Notes->patient_id)
+                            foreach ($getDiagnosis as $diagnosis):
+                                if($patient_id == $diagnosis->patient_id)
                                 {
                         ?>
-                                    <table class="table table-condensed table-bordered " >
-
-                                        <tbody>
-
-                                            <tr>
-                                                <td><?php echo $Notes->note; ?> </td>
-                                            </tr>
-
-                                            </tbody>
+                                <p><?php echo $diagnosis->diagnosis; ?></p> 
+                                                    
+                                    <table class="table table-condensed table-bordered">
+                                        <tr class="active">
+                                            <td><?php echo $diagnosis->doc_name; ?></td>
+                                            <td><?php echo $diagnosis->date; ?></td>
+                                            <td><?php echo $diagnosis->time; ?></td>
+                                        </tr>
                                     </table>
+
 
 
                         <?php 
                             }endforeach;
                         ?>
                             </div>
-                            <div id="problem_form">
+                            <div id="diagnosis_form">
                         <?php 
                             $attri = array('class'=>'form-horizontal');
-                            echo form_open('DoctorView/add_case_notes',$attri);
+                            echo form_open('DoctorView/add_diagnosis',$attri);
                         ?>
 
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <textarea name="cese_notes" class="form-control"   placeholder=""></textarea>
-                                    </div>
+                                <div class="form-group col-lg-3">
+                                    <label for="diagnosis" class="col-sm-3 control-label text-center">Diagnosis </label>
+                                </div>
+                                <div class="form-group col-lg-9">
+                                
+                                    <select name="diagnosis" class="form-control">
+                                        <option value="ASD">ASD</option>
+                                        <option value="ODD">ODD</option>
+                                        <option value="ADHD">ADHD</option>
+                                        <option value="SDLSS">SDLSS</option>
+                                        <option value="OCD">OCD</option>
+                                        <option value="PTSD">PTSD</option>
+                                        <option value="GAD">GAD</option>
+                                        <option value="Ajustment Disorder">Ajustment Disorder</option>
+                                        <option value="Acute Stress Disorder">Acute Stress Disorder</option>
+                                        <option value="MR">MR</option>
+                                        <option value="Conduct Disorder">Conduct Disorder</option>
+                                        <option value="Dissociative Disorder">Dissociative Disorder</option>
+                                        <option value="Non Organic Enuresis">Non Organic Enuresis</option>
+                                        <option value="Somatization Disorder">Somatization Disorder</option>
+                                        <option value="Selective Mutism">Selective Mutism</option>
+                                        <option value="Reactive Attachment Disorder">Reactive Attachment Disorder</option>
+                                        <option value="Tie Disorder">Tie Disorder</option>
+                                        <option value="Panic Disorder">Panic Disorder</option>
+                                        <option value="Seperation Anxiety Disorder">Seperation Anxiety Disorder</option>
+                                        <option value="Mental Behavioural Disorder">Mental Behavioural Disorder</option>
+                                        <option value="Pshycotic Disorder">Pshycotic Disorder</option>
+                                        <option value="No Mental Illness">No Mental Illness</option>
+                                        <option value="Expressive Language Dificult Speach Delay">Expressive Language Dificult Speach Delay</option>
+                                    </select>
+                                    
                                 </div>  
 
 
@@ -941,7 +1044,61 @@
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                     </div>
                                     <div class="col-sm-3">
-                                        <button type="submit" name='save' class="btn btn-primary">Submit</button>
+                                        <button type="submit" name='save' class="btn btn-primary">Save</button>
+                                    </div>
+                                </div>
+
+                        <?php  
+                            echo form_close();                                        
+                        ?>                                        
+                            </div>
+                    </div>
+                    <div class="white_back">
+                        <h3 class="success text-center">Problem</h3><hr>
+                            <div id="problem_table">
+                        <?php
+                            foreach ($getDiagnosis as $problems):
+                                if($patient_id == $problems->patient_id)
+                                {
+                        ?>
+                                    
+                                <p><?php echo $problems->problem; ?></p>
+                                <table class="table table-condensed table-bordered">
+                                    <tr class="active">
+                                        <td><?php echo $problems->doc_name2; ?></td>
+                                        <td><?php echo $problems->date2; ?></td>
+                                        <td><?php echo $problems->time2; ?></td>
+                                    </tr>
+                                </table>
+                        <?php 
+                            }endforeach;
+                        ?>
+                            </div>
+                            <div id="problem_form">
+                        <?php 
+                            $attri = array('class'=>'form-horizontal');
+                            echo form_open('DoctorView/add_problem',$attri);
+                        ?>
+
+                                <div class="form-group col-lg-3">
+                                    <label for="problem" class="control-label text-center">Problem </label>
+                                </div>
+                                <div class="form-group col-lg-9">
+                                    <textarea name="problem" class="form-control"   placeholder=""></textarea>
+                                </div>
+
+                                <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
+                                <input type="hidden" name="time" id="id" value="<?php echo date('H:i:s'); ?>" />
+                                <input type="hidden" name="date" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                                <input type="hidden" name="doctorid" id="id" value="<?php echo $name; ?>" />
+
+                                <div class="form-group">
+                                    <div class="col-sm-7"></div>
+                                    <div class="col-sm-2">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <button type="submit" name='save' class="btn btn-primary">Save</button>
                                     </div>
                                 </div>
 
@@ -1082,6 +1239,13 @@
                                                             <td><?php echo $familyHistory->related_history_family; ?> </td>
                                                         </tr>
                                                     </tbody>
+                                                </table>
+                                                <table class="table table-condensed table-bordered">
+                                                    <tr class="active">
+                                                        <td><?php echo $familyHistory->doc_name; ?></td>
+                                                        <td><?php echo $familyHistory->date; ?></td>
+                                                        <td><?php echo $familyHistory->time; ?></td>
+                                                    </tr>
                                                 </table>
                                     <?php 
                                         }
@@ -1502,7 +1666,14 @@
                                                             <td><?php echo $communication->prognosis; ?> </td>
                                                         </tr>                                           
                                                     </tbody>
-                                                </table>               
+                                                </table> 
+                                                <table class="table table-condensed table-bordered">
+                                                    <tr class="active">
+                                                        <td><?php echo $communication->doc_name; ?></td>
+                                                        <td><?php echo $communication->date; ?></td>
+                                                        <td><?php echo $communication->time; ?></td>
+                                                    </tr>
+                                                </table>
 
                                     <?php 
                                         }
@@ -1868,6 +2039,13 @@
                                                         </tr>
                                                     </tbody>
                                                 </table>
+                                                <table class="table table-condensed table-bordered">
+                                                    <tr class="active">
+                                                        <td><?php echo $Motor->doc_name; ?></td>
+                                                        <td><?php echo $Motor->date; ?></td>
+                                                        <td><?php echo $Motor->time; ?></td>
+                                                    </tr>
+                                                </table>
 
 
                                     <?php 
@@ -2091,6 +2269,13 @@
 
                                                     </tbody>
                                                 </table>
+                                                <table class="table table-condensed table-bordered">
+                                                    <tr class="active">
+                                                        <td><?php echo $Cognitive->doc_name; ?></td>
+                                                        <td><?php echo $Cognitive->date; ?></td>
+                                                        <td><?php echo $Cognitive->time; ?></td>
+                                                    </tr>
+                                                </table>
 
 
                                     <?php 
@@ -2268,23 +2453,25 @@
 <!-- display cognative skills --> 
                             <div id="case_notes" class="tab-pane fade">
                                 <div class="white_back">
-                                    <h3 class="success">Case notes</h3><hr>
+                                    <h3 class="success text-center">Case notes</h3><hr>
                                         <div id="notes_table">
                                     <?php
                                         foreach ($getNotes as $Notes):
                                             if($patient_id == $Notes->patient_id)
                                             {
                                     ?>
-                                                <table class="table table-condensed table-bordered " >
-
-                                                    <tbody>
-
-                                                        <tr>
-                                                            <td><?php echo $Notes->note; ?> </td>
-                                                        </tr>
-
-                                                        </tbody>
-                                                </table>
+                                                
+                                            <p>
+                                                <?php echo $Notes->note; ?>
+                                                
+                                            </p>
+                                            <table class="table table-condensed table-bordered">
+                                                <tr class="active">
+                                                    <td><?php echo $Notes->doc_name; ?></td>
+                                                    <td><?php echo $Notes->date; ?></td>
+                                                    <td><?php echo $Notes->time; ?></td>
+                                                </tr>
+                                            </table>
 
 
                                     <?php 
@@ -2801,17 +2988,19 @@
                     </div>
                 </div>
                 <div class="col-sm-2 col-icon-box "  onclick="diagnosis()">
-                    <img src="<?php echo base_url()."asserts/images/icons/diagnosis.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    <img src="<?php echo base_url()."asserts/images/icons/diagnosis_problem.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
                     <div class="overlay">
-                        <div class="text">Diagnosis</div>
+                        <div class="text">Problem <br>Diagnosis</div>
                     </div>
                 </div>
+<!--
                 <div class="col-sm-2 col-icon-box "  onclick="problem()">
-                    <img src="<?php echo base_url()."asserts/images/icons/problem.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    <img src="</?php echo base_url()."asserts/images/icons/problem.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
                     <div class="overlay">
                         <div class="text">Problem</div>
                     </div>
                 </div>
+-->
                 <div class="col-sm-2 col-icon-box "  onclick="caseHistory()">
                     <img src="<?php echo base_url()."asserts/images/icons/medical_history_icon.jpg"; ?>" class="img-thumbnail" width="100px" height="100px" />
                     <div class="overlay">
@@ -2982,6 +3171,48 @@
     endforeach;
 ?>
 
+<?php                       //  show/hide form/table for problem
+    foreach ($getDiagnosis as $problems):
+        if($patient_id == $problems->patient_id && !empty($problems->problem)){ 
+?>
+    
+    <script type="text/javascript">
+        document.getElementById('problem_form').style.display = 'none';
+        document.getElementById('problem_table').style.display = 'block';
+    </script>
+<?php
+        }else{
+?>
+    <script type="text/javascript">
+        document.getElementById('problem_form').style.display = 'block';
+        document.getElementById('problem_table').style.display = 'none';
+    </script>
+<?php
+        }
+    endforeach;
+?>
+
+<?php                       //  show/hide form/table for diagnosis
+    foreach ($getDiagnosis as $diagnosis):
+        if($patient_id == $diagnosis->patient_id){
+?>
+    
+    <script type="text/javascript">
+        document.getElementById('diagnosis_form').style.display = 'none';
+        document.getElementById('diagnosis_table').style.display = 'block';
+    </script>
+<?php
+        }else{
+?>
+    <script type="text/javascript">
+        document.getElementById('diagnosis_form').style.display = 'block';
+        document.getElementById('diagnosis_table').style.display = 'none';
+    </script>
+<?php
+        }
+    endforeach;
+?>
+
 
 <script src="<?php echo base_url("js/jquery-1.10.2.js"); ?>" type="text/javascript"></script>
 
@@ -3033,11 +3264,7 @@ $("#start").click(function() {
     }
     function diagnosis() {
         $("#diagnosis").show();  
-        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient,#problem,#diagnosis").hide();   
-    }
-    function problem() {
-        $("#problem").show();  
-        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient,#diagnosis").hide();   
+        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient,#problem").hide();   
     }
     function DischargePlan() {
         $("#discharge").show();  
@@ -3078,3 +3305,4 @@ $("#start").click(function() {
     }
     
 </script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>

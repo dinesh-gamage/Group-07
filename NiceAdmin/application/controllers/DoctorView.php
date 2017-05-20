@@ -69,6 +69,8 @@ class DoctorView extends CI_Controller {
         $data['goals'] = $this->doc_model->getAllGoals();
         $data['refernces'] = $this->doc_model->get_All_references();
         $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+        $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+        
         $data1['doc_data'] = $this->profilemodel->get_doc_data();
         $this->load->view('main/doc_header',$data1);
 		$this->load->view('doctor/doc_view_patient',$data);
@@ -612,6 +614,112 @@ class DoctorView extends CI_Controller {
         }
         
         
+    }
+    
+    public function add_diagnosis(){
+        $patient_id = $this->input->post('patientid');
+        $data = array(
+            'patient_id' => $this->input->post('patientid'),
+            'doc_name' => $this->input->post('doctorid'),
+            'diagnosis' => $this->input->post('diagnosis'),
+            'date' => $this->input->post('date'),
+            'time' => $this->input->post('time')
+        );
+        
+        $result = $this->doc_model->add_diagnosis($data);
+        if ($result == TRUE) {
+            
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id); 
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            //$data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            //$patientid = $this->input->post('patientid');
+            //$data['patientByID'] = $this->doc_model->getPatientById($patientid);
+            $data['successMessage'] = 'Diagnosis added Successfully !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        } else {
+            
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id); 
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            //$data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            //$patientid = $this->input->post('patientid');
+            //$data['patientByID'] = $this->doc_model->getPatientById($patientid);
+            $data['errorMessage'] = 'Diagnosis added failed !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        }
+    }
+    public function add_problem(){
+        $patient_id = $this->input->post('patientid');
+        $data = array(
+            'doc_name2' => $this->input->post('doctorid'),
+            'problem' => $this->input->post('problem'),
+            'date2' => $this->input->post('date'),
+            'time2' => $this->input->post('time')
+        );
+        
+        $result = $this->doc_model->add_problem($data,$patient_id);
+        if ($result == TRUE) {
+            
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id); 
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            //$data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            //$patientid = $this->input->post('patientid');
+            //$data['patientByID'] = $this->doc_model->getPatientById($patientid);
+            $data['successMessage'] = 'Porblem added Successfully !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        } else {
+            
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id); 
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            //$data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            //$patientid = $this->input->post('patientid');
+            //$data['patientByID'] = $this->doc_model->getPatientById($patientid);
+            $data['errorMessage'] = 'Problem added failed !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        }
     }
    
     

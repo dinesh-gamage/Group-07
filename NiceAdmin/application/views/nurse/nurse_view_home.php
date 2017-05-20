@@ -58,7 +58,7 @@
                         $attri = array(
                             'class'=>'form-horizontal'
                         );
-                        echo form_open('NurseView/add_data',$attri);?>
+                        echo form_open('DoctorView/add_data',$attri);?>
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Add Event</h4>
@@ -121,7 +121,7 @@
                         $attri = array(
                             'class'=>'form-horizontal'
                         );
-                        echo form_open('NurseView/edit_data',$attri);?>
+                        echo form_open('DoctorView/edit_data',$attri);?>
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Edit Event</h4>
@@ -171,28 +171,26 @@
                     </div>
                   </div>
                 </div>
-                 </div>
-
-
-        </div>
-
+              </div>
+            </div>
     <script src="<?php echo base_url() ?>scripts/fullcalendar/lib/moment.min.js"></script>
     <script src="<?php echo base_url() ?>scripts/fullcalendar/fullcalendar.min.js"></script>
     <script src="<?php echo base_url() ?>scripts/fullcalendar/gcal.js"></script>
     
     <!-- jQuery Version 1.11.1 -->
-<!--    <script src="js/jquery.js"></script>
+<!--    <script src="js/jquery.js"></script>-->
 
-     Bootstrap Core JavaScript 
-    <script src="js/bootstrap.min.js"></script>-->
+    <!-- Bootstrap Core JavaScript -->
+<!--    <script src="js/bootstrap.min.js"></script>-->
 	
 	<!-- FullCalendar -->
-	<script src='js/moment.min.js'></script>
-	<script src='js/fullcalendar.min.js'></script>
+<!--	<script src='js/moment.min.js'></script>-->
+<!--	<script src='js/fullcalendar.min.js'></script>-->
 	
 	<script>
-            
+
 	$(document).ready(function() {
+		
 		$('#calendar').fullCalendar({
 			header: {
 				left: 'prev,next today',
@@ -279,7 +277,7 @@
 			id =  event.id;
             title = event.title;
 			$.ajax({
-			 url: 'http://[::1]/project/Group-07/nurse/NurseView/edit_event',
+			 url: 'http://[::1]/project/Group-07/NiceAdmin/DoctorView/edit_event',
 			 type: "POST",
 			 data: {id:id,end:end,start:start,title:title},
 			 success: function(rep) {

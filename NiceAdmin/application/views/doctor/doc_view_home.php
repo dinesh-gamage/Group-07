@@ -17,6 +17,7 @@
     ?>
 <!--main content start-->
 <!--section id="main-content"-->
+<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
 <section class="wrapper">
     <div class="contentContainer">
     <!--overview start-->
@@ -43,6 +44,12 @@
                     <img src="<?php echo base_url()."asserts/images/icons/progressing_patient.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
                     <div class="overlay">
                         <div class="text">Progressing<br> Patients</div>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-icon-box "  onclick="viewDisPatients()">
+                    <img src="<?php echo base_url()."asserts/images/icons/dischargd_patients.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    <div class="overlay">
+                        <div class="text">Discharged<br> Patients</div>
                     </div>
                 </div>
             </div>
@@ -111,7 +118,42 @@
                                 }
                             endforeach;
                         ?>
-                    </div> 
+                    </div>
+                    
+                    <div id="disPatientList" style="display: none" >
+                        <h4 class="text-center">Discharged Patients</h4><hr>
+                        <?php
+                            foreach($patients as $patient):
+                                if ($patient->status == '2'){
+                        ?>
+
+                            <form name="myform" id="myform" action="<?php echo base_url() ?>/DoctorView/getPatient/" method="post">
+                                <input type="hidden" name="patientid" id="id" value="<?php echo $patient->patient_id; ?>" />
+                                <div class="patient">
+                                    <div class="col-lg-8">
+                                        <?php 
+                                            echo "<div class=\"col-sm-8 padding10top\">";
+                                                echo $patient->patient_name;
+                                            echo "</div>";
+                                            //echo str_repeat("&nbsp;", 6); 
+                                            echo "<div class=\"col-sm-4 padding10top\">";
+                                                echo $patient->regitration_date;
+                                            echo "</div>";
+                                        ?>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <button type="button" class="btn btn-default" onclick="javascript: submit()" >View</button>
+                                    </div>
+                                </div>                                    
+                            </form>
+
+                        <?php
+                                }
+                            endforeach;
+                        ?>
+                    </div>
+                    
+                    
                 </div>
             </div>
 <!-- paging -->
@@ -257,16 +299,7 @@
     <script src="<?php echo base_url() ?>scripts/fullcalendar/lib/moment.min.js"></script>
     <script src="<?php echo base_url() ?>scripts/fullcalendar/fullcalendar.min.js"></script>
     <script src="<?php echo base_url() ?>scripts/fullcalendar/gcal.js"></script>
-    
-    <!-- jQuery Version 1.11.1 -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-	
-	<!-- FullCalendar -->
-	<script src='js/moment.min.js'></script>
-	<script src='js/fullcalendar.min.js'></script>
+    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/bootstrap.min.js" ?>"></script>
 	
 	<script>
 
@@ -416,11 +449,17 @@
 <script>
     function viewNewPatients() {
         $("#newPatientList").show();  
-        $("#proPatientList").hide();   
+        $("#proPatientList,#disPatientList").hide();   
     }
     function viewProPatients() {
         $("#proPatientList").show();
-        $("#newPatientList").hide(); 
+        $("#newPatientList,#disPatientList").hide(); 
     }
+    function viewDisPatients() {
+        $("#disPatientList").show();
+        $("#newPatientList,#proPatientList").hide(); 
+    }
+    
+    
 </script>
 <!--/section-->

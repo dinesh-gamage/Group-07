@@ -73,8 +73,9 @@
     </style>
     
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<!--    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<!--    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>-->
+    
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/lib/moment.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/fullcalendar.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/gcal.js"></script>
@@ -84,38 +85,14 @@
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/sweetalert.min.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-ui-1.10.4.min.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-1.8.3.min.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-ui-1.9.2.custom.min.js" ?>"></script>
-    <!-- bootstrap -->
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/bootstrap.min.js" ?>"></script>
-    <!-- nice scroll -->
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.scrollTo.min.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.nicescroll.js" ?>" type="text/javascript"></script>
     <!-- charts scripts -->
     <script type="text/javascript" src="<?php echo base_url() . "asserts/assets/jquery-knob/js/jquery.knob.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.sparkline.js" ?>" type="text/javascript"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/owl.carousel.js" ?>" ></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.rateit.min.js" ?>"></script>
     <!-- custom select -->
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.customSelect.min.js" ?>" ></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/assets/chart-master/Chart.js" ?>"></script>
-
-    <!--custome script for all page-->
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/scripts.js" ?>"></script>
-    <!-- custom script for this page-->
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/sparkline-chart.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/easy-pie-chart.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-jvectormap-1.2.2.min.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-jvectormap-world-mill-en.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/xcharts.min.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.autosize.min.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.placeholder.min.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/gdp-data.js" ?>"></script>	
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/morris.min.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/sparklines.js" ?>"></script>	
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/charts.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.slimscroll.min.js" ?>"></script>
     
     
     <script>
@@ -226,8 +203,9 @@
             <a href="<?php echo base_url()."Index1"?>" class="logo">Healthy<span class="lite">Life</span></a>
             <!--logo end-->
 
-            <div class="nav search-row" id="top_menu">
+<!--            <div class="nav search-row" id="top_menu">-->
                 <!--  search form start -->
+<!--
                 <ul class="nav top-menu">                    
                     <li>
                         <form class="navbar-form">
@@ -235,8 +213,9 @@
                         </form>
                     </li>                    
                 </ul>
+-->
                 <!--  search form end -->                
-            </div>
+<!--            </div>-->
 
             <div class="top-nav notification-row">                
                 <!-- notificatoin dropdown start-->
@@ -280,109 +259,9 @@
                         </ul>
                     </li>
                     <?php endforeach;?>
-                    <!-- user login dropdown end -->
-                    
-                    
-                    
-                    
-<!--                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="profile-ava">
-                                <img alt="" src="<?php echo base_url().$picture?>" class="profile_sm">
-                            </span>
-                            <span class="username"><?php echo $name; ?></span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu extended logout">
-                            <div class="log-arrow-up"></div>
-                            <li class="eborder-top">
-                                <a href="<?php echo base_url()."Profile"?>"><i class="icon_profile"></i> My Profile</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url()."user_authentication/logout"?>"><i class="icon_key_alt"></i> Log Out</a>
-                            </li>
-                        </ul>
-                    </li> -->
-                    
+                   
                 </ul>
                 <!-- notificatoin dropdown end-->
             </div>
         </header>      
-        <!--header end-->
-
-        <!--sidebar start-->
-        <!--aside>
-            <div id="sidebar"  class="nav-collapse ">
-                <!-- sidebar menu start-->
-                <!--ul class="sidebar-menu">                
-                    <li class="active">
-                        <a class="" href="<-?php echo base_url()."Index1"?>">
-                            <i class="icon_house_alt"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-
-                    <li><a class="" href="<-?php echo base_url()."Calendar"?>">Calendar</a></li>
-                    <li><a class="" href="<-?php echo base_url()."CognitiveTest"?>">Add Questions</a></li>                          
-                    <li><a class="" href="<-?php echo base_url()."CogTestQuiz"?>">Start Quiz</a></li> 
-                    <li><a class="" href="<-?php echo base_url()."FormComponent"?>">Form Elements</a></li>                          
-                    <li><a class="" href="<-?php echo base_url()."FormValidation"?>">Form Validation</a></li>
-
-                         
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                            <i class="icon_desktop"></i>
-                            <span>UI Fitures</span>
-                            <span class="menu-arrow arrow_carrot-right"></span>
-                        </a>
-                        <ul class="sub">
-                            <li><a class="" href="<-?-php echo base_url()."General"?>">Elements</a></li>
-                            <li><a class="" href="<-?php echo base_url()."Buttons"?>">Buttons</a></li>
-                            <li><a class="" href="<--?php echo base_url()."Grids"?>">Grids</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="" href="<-?php echo base_url()."Widgets"?>">
-                            <i class="icon_genius"></i>
-                            <span>Widgets</span>
-                        </a>
-                    </li>
-                    <li>                     
-                        <a class="" href="<-?php echo base_url()."Charts"?>">
-                            <i class="icon_piechart"></i>
-                            <span>Charts</span>
-
-                        </a>
-
-                    </li>
-
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                            <i class="icon_table"></i>
-                            <span>Tables</span>
-                            <span class="menu-arrow arrow_carrot-right"></span>
-                        </a>
-                        <ul class="sub">
-                            <li><a class="" href="<-?php echo base_url()."BasicTable"?>">Basic Table</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                            <i class="icon_documents_alt"></i>
-                            <span>Pages</span>
-                            <span class="menu-arrow arrow_carrot-right"></span>
-                        </a>
-                        <ul class="sub">                          
-                            <li><a class="" href="<-?php echo base_url()."Profile"?>">Profile</a></li>
-                            <li><a class="" href="<-?php echo base_url()."Login"?>"><span>Login Page</span></a></li>
-                            <li><a class="" href="blank">Blank Page</a></li>
-                            <li><a class="" href="404.html">404 Error</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-                <!-- sidebar menu end-->
-            <!--/div>
-        </aside-->
-        <!--sidebar end-->
+       
