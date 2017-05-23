@@ -907,7 +907,14 @@ class DoctorView extends CI_Controller {
     }
  
    
-    
+    public function patientSearch(){
+        $patient_id = $this->input->post('id');
+        
+        
+                echo 
+                 '<div class="correct">'.$patient_id.'</div>';
+            
+    }
     
     
 

@@ -15,9 +15,6 @@
             redirect('/Login');
         }
     ?>
-<!--main content start-->
-<!--section id="main-content"-->
-<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
 <section class="wrapper">
     <div class="contentContainer">
     <!--overview start-->
@@ -29,6 +26,20 @@
                     <li><i class="fa fa-laptop"></i>All Patients</li>	
                     
                 </ol>
+                
+            </div>  
+            <div class="searchDiv">
+                <div class="input-group">
+                    <input type="text" class="form-control col-sm-11" placeholder="Enter Patient ID" id="patientSearch" />
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" id="searchButton" type="submit" >
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                
+                
             </div>
         </div>
 
@@ -55,6 +66,9 @@
             </div>
             <div class="col-lg-4">
                 <div class="white_back container">
+                    <div id="searchResults">
+                        
+                    </div>
                     <div id="newPatientList">
                         <h4 class="text-center">New Patients</h4><hr>
                          <?php
@@ -461,5 +475,24 @@
     }
     
     
+//    function searchPatient(){
+//        alert($search);
+//    $(document).ready(function(){
+//        $search = $("#patientSearch").val();
+//        
+//        if ($search.length>0) 
+//        {
+//            $.post("http://[::1]/project/Group-07/NiceAdmin/CogTestQuiz/patientSearch/",{"partial":$search){
+//                $("#searchResults").html($data);
+//            });	
+//        }
+//        
+//        
+//    });
+//    }
+        
+    
+  
+
 </script>
 <!--/section-->

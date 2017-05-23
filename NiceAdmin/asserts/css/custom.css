@@ -233,3 +233,14 @@ input[type=range]:focus::-ms-fill-upper {
     top: 0;
   
 }
+
+.searchDiv{
+    width: 300px;
+    height: 35px;
+    float: right;
+    top: 90px;
+    right: 30px;
+    background-color: transparent;
+    z-index: 1000;
+    position: fixed;
+}
