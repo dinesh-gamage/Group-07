@@ -2801,8 +2801,9 @@ border-radius: 20px;
                                         echo form_open('DoctorView/add_goal_marks',$attri);
                                     ?>
                                     <?php
+//                                        
                                         foreach ($goals as $goal):
-                                            if($goals->patient_id == $patient_id){
+                                            if($goal->patient_id == $patient_id){
                                                     //if($goals->type == 'Clinical'){
                                     ?>
                                     <div class="col-lg-12">
