@@ -908,8 +908,12 @@ class DoctorView extends CI_Controller {
     }
  
     
-   
-    
+   public function search(){
+        if(isset($_POST['searchitem'])){
+            
+        }
+
+   }
     
 
 }

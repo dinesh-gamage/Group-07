@@ -34,7 +34,7 @@
             <div class="searchDiv">
                 
                 <div class="input-group">
-                    <input type="text" class="form-control col-sm-11" placeholder="Enter Patient ID" name="patientSearch" />
+                    <input type="text" class="form-control col-sm-11" placeholder="Enter Patient ID" name="patientSearch" id="patientSearch" />
                     <div class="input-group-btn">
                         <button class="btn btn-default" id="searchButton" type="submit" >
                             <i class="glyphicon glyphicon-search"></i>
@@ -476,25 +476,21 @@
         $("#newPatientList,#proPatientList").hide(); 
     }
     
-    
-//    function searchPatient(){
-//        alert($search);
-//    $(document).ready(function(){
-//        $search = $("#patientSearch").val();
-//        
-//        if ($search.length>0) 
-//        {
-//            $.post("http://[::1]/project/Group-07/NiceAdmin/CogTestQuiz/patientSearch/",{"partial":$search){
-//                $("#searchResults").html($data);
-//            });	
-//        }
-//        
-//        
-//    });
-//    }
-        
-    
-  
-
 </script>
+
+<script type="text/javascript">
+  $('#searchButton').click(function(){
+      var search = $('#patientSearch').val();
+      $.ajax({
+         url: 'http://[::1]/project/Group-07/NiceAdmin/DoctorView/search',
+         type: "POST",
+         data: {searchitem:search},
+         success: function(rep) {
+            alert("one");
+         }
+      });
+
+
+  });
+</script>>
 <!--/section-->
