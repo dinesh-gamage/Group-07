@@ -73,8 +73,14 @@
     </style>
     
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/main/doc_header.php
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+=======
+<!--    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<!--    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>-->
+    
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/main/doc_header.php
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/lib/moment.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/fullcalendar.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/gcal.js"></script>
@@ -84,38 +90,14 @@
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/sweetalert.min.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-ui-1.10.4.min.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-1.8.3.min.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-ui-1.9.2.custom.min.js" ?>"></script>
-    <!-- bootstrap -->
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/bootstrap.min.js" ?>"></script>
-    <!-- nice scroll -->
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.scrollTo.min.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.nicescroll.js" ?>" type="text/javascript"></script>
     <!-- charts scripts -->
     <script type="text/javascript" src="<?php echo base_url() . "asserts/assets/jquery-knob/js/jquery.knob.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.sparkline.js" ?>" type="text/javascript"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/owl.carousel.js" ?>" ></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.rateit.min.js" ?>"></script>
     <!-- custom select -->
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.customSelect.min.js" ?>" ></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/assets/chart-master/Chart.js" ?>"></script>
-
-    <!--custome script for all page-->
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/scripts.js" ?>"></script>
-    <!-- custom script for this page-->
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/sparkline-chart.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/easy-pie-chart.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-jvectormap-1.2.2.min.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-jvectormap-world-mill-en.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/xcharts.min.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.autosize.min.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.placeholder.min.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/gdp-data.js" ?>"></script>	
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/morris.min.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/sparklines.js" ?>"></script>	
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/charts.js" ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery.slimscroll.min.js" ?>"></script>
     
     
     <script>
@@ -187,7 +169,11 @@
             function getnewpatient(){
                 $.ajax({
                     type: "post",
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/main/doc_header.php
                     url: "http://[::1]/project/Group-07/NiceAdmin/Header/newpatient",
+=======
+                    url: "http://[::1]/new4/NiceAdmin/Header/newpatient",
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/main/doc_header.php
                     cache: false,
                     data: {pid: "one"},
                     success: function (data) {
@@ -199,7 +185,11 @@
             function countnewpatient(){
                 $.ajax({
                     type: "post",
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/main/doc_header.php
                     url: "http://[::1]/project/Group-07/NiceAdmin/Header/count_new_patient",
+=======
+                    url: "http://[::1]/new4/NiceAdmin/Header/count_new_patient",
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/main/doc_header.php
                     cache: false,
                     data: {pid: "one"},
                     success: function (data) {
@@ -226,8 +216,9 @@
             <a href="<?php echo base_url()."Index1"?>" class="logo">Healthy<span class="lite">Life</span></a>
             <!--logo end-->
 
-            <div class="nav search-row" id="top_menu">
+<!--            <div class="nav search-row" id="top_menu">-->
                 <!--  search form start -->
+<!--
                 <ul class="nav top-menu">                    
                     <li>
                         <form class="navbar-form">
@@ -235,8 +226,9 @@
                         </form>
                     </li>                    
                 </ul>
+-->
                 <!--  search form end -->                
-            </div>
+<!--            </div>-->
 
             <div class="top-nav notification-row">                
                 <!-- notificatoin dropdown start-->
@@ -280,8 +272,16 @@
                         </ul>
                     </li>
                     <?php endforeach;?>
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/main/doc_header.php
+=======
+                   
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/main/doc_header.php
                 </ul>
                 <!-- notificatoin dropdown end-->
             </div>
         </header>      
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/main/doc_header.php
         
+=======
+       
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/main/doc_header.php

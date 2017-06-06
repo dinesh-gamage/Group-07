@@ -254,7 +254,11 @@ $(document).ready(function (){
       var curr = $(this).val();
       $.ajax({
           type: "post",
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/profile.php
           url: "http://[::1]/project/Group-07/NiceAdmin/Profile/index/",
+=======
+          url: "http://[::1]/new4/NiceAdmin/Profile/index/",
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/profile.php
           cache: false,
           data: {curpass: curr},
           success: function (data) {

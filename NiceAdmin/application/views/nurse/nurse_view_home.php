@@ -14,7 +14,11 @@
         } else{
             redirect('/Login');
         }
+       
     ?>
+<!--main content start-->
+<!--section id="main-content"-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <section class="wrapper">
     <div class="contentContainer">
     <!--overview start-->
@@ -24,173 +28,22 @@
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="<?php echo base_url() . "Index1" ?>">Home</a></li>
                     <li><i class="fa fa-laptop"></i>All Patients</li>	
-                    
-                </ol>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_home.php
-=======
-                
-            </div>  
-            <div class="searchDiv">
-                <div class="input-group">
-                    <input type="text" class="form-control col-sm-11" placeholder="Enter Patient ID" id="patientSearch" />
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" id="searchButton" type="submit" >
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
+                    <div class="form-group" style="float:right ;margin-top: -8px;" >
+                        <li >
+                            <select class="form-control" id="doc">
+                                <?php foreach($doctor as $doc):?>
+                                <option value="<?php echo $doc->doctor_id;?>"><?php echo $doc->doc_name;?></option>
+                                <?php endforeach;?>
+                            </select>
+                        </li> 
                     </div>
-                </div>
-
-                
-                
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_home.php
+                </ol>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-lg-2">
-                <div class="col-sm-2 col-icon-box " onclick="viewNewPatients()" >
-                    <img src="<?php echo base_url()."asserts/images/icons/new_patient.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-                    <div class="overlay">
-                        <div class="text">New Patient</div>
-                    </div>
-                </div>
-                <div class="col-sm-2 col-icon-box "  onclick="viewProPatients()">
-                    <img src="<?php echo base_url()."asserts/images/icons/progressing_patient.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-                    <div class="overlay">
-                        <div class="text">Progressing<br> Patients</div>
-                    </div>
-                </div>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_home.php
-=======
-                <div class="col-sm-2 col-icon-box "  onclick="viewDisPatients()">
-                    <img src="<?php echo base_url()."asserts/images/icons/dischargd_patients.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-                    <div class="overlay">
-                        <div class="text">Discharged<br> Patients</div>
-                    </div>
-                </div>
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_home.php
-            </div>
-            <div class="col-lg-4">
-                <div class="white_back container">
-                    <div id="searchResults">
-                        
-                    </div>
-                    <div id="newPatientList">
-                        <h4 class="text-center">New Patients</h4><hr>
-                         <?php
-                            foreach($patients as $patient):
-                                if ($patient->status == '0'){
-                        ?>
-
-                            <form name="myform" id="myform" action="<?php echo base_url() ?>/DoctorView/getPatient/" method="post">
-                                <input type="hidden" name="patientid" id="id" value="<?php echo $patient->patient_id; ?>" />
-                                <div class="patient">
-                                    <div class="col-lg-8">
-                                        <?php 
-                                            echo "<div class=\"col-sm-8 padding10top\">";
-                                                echo $patient->patient_name;
-                                            echo "</div>";
-                                            //echo str_repeat("&nbsp;", 6); 
-                                            echo "<div class=\"col-sm-4 padding10top\">";
-                                                echo $patient->regitration_date;
-                                            echo "</div>";
-                                        ?>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <button type="button" class="btn btn-info" onclick="javascript: submit()" >View</button>
-                                    </div>
-                                </div>                                    
-                            </form>
-
-                        <?php
-                                }
-                            endforeach;
-                        ?>
-                    </div>   
-                    <div id="proPatientList" style="display: none" >
-                        <h4 class="text-center">Progressing Patients</h4><hr>
-                        <?php
-                            foreach($patients as $patient):
-                                if ($patient->status == '1'){
-                        ?>
-
-                            <form name="myform" id="myform" action="<?php echo base_url() ?>/DoctorView/getPatient/" method="post">
-                                <input type="hidden" name="patientid" id="id" value="<?php echo $patient->patient_id; ?>" />
-                                <div class="patient">
-                                    <div class="col-lg-8">
-                                        <?php 
-                                            echo "<div class=\"col-sm-8 padding10top\">";
-                                                echo $patient->patient_name;
-                                            echo "</div>";
-                                            //echo str_repeat("&nbsp;", 6); 
-                                            echo "<div class=\"col-sm-4 padding10top\">";
-                                                echo $patient->regitration_date;
-                                            echo "</div>";
-                                        ?>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <button type="button" class="btn btn-success" onclick="javascript: submit()" >View</button>
-                                    </div>
-                                </div>                                    
-                            </form>
-
-                        <?php
-                                }
-                            endforeach;
-                        ?>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_home.php
-                    </div> 
-=======
-                    </div>
-                    
-                    <div id="disPatientList" style="display: none" >
-                        <h4 class="text-center">Discharged Patients</h4><hr>
-                        <?php
-                            foreach($patients as $patient):
-                                if ($patient->status == '2'){
-                        ?>
-
-                            <form name="myform" id="myform" action="<?php echo base_url() ?>/DoctorView/getPatient/" method="post">
-                                <input type="hidden" name="patientid" id="id" value="<?php echo $patient->patient_id; ?>" />
-                                <div class="patient">
-                                    <div class="col-lg-8">
-                                        <?php 
-                                            echo "<div class=\"col-sm-8 padding10top\">";
-                                                echo $patient->patient_name;
-                                            echo "</div>";
-                                            //echo str_repeat("&nbsp;", 6); 
-                                            echo "<div class=\"col-sm-4 padding10top\">";
-                                                echo $patient->regitration_date;
-                                            echo "</div>";
-                                        ?>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <button type="button" class="btn btn-default" onclick="javascript: submit()" >View</button>
-                                    </div>
-                                </div>                                    
-                            </form>
-
-                        <?php
-                                }
-                            endforeach;
-                        ?>
-                    </div>
-                    
-                    
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_home.php
-                </div>
-            </div>
-<!-- paging -->
-           
-            
-<!-- calendar -->
-            
-            
-<!-- patients -->
-            
-            
-            
             <!--calender -->
+            
             <div class="col-lg-6">
                
                <div class="white_back">
@@ -323,7 +176,16 @@
     <script src="<?php echo base_url() ?>scripts/fullcalendar/lib/moment.min.js"></script>
     <script src="<?php echo base_url() ?>scripts/fullcalendar/fullcalendar.min.js"></script>
     <script src="<?php echo base_url() ?>scripts/fullcalendar/gcal.js"></script>
-    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/bootstrap.min.js" ?>"></script>
+    
+    <!-- jQuery Version 1.11.1 -->
+<!--    <script src="js/jquery.js"></script>-->
+
+    <!-- Bootstrap Core JavaScript -->
+<!--    <script src="js/bootstrap.min.js"></script>-->
+	
+	<!-- FullCalendar -->
+<!--	<script src='js/moment.min.js'></script>-->
+<!--	<script src='js/fullcalendar.min.js'></script>-->
 	
 	<script>
 
@@ -456,62 +318,45 @@
     $(function () {
         $('select.styled').customSelect();
     });
-
-
+    
+    
+   
+    $(document).ready(function (){
+        $('#doc').on('change',function(){
+            var i = $( "#doc option:selected" ).attr('value');
+            alert(i);
+            
+            $.ajax({
+                url: 'http://[::1]/new4/NiceAdmin/NurseView/index',
+                type: "POST",
+                data: {'user':i},
+                success: function(data) {
+                    
+                                    
+                                        
+                                        
+                }
+            });
+            
+        });
+    });
     
 
 
 </script>
             
             
-          
-
-
-       
+           
     </div>
 </section>
 <script>
     function viewNewPatients() {
         $("#newPatientList").show();  
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_home.php
         $("#proPatientList").hide();   
     }
     function viewProPatients() {
         $("#proPatientList").show();
         $("#newPatientList").hide(); 
     }
-=======
-        $("#proPatientList,#disPatientList").hide();   
-    }
-    function viewProPatients() {
-        $("#proPatientList").show();
-        $("#newPatientList,#disPatientList").hide(); 
-    }
-    function viewDisPatients() {
-        $("#disPatientList").show();
-        $("#newPatientList,#proPatientList").hide(); 
-    }
-    
-    
-//    function searchPatient(){
-//        alert($search);
-//    $(document).ready(function(){
-//        $search = $("#patientSearch").val();
-//        
-//        if ($search.length>0) 
-//        {
-//            $.post("http://[::1]/project/Group-07/NiceAdmin/CogTestQuiz/patientSearch/",{"partial":$search){
-//                $("#searchResults").html($data);
-//            });	
-//        }
-//        
-//        
-//    });
-//    }
-        
-    
-  
-
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_home.php
 </script>
 <!--/section-->

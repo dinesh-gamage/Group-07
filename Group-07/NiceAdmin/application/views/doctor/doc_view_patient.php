@@ -1,20 +1,35 @@
 <?php
-        if (isset($this->session->userdata['logged_in'])) // Check if user has logged in 
+        if (isset($this->session->userdata['logged_in'])) 
         {
             $username = ($this->session->userdata['logged_in']['username']);
             $email = ($this->session->userdata['logged_in']['email']);
             $name = ($this->session->userdata['logged_in']['name']);
             $picture = ($this->session->userdata['logged_in']['picture']);
             $status = ($this->session->userdata['logged_in']['status']);
+            $doctorID = ($this->session->userdata['logged_in']['doctorId']);
             
-            if($status != 'Doctor'){   //Check if the logged user is a doctor
+            if($status != 'Doctor'){
                 redirect('/Login');
             }
         } else{
             redirect('/Login');
         }
     ?>
+<style>
+    .modal-dialog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 2%;
+border-radius: 20px;
+}
 
+.modal-content {
+  height: auto;
+  
+  
+}
+</style>
 <section class="wrapper">
     <div class="contentContainer">
         <div class="row">
@@ -49,7 +64,7 @@
                         {
                 ?>
                         <script>
-                            swal('congratulations!', '<?php  echo $successMessage ?>','success') //Success message
+                            swal('', '<?php  echo $successMessage ?>','success') //Success message
                         </script>
                 <?php 
                         }
@@ -75,8 +90,13 @@
                                 <div class="white_back container" >
                                 <ul class="nav nav-pills nav-stacked">
                                     <li class="active"><a data-toggle="pill" href="#generalDetails">Genaral Details</a></li>
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
                                     <li><a data-toggle="pill" href="#caseHistoryHistory">Case History</a></li>
                                     <li><a data-toggle="pill" href="#problemHistory">Problem</a></li>
+=======
+                                    <li><a data-toggle="pill" href="#problemHistory">Problem/Diagnosis</a></li>
+                                    <li><a data-toggle="pill" href="#caseHistoryHistory">Case History</a></li>
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
                                     <li><a data-toggle="pill" href="#goalEvaluationHistory">Goals Evaluation</a></li>
                                     <li><a data-toggle="pill" href="#cognitiveTestHistory">Cognitive Test</a></li>
                                     <li><a data-toggle="pill" href="#meicationsHistory">Medications</a></li>
@@ -386,6 +406,16 @@
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
+=======
+                                                                    <table class="table table-condensed table-bordered">
+                                                                        <tr class="active">
+                                                                            <td><?php echo $familyHistory->doc_name; ?></td>
+                                                                            <td><?php echo $familyHistory->date; ?></td>
+                                                                            <td><?php echo $familyHistory->time; ?></td>
+                                                                        </tr>
+                                                                    </table>
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
                                                         <?php 
                                                             }
 
@@ -597,7 +627,18 @@
                                                                                 <td><?php echo $communication->prognosis; ?> </td>
                                                                             </tr>                                           
                                                                         </tbody>
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
                                                                     </table>               
+=======
+                                                                    </table> 
+                                                                    <table class="table table-condensed table-bordered">
+                                                                        <tr class="active">
+                                                                            <td><?php echo $communication->doc_name; ?></td>
+                                                                            <td><?php echo $communication->date; ?></td>
+                                                                            <td><?php echo $communication->time; ?></td>
+                                                                        </tr>
+                                                                    </table>
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
                                                         <?php 
                                                             }
@@ -657,6 +698,16 @@
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
+=======
+                                                                    <table class="table table-condensed table-bordered">
+                                                                        <tr class="active">
+                                                                            <td><?php echo $Motor->doc_name; ?></td>
+                                                                            <td><?php echo $Motor->date; ?></td>
+                                                                            <td><?php echo $Motor->time; ?></td>
+                                                                        </tr>
+                                                                    </table>
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
 
                                                         <?php 
@@ -752,6 +803,16 @@
 
                                                                         </tbody>
                                                                     </table>
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
+=======
+                                                                    <table class="table table-condensed table-bordered">
+                                                                        <tr class="active">
+                                                                            <td><?php echo $Cognitive->doc_name; ?></td>
+                                                                            <td><?php echo $Cognitive->date; ?></td>
+                                                                            <td><?php echo $Cognitive->time; ?></td>
+                                                                        </tr>
+                                                                    </table>
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
 
                                                         <?php 
@@ -765,13 +826,14 @@
                     <!-- display cognative skills --> 
                                                 <div id="case_noteshistory" class="tab-pane fade">
                                                     <div class="white_back">
-                                                        <h3 class="success">Case notes</h3><hr>
+                                                        <h3 class="success text-center">Case notes</h3><hr>
                                                           
                                                         <?php
                                                             foreach ($getNotes as $Notes):
                                                                 if($patient_id == $Notes->patient_id)
                                                                 {
                                                         ?>
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
                                                                     <table class="table table-condensed table-bordered " >
 
                                                                         <tbody>
@@ -783,6 +845,20 @@
                                                                             </tbody>
                                                                     </table>
 
+=======
+                                                                    <p>
+                                                                        <?php echo $Notes->note; ?>
+
+                                                                    </p>
+                                                                    <table class="table table-condensed table-bordered">
+                                                                        <tr class="active">
+                                                                            <td><?php echo $Notes->doc_name; ?></td>
+                                                                            <td><?php echo $Notes->date; ?></td>
+                                                                            <td><?php echo $Notes->time; ?></td>
+                                                                        </tr>
+                                                                    </table>
+
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
                                                         <?php 
                                                             }endforeach;
@@ -796,16 +872,188 @@
                                     </div> 
                                     
                                     <div id="problemHistory" class="tab-pane fade">
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
 
                      
                                     </div>
                                     <div id="goalEvaluationHistory" class="tab-pane fade">
                                         <h3>Menu 3</h3>
                                         <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+=======
+                                        <div id="diagnosis_table">
+                                            <div class="white_back">
+                                                <h3 class="success text-center">Diagnosis</h3><hr>
+                                                
+                                            <?php
+                                                foreach ($getDiagnosis as $diagnosis):
+                                                    if($patient_id == $diagnosis->patient_id)
+                                                    {
+                                            ?>
+                                                <p><?php echo $diagnosis->diagnosis; ?> </p>
+                                                    
+                                                        <table class="table table-condensed table-bordered">
+                                                            <tr class="active">
+                                                                <td><?php echo $diagnosis->doc_name; ?></td>
+                                                                <td><?php echo $diagnosis->date; ?></td>
+                                                                <td><?php echo $diagnosis->time; ?></td>
+                                                            </tr>
+                                                        </table>
+
+                                            <?php 
+                                                }endforeach;
+                                            ?>
+                                                </div>
+                                                
+                                        </div>
+                                        <div id="problem_table">
+                                            <div class="white_back">
+                                                <h3 class="success text-center">Problem</h3><hr>
+                                                
+                                            <?php
+                                                foreach ($getDiagnosis as $problems):
+                                                    if($patient_id == $problems->patient_id)
+                                                    {
+                                            ?>
+                                                <p><?php echo $problems->problem; ?></p>
+                                                        <table class="table table-condensed table-bordered">
+                                                            <tr class="active">
+                                                                <td><?php echo $problems->doc_name; ?></td>
+                                                                <td><?php echo $problems->date; ?></td>
+                                                                <td><?php echo $problems->time; ?></td>
+                                                            </tr>
+                                                        </table>
+
+                                            <?php 
+                                                }endforeach;
+                                            ?>
+                                                </div>
+                                            
+                                        </div>
+                     
+                                    </div>
+                                    <div id="goalEvaluationHistory" class="tab-pane fade">
+                                        <h3 class="success text-center">Goal Evaluation</h3>
+                                        
+                                        <?php
+                                            $dates = array();
+                                            foreach($goalEvaluation as $goalmarks):
+                                                $date = $goalmarks->date;
+                                                if (in_array($date, $dates)){
+                                                    continue;
+                                                }else{
+                                                    array_push($dates,$date);
+                                                }
+                                            endforeach;
+                                        
+                                            $goalsM = array();
+                                            foreach($goalEvaluation as $goalmarks):
+                                                $goal = $goalmarks->goal;
+                                                $marks = $goalmarks->marks;
+                                                if (in_array($goal, $goalsM)){
+                                                    continue;
+                                                }else{
+                                                    array_push($goalsM,$goal);
+                                                }
+                                            endforeach;
+                                        ?>
+                                        <table class="table table-condensed table-bordered">
+                                            <tr>
+                                                <td></td>
+                                                <?php
+                                                    foreach ($dates as $dates):
+                                                    echo "<td>".$dates."</td>";
+                                                    endforeach;
+                                                ?>
+                                            </tr>
+                                            <?php
+                                                foreach($goalsM as $goalsM):
+                                                echo "<tr><td>".$goalsM."</td>";
+                                                    foreach($goalEvaluation as $goalmarks):
+                                                        if ($goalsM == $goalmarks->goal){
+                                                            echo "<td>".$goalmarks->marks."</td>";
+                                                        }
+                                                    endforeach;
+                                                echo "</tr>";
+                                                endforeach;
+                                                
+                                            ?>
+                                            
+                                        </table> 
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
                                     </div>
                                     <div id="cognitiveTestHistory" class="tab-pane fade">
-                                        <h3>Menu 3</h3>
-                                        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                        <div class="white_back container">
+                                            <h3 class="success text-center">Cognitive Test Final Marks</h3>
+                                            <?php
+                                                foreach($finalmarks as $final):
+                                                if ($final->test_type == "A"){
+                                            ?>
+
+                                            <div class="col-lg-12">
+                                                <table class="table table-condensed table-bordered"> 
+                                                    <thead>
+                                                        <tr class="success">
+                                                            <th class="text-center" colspan="2">Test A Final Marks</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Deviation Quotients</td>
+                                                            <td><?php echo $final->dq; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Percentile Ranks</td>
+                                                            <td><?php echo $final->pr; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Description</td>
+                                                            <td><?php echo $final->description; ?></td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr class="active">
+                                                            <td><?php echo $final->doc_name; ?></td>
+                                                            <td><?php echo $final->date; ?></td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+
+                                            <?php }else{ ?>
+                                            <div class="col-lg-12">
+                                                <table class="table table-condensed table-bordered"> 
+                                                    <thead>
+                                                        <tr class="success">
+                                                            <th class="text-center" colspan="2">Test B Final Marks</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Deviation Quotients</td>
+                                                            <td><?php echo $final->dq; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Percentile Ranks</td>
+                                                            <td><?php echo $final->pr; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Description</td>
+                                                            <td><?php echo $final->description; ?></td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr class="active">
+                                                            <td><?php echo $final->doc_name; ?></td>
+                                                            <td><?php echo $final->date; ?></td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                            <?php 
+                                                }
+                                            endforeach;
+                                            ?>
+                                        </div>
                                     </div>
                                     <div id="meicationsHistory" class="tab-pane fade">
                                         <h3>Menu 3</h3>
@@ -890,6 +1138,7 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
                 
                 <div id="diagnosis" style="display: none" ></div>
                 <div id="problem" style="display: none" >
@@ -913,10 +1162,35 @@
                                     </table>
 
 
+=======
+
+                <div id="diagnosis" style="display: none" >
+                    <div class="white_back">
+                        <h3 class="success text-center">Diagnosis</h3><hr>
+                            <div id="diagnosis_table">
+                        <?php
+                            foreach ($getDiagnosis as $diagnosis):
+                                if($patient_id == $diagnosis->patient_id)
+                                {
+                        ?>
+                                <p><?php echo $diagnosis->diagnosis; ?></p> 
+                                                    
+                                    <table class="table table-condensed table-bordered">
+                                        <tr class="active">
+                                            <td><?php echo $diagnosis->doc_name; ?></td>
+                                            <td><?php echo $diagnosis->date; ?></td>
+                                            <td><?php echo $diagnosis->time; ?></td>
+                                        </tr>
+                                    </table>
+
+
+
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
                         <?php 
                             }endforeach;
                         ?>
                             </div>
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
                             <div id="problem_form">
                         <?php 
                             $attri = array('class'=>'form-horizontal');
@@ -927,6 +1201,46 @@
                                     <div class="col-sm-12">
                                         <textarea name="cese_notes" class="form-control"   placeholder=""></textarea>
                                     </div>
+                                </div>  
+
+=======
+                            <div id="diagnosis_form">
+                        <?php 
+                            $attri = array('class'=>'form-horizontal');
+                            echo form_open('DoctorView/add_diagnosis',$attri);
+                        ?>
+
+                                <div class="form-group col-lg-3">
+                                    <label for="diagnosis" class="col-sm-3 control-label text-center">Diagnosis </label>
+                                </div>
+                                <div class="form-group col-lg-9">
+                                
+                                    <select name="diagnosis" class="form-control">
+                                        <option value="ASD">ASD</option>
+                                        <option value="ODD">ODD</option>
+                                        <option value="ADHD">ADHD</option>
+                                        <option value="SDLSS">SDLSS</option>
+                                        <option value="OCD">OCD</option>
+                                        <option value="PTSD">PTSD</option>
+                                        <option value="GAD">GAD</option>
+                                        <option value="Ajustment Disorder">Ajustment Disorder</option>
+                                        <option value="Acute Stress Disorder">Acute Stress Disorder</option>
+                                        <option value="MR">MR</option>
+                                        <option value="Conduct Disorder">Conduct Disorder</option>
+                                        <option value="Dissociative Disorder">Dissociative Disorder</option>
+                                        <option value="Non Organic Enuresis">Non Organic Enuresis</option>
+                                        <option value="Somatization Disorder">Somatization Disorder</option>
+                                        <option value="Selective Mutism">Selective Mutism</option>
+                                        <option value="Reactive Attachment Disorder">Reactive Attachment Disorder</option>
+                                        <option value="Tie Disorder">Tie Disorder</option>
+                                        <option value="Panic Disorder">Panic Disorder</option>
+                                        <option value="Seperation Anxiety Disorder">Seperation Anxiety Disorder</option>
+                                        <option value="Mental Behavioural Disorder">Mental Behavioural Disorder</option>
+                                        <option value="Pshycotic Disorder">Pshycotic Disorder</option>
+                                        <option value="No Mental Illness">No Mental Illness</option>
+                                        <option value="Expressive Language Dificult Speach Delay">Expressive Language Dificult Speach Delay</option>
+                                    </select>
+                                    
                                 </div>  
 
 
@@ -941,7 +1255,66 @@
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                     </div>
                                     <div class="col-sm-3">
+                                        <button type="submit" name='save' class="btn btn-primary">Save</button>
+                                    </div>
+                                </div>
+
+                        <?php  
+                            echo form_close();                                        
+                        ?>                                        
+                            </div>
+                    </div>
+                    <div class="white_back">
+                        <h3 class="success text-center">Problem</h3><hr>
+                            <div id="problem_table">
+                        <?php
+                            foreach ($getDiagnosis as $problems):
+                                if($patient_id == $problems->patient_id)
+                                {
+                        ?>
+                                    
+                                <p><?php echo $problems->problem; ?></p>
+                                <table class="table table-condensed table-bordered">
+                                    <tr class="active">
+                                        <td><?php echo $problems->doc_name2; ?></td>
+                                        <td><?php echo $problems->date2; ?></td>
+                                        <td><?php echo $problems->time2; ?></td>
+                                    </tr>
+                                </table>
+                        <?php 
+                            }endforeach;
+                        ?>
+                            </div>
+                            <div id="problem_form">
+                        <?php 
+                            $attri = array('class'=>'form-horizontal');
+                            echo form_open('DoctorView/add_problem',$attri);
+                        ?>
+
+                                <div class="form-group col-lg-3">
+                                    <label for="problem" class="control-label text-center">Problem </label>
+                                </div>
+                                <div class="form-group col-lg-9">
+                                    <textarea name="problem" class="form-control"   placeholder=""></textarea>
+                                </div>
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
+
+                                <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
+                                <input type="hidden" name="time" id="id" value="<?php echo date('H:i:s'); ?>" />
+                                <input type="hidden" name="date" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                                <input type="hidden" name="doctorid" id="id" value="<?php echo $name; ?>" />
+
+                                <div class="form-group">
+                                    <div class="col-sm-7"></div>
+                                    <div class="col-sm-2">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                    <div class="col-sm-3">
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
                                         <button type="submit" name='save' class="btn btn-primary">Submit</button>
+=======
+                                        <button type="submit" name='save' class="btn btn-primary">Save</button>
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
                                     </div>
                                 </div>
 
@@ -1083,6 +1456,16 @@
                                                         </tr>
                                                     </tbody>
                                                 </table>
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
+=======
+                                                <table class="table table-condensed table-bordered">
+                                                    <tr class="active">
+                                                        <td><?php echo $familyHistory->doc_name; ?></td>
+                                                        <td><?php echo $familyHistory->date; ?></td>
+                                                        <td><?php echo $familyHistory->time; ?></td>
+                                                    </tr>
+                                                </table>
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
                                     <?php 
                                         }
                                        
@@ -1502,7 +1885,18 @@
                                                             <td><?php echo $communication->prognosis; ?> </td>
                                                         </tr>                                           
                                                     </tbody>
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
                                                 </table>               
+=======
+                                                </table> 
+                                                <table class="table table-condensed table-bordered">
+                                                    <tr class="active">
+                                                        <td><?php echo $communication->doc_name; ?></td>
+                                                        <td><?php echo $communication->date; ?></td>
+                                                        <td><?php echo $communication->time; ?></td>
+                                                    </tr>
+                                                </table>
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
                                     <?php 
                                         }
@@ -1868,6 +2262,16 @@
                                                         </tr>
                                                     </tbody>
                                                 </table>
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
+=======
+                                                <table class="table table-condensed table-bordered">
+                                                    <tr class="active">
+                                                        <td><?php echo $Motor->doc_name; ?></td>
+                                                        <td><?php echo $Motor->date; ?></td>
+                                                        <td><?php echo $Motor->time; ?></td>
+                                                    </tr>
+                                                </table>
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
 
                                     <?php 
@@ -2091,6 +2495,16 @@
 
                                                     </tbody>
                                                 </table>
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
+=======
+                                                <table class="table table-condensed table-bordered">
+                                                    <tr class="active">
+                                                        <td><?php echo $Cognitive->doc_name; ?></td>
+                                                        <td><?php echo $Cognitive->date; ?></td>
+                                                        <td><?php echo $Cognitive->time; ?></td>
+                                                    </tr>
+                                                </table>
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
 
                                     <?php 
@@ -2268,13 +2682,14 @@
 <!-- display cognative skills --> 
                             <div id="case_notes" class="tab-pane fade">
                                 <div class="white_back">
-                                    <h3 class="success">Case notes</h3><hr>
+                                    <h3 class="success text-center">Case notes</h3><hr>
                                         <div id="notes_table">
                                     <?php
                                         foreach ($getNotes as $Notes):
                                             if($patient_id == $Notes->patient_id)
                                             {
                                     ?>
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
                                                 <table class="table table-condensed table-bordered " >
 
                                                     <tbody>
@@ -2285,6 +2700,20 @@
 
                                                         </tbody>
                                                 </table>
+=======
+                                                
+                                            <p>
+                                                <?php echo $Notes->note; ?>
+                                                
+                                            </p>
+                                            <table class="table table-condensed table-bordered">
+                                                <tr class="active">
+                                                    <td><?php echo $Notes->doc_name; ?></td>
+                                                    <td><?php echo $Notes->date; ?></td>
+                                                    <td><?php echo $Notes->time; ?></td>
+                                                </tr>
+                                            </table>
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
 
                                     <?php 
@@ -2484,23 +2913,24 @@
                                         echo form_open('DoctorView/add_goal_marks',$attri);
                                     ?>
                                     <?php
-                                        foreach ($goals as $goals):
-                                            if($goals->patient_id == $patient_id){
+//                                        
+                                        foreach ($goals as $goal):
+                                            if($goal->patient_id == $patient_id){
                                                     //if($goals->type == 'Clinical'){
                                     ?>
                                     <div class="col-lg-12">
-                                        <div class="col-lg-5"><?php echo $goals->goal;?></div>
+                                        <div class="col-lg-5"><?php echo $goal->goal;?></div>
                                         <div class="col-lg-7">
-                                            <input type="hidden" name="goal<?php echo $goals->sequence;?>" value="<?php echo $goals->goal;?>" />
+                                            <input type="hidden" name="goal<?php echo $goal->sequence;?>" value="<?php echo $goal->goal;?>" />
                                             <img src="<?php echo base_url('asserts/images/range.png'); ?>" />
-                                            <input class="range" type="range" name="mark<?php echo $goals->sequence;?>" min="0" max="10" step="1" value="0" />
+                                            <input class="range" type="range" name="mark<?php echo $goal->sequence;?>" min="0" max="10" step="1" value="0" />
                                         </div>
                                         <div class="col-lg-12 info">
                                             <div class="col-lg-3">
                                                 Evaluation Criteria :
                                             </div>
                                             <div class="col-lg-9">
-                                                <?php echo $goals->criteria;?>
+                                                <?php echo $goal->criteria;?>
                                             </div>
                                         </div>
                                     </div>
@@ -2772,6 +3202,7 @@
                                 <div class="panel-body" id="cogtestmarks_A">
                                     
                                 </div>
+                                
                             </div>
                 
                             <div class="col-lg-6 panel panel-info">
@@ -2783,7 +3214,505 @@
                             
                         </div>
                         
+                        
                     </div>
+                    
+                    <div class="white_back container">
+                        <?php
+                            foreach($finalmarks as $final):
+                            if ($final->test_type == "A"){
+                        ?>
+                    
+                        <div class="col-lg-6">
+                            <table class="table table-condensed table-bordered"> 
+                                <thead>
+                                    <tr class="success">
+                                        <th class="text-center" colspan="2">Test A Final Marks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Deviation Quotients</td>
+                                        <td><?php echo $final->dq; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Percentile Ranks</td>
+                                        <td><?php echo $final->pr; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Description</td>
+                                        <td><?php echo $final->description; ?></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="active">
+                                        <td><?php echo $final->doc_name; ?></td>
+                                        <td><?php echo $final->date; ?></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        
+                        <?php }else{ ?>
+                        <div class="col-lg-6">
+                            <table class="table table-condensed table-bordered"> 
+                                <thead>
+                                    <tr class="success">
+                                        <th class="text-center" colspan="2">Test B Final Marks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Deviation Quotients</td>
+                                        <td><?php echo $final->dq; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Percentile Ranks</td>
+                                        <td><?php echo $final->pr; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Description</td>
+                                        <td><?php echo $final->description; ?></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="active">
+                                        <td><?php echo $final->doc_name; ?></td>
+                                        <td><?php echo $final->date; ?></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <?php 
+                            }
+                        endforeach;
+                        ?>
+                    </div>
+                    <div class="white_back container">
+                        <h3 class="success text-center" >Add Final Marks</h3>
+                        <?php 
+                            $attri = array(
+                                'class'=>'form-horizontal'
+                            );
+                            echo form_open('DoctorView/add_final_marks',$attri);
+                        ?>
+
+                        <div class="form-group">
+                            <label for="test" class="col-sm-3 control-label">Select Test </label>
+                            <div class="col-sm-9">
+                                <select class="form-control" name="type">
+                                    <option value="A">Test A</option>
+                                    <option value="B">Test B</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fine" class="col-sm-3 control-label">Deviation Quotients</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" placeholder="Deviation Quotients" name="dq" required >
+                            </div>
+                            <div class="col-sm-4">
+                                <!-- Trigger the modal with a button -->
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#dq">View Deviation Quotients table </button>
+
+                                <!-- Modal -->
+                                <div id="dq" class="modal fade" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title text-center">Deviation Quotients table</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <table class="table table-condensed table-bordered">
+                                                      <tr class="success text-center" style="color:green;"> 	
+                                                          <td>TONI-3 Raw Scores</td>	
+                                                          <td>6-0 to 6-5</td><td>6-6 to 6-11</td><td>7-0 to 7-5</td><td>7-6 to 7-11</td><td>8-0 to 8-5</td><td>8-6 to 8-11</td><td>9-0 to 9-5</td><td>9-6 to 9-11</td><td>10-0 to 10-5</td><td>10-6 to 10-11</td><td>11-0 to11-11</td><td>12-0 to 12-11</td><td>13-0 to 13-11</td><td>14-0 to 14-11</td><td>15-0 to 15-11</td><td>16-0 to 16-11</td><td>17-0 to 54-11</td><td>55-0 to 59-11</td><td>60-0 to 64-11</td><td>65-0 to 69-11</td><td>70-0 to 74-11</td><td>75-0 to 79-11</td><td>80-0 to 89-11</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">        
+                                                          <td>0</td><td>70</td><td>69</td><td>68</td><td>67</td><td>66</td><td>65</td><td>64</td><td>63</td><td>62</td><td>61</td><td>61</td><td>60</td><td>60</td><td>60</td><td>60</td><td>60</td><td>60</td><td>62</td><td>63</td><td>64</td><td>65</td><td>67</td><td>68</td>
+                                                      </tr>
+                                                      <tr class="success text-center" style="color:gray;">
+                                                          <td>1</td><td>75</td><td>70</td><td>69</td><td>68</td><td>67</td><td>66</td><td>65</td><td>64</td><td>64</td><td>63</td><td>63</td><td>62</td><td>62</td><td>62</td><td>62</td><td>61</td><td>61</td><td>63</td><td>64</td><td>65</td><td>67</td><td>68</td><td>70</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>2</td><td>80</td><td>75</td><td>70</td><td>70</td><td>69</td><td>68</td><td>67</td><td>66</td><td>66</td><td>65</td><td>65</td><td>64</td><td>63</td><td>63</td><td>63</td><td>62</td><td>62</td><td>64</td><td>65</td><td>66</td><td>68</td><td>69</td><td>73</td>
+                                                      </tr>
+                                                      <tr class="info text-center" style="color:gray;">
+                                                          <td>3</td><td>85</td><td>81</td><td>75</td><td>72</td><td>70</td><td>69</td><td>69</td><td>68</td><td>68</td><td>67</td><td>67</td><td>66</td><td>65</td><td>65</td><td>64</td><td>63</td><td>63</td><td>65</td><td>66</td><td>67</td><td>69</td><td>70</td><td>75</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>4</td><td>87</td><td>83</td><td>78</td><td>75</td><td>72</td><td>70</td><td>70</td><td>69</td><td>69</td><td>68</td><td>68</td><td>67</td><td>66</td><td>66</td><td>65</td><td>64</td><td>64</td><td>66</td><td>67</td><td>68</td><td>70</td><td>73</td><td>77</td>
+                                                      </tr>
+                                                      <tr class="success text-center" style="color:gray;">
+                                                          <td>5</td><td>89</td><td>85</td><td>81</td><td>78</td><td>75</td><td>73</td><td>72</td><td>70</td><td>70</td><td>69</td><td>69</td><td>68</td><td>67</td><td>67</td><td>66</td><td>65</td><td>65</td><td>67</td><td>68</td><td>69</td><td>72</td><td>75</td><td>79</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>6</td><td>95</td><td>89</td><td>83</td><td>81</td><td>79</td><td>77</td><td>75</td><td>73</td><td>72</td><td>70</td><td>70</td><td>69</td><td>68</td><td>68</td><td>67</td><td>66</td><td>66</td><td>68</td><td>69</td><td>70</td><td>74</td><td>78</td><td>82</td>
+                                                      </tr>
+                                                      <tr class="info text-center" style="color:gray;"> 	
+                                                          <td>7</td><td>100</td><td>93</td><td>85</td><td>83</td><td>81</td><td>80</td><td>79</td><td>75</td><td>74</td><td>73</td><td>72</td><td>70</td><td>69</td><td>69</td><td>68</td><td>67</td><td>67</td><td>69</td><td>70</td><td>72</td><td>76</td><td>80</td><td>85</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>8</td><td>103</td><td>96</td><td>88</td><td>84</td><td>83</td><td>82</td><td>81</td><td>78</td><td>76</td><td>75</td><td>74</td><td>72</td><td>70</td><td>70</td><td>69</td><td>68</td><td>68</td><td>70</td><td>72</td><td>74</td><td>78</td><td>81</td><td>86</td>
+                                                      </tr>
+                                                      <tr class="success text-center" style="color:gray;">
+                                                          <td>9</td><td>104</td><td>97</td><td>89</td><td>85</td><td>84</td><td>83</td><td>82</td><td>79</td><td>78</td><td>77</td><td>76</td><td>75</td><td>73</td><td>72</td><td>70</td><td>69</td><td>69</td><td>71</td><td>73</td><td>75</td><td>81</td><td>85</td><td>87</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>10</td><td>107</td><td>100</td><td>92</td><td>88</td><td>85</td><td>84</td><td>83</td><td>81</td><td>80</td><td>79</td><td>78</td><td>77</td><td>75</td><td>74</td><td>72</td><td>70</td><td>70</td><td>72</td><td>74</td><td>77</td><td>83</td><td>86</td><td>88</td>
+                                                      </tr>
+                                                      <tr class="info text-center" style="color:gray;">
+                                                          <td>11</td><td>109</td><td>102</td><td>94</td><td>90</td><td>89</td><td>85</td><td>84</td><td>82</td><td>81</td><td>80</td><td>79</td><td>78</td><td>76</td><td>75</td><td>74</td><td>73</td><td>72</td><td>74</td><td>75</td><td>79</td><td>85</td><td>87</td><td>89</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>12</td><td>111</td><td>104</td><td>97</td><td>93</td><td>92</td><td>86</td><td>85</td><td>84</td><td>82</td><td>81</td><td>80</td><td>79</td><td>78</td><td>NULL	</td><td>NULL</td><td>75</td><td>NULL</td><td>NULL</td><td>NULL</td><td>80</td><td>86</td><td>88</td><td>90</td>
+                                                      </tr>
+                                                      <tr class="success text-center" style="color:gray;">
+                                                          <td>13</td><td>115</td><td>107</td><td>100</td><td>95</td><td>94</td><td>89</td><td>88</td><td>85</td><td>84</td><td>83</td><td>82</td><td>81</td><td>80</td><td>79</td><td>77</td><td>76</td><td>75</td><td>77</td><td>79</td><td>82</td><td>87</td><td>89</td><td>91</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>14</td><td>117</td><td>109</td><td>103</td><td>97</td><td>95</td><td>91</td><td>89</td><td>88</td><td>85</td><td>84</td><td>83</td><td>82</td><td>81</td><td>80</td><td>78</td><td>77</td><td>76</td><td>78</td><td>80</td><td>85</td><td>88</td><td>90</td><td>92</td>
+                                                      </tr>
+                                                      <tr class="info text-center" style="color:gray;">
+                                                          <td>15</td><td>119</td><td>110</td><td>105</td><td>99</td><td>97</td><td>93</td><td>91</td><td>90</td><td>87</td><td>85</td><td>84</td><td>83</td><td>82</td><td>81</td><td>79</td><td>78</td><td>77</td><td>79</td><td>81</td><td>86</td><td>89</td><td>91</td><td>93</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>16</td><td>121</td><td>115</td><td>107</td><td>100</td><td>99</td><td>95</td><td>93</td><td>92</td><td>89</td><td>88</td><td>85</td><td>84</td><td>83</td><td>82</td><td>81</td><td>80</td><td>79</td><td>80</td><td>83</td><td>87</td><td>90</td><td>92</td><td>94</td>
+                                                      </tr>
+                                                      <tr class="success text-center" style="color:gray;">
+                                                          <td>17</td><td>123</td><td>116</td><td>109</td><td>102</td><td>100</td><td>98</td><td>95</td><td>93</td><td>91</td><td>90</td><td>87</td><td>85</td><td>84</td><td>83</td><td>82</td><td>81</td><td>80</td><td>81</td><td>85</td><td>88</td><td>91</td><td>93</td><td>96</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>18</td><td>125</td><td>117</td><td>112</td><td>105</td><td>102</td><td>99</td><td>98</td><td>97</td><td>93</td><td>92</td><td>89</td><td>88</td><td>85</td><td>84</td><td>83</td><td>82</td><td>81</td><td>82</td><td>86</td><td>89</td><td>92</td><td>94</td><td>98</td>
+                                                      </tr>
+                                                      <tr class="info text-center" style="color:gray;">
+                                                          <td>19</td><td>127</td><td>120</td><td>115</td><td>107</td><td>105</td><td>100</td><td>100</td><td>98</td><td>96</td><td>95</td><td>92</td><td>91</td><td>90</td><td>85</td><td>84</td><td>83</td><td>82</td><td>83</td><td>87</td><td>90</td><td>93</td><td>95</td><td>100</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>20</td><td>129</td><td>122</td><td>116</td><td>110</td><td>108</td><td>103</td><td>102</td><td>100</td><td>98</td><td>97</td><td>95</td><td>93</td><td>91</td><td>90</td><td>85</td><td>84</td><td>83</td><td>85</td><td>88</td><td>92</td><td>95</td><td>98</td><td>102</td>
+                                                      </tr>
+                                                      <tr class="success text-center" style="color:gray;">
+                                                          <td>21</td><td>130</td><td>124</td><td>118</td><td>115</td><td>110</td><td>106</td><td>105</td><td>102</td><td>100</td><td>98</td><td>96</td><td>95</td><td>93</td><td>91</td><td>89</td><td>85</td><td>84</td><td>88</td><td>89</td><td>93</td><td>98</td><td>100</td><td>105</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>22</td><td>131</td><td>126</td><td>121</td><td>118</td><td>115</td><td>110</td><td>108</td><td>105</td><td>103</td><td>100</td><td>98</td><td>97</td><td>96</td><td>93</td><td>89</td><td>86</td><td>85</td><td>87</td><td>90</td><td>95</td><td>100</td><td>101</td><td>107</td>
+                                                      </tr>
+                                                      <tr class="info text-center" style="color:gray;">
+                                                          <td>23</td><td>133</td><td>129</td><td>125</td><td>121</td><td>118</td><td>115</td><td>111</td><td>107</td><td>105</td><td>104</td><td>100</td><td>99</td><td>98</td><td>95</td><td>91</td><td>89</td><td>88</td><td>90</td><td>93</td><td>97</td><td>102</td><td>103</td><td>109</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>24</td><td>135</td><td>130</td><td>127</td><td>124</td><td>121</td><td>117</td><td>113</td><td>110</td><td>108</td><td>107</td><td>102</td><td>100</td><td>99</td><td>98</td><td>94</td><td>91</td><td>90</td><td>92</td><td>95</td><td>100</td><td>104</td><td>105</td><td>110</td>
+                                                      </tr>
+                                                  </table>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fine" class="col-sm-3 control-label">Percentile Ranks</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" placeholder="Percentile Ranks" name="pr" required >
+                            </div>
+                            <div class="col-sm-4">
+                                <!-- Trigger the modal with a button -->
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#pr">View Percentile Ranks table </button>
+
+                                <!-- Modal -->
+                                <div id="pr" class="modal fade" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title text-center">Percentile Ranks table</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="col-lg-3">
+                                                    <table class="table table-condensed table-bordered">
+                                                          <tr class="success text-center" style="color:green;">
+                                                              <td>Quotients</td><td>Percentiles</td>
+                                                          </tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td>140</td><td>99</td></tr>
+                                                          <tr class="success text-center" style="color:gray;">
+                                                              <td>139</td><td>99</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td>138</td><td>99</td></tr>
+                                                          <tr class="info text-center" style="color:gray;">
+                                                              <td>137</td><td>99</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td>136</td><td>99</td></tr>
+                                                          <tr class="success text-center" style="color:gray;">
+                                                              <td>135</td><td>99</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td>134</td><td>99</td></tr>
+                                                          <tr class="info text-center" style="color:gray;">
+                                                              <td>133</td><td>99</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td>132</td><td>98</td></tr>
+                                                          <tr class="success text-center" style="color:gray;">
+                                                              <td>131</td><td>98</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td>130</td><td>98</td></tr>
+                                                          <tr class="info text-center" style="color:gray;">
+                                                              <td>129</td><td>97</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td>128</td><td>97</td></tr>
+                                                          <tr class="success text-center" style="color:gray;">
+                                                              <td>127</td><td>96</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td>126</td><td>96</td></tr>
+                                                          <tr class="info text-center" style="color:gray;">
+                                                              <td>125</td><td>96</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td> 124</td><td>95</td></tr>
+                                                          <tr class="success text-center" style="color:gray;">
+                                                                <td>123</td><td>94</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                                <td>122</td><td>93</td></tr>
+
+                                                    </table>
+                                                      </div>
+                                                      <div class="col-lg-3">
+                                                        <table class="table table-condensed table-bordered">
+                                                            <tr class="success text-center" style="color:green;">
+                                                                <td>Quotients</td><td>Percentiles</td>
+                                                            </tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>121</td><td>92</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>120</td><td>91</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>119</td><td>90</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>118</td><td>88</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>117</td><td>87</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>116</td><td>86</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td> 115</td><td>84</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>114</td><td>83</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>113</td><td>81</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>112</td><td>79</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>111</td><td>76</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>110</td><td>74</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>109</td><td>73</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>108</td><td>70</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>107</td><td>68</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>106</td><td>66</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>105</td><td>63</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>104</td><td>61</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>103</td><td>58</td></tr>
+                                                          </table>
+                                                      </div>
+                                                        <div class="col-lg-3">
+                                                        <table class="table table-condensed table-bordered">
+                                                            <tr class="success text-center" style="color:green;">
+                                                                <td>Quotients</td><td>Percentiles</td>
+                                                            </tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>102</td><td>55</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>101</td><td>52</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>100</td><td>50</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>99</td><td>48</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>98</td><td>45</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>97</td><td>42</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td> 96</td><td>39</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>95</td><td>37</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>94</td><td>34</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>93</td><td>32</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>92</td><td>30</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>91</td><td>27</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td> 90</td><td>26</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>89</td><td>24</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>88</td><td>21</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>87</td><td>19</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>86</td><td>17</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td> 85</td><td>16</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>84</td><td>14</td></tr>
+                                                        </table>
+                                                      </div>
+
+                                                      <div class="col-lg-3">
+                                                        <table class="table table-condensed table-bordered">
+                                                            <tr class="success text-center" style="color:green;">
+                                                                <td>Quotients</td><td>Percentiles</td>
+                                                            </tr>    
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>83</td><td>13</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>82</td><td>12</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>81</td><td>10</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td> 80</td><td>9</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>79</td><td>8</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>78</td><td>7</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>77</td><td>6</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>76</td><td>5</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>75</td><td>5</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>74</td><td>4</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>73</td><td>4</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>72</td><td>3</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>71</td><td>3</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>70</td><td>2</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>69</td><td>2</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>68</td><td>2</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td> 67</td><td>1</td></tr>
+                                                            <tr class="succes text-center" style="color:gray;">
+                                                                <td>66</td><td>1</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>65</td><td>1</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>64</td><td>1</td></tr>
+                                                      </table>
+                                                      </div>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fine" class="col-sm-3 control-label">Description</label>
+                            <div class="col-sm-5">
+                                <select class="form-control" name="desc">
+                                    <option value="Very Superior">Very Superior</option>
+                                    <option value="Superior">Superior</option>
+                                    <option value="Above Average">Above Average</option>
+                                    <option value="Average">Average</option>
+                                    <option value="Below Average">Below Average</option>
+                                    <option value="Poor">Poor</option>
+                                    <option value="Very Poo">Very Poor</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4">
+                                <!-- Trigger the modal with a button -->
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#desc">View Description table </button>
+
+                                <!-- Modal -->
+                                <div id="desc" class="modal fade" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title text-center">Description table</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <table class="table table-condensed table-bordered">
+                                                    <tr class="success text-center" style="color:green;">
+                                                        <td>Percentile Ranks</td><td>Deviation Quotients</td><td>Description</td><td>%Included</td>
+                                                    </tr>    
+                                                    <tr class="active text-center" style="color:gray;">
+                                                        <td>&gt;98</td><td>&gt;130</td><td>Very Superior</td><td>2.34</td></tr>
+                                                    <tr class="success text-center" style="color:gray;">
+                                                        <td>91-98</td><td>121-130</td><td>Superior</td><td>6.87</td></tr>
+                                                    <tr class="active text-center" style="color:gray;">
+                                                        <td>74-97</td><td>111-120</td><td>Above Average</td><td>16.12</td></tr>
+                                                    <tr class="success text-center" style="color:gray;">
+                                                        <td> 25-73</td><td>90-110</td><td>Average</td><td>49.51</td> </tr>
+                                                    <tr class="active text-center" style="color:gray;">
+                                                        <td>9-24</td><td>80-89</td><td>Below Average</td><td>16.12</td></tr>
+                                                    <tr class="success text-center" style="color:gray;">
+                                                        <td>2-8</td><td>70-79</td><td>Poor</td><td>6.87</td></tr>
+                                                    <tr class="active text-center" style="color:gray;">
+                                                        <td>&lt;2</td><td>&lt;70</td><td>Very Poor</td><td>2.34</td></tr>
+                                                </table>
+                                            </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+
+                        <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
+                        <input type="hidden" name="time" id="id" value="<?php echo date('H:i:s'); ?>" />
+                        <input type="hidden" name="date" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                        <input type="hidden" name="doctorid" id="id" value="<?php echo $name; ?>" />
+
+                        <div class="form-group">
+                            <div class="col-sm-7"></div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="submit" name='save' class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+
+                    <?php 
+                        echo form_close();
+
+                    ?>
+                    </div>
+
                 </div>
 
 <!-- discharge -->
@@ -2801,6 +3730,7 @@
                     </div>
                 </div>
                 <div class="col-sm-2 col-icon-box "  onclick="diagnosis()">
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
                     <img src="<?php echo base_url()."asserts/images/icons/diagnosis.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
                     <div class="overlay">
                         <div class="text">Diagnosis</div>
@@ -2808,10 +3738,24 @@
                 </div>
                 <div class="col-sm-2 col-icon-box "  onclick="problem()">
                     <img src="<?php echo base_url()."asserts/images/icons/problem.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+=======
+                    <img src="<?php echo base_url()."asserts/images/icons/diagnosis_problem.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    <div class="overlay">
+                        <div class="text">Problem <br>Diagnosis</div>
+                    </div>
+                </div>
+<!--
+                <div class="col-sm-2 col-icon-box "  onclick="problem()">
+                    <img src="</?php echo base_url()."asserts/images/icons/problem.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
                     <div class="overlay">
                         <div class="text">Problem</div>
                     </div>
                 </div>
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
+=======
+-->
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
                 <div class="col-sm-2 col-icon-box "  onclick="caseHistory()">
                     <img src="<?php echo base_url()."asserts/images/icons/medical_history_icon.jpg"; ?>" class="img-thumbnail" width="100px" height="100px" />
                     <div class="overlay">
@@ -2982,6 +3926,51 @@
     endforeach;
 ?>
 
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
+=======
+<?php                       //  show/hide form/table for problem
+    foreach ($getDiagnosis as $problems):
+        if($patient_id == $problems->patient_id && !empty($problems->problem)){ 
+?>
+    
+    <script type="text/javascript">
+        document.getElementById('problem_form').style.display = 'none';
+        document.getElementById('problem_table').style.display = 'block';
+    </script>
+<?php
+        }else{
+?>
+    <script type="text/javascript">
+        document.getElementById('problem_form').style.display = 'block';
+        document.getElementById('problem_table').style.display = 'none';
+    </script>
+<?php
+        }
+    endforeach;
+?>
+
+<?php                       //  show/hide form/table for diagnosis
+    foreach ($getDiagnosis as $diagnosis):
+        if($patient_id == $diagnosis->patient_id){
+?>
+    
+    <script type="text/javascript">
+        document.getElementById('diagnosis_form').style.display = 'none';
+        document.getElementById('diagnosis_table').style.display = 'block';
+    </script>
+<?php
+        }else{
+?>
+    <script type="text/javascript">
+        document.getElementById('diagnosis_form').style.display = 'block';
+        document.getElementById('diagnosis_table').style.display = 'none';
+    </script>
+<?php
+        }
+    endforeach;
+?>
+
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
 <script src="<?php echo base_url("js/jquery-1.10.2.js"); ?>" type="text/javascript"></script>
 
@@ -2997,6 +3986,22 @@ $("#start").click(function() {
 });
 </script>
 
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
+=======
+<script type="text/javascript">
+$("#calculateB").click(function() {
+    $.ajax({
+        type: "POST",
+        url: "<?php echo site_url('CogTestQuiz/ViewMarks'); ?>",
+        success: function(data) {
+            $("#cognitive_marks").html(data);
+        }
+    });
+});
+</script>
+
+
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 <!-- javascript functions for tile navigation -->
 <script>
     function viewPatients() {
@@ -3033,11 +4038,15 @@ $("#start").click(function() {
     }
     function diagnosis() {
         $("#diagnosis").show();  
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
         $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient,#problem,#diagnosis").hide();   
     }
     function problem() {
         $("#problem").show();  
         $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient,#diagnosis").hide();   
+=======
+        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient,#problem").hide();   
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
     }
     function DischargePlan() {
         $("#discharge").show();  
@@ -3077,4 +4086,13 @@ $("#start").click(function() {
     });
     }
     
+<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
 </script>
+=======
+</script>
+
+
+
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php

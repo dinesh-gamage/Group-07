@@ -18,8 +18,13 @@ class NurseView extends CI_Controller {
     
 	public function index()
 	{
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
         $data['doctor'] = $this->doc_model->getAllDoctors();  
         $data['events']  = $this->calendarmodel->cal(); 
+=======
+        
+        $data['events'] = $this->calendarmodel->cal();
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         $data['patients'] = $this->doc_model->getAllPatients();
         $data['goals'] = $this->doc_model->getAllGoals();
         $data1['nur_data'] = $this->profilemodel->get_nur_data();
@@ -49,9 +54,19 @@ class NurseView extends CI_Controller {
         $data['goals'] = $this->doc_model->getAllGoals();
         $data['refernces'] = $this->doc_model->get_All_references();
         $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
         $data1['doc_data'] = $this->profilemodel->get_nur_data();
         $this->load->view('main/nurse_header',$data1);
 		$this->load->view('nurse/nurse_view_home',$data);
+=======
+        $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+        $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+        $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        
+        $data1['doc_data'] = $this->profilemodel->get_doc_data();
+        $this->load->view('main/doc_header',$data1);
+		$this->load->view('doctor/doc_view_patient',$data);
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
     }
       
     public function add_family_history()
@@ -97,9 +112,21 @@ class NurseView extends CI_Controller {
             $data['successMessage'] = 'Family History added Successfully !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
+=======
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         } else {
             
             $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
@@ -111,9 +138,21 @@ class NurseView extends CI_Controller {
             $data['errorMessage'] = 'Family History added failed !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
+=======
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         }
             
     }
@@ -168,9 +207,21 @@ class NurseView extends CI_Controller {
             $data['successMessage'] = 'Communication Skills added Successfully !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
         $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
+=======
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+        $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         } else {
             
             $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
@@ -182,9 +233,21 @@ class NurseView extends CI_Controller {
             $data['errorMessage'] = 'Communication Skills added failed !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
+=======
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         }
         
     }
@@ -221,9 +284,21 @@ class NurseView extends CI_Controller {
             $data['successMessage'] = 'Mortor Skills added Successfully !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
+=======
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         } else {
 
             $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
@@ -235,9 +310,21 @@ class NurseView extends CI_Controller {
             $data['errorMessage'] = 'Mortor Skills added failed !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
+=======
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         }
         
         
@@ -281,9 +368,21 @@ class NurseView extends CI_Controller {
             $data['successMessage'] = 'Cognitive and communicatin developing added Successfully !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
         $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
+=======
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+        $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         } else {
             
             $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
@@ -295,9 +394,21 @@ class NurseView extends CI_Controller {
             $data['errorMessage'] = 'Cognitive and communicatin developing added failed !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
+=======
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         }
         
     }
@@ -326,9 +437,21 @@ class NurseView extends CI_Controller {
             $data['successMessage'] = 'Case notes added Successfully !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
+=======
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         } else {
             
             $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
@@ -340,9 +463,21 @@ class NurseView extends CI_Controller {
             $data['errorMessage'] = 'Case notes added failed !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
+=======
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         }
         
     }
@@ -446,8 +581,49 @@ class NurseView extends CI_Controller {
         }
 
 
-        $this->db->insert_batch('goals', $data); 
+        $this->db->insert_batch('goals', $data);
+        if ($this->db->affected_rows() > 0) {
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['successMessage'] = 'Goals added Successfully !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
         
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        }else {
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['errorMessage'] = 'Goals added failed !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        }
+        
+        
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
         $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
         $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
         $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
@@ -460,6 +636,8 @@ class NurseView extends CI_Controller {
         $data1['doc_data'] = $this->profilemodel->get_nur_data();
         $this->load->view('main/nurse_header',$data1);
         $this->load->view('nurse/nurse_view_home',$data);
+=======
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
 
     }
     
@@ -483,6 +661,7 @@ class NurseView extends CI_Controller {
         );
         endforeach;
         
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
         $this->db->insert_batch('patient_goal', $data); 
         
         $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
@@ -497,6 +676,48 @@ class NurseView extends CI_Controller {
         $data1['doc_data'] = $this->profilemodel->get_nur_data();
         $this->load->view('main/nurse_header',$data1);
         $this->load->view('nurse/nurse_view_home',$data);
+=======
+        $this->db->insert_batch('patient_goal', $data);
+        if ($this->db->affected_rows() > 0) {
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['successMessage'] = 'Marks added Successfully !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        }else{
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['errorMessage'] = 'Marks added failed !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        }
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
     }
     
     
@@ -557,9 +778,21 @@ class NurseView extends CI_Controller {
             $data['successMessage'] = 'Note added Successfully !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
+=======
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         } else {
             
             $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
@@ -571,12 +804,217 @@ class NurseView extends CI_Controller {
             $data['errorMessage'] = 'Note added failed !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
         }
+=======
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        }
         
     }
+    public function getGraphData(){
+        $this->load->model('graphData');
+        if(isset($_POST['graph'])){
+            $dates = $this->graphData->getDates();
+            foreach($dates as $d){
+                $graphRes = $this->graphData->getGraphData($d);
+                echo json_encode($graphRes);
+                
+            }
+            
+            
+            
+        }
+        
+        
+    }
+    
+    public function add_diagnosis(){
+        $patient_id = $this->input->post('patientid');
+        $data = array(
+            'patient_id' => $this->input->post('patientid'),
+            'doc_name' => $this->input->post('doctorid'),
+            'diagnosis' => $this->input->post('diagnosis'),
+            'date' => $this->input->post('date'),
+            'time' => $this->input->post('time')
+        );
+        
+        $result = $this->doc_model->add_diagnosis($data);
+        if ($result == TRUE) {
+            
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id); 
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['successMessage'] = 'Diagnosis added Successfully !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        } else {
+            
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id); 
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['errorMessage'] = 'Diagnosis added failed !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+            
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        }
+    }
+    public function add_problem(){
+        $patient_id = $this->input->post('patientid');
+        $data = array(
+            'doc_name2' => $this->input->post('doctorid'),
+            'problem' => $this->input->post('problem'),
+            'date2' => $this->input->post('date'),
+            'time2' => $this->input->post('time')
+        );
+        
+        $result = $this->doc_model->add_problem($data,$patient_id);
+        if ($result == TRUE) {
+            
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id); 
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['successMessage'] = 'Porblem added Successfully !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+            
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        } else {
+            
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id); 
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+            
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        }
+    }
+    
+    public function add_final_marks(){
+        $patient_id = $this->input->post('patientid');
+        $testType = $this->input->post('type');
+        $data = array(
+            'patient_id' => $this->input->post('patientid'),
+            'dq' => $this->input->post('dq'),
+            'pr' => $this->input->post('pr'),
+            'description' => $this->input->post('desc'),
+            'test_type' => $this->input->post('type'),
+            'doc_name' => $this->input->post('doctorid'),
+            'date' => $this->input->post('date'),
+            'time' => $this->input->post('time')
+        );
+        
+        $result = $this->doc_model->add_final_marks($data,$testType,$patient_id);
+        if ($result == TRUE) {
+            
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id); 
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['successMessage'] = 'Final mark added Successfully !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+            
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        } else {
+            
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id); 
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['errorMessage'] = 'Final mark added Failed !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+            
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        }
+    }
+ 
+   
+    public function patientSearch(){
+        $patient_id = $this->input->post('id');
+        
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
+        
+                echo 
+                 '<div class="correct">'.$patient_id.'</div>';
+            
+    }
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
+=======
+    
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
     
      
 

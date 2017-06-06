@@ -114,6 +114,8 @@ Class Login extends CI_Controller {
                 $result = $this->login_database->read_user_information($username);
                 if($result[0]->is_admin == 1){
                     $status = 'Admin';
+                }else if($result[0]->is_admin == 2){
+                    $status = 'Nurse';
                 }else{
                     $status = 'Doctor';
                 }
@@ -134,6 +136,12 @@ Class Login extends CI_Controller {
                     if($status==="Doctor"){
                         $data1['doc_data'] = $this->profilemodel->get_doc_data();                    
                         redirect('/DoctorView/');
+<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/Login.php
+=======
+                    }else if($status==="Doctor"){
+                        $data1['doc_data'] = $this->profilemodel->get_doc_data();                    
+                        redirect('/NurseView/');
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/Login.php
                     }else{
                         $data1['doc_data'] = $this->profilemodel->get_doc_data();                    
                         redirect('/AdminView/');

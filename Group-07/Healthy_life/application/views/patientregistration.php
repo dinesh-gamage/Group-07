@@ -136,7 +136,11 @@
 
             $.ajax({
                 type: "post",
+<<<<<<< HEAD:Group-07/Healthy_life/application/views/patientregistration.php
                 url: "http://[::1]/project/Group-07/Healthy_life/Register/reg_patient/",
+=======
+                url: "http://[::1]/new4/Healthy_life/Register/reg_patient/",
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:Healthy_life/application/views/patientregistration.php
                 cache: false,
                 data: {regbtn: "regbtn",pname:pname,age:page,dob:pdob,tel:ptel,lan:plan,gender:pgen,sch:psch,address:paddre,gur:pgur,rel:prel,ref:pref,pass:ppass,div:pdiv,date:pdate},
                 success: function (data) {

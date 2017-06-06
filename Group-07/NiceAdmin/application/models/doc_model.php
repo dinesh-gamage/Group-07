@@ -218,6 +218,89 @@ class doc_model extends CI_Model{
         $query = $this->db->get('doctors');
         return $query->result();
     }
+<<<<<<< HEAD:Group-07/NiceAdmin/application/models/doc_model.php
+=======
+    
+    public function add_problem($data,$patient_id){
+        $this->db->where('patient_id', $patient_id);
+        $this->db->update('diagnisis_problem', $data);
+        if ($this->db->affected_rows() > 0) {
+                    return true;
+                }else {
+                    return false;
+                }
+        
+    }
+    
+    public function add_diagnosis($data){
+        $condition = "patient_id ="."'".$data['patient_id']."'";
+        $this->db->select('*');
+        $this->db->from('diagnisis_problem');
+        $this->db->where($condition);
+        $query = $this->db->get();
+        
+        if ($query->num_rows() == 0) {
+            $this->db->insert('diagnisis_problem', $data);
+                if ($this->db->affected_rows() > 0) {
+                    return true;
+                }else {
+                    return false;
+                }
+        }else {
+            return false;
+        }
+        
+    }
+    
+    public function get_diagnosis_by_id($patient_id){
+        $condition = "patient_id ="."'".$patient_id."'";
+        $this->db->select('*');
+        $this->db->from('diagnisis_problem');
+        $this->db->where($condition);
+        $query = $this->db->get();
+        return $query->result();
+    }
+    
+    public function get_goal_marks_by_patient_id($patient_id){
+        $condition = "patient_id ="."'".$patient_id."'";
+        $this->db->select('*');
+        $this->db->from('patient_goal');
+        $this->db->where($condition);
+        $this->db->order_by('date','ASC');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    
+    public function add_final_marks($data,$testType,$patient_id){
+        $condition = array('patient_id'=>$patient_id, 'test_type' => $testType);
+        $this->db->select('*');
+        $this->db->from('cognitive_final');
+        $this->db->where($condition);
+        $query = $this->db->get();
+        
+        if ($query->num_rows() == 0) {
+            $this->db->insert('cognitive_final', $data);
+                if ($this->db->affected_rows() > 0) {
+                    return true;
+                }else {
+                    return false;
+                }
+        }else {
+            return false;
+        }
+    }
+    
+    
+    public function getFinalMarks($patient_id){
+        $condition = "patient_id ="."'".$patient_id."'";
+        $this->db->select('*');
+        $this->db->from('cognitive_final');
+        $this->db->where($condition);
+        $this->db->order_by('test_type','ASC');
+        $query = $this->db->get();
+        return $query->result();
+    }
+>>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/models/doc_model.php
 }
 
 ?>
