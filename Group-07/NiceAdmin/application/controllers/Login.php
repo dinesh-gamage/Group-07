@@ -114,8 +114,6 @@ Class Login extends CI_Controller {
                 $result = $this->login_database->read_user_information($username);
                 if($result[0]->is_admin == 1){
                     $status = 'Admin';
-                }else if($result[0]->is_admin == 2){
-                    $status = 'Nurse';
                 }else{
                     $status = 'Doctor';
                 }
@@ -136,12 +134,6 @@ Class Login extends CI_Controller {
                     if($status==="Doctor"){
                         $data1['doc_data'] = $this->profilemodel->get_doc_data();                    
                         redirect('/DoctorView/');
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/Login.php
-=======
-                    }else if($status==="Doctor"){
-                        $data1['doc_data'] = $this->profilemodel->get_doc_data();                    
-                        redirect('/NurseView/');
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/Login.php
                     }else{
                         $data1['doc_data'] = $this->profilemodel->get_doc_data();                    
                         redirect('/AdminView/');
@@ -155,19 +147,21 @@ Class Login extends CI_Controller {
                     $status = 'Director';
                 }else{
                     $status = 'Nurse';
-                }if ($result3 != false) {
-                    $this->session->set_userdata('nur_username',  $result3[0]->user_name);
-                    $this->session->set_userdata('nur_name',  $result3[0]->nurse_name);
-                    $this->session->set_userdata('nurseId',  $result3[0]->nurse_id);
-                    if($status==="Nurse"){
-                        $data1['nur_data'] = $this->profilemodel->get_nur_data();                    
-                        redirect('/NurseView/');
-                    }else{
-                        $data1['nur_data'] = $this->profilemodel->get_nur_data();                    
-                        redirect('/DirectorView/');
-                    }
-                    
                 }
+                if ($result3 != false) {
+                        $this->session->set_userdata('nur_username',  $result3[0]->user_name);
+                        $this->session->set_userdata('nur_name',  $result3[0]->nurse_name);
+                        $this->session->set_userdata('nurseId',  $result3[0]->nurse_id);
+                        $this->session->set_userdata('status',  $status);
+                        if($status==="Nurse"){
+                            $data1['nur_data'] = $this->profilemodel->get_nur_data();                    
+                            redirect('/NurseView/');
+                        }else{
+                            $data1['nur_data'] = $this->profilemodel->get_nur_data();                    
+                            redirect('/DirectorView/');
+                        }
+                        
+                    }
                 
             }else{
                 $data = array(

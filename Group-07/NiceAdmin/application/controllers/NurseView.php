@@ -18,13 +18,12 @@ class NurseView extends CI_Controller {
     
 	public function index()
 	{
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
+
         $data['doctor'] = $this->doc_model->getAllDoctors();  
         $data['events']  = $this->calendarmodel->cal(); 
-=======
+
         
         $data['events'] = $this->calendarmodel->cal();
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         $data['patients'] = $this->doc_model->getAllPatients();
         $data['goals'] = $this->doc_model->getAllGoals();
         $data1['nur_data'] = $this->profilemodel->get_nur_data();
@@ -54,11 +53,10 @@ class NurseView extends CI_Controller {
         $data['goals'] = $this->doc_model->getAllGoals();
         $data['refernces'] = $this->doc_model->get_All_references();
         $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
         $data1['doc_data'] = $this->profilemodel->get_nur_data();
         $this->load->view('main/nurse_header',$data1);
 		$this->load->view('nurse/nurse_view_home',$data);
-=======
+
         $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
         $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
         $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
@@ -66,7 +64,6 @@ class NurseView extends CI_Controller {
         $data1['doc_data'] = $this->profilemodel->get_doc_data();
         $this->load->view('main/doc_header',$data1);
 		$this->load->view('doctor/doc_view_patient',$data);
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
     }
       
     public function add_family_history()
@@ -112,11 +109,9 @@ class NurseView extends CI_Controller {
             $data['successMessage'] = 'Family History added Successfully !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
-=======
             $data['refernces'] = $this->doc_model->get_All_references();
             $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
@@ -126,7 +121,6 @@ class NurseView extends CI_Controller {
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         } else {
             
             $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
@@ -138,11 +132,10 @@ class NurseView extends CI_Controller {
             $data['errorMessage'] = 'Family History added failed !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
+
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
-=======
             $data['refernces'] = $this->doc_model->get_All_references();
             $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
@@ -152,7 +145,6 @@ class NurseView extends CI_Controller {
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         }
             
     }
@@ -207,11 +199,9 @@ class NurseView extends CI_Controller {
             $data['successMessage'] = 'Communication Skills added Successfully !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
         $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
-=======
             $data['refernces'] = $this->doc_model->get_All_references();
             $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
@@ -221,7 +211,6 @@ class NurseView extends CI_Controller {
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
         $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         } else {
             
             $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
@@ -233,11 +222,9 @@ class NurseView extends CI_Controller {
             $data['errorMessage'] = 'Communication Skills added failed !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
-=======
             $data['refernces'] = $this->doc_model->get_All_references();
             $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
@@ -247,7 +234,6 @@ class NurseView extends CI_Controller {
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         }
         
     }
@@ -284,11 +270,9 @@ class NurseView extends CI_Controller {
             $data['successMessage'] = 'Mortor Skills added Successfully !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
-=======
             $data['refernces'] = $this->doc_model->get_All_references();
             $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
@@ -298,7 +282,6 @@ class NurseView extends CI_Controller {
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         } else {
 
             $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
@@ -310,11 +293,11 @@ class NurseView extends CI_Controller {
             $data['errorMessage'] = 'Mortor Skills added failed !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
+
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
-=======
+
             $data['refernces'] = $this->doc_model->get_All_references();
             $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
@@ -324,7 +307,7 @@ class NurseView extends CI_Controller {
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
+
         }
         
         
@@ -368,11 +351,10 @@ class NurseView extends CI_Controller {
             $data['successMessage'] = 'Cognitive and communicatin developing added Successfully !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
         $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
-=======
+
             $data['refernces'] = $this->doc_model->get_All_references();
             $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
@@ -382,7 +364,7 @@ class NurseView extends CI_Controller {
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
         $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
+
         } else {
             
             $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
@@ -394,11 +376,11 @@ class NurseView extends CI_Controller {
             $data['errorMessage'] = 'Cognitive and communicatin developing added failed !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
+
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
-=======
+
             $data['refernces'] = $this->doc_model->get_All_references();
             $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
@@ -408,7 +390,7 @@ class NurseView extends CI_Controller {
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
+
         }
         
     }
@@ -437,11 +419,11 @@ class NurseView extends CI_Controller {
             $data['successMessage'] = 'Case notes added Successfully !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
+
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
-=======
+
             $data['refernces'] = $this->doc_model->get_All_references();
             $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
@@ -451,7 +433,6 @@ class NurseView extends CI_Controller {
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         } else {
             
             $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
@@ -463,11 +444,10 @@ class NurseView extends CI_Controller {
             $data['errorMessage'] = 'Case notes added failed !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
-=======
+
             $data['refernces'] = $this->doc_model->get_All_references();
             $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
@@ -477,7 +457,6 @@ class NurseView extends CI_Controller {
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
         }
         
     }
@@ -623,7 +602,7 @@ class NurseView extends CI_Controller {
         }
         
         
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
+
         $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
         $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
         $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
@@ -636,8 +615,8 @@ class NurseView extends CI_Controller {
         $data1['doc_data'] = $this->profilemodel->get_nur_data();
         $this->load->view('main/nurse_header',$data1);
         $this->load->view('nurse/nurse_view_home',$data);
-=======
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
+
+
 
     }
     
@@ -661,7 +640,7 @@ class NurseView extends CI_Controller {
         );
         endforeach;
         
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
+
         $this->db->insert_batch('patient_goal', $data); 
         
         $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
@@ -676,7 +655,7 @@ class NurseView extends CI_Controller {
         $data1['doc_data'] = $this->profilemodel->get_nur_data();
         $this->load->view('main/nurse_header',$data1);
         $this->load->view('nurse/nurse_view_home',$data);
-=======
+
         $this->db->insert_batch('patient_goal', $data);
         if ($this->db->affected_rows() > 0) {
             $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
@@ -717,7 +696,7 @@ class NurseView extends CI_Controller {
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
         }
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
+
     }
     
     
@@ -778,11 +757,10 @@ class NurseView extends CI_Controller {
             $data['successMessage'] = 'Note added Successfully !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
+
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
-=======
             $data['refernces'] = $this->doc_model->get_All_references();
             $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
@@ -792,7 +770,7 @@ class NurseView extends CI_Controller {
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
+
         } else {
             
             $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
@@ -804,12 +782,12 @@ class NurseView extends CI_Controller {
             $data['errorMessage'] = 'Note added failed !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
+
             $data1['doc_data'] = $this->profilemodel->get_nur_data();
             $this->load->view('main/nurse_header',$data1);
             $this->load->view('nurse/nurse_view_home',$data);
         }
-=======
+
             $data['refernces'] = $this->doc_model->get_All_references();
             $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
@@ -821,7 +799,7 @@ class NurseView extends CI_Controller {
             $this->load->view('doctor/doc_view_patient',$data);
         }
         
-    }
+    
     public function getGraphData(){
         $this->load->model('graphData');
         if(isset($_POST['graph'])){
@@ -1005,18 +983,13 @@ class NurseView extends CI_Controller {
     public function patientSearch(){
         $patient_id = $this->input->post('id');
         
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
+
         
                 echo 
                  '<div class="correct">'.$patient_id.'</div>';
             
     }
-<<<<<<< HEAD:Group-07/NiceAdmin/application/controllers/NurseView.php
-=======
-    
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/controllers/DoctorView.php
-    
-     
+
 
 }
 ?>

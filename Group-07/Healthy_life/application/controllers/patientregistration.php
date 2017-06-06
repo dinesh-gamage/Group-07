@@ -37,10 +37,10 @@ class patientregistration extends CI_Controller {
 		$school = $this->input->post('school');
 		$division = $this->input->post('division');
         
-        $data = array('patient_id'=>$patient_id,'password'=>$password,'patien_name'=>$patien_name,'registration_date'=>$registration_date,'address'=>$address,'gender'=>$gender,'age'=>$age,'dob'=>$dob,'guardian_name'=>$guardian_name,'telephone'=>$telephone,'relationship'=>$relationship,'language'=>$language,'refered_by'=>$refered_by,'school'=>$school,'division'->$division);
+        $data = array('patient_id'=>$patient_id,'password'=>$password,'patien_name'=>$patien_name,'registration_date'=>$registration_date,'address'=>$address,'gender'=>$gender,'age'=>$age,'dob'=>$dob,'guardian_name'=>$guardian_name,'telephone'=>$telephone,'relationship'=>$relationship,'language'=>$language,'refered_by'=>$refered_by,'school'=>$school,'division'=>$division);
 
         
-        $this->patient_registration->add($data)
+        $this->patient_registration->add($data);
 
 
         	
@@ -48,5 +48,6 @@ class patientregistration extends CI_Controller {
 
 
 
-	}
+        }
+        
 }

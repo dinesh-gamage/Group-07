@@ -90,13 +90,8 @@ border-radius: 20px;
                                 <div class="white_back container" >
                                 <ul class="nav nav-pills nav-stacked">
                                     <li class="active"><a data-toggle="pill" href="#generalDetails">Genaral Details</a></li>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-                                    <li><a data-toggle="pill" href="#caseHistoryHistory">Case History</a></li>
-                                    <li><a data-toggle="pill" href="#problemHistory">Problem</a></li>
-=======
                                     <li><a data-toggle="pill" href="#problemHistory">Problem/Diagnosis</a></li>
                                     <li><a data-toggle="pill" href="#caseHistoryHistory">Case History</a></li>
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
                                     <li><a data-toggle="pill" href="#goalEvaluationHistory">Goals Evaluation</a></li>
                                     <li><a data-toggle="pill" href="#cognitiveTestHistory">Cognitive Test</a></li>
                                     <li><a data-toggle="pill" href="#meicationsHistory">Medications</a></li>
@@ -406,8 +401,6 @@ border-radius: 20px;
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-=======
                                                                     <table class="table table-condensed table-bordered">
                                                                         <tr class="active">
                                                                             <td><?php echo $familyHistory->doc_name; ?></td>
@@ -415,7 +408,6 @@ border-radius: 20px;
                                                                             <td><?php echo $familyHistory->time; ?></td>
                                                                         </tr>
                                                                     </table>
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
                                                         <?php 
                                                             }
 
@@ -627,9 +619,6 @@ border-radius: 20px;
                                                                                 <td><?php echo $communication->prognosis; ?> </td>
                                                                             </tr>                                           
                                                                         </tbody>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-                                                                    </table>               
-=======
                                                                     </table> 
                                                                     <table class="table table-condensed table-bordered">
                                                                         <tr class="active">
@@ -638,7 +627,6 @@ border-radius: 20px;
                                                                             <td><?php echo $communication->time; ?></td>
                                                                         </tr>
                                                                     </table>
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
                                                         <?php 
                                                             }
@@ -698,8 +686,6 @@ border-radius: 20px;
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-=======
                                                                     <table class="table table-condensed table-bordered">
                                                                         <tr class="active">
                                                                             <td><?php echo $Motor->doc_name; ?></td>
@@ -707,7 +693,6 @@ border-radius: 20px;
                                                                             <td><?php echo $Motor->time; ?></td>
                                                                         </tr>
                                                                     </table>
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
 
                                                         <?php 
@@ -803,8 +788,6 @@ border-radius: 20px;
 
                                                                         </tbody>
                                                                     </table>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-=======
                                                                     <table class="table table-condensed table-bordered">
                                                                         <tr class="active">
                                                                             <td><?php echo $Cognitive->doc_name; ?></td>
@@ -812,7 +795,6 @@ border-radius: 20px;
                                                                             <td><?php echo $Cognitive->time; ?></td>
                                                                         </tr>
                                                                     </table>
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
 
                                                         <?php 
@@ -833,19 +815,6 @@ border-radius: 20px;
                                                                 if($patient_id == $Notes->patient_id)
                                                                 {
                                                         ?>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-                                                                    <table class="table table-condensed table-bordered " >
-
-                                                                        <tbody>
-
-                                                                            <tr>
-                                                                                <td><?php echo $Notes->note; ?> </td>
-                                                                            </tr>
-
-                                                                            </tbody>
-                                                                    </table>
-
-=======
                                                                     <p>
                                                                         <?php echo $Notes->note; ?>
 
@@ -858,7 +827,6 @@ border-radius: 20px;
                                                                         </tr>
                                                                     </table>
 
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
                                                         <?php 
                                                             }endforeach;
@@ -872,14 +840,6 @@ border-radius: 20px;
                                     </div> 
                                     
                                     <div id="problemHistory" class="tab-pane fade">
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-
-                     
-                                    </div>
-                                    <div id="goalEvaluationHistory" class="tab-pane fade">
-                                        <h3>Menu 3</h3>
-                                        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-=======
                                         <div id="diagnosis_table">
                                             <div class="white_back">
                                                 <h3 class="success text-center">Diagnosis</h3><hr>
@@ -979,7 +939,6 @@ border-radius: 20px;
                                             ?>
                                             
                                         </table> 
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
                                     </div>
                                     <div id="cognitiveTestHistory" class="tab-pane fade">
                                         <div class="white_back container">
@@ -1138,31 +1097,6 @@ border-radius: 20px;
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-                
-                <div id="diagnosis" style="display: none" ></div>
-                <div id="problem" style="display: none" >
-                    <div class="white_back">
-                        <h3 class="success">Problem</h3><hr>
-                            <div id="problem_table">
-                        <?php
-                            foreach ($getNotes as $Notes):
-                                if($patient_id == $Notes->patient_id)
-                                {
-                        ?>
-                                    <table class="table table-condensed table-bordered " >
-
-                                        <tbody>
-
-                                            <tr>
-                                                <td><?php echo $Notes->note; ?> </td>
-                                            </tr>
-
-                                            </tbody>
-                                    </table>
-
-
-=======
 
                 <div id="diagnosis" style="display: none" >
                     <div class="white_back">
@@ -1185,25 +1119,10 @@ border-radius: 20px;
 
 
 
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
                         <?php 
                             }endforeach;
                         ?>
                             </div>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-                            <div id="problem_form">
-                        <?php 
-                            $attri = array('class'=>'form-horizontal');
-                            echo form_open('DoctorView/add_case_notes',$attri);
-                        ?>
-
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <textarea name="cese_notes" class="form-control"   placeholder=""></textarea>
-                                    </div>
-                                </div>  
-
-=======
                             <div id="diagnosis_form">
                         <?php 
                             $attri = array('class'=>'form-horizontal');
@@ -1297,7 +1216,6 @@ border-radius: 20px;
                                 <div class="form-group col-lg-9">
                                     <textarea name="problem" class="form-control"   placeholder=""></textarea>
                                 </div>
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
                                 <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
                                 <input type="hidden" name="time" id="id" value="<?php echo date('H:i:s'); ?>" />
@@ -1310,11 +1228,7 @@ border-radius: 20px;
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                     </div>
                                     <div class="col-sm-3">
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-                                        <button type="submit" name='save' class="btn btn-primary">Submit</button>
-=======
                                         <button type="submit" name='save' class="btn btn-primary">Save</button>
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
                                     </div>
                                 </div>
 
@@ -1456,8 +1370,6 @@ border-radius: 20px;
                                                         </tr>
                                                     </tbody>
                                                 </table>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-=======
                                                 <table class="table table-condensed table-bordered">
                                                     <tr class="active">
                                                         <td><?php echo $familyHistory->doc_name; ?></td>
@@ -1465,7 +1377,6 @@ border-radius: 20px;
                                                         <td><?php echo $familyHistory->time; ?></td>
                                                     </tr>
                                                 </table>
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
                                     <?php 
                                         }
                                        
@@ -1885,9 +1796,6 @@ border-radius: 20px;
                                                             <td><?php echo $communication->prognosis; ?> </td>
                                                         </tr>                                           
                                                     </tbody>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-                                                </table>               
-=======
                                                 </table> 
                                                 <table class="table table-condensed table-bordered">
                                                     <tr class="active">
@@ -1896,7 +1804,6 @@ border-radius: 20px;
                                                         <td><?php echo $communication->time; ?></td>
                                                     </tr>
                                                 </table>
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
                                     <?php 
                                         }
@@ -2262,8 +2169,6 @@ border-radius: 20px;
                                                         </tr>
                                                     </tbody>
                                                 </table>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-=======
                                                 <table class="table table-condensed table-bordered">
                                                     <tr class="active">
                                                         <td><?php echo $Motor->doc_name; ?></td>
@@ -2271,7 +2176,6 @@ border-radius: 20px;
                                                         <td><?php echo $Motor->time; ?></td>
                                                     </tr>
                                                 </table>
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
 
                                     <?php 
@@ -2495,8 +2399,6 @@ border-radius: 20px;
 
                                                     </tbody>
                                                 </table>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-=======
                                                 <table class="table table-condensed table-bordered">
                                                     <tr class="active">
                                                         <td><?php echo $Cognitive->doc_name; ?></td>
@@ -2504,7 +2406,6 @@ border-radius: 20px;
                                                         <td><?php echo $Cognitive->time; ?></td>
                                                     </tr>
                                                 </table>
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
 
                                     <?php 
@@ -2689,18 +2590,6 @@ border-radius: 20px;
                                             if($patient_id == $Notes->patient_id)
                                             {
                                     ?>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-                                                <table class="table table-condensed table-bordered " >
-
-                                                    <tbody>
-
-                                                        <tr>
-                                                            <td><?php echo $Notes->note; ?> </td>
-                                                        </tr>
-
-                                                        </tbody>
-                                                </table>
-=======
                                                 
                                             <p>
                                                 <?php echo $Notes->note; ?>
@@ -2713,7 +2602,6 @@ border-radius: 20px;
                                                     <td><?php echo $Notes->time; ?></td>
                                                 </tr>
                                             </table>
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
 
                                     <?php 
@@ -3000,7 +2888,7 @@ border-radius: 20px;
                             }
                             function getGraphData(){
                                 $.ajax({
-                                    url: 'http://[::1]/new4/NiceAdmin/DoctorView/getGraphData/',
+                                    url: 'http://[::1]/project/Group-07/NiceAdmin/DoctorView/getGraphData/',
                                     type: "POST",
                                     data: {graph:"graph"},
                                     success: function(one) {
@@ -3718,6 +3606,60 @@ border-radius: 20px;
 <!-- discharge -->
                 <div id="discharge" style="display: none" ></div>
                 
+                <div id="uploads" style="display: none" >
+                    <div class="white_back container">
+                        <h3 class="success text-center">Upload Records</h3>
+                        <div class="col-lg-10">
+                            <?php
+                            $attri = array('class'=>'form-horizontal');
+                            echo form_open_multipart('CognitiveTest/add_question',$attri);
+                            
+                            ?>
+                            <label for="" class="col-sm-3 control-label">Description</label>
+                            <div class="col-sm-4">
+                            <input type="text" class="form-control" placeholder="Type or Select" name="description" list="description" required >
+                            <datalist id="description">
+                                <option value="Blood test"> Blood test</option>
+                                <option value="Urine test"> Urine test</option>
+                                <option value="CTC scan"> CTC scan</option>
+                                <option value="ECG"> ECG</option>
+                                <option value="X-ray"> X-ray</option>
+                            </datalist>
+                            </div>
+                            <?php
+                                                            
+                            //Quewstion lable
+                            echo"<div class='form-group'>";
+                            echo"<div class='col-sm-4'>";
+                            echo form_label('Report : ','class="control-label"');
+                            echo"</div>";
+                            //Question input
+                            echo"<div class='ccol-sm-push-12'>";
+                                $data = array(
+                                    'type' => 'file',
+                                    'name' => 'report',
+                                    'required'=>'required'
+                                );
+                            echo form_input($data,'class="form-control"');
+                            echo"</div>";
+                            echo"</div>";
+
+
+                            //button
+                            echo"<div class='form-group'>";
+                            echo"<div class='col-sm-4'>";
+                            echo "</div>";
+                            echo"<div class='col-sm-push-12'>";
+                            echo form_submit('submit', 'Save');
+                            echo "</div>";
+                            echo "</div>";
+                            echo form_close();
+                            ?>    
+                        </div>              
+                    </div>
+                
+                </div>
+                
                             
             </div>
             
@@ -3730,15 +3672,6 @@ border-radius: 20px;
                     </div>
                 </div>
                 <div class="col-sm-2 col-icon-box "  onclick="diagnosis()">
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-                    <img src="<?php echo base_url()."asserts/images/icons/diagnosis.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-                    <div class="overlay">
-                        <div class="text">Diagnosis</div>
-                    </div>
-                </div>
-                <div class="col-sm-2 col-icon-box "  onclick="problem()">
-                    <img src="<?php echo base_url()."asserts/images/icons/problem.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-=======
                     <img src="<?php echo base_url()."asserts/images/icons/diagnosis_problem.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
                     <div class="overlay">
                         <div class="text">Problem <br>Diagnosis</div>
@@ -3747,15 +3680,11 @@ border-radius: 20px;
 <!--
                 <div class="col-sm-2 col-icon-box "  onclick="problem()">
                     <img src="</?php echo base_url()."asserts/images/icons/problem.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
                     <div class="overlay">
                         <div class="text">Problem</div>
                     </div>
                 </div>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-=======
 -->
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
                 <div class="col-sm-2 col-icon-box "  onclick="caseHistory()">
                     <img src="<?php echo base_url()."asserts/images/icons/medical_history_icon.jpg"; ?>" class="img-thumbnail" width="100px" height="100px" />
                     <div class="overlay">
@@ -3805,6 +3734,15 @@ border-radius: 20px;
                         <div class="text">Discharge<br/> Plan</div>
                     </div>
                 </div>
+                
+                <div class="col-sm-2 col-icon-box " onclick="UploadFiles()" >
+                    <img src="<?php echo base_url()."asserts/images/icons/uploading.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    <div class="overlay">
+                        <div class="text">Upload<br/> Records</div>
+                    </div>
+                </div>
+                
+                
             </div>
             
             
@@ -3926,8 +3864,6 @@ border-radius: 20px;
     endforeach;
 ?>
 
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-=======
 <?php                       //  show/hide form/table for problem
     foreach ($getDiagnosis as $problems):
         if($patient_id == $problems->patient_id && !empty($problems->problem)){ 
@@ -3970,7 +3906,6 @@ border-radius: 20px;
     endforeach;
 ?>
 
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 
 <script src="<?php echo base_url("js/jquery-1.10.2.js"); ?>" type="text/javascript"></script>
 
@@ -3986,8 +3921,6 @@ $("#start").click(function() {
 });
 </script>
 
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-=======
 <script type="text/javascript">
 $("#calculateB").click(function() {
     $.ajax({
@@ -4001,57 +3934,55 @@ $("#calculateB").click(function() {
 </script>
 
 
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
 <!-- javascript functions for tile navigation -->
 <script>
     function viewPatients() {
         $("#viewPatient").show();  
-        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#discharge,#problem,#diagnosis").hide();   
+        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#discharge,#problem,#diagnosis,#uploads").hide();   
     }
     function caseHistory() {
         $("#caseHistory").show();
-        $("#viewPatient,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#discharge,#problem,#diagnosis").hide(); 
+        $("#viewPatient,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#discharge,#problem,#diagnosis,#uploads").hide(); 
     }
     function medication() {
         $("#medication").show();
-        $("#caseHistory,#viewPatient,#goals,#progress,#notes,#references,#cognitiveTest,#discharge,#problem,#diagnosis").hide();  
+        $("#caseHistory,#viewPatient,#goals,#progress,#notes,#references,#cognitiveTest,#discharge,#problem,#diagnosis,#uploads").hide();  
     }
     function goals() {
         $("#goals").show();
-        $("#caseHistory,#viewPatient,#medication,#progress,#notes,#references,#cognitiveTest,#discharge,#problem,#diagnosis").hide(); 
+        $("#caseHistory,#viewPatient,#medication,#progress,#notes,#references,#cognitiveTest,#discharge,#problem,#diagnosis,#uploads").hide(); 
     }
     function progress() {
         $("#progress").show();
-        $("#caseHistory,#viewPatient,#medication,#goals,#notes,#references,#cognitiveTest,#discharge,#problem,#diagnosis").hide(); 
+        $("#caseHistory,#viewPatient,#medication,#goals,#notes,#references,#cognitiveTest,#discharge,#problem,#diagnosis,#uploads").hide(); 
     }
     function notes() {
         $("#notes").show();
-        $("#caseHistory,#viewPatient,#medication,#goals,#progress,#references,#cognitiveTest,#discharge,#problem,#diagnosis").hide(); 
+        $("#caseHistory,#viewPatient,#medication,#goals,#progress,#references,#cognitiveTest,#discharge,#problem,#diagnosis,#uploads").hide(); 
     }
     function references() {
         $("#references").show();
-        $("#caseHistory,#viewPatient,#medication,#goals,#progress,#notes,#cognitiveTest,#discharge,#problem,#diagnosis").hide(); 
+        $("#caseHistory,#viewPatient,#medication,#goals,#progress,#notes,#cognitiveTest,#discharge,#problem,#diagnosis,#uploads").hide(); 
     }
     function cognitiveTest() {
         $("#cognitiveTest").show();
-        $("#caseHistory,#viewPatient,#medication,#goals,#progress,#notes,#references,#discharge,#problem,#diagnosis").hide(); 
+        $("#caseHistory,#viewPatient,#medication,#goals,#progress,#notes,#references,#discharge,#problem,#diagnosis,#uploads").hide(); 
     }
     function diagnosis() {
         $("#diagnosis").show();  
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient,#problem,#diagnosis").hide();   
-    }
-    function problem() {
-        $("#problem").show();  
-        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient,#diagnosis").hide();   
-=======
-        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient,#problem").hide();   
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php
+        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient,#problem,#uploads").hide();   
     }
     function DischargePlan() {
         $("#discharge").show();  
-        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient,#problem,#diagnosis").hide();   
+        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient,#problem,#diagnosis,#uploads").hide();   
     }
+    function UploadFiles() {
+        $("#uploads").show();  
+        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient,#problem,#diagnosis,#discharge").hide();   
+    }
+    
+    
+    
       $(document).ready(function (){
                 setInterval(getMarksB, 100);
                 setInterval(getMarksA, 100);
@@ -4086,13 +4017,9 @@ $("#calculateB").click(function() {
     });
     }
     
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_patient.php
-</script>
-=======
 </script>
 
 
 
 
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_patient.php

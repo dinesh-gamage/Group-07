@@ -218,8 +218,6 @@ class doc_model extends CI_Model{
         $query = $this->db->get('doctors');
         return $query->result();
     }
-<<<<<<< HEAD:Group-07/NiceAdmin/application/models/doc_model.php
-=======
     
     public function add_problem($data,$patient_id){
         $this->db->where('patient_id', $patient_id);
@@ -300,7 +298,8 @@ class doc_model extends CI_Model{
         $query = $this->db->get();
         return $query->result();
     }
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/models/doc_model.php
+    
+    
 }
 
 ?>

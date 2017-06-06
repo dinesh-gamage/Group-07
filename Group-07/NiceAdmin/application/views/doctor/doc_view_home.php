@@ -15,6 +15,9 @@
             redirect('/Login');
         }
     ?>
+
+
+
 <section class="wrapper">
     <div class="contentContainer">
     <!--overview start-->
@@ -26,23 +29,19 @@
                     <li><i class="fa fa-laptop"></i>All Patients</li>	
                     
                 </ol>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_home.php
-=======
                 
             </div>  
             <div class="searchDiv">
+                
                 <div class="input-group">
-                    <input type="text" class="form-control col-sm-11" placeholder="Enter Patient ID" id="patientSearch" />
+                    <input type="text" class="form-control col-sm-11" placeholder="Enter Patient ID" name="patientSearch" />
                     <div class="input-group-btn">
                         <button class="btn btn-default" id="searchButton" type="submit" >
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
                     </div>
                 </div>
-
                 
-                
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_home.php
             </div>
         </div>
 
@@ -60,15 +59,12 @@
                         <div class="text">Progressing<br> Patients</div>
                     </div>
                 </div>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_home.php
-=======
                 <div class="col-sm-2 col-icon-box "  onclick="viewDisPatients()">
                     <img src="<?php echo base_url()."asserts/images/icons/dischargd_patients.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
                     <div class="overlay">
                         <div class="text">Discharged<br> Patients</div>
                     </div>
                 </div>
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_home.php
             </div>
             <div class="col-lg-4">
                 <div class="white_back container">
@@ -138,9 +134,6 @@
                                 }
                             endforeach;
                         ?>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_home.php
-                    </div> 
-=======
                     </div>
                     
                     <div id="disPatientList" style="display: none" >
@@ -177,7 +170,6 @@
                     </div>
                     
                     
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_home.php
                 </div>
             </div>
 <!-- paging -->
@@ -473,14 +465,6 @@
 <script>
     function viewNewPatients() {
         $("#newPatientList").show();  
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/doctor/doc_view_home.php
-        $("#proPatientList").hide();   
-    }
-    function viewProPatients() {
-        $("#proPatientList").show();
-        $("#newPatientList").hide(); 
-    }
-=======
         $("#proPatientList,#disPatientList").hide();   
     }
     function viewProPatients() {
@@ -512,6 +496,5 @@
     
   
 
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/doctor/doc_view_home.php
 </script>
 <!--/section-->

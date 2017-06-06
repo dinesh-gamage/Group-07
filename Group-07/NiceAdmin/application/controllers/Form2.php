@@ -106,6 +106,6 @@ class Form2 extends CI_Controller {
 	}
 
 	public function getPage(){
-		$this->load->view('nurse/nurse_view_home.php');
+		$this->load->view('doctor/doc_view_patient.php');
 	}
 }

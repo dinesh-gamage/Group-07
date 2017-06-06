@@ -1,5 +1,5 @@
 <!-- 
-+===============================================================================================================================================+
++                                                            ===+
                                                     **********************************************
                                                         HEALTHY LIFE - CLIIC MANAGEMENT SYSTEM 
                                                     **********************************************
@@ -9,7 +9,7 @@
 |   Copyright   : Alrights Received by Healthy Life developing team of UCSC (2013/2014)
 
 
-+===============================================================================================================================================+
++                                                            ===+
 -->
 
 <!DOCTYPE html >
@@ -73,14 +73,13 @@
     </style>
     
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/main/doc_header.php
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-=======
+
 <!--    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 <!--    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>-->
     
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/main/doc_header.php
+ 
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/lib/moment.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/fullcalendar.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>scripts/fullcalendar/gcal.js"></script>
@@ -169,11 +168,7 @@
             function getnewpatient(){
                 $.ajax({
                     type: "post",
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/main/doc_header.php
                     url: "http://[::1]/project/Group-07/NiceAdmin/Header/newpatient",
-=======
-                    url: "http://[::1]/new4/NiceAdmin/Header/newpatient",
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/main/doc_header.php
                     cache: false,
                     data: {pid: "one"},
                     success: function (data) {
@@ -185,11 +180,7 @@
             function countnewpatient(){
                 $.ajax({
                     type: "post",
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/main/doc_header.php
                     url: "http://[::1]/project/Group-07/NiceAdmin/Header/count_new_patient",
-=======
-                    url: "http://[::1]/new4/NiceAdmin/Header/count_new_patient",
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/main/doc_header.php
                     cache: false,
                     data: {pid: "one"},
                     success: function (data) {
@@ -272,16 +263,16 @@
                         </ul>
                     </li>
                     <?php endforeach;?>
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/main/doc_header.php
-=======
+  
+   
                    
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/main/doc_header.php
+ 
                 </ul>
                 <!-- notificatoin dropdown end-->
             </div>
         </header>      
-<<<<<<< HEAD:Group-07/NiceAdmin/application/views/main/doc_header.php
+  
         
-=======
+   
        
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:NiceAdmin/application/views/main/doc_header.php
+ 

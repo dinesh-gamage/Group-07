@@ -1,19 +1,10 @@
 <?php
-        if (isset($this->session->userdata['logged_in'])) 
-        {
-            $username = ($this->session->userdata['logged_in']['username']);
-            $email = ($this->session->userdata['logged_in']['email']);
-            $name = ($this->session->userdata['logged_in']['name']);
-            $picture = ($this->session->userdata['logged_in']['picture']);
-            $status = ($this->session->userdata['logged_in']['status']);
-            $doctorID = ($this->session->userdata['logged_in']['doctorId']);
-            
-            if($status != 'Doctor'){
-                redirect('/Login');
-            }
-        } else{
+        
+        $status  = $this->session->userdata('status');    
+        if($status != 'Nurse'){
             redirect('/Login');
-        }
+        
+        } 
     ?>
 <!--main content start-->
 <!--section id="main-content"-->
@@ -190,7 +181,7 @@
                                                 
                                                 <div class="form-group col-sm-6">
                                                     <label for="date">Date:</label>
-                                                    <input type="text" class="form-control" name="date" value="" placeholder="Enter clinic number" readonly>
+                                                    <input type="text" class="form-control" name="date" value="" placeholder="<?php echo date('Y-m-d');?>" readonly>
                                                 </div>
                                                 <div class="form-group col-sm-6">
                                                     <label for="clno">Clinic No:</label>
@@ -292,66 +283,78 @@
                         <div class="row">
                             <div class="col-xs-6">
                                 <div class="form-group">
-                                    <div class="row"><div class="col-xs-11"><input type="text" class="form-control" id="pname" name="pname" placeholder="Patient Name" required></div><div class="col-xs-1"><span style="color:red;">*</span></div></div>
+                                    <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11"><input type="text" class="form-control" id="pname" name="pname" placeholder="Patient Name" required></div></div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="row"><div class="col-xs-11"><input type="text" class="form-control" id="age" name="age" placeholder="Patient Age" required></div><div class="col-xs-1"><span style="color:red;">*</span></div></div>
+                                    <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11"><input type="text" class="form-control" id="age" name="age" placeholder="Patient Age" required></div></div>
                                 </div>
                                 <div class="form-group">
                                      <div id="checkage"></div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="row"><div class="col-xs-11"><input type="text" class="form-control" id="dob" onfocus="(this.type='date')" name="dob"  placeholder="Date Of Birth" required></div><div class="col-xs-1"><span style="color:red;">*</span></div></div>
+                                    <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11"><input type="text" class="form-control" id="dob" onfocus="(this.type='date')" name="dob"  placeholder="Date Of Birth" required></div></div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="row"><div class="col-xs-11"><input type="text" class="form-control" id="tel" name="tel" placeholder="Phone Number" required></div><div class="col-xs-1"><span style="color:red;">*</span></div></div>
+                                    <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11"><input type="text" class="form-control" id="tel" name="tel" placeholder="Phone Number" required></div></div>
                                 </div>
                                 <div class="form-group">
                                     <div id="checktel"></div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="row"><div class="col-xs-11"><input type="text" class="form-control" id="lan" name="lan"  placeholder="Language" required></div><div class="col-xs-1"><span style="color:red;">*</span></div></div>
+                                    <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11">
+                                    <select id="lan" name="lan" class="form-control" >
+                                            <option value="0" name="lan">Sinhala</option>
+                                            <option value="1" name="lan">Tamil</option>
+                                            <option value="2" name="lan">English</option>
+                                    </select>
+                                    </div></div>
                                 </div>
                                 <div class="form-group select" required>
-                                    <div class="row"><div class="col-xs-11">
+                                    <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11">
                                         <select name="gender" id="gender" class="form-control" >
                                             <option value="0" name="gender">Female</option>
                                             <option value="1" name="gender">Male</option>
                                         </select>
-                                    </div><div class="col-xs-1"><span style="color:red;">*</span></div></div>    
+                                    </div></div>    
                                 </div>
+                                <br/>
                                 <div class="form-group">
-                                    <div class="row"><div class="col-xs-11"><input type="text" class="form-control" id="sch" name="sch" placeholder="School" required></div><div class="col-xs-1"><span style="color:red;">*</span></div></div>
+                                    <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11"><input type="text" class="form-control" id="sch" name="sch" placeholder="School" required></div></div>
                                 </div>
                             </div>
                             <div class="col-xs-6">
                                 <div class="form-group">
-                                    <div class="row"><div class="col-xs-11"><input type="text" class="form-control" id="gur" name="gur" placeholder="Guardian Name" required></div><div class="col-xs-1"><span style="color:red;">*</span></div></div>
+                                    <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11"><input type="text" class="form-control" id="gur" name="gur" placeholder="Guardian Name" required></div></div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="row"><div class="col-xs-11"><input type="text" class="form-control" id="rel" name="rel" placeholder="Relationship" required></div><div class="col-xs-1"><span style="color:red;">*</span></div></div>
+                                    <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11"><input type="text" list="gar" class="form-control" id="rel" name="rel" placeholder="Relationship" required>
+                                      <datalist id="gar">
+                                        <option value="Father">
+                                        <option value="Mother">
+                                      </datalist>
+                                    </div></div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="row"><div class="col-xs-11"><input type="text" class="form-control" id="ref" name="ref" placeholder="Referred By" required></div><div class="col-xs-1"><span style="color:red;">*</span></div></div>
+                                    <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11"><input type="text" class="form-control" id="ref" name="ref" placeholder="Referred By" required></div></div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="row"><div class="col-xs-11"><input type="password" class="form-control" id="pass" name="pass" placeholder="Password" required></div><div class="col-xs-1"><span style="color:red;">*</span></div></div>
+                                    <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11"><input type="password" class="form-control" id="pass" name="pass" placeholder="Password" required></div></div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="row"><div class="col-xs-11"><input type="password" class="form-control" id="cpass" name="cpass" placeholder="Confirm Password" required></div><div class="col-xs-1"><span style="color:red;">*</span></div></div>
+                                    <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11"><input type="password" class="form-control" id="cpass" name="cpass" placeholder="Confirm Password" required></div></div>
                                 </div>
                                 <div class="form-group">
                                     <div id="checkpass"></div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="row"><div class="col-xs-11"><input type="text" class="form-control" id="div" name="div" placeholder="Divisional Secretariet" required></div><div class="col-xs-1"><span style="color:red;">*</span></div></div>
+                                    <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11"><input  type="text" class="form-control" id="div" name="div" placeholder="Divisional Secretariet" required value="Karapitiya"></div></div>
                                 </div>
                                 <div class="form-group" hidden="hidden">
-                                    <div class="row"><div class="col-xs-11"><input type="text" readonly class="form-control" id="date" name="date" placeholder=""  value="<?php echo date('Y-m-d');?>" required></div><div class="col-xs-1"><span style="color:red;">*</span></div></div>
+                                    <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11"><input type="text" readonly class="form-control" id="date" name="date" placeholder=""  value="<?php echo date('Y-m-d');?>" required></div></div>
                                 </div>
+                                <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11"><textarea class="form-control" id="address" name="address" rows="2" placeholder="Address"></textarea></div></div>
                             </div>
                         </div>
-                        <div class="row"><div class="col-xs-11"><textarea class="form-control" id="address" name="address" rows="2" placeholder="Address"></textarea></div><div class="col-xs-1"><span style="color:red;">*</span></div></div>
                         </br>
                         <div class="text-center" id="messagereg"></div>
                         <div class="row"><button type="submit" style="float: right;margin-right: 50px;" id="register_btn" class="btn btn-primary">Register</button></div>
@@ -373,12 +376,7 @@
                         <div class="text">Register</div>
                     </div>
                 </div>
-                <div class="col-sm-2 col-icon-box "  onclick="caseHistory()">
-                    <img src="<?php echo base_url()."asserts/images/icons/medical_history_icon.jpg"; ?>" class="img-thumbnail" width="100px" height="100px" />
-                    <div class="overlay">
-                        <div class="text">Case History</div>
-                    </div>
-                </div>
+                
                 <div class="col-sm-2 col-icon-box "  onclick="references()">
                     <img src="<?php echo base_url()."asserts/images/icons/reference_letters.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
                     <div class="overlay">
@@ -672,7 +670,7 @@
             var page =  $('#age').val();
             var pdob =  $('#dob').val();
             var ptel =  $('#tel').val();
-            var plan =  $('#lan').val();
+            var plan =  $( "#lan option:selected" ).val();
             var psch =  $('#sch').val();
             var pgur =  $('#gur').val();
             var prel =  $('#rel').val();
