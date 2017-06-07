@@ -292,9 +292,11 @@ border-radius: 20px;
                                                         <h3 class="text-center">Family and Medical History</h3><hr>
                                                             
                                                         <?php
+                                                            $familyCount = 0;
                                                             foreach ($getFamily as $familyHistory):
                                                                 if($patient_id == $familyHistory->patient_id)
                                                                 {
+                                                                    $familyCount += 1;
                                                         ?>  
 
                                                                     <table class="table table-condensed table-bordered"> <!-- family history -->
@@ -409,9 +411,17 @@ border-radius: 20px;
                                                                         </tr>
                                                                     </table>
                                                         <?php 
-                                                            }
+                                                            }else{
+                                                                    $familyCount += 0;
+                                                                }
 
                                                             endforeach;
+                                                            if($familyCount = 0){
+                                                                echo "<div class=\"alert warning\">";
+                                                                    echo "<span class=\"closebtn\">&times;</span>";  
+                                                                        echo "Family History has not been observed yet.";
+                                                                echo "</div>";
+                                                            }
                                                         ?>
                                                              
                                                     </div>
@@ -423,9 +433,11 @@ border-radius: 20px;
                                                         <h3 class="text-center">Communication Skills</h3><hr>
                                                             
                                                         <?php
+                                                            $comCount = 0;
                                                             foreach ($getComm as $communication):
                                                                 if($patient_id == $communication->patient_id)
                                                                 {
+                                                                    $comCount+= 1;
                                                         ?>
                                                                     <table class="table table-condensed table-bordered " >
 
@@ -629,8 +641,16 @@ border-radius: 20px;
                                                                     </table>
 
                                                         <?php 
-                                                            }
+                                                            }else{
+                                                                    $comCount+=0;
+                                                                }
                                                             endforeach;
+                                                        if($comCount = 0){
+                                                                echo "<div class=\"alert warning\">";
+                                                                    echo "<span class=\"closebtn\">&times;</span>";  
+                                                                        echo "Family History has not been observed yet.";
+                                                                echo "</div>";
+                                                            }
                                                         ?>
                                                             
                                                     </div>
@@ -845,9 +865,11 @@ border-radius: 20px;
                                                 <h3 class="success text-center">Diagnosis</h3><hr>
                                                 
                                             <?php
+                                                $diagCount =0;
                                                 foreach ($getDiagnosis as $diagnosis):
                                                     if($patient_id == $diagnosis->patient_id)
                                                     {
+                                                    $diagCount +=1;
                                             ?>
                                                 <p><?php echo $diagnosis->diagnosis; ?> </p>
                                                     
@@ -860,7 +882,16 @@ border-radius: 20px;
                                                         </table>
 
                                             <?php 
-                                                }endforeach;
+                                                }else{
+                                                        $diagCount+=0;
+                                                    }
+                                                endforeach;
+                                                if($diagCount == 0){
+                                                    echo "<div class=\"alert warning\">";
+                                                    echo "Diagnosis has not been identified yet.";
+                                                    echo "</div>";
+                                                }                                                         
+
                                             ?>
                                                 </div>
                                                 
@@ -870,9 +901,11 @@ border-radius: 20px;
                                                 <h3 class="success text-center">Problem</h3><hr>
                                                 
                                             <?php
+                                                $problemCount = 0;
                                                 foreach ($getDiagnosis as $problems):
                                                     if($patient_id == $problems->patient_id)
                                                     {
+                                                        $problemCount +=1; 
                                             ?>
                                                 <p><?php echo $problems->problem; ?></p>
                                                         <table class="table table-condensed table-bordered">
@@ -884,7 +917,15 @@ border-radius: 20px;
                                                         </table>
 
                                             <?php 
-                                                }endforeach;
+                                                }else{
+                                                        $problemCount+=0;
+                                                    }
+                                                endforeach;
+                                                if($problemCount == 0){
+                                                    echo "<div class=\"alert warning\">";
+                                                    echo "Problem has not been identified yet.";
+                                                    echo "</div>";
+                                                } 
                                             ?>
                                                 </div>
                                             
@@ -1103,9 +1144,11 @@ border-radius: 20px;
                         <h3 class="success text-center">Diagnosis</h3><hr>
                             <div id="diagnosis_table">
                         <?php
+                                
                             foreach ($getDiagnosis as $diagnosis):
                                 if($patient_id == $diagnosis->patient_id)
                                 {
+                                    
                         ?>
                                 <p><?php echo $diagnosis->diagnosis; ?></p> 
                                                     
@@ -3741,6 +3784,16 @@ border-radius: 20px;
                         <div class="text">Upload<br/> Records</div>
                     </div>
                 </div>
+                <a target="_blank" href="<?php echo base_url()."Game"; ?> ">
+                <div class="col-sm-2 col-icon-box ">
+                    
+                        <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    
+                    <div class="overlay">
+                        <div class="text">Activities</div>
+                    </div>
+                </div>
+                </a>
                 
                 
             </div>
