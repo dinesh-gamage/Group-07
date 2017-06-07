@@ -31,6 +31,7 @@ class NurseProfile extends CI_Controller {
 
 	public function index()
 	{
+        $this->load->model('register_doctor_model');
         $data1['nur_data'] = $this->profilemodel->get_nur_data();
         $nurDetails ['records'] = $this->profilemodel->get_nur_data();
         $currpass = $this->input->post('curpass');
@@ -61,14 +62,14 @@ class NurseProfile extends CI_Controller {
                 $this->email = $_POST['email'];
             }
             if(isset($_FILES['userfile'])){
-//                $img_data = $this->register_nurtor_model->do_upload();
-//                $this->image = $img_data['file_name'];
+               $img_data = $this->register_doctor_model->do_upload();
+               $this->image = $img_data['file_name'];
             }
 
 
             if($this->nur_name!="" && $this->contact!="" && $this->email!="" &&  $this->nur_pass!=""){
                 if($this->image!=""){
-                    $this->profilemodel->update_nur1($this->nur_name,$this->nur_pass,$this->contact ,$this->email);
+                    $this->profilemodel->update_nur1($this->nur_name,$this->nur_pass,$this->contact ,$this->email,$this->image);
                     redirect(base_url('nurseProfile'));
                 }else{
                     $this->profilemodel->update_nur2($this->nur_name,$this->nur_pass,$this->contact ,$this->email);
@@ -77,7 +78,7 @@ class NurseProfile extends CI_Controller {
 
             }if($this->nur_name!="" && $this->contact!="" && $this->email!=""){
                 if($this->image!=""){
-                    $this->profilemodel->update_nur3($this->nur_name,$this->contact ,$this->email);
+                    $this->profilemodel->update_nur3($this->nur_name,$this->contact ,$this->email,$this->image);
                     redirect(base_url('nurseProfile'));
                 }else{
                     $this->profilemodel->update_nur4($this->nur_name,$this->contact ,$this->email);

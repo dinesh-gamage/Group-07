@@ -728,22 +728,6 @@ class DoctorView extends CI_Controller {
         }
         
     }
-    public function getGraphData(){
-        $this->load->model('graphData');
-        if(isset($_POST['graph'])){
-            $dates = $this->graphData->getDates();
-            foreach($dates as $d){
-                $graphRes = $this->graphData->getGraphData($d);
-                echo json_encode($graphRes);
-                
-            }
-            
-            
-            
-        }
-        
-        
-    }
     
     public function add_diagnosis(){
         $patient_id = $this->input->post('patientid');
@@ -906,11 +890,122 @@ class DoctorView extends CI_Controller {
             $this->load->view('doctor/doc_view_patient',$data);
         }
     }
- 
+     public function getGraphData(){
+        $this->load->model('graphData');
+        if(isset($_POST['graph'])){
+            $dates = $this->graphData->getDates();
+            foreach($dates as $d){
+                $graphRes = $this->graphData->getGraphData($d);
+                echo json_encode($graphRes);
+                
+            }
+            
+            
+            
+        }
+        
+        
+    }
+   
     
    public function search(){
         if(isset($_POST['searchitem'])){
-            
+            $res = "";
+            $s_item = $_POST['searchitem'];
+            $search = $this->doc_model->searchPatient($s_item );
+            if($search != null){
+                foreach ($search as $searchres) {
+                    if($searchres->status == '0'){
+                        $res = '
+                                    <div id="">
+                                            <h4 class="text-center">Search  Results</h4><hr>
+                                                <form name="myform" id="myform" action="'.base_url().'/DoctorView/getPatient/" method="post">
+                                                    <input type="hidden" name="patientid" id="id" value="'.$searchres->patient_id.'" />
+                                                    <div class="patient">
+                                                        <div class="col-lg-8">
+                                                                <div class=\"col-sm-8 padding10top\">
+                                                                     '.$searchres->patient_name.'
+                                                                </div>
+                                                                
+                                                                <div class=\"col-sm-4 padding10top\">
+                                                                     '.$searchres->regitration_date.'
+                                                                </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <button type="button" class="btn btn-info" onclick="javascript: submit()" >View</button>
+                                                        </div>
+                                                    </div>                                    
+                                                </form>
+                                    </div>   
+
+
+
+                                ';
+                    }else if($searchres->status == '1'){
+
+                         $res = '
+                                    <div id="">
+                                            <h4 class="text-center">Search  Results</h4><hr>
+                                                <form name="myform" id="myform" action="'.base_url().'/DoctorView/getPatient/" method="post">
+                                                    <input type="hidden" name="patientid" id="id" value="'.$searchres->patient_id.'" />
+                                                    <div class="patient">
+                                                        <div class="col-lg-8">
+                                                                <div class=\"col-sm-8 padding10top\">
+                                                                     '.$searchres->patient_name.'
+                                                                </div>
+                                                                
+                                                                <div class=\"col-sm-4 padding10top\">
+                                                                     '.$searchres->regitration_date.'
+                                                                </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <button type="button" class="btn btn-success" onclick="javascript: submit()" >View</button>
+                                                        </div>
+                                                    </div>                                    
+                                                </form>
+                                    </div>   
+
+
+
+                                ';
+
+
+                    }else{
+
+                         $res = '
+                                    <div id="">
+                                            <h4 class="text-center">Search  Results</h4><hr>
+                                                <form name="myform" id="myform" action="'.base_url().'/DoctorView/getPatient/" method="post">
+                                                    <input type="hidden" name="patientid" id="id" value="'.$searchres->patient_id.'" />
+                                                    <div class="patient">
+                                                        <div class="col-lg-8">
+                                                                <div class=\"col-sm-8 padding10top\">
+                                                                     '.$searchres->patient_name.'
+                                                                </div>
+                                                                
+                                                                <div class=\"col-sm-4 padding10top\">
+                                                                     '.$searchres->regitration_date.'
+                                                                </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <button type="button" class="btn btn-default" onclick="javascript: submit()" >View</button>
+                                                        </div>
+                                                    </div>                                    
+                                                </form>
+                                    </div>   
+
+
+
+                                ';
+
+                        
+                    }        
+
+                    echo $res;    
+                }
+            }else{
+                echo "false";
+            }    
         }
 
    }

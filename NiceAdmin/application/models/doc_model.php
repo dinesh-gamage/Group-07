@@ -299,6 +299,14 @@ class doc_model extends CI_Model{
         return $query->result();
     }
     
+    public function searchPatient($s_item ){
+        $this->db->select('*');
+        $this->db->where('patient_id',$s_item);
+        $query = $this->db->get('patient_register');
+        return $query->result();
+
+
+    }
     
 }
 

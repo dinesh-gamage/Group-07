@@ -24,6 +24,82 @@
         <div class="row">
             <!--calender -->
             <div class="col-lg-8">
+            	<div class="row">
+            		<div class="col-lg-12" >
+		            	<div id="staicReport" style="display: none" >
+		                	<ul class="nav nav-pills nav-justified">
+			                    <li class="active"><a data-toggle="pill" href="#diagnos">Diagnosis</a></li>
+			                    <li><a data-toggle="pill" href="#visit">Patient Visit</a></li>
+			                    <li><a data-toggle="pill" href="#">Total Attendance</a></li>
+			                    <li><a data-toggle="pill" href="#">New Registrants</a></li>
+			                </ul>
+
+		                    <?php $months = array('January','February','March','Aprail','May','June','July','Auguest','September','October','November','December');?>
+		                    <div class="tab-content">
+			                    <div id="diagnos" class="tab-pane fade in active">
+			                        <div class="white_back" style="overflow-x:auto; ">
+			                        	<div class="table-responsive" >
+				                        	<table class="table "  >
+												  <thead>
+												    <tr>
+												      <th>No</th>
+												      <th>Month</th>
+												      <th>ASD</th>
+												      <th>ODD</th>
+												      <th>ADHD</th>
+												      <th>SDLSS</th>
+												      <th>OCD</th>
+												      <th>PTSD</th>
+												      <th>Depression</th>
+												      <th>GAD</th>
+												      <th>Adjustment Disorder</th>
+												      <th>Acute Stress Disorder</th>
+												      <th>MR</th>
+												      <th>Conduct Disorder</th>
+												      <th>Disosiative Disorder</th>
+												      <th>Non Organic Enuresis</th>
+												      <th>Somatization Disorder</th>
+												      <th>Selective Mutism</th>
+												      <th>Reactive Attachment Disorder</th>
+												      <th>Tie Disorder</th>
+												      <th>Panic Disorder</th>
+												      <th>Separation Ansiety Disorder</th>
+												      <th>Mental Behavioural Disorder</th>
+												      <th>Phychotic Disorder</th>
+												      <th>No Mental illness</th>
+												      <th>Expressive Language Difficult Disorder</th>
+												      <th>Total</th>
+												    </tr>
+												  </thead>
+
+												  <tbody>
+												  	<?php for($m=0;$m<sizeof($months);$m++){
+												  	?>
+												    <tr>
+												      <th scope="row"><?php echo $m+1?></th>
+												      <td><?php echo $months[$m];?></td>
+												    </tr>
+												   <?php };?>
+												   	<tr>
+												      <th scope="row"></th>
+												      <td>Total</td>
+												    </tr>
+												  </tbody>
+											</table>
+										</div>
+			                        </div>
+			                    </div>
+
+
+			                    <div id="visit" class="tab-pane  ">
+			                        <div class="white_back"></div>
+			                    </div>        
+		                	</div>
+		                </div>
+			        </div>
+			    </div>       
+
+
                 <div id="cala" >
                     <div class="form-group" style="float:right ;margin-top: -8px;" >
                         <form class="navbar-form">
@@ -360,6 +436,10 @@
                         <div class="row"><button type="submit" style="float: right;margin-right: 50px;" id="register_btn" class="btn btn-primary">Register</button></div>
                     </div>
                 </div>
+
+                
+
+
               </div>
         
             <!--menu -->
@@ -387,6 +467,12 @@
                     <img src="<?php echo base_url()."asserts/images/icons/quiz.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
                     <div class="overlay">
                         <div class="text">Cognitive <br/>Test</div>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-icon-box " onclick="staticReport()">
+                    <img src="<?php echo base_url()."asserts/images/icons/report_icon.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    <div class="overlay">
+                        <div class="text">Static <br/> Reports</div>
                     </div>
                 </div>
             </div>
@@ -566,21 +652,25 @@
 <script>
     function calendar(){
         $("#cala").show();  
-        $("#references,#cognitiveTest,#register,#caseHistory").hide();   
+        $("#references,#cognitiveTest,#register,#staicReport").hide();   
     }
     
     function references(){
         $("#references").show();  
-        $("#cala,#cognitiveTest,#register,#caseHistory").hide();   
+        $("#cala,#cognitiveTest,#register,#staicReport").hide();   
         
     }
     function cognitiveTest(){
         $("#cognitiveTest").show();  
-        $("#cala,#references,#register,#caseHistory").hide();   
+        $("#cala,#references,#register,#staicReport").hide();   
     }
     function registerPatients(){
         $("#register").show();  
-        $("#cala,#cognitiveTest,#references,#caseHistory").hide();   
+        $("#cala,#cognitiveTest,#references,#staicReport").hide();   
+    }
+    function staticReport(){
+        $("#staicReport").show();  
+        $("#cala,#cognitiveTest,#references,#register").hide();   
     }
     
     

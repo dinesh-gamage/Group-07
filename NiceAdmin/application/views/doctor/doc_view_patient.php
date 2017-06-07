@@ -2888,7 +2888,7 @@ border-radius: 20px;
                             }
                             function getGraphData(){
                                 $.ajax({
-                                    url: 'http://[::1]/project/Group-07/NiceAdmin/DoctorView/getGraphData/',
+                                    url: 'http://[::1]/new4/NiceAdmin/DoctorView/getGraphData/',
                                     type: "POST",
                                     data: {graph:"graph"},
                                     success: function(one) {

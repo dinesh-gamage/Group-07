@@ -117,7 +117,7 @@
                                       );
                                       $imageprop = array(
                                           'id'=>'browse',
-                                          'name'=>'userfile'
+                                          'name'=>'userfile',
                                       );
                                       $imag_function = 'onChange="previewFile()"';
 
@@ -170,7 +170,7 @@
                                               <?php echo form_label('Profile Image','',$lable)?>
                                               <div class="col-lg-6">
 
-                                                  <img src="" id="bro_img" class="img-responsive" style="height:100px;width:150px;border: 1px solid gray" />
+                                                  <img src="<?php echo $row->nur_image ;?>" id="bro_img" class="img-responsive" style="height:100px;width:150px;border: 1px solid gray" />
                                                   <br/>
                                                   <?php echo  form_upload($imageprop,'',$imag_function);?>
                                               </div>

@@ -190,7 +190,7 @@
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="" class="img-responsive" style="height:40px;width: 40px;">
+                                <img alt="" src="<?php echo base_url($nur_row->nur_image);?>" class="img-responsive" style="height:40px;width: 40px;">
                             </span>
                             <span class="username"><?php echo $nur_row->nurse_name?></span>
                             <b class="caret"></b>

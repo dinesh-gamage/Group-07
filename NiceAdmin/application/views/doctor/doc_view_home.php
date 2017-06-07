@@ -31,8 +31,10 @@
                 </ol>
                 
             </div>  
-            <div class="searchDiv">
-                
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-lg-offset-8">
+              <div class="searchDiv">
                 <div class="input-group">
                     <input type="text" class="form-control col-sm-11" placeholder="Enter Patient ID" name="patientSearch" id="patientSearch" />
                     <div class="input-group-btn">
@@ -42,9 +44,9 @@
                     </div>
                 </div>
                 
-            </div>
+            </div>  
+          </div>
         </div>
-
         <div class="row">
             <div class="col-lg-2">
                 <div class="col-sm-2 col-icon-box " onclick="viewNewPatients()" >
@@ -69,8 +71,10 @@
             <div class="col-lg-4">
                 <div class="white_back container">
                     <div id="searchResults">
-                        
+                        <div class="text-center"><span style="color: red" id="searchNoResults"></span> </div>
                     </div>
+                    <br/>
+                    <hr/>
                     <div id="newPatientList">
                         <h4 class="text-center">New Patients</h4><hr>
                          <?php
@@ -485,8 +489,12 @@
          url: 'http://[::1]/project/Group-07/NiceAdmin/DoctorView/search',
          type: "POST",
          data: {searchitem:search},
-         success: function(rep) {
-            alert("one");
+         success: function(data) {
+            if(data.trim() != "false"){
+                $('#searchResults').html(data);
+            }else{
+                $('#searchNoResults').html("There are no patients with "+ search +" PatientId");
+            }
          }
       });
 
