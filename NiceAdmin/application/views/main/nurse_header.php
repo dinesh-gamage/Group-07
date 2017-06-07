@@ -150,12 +150,9 @@
     <!-- container section start -->
     <section id="container" class="">
         <header class="header dark-bg">
-            <div class="toggle-nav">
-                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
-            </div>
 
             <!--logo start-->
-            <a href="<?php echo base_url()."Index1"?>" class="logo">Healthy<span class="lite">Life</span></a>
+            <a href="<?php echo base_url()."NurseView"?>" class="logo">Healthy<span class="lite">Life</span></a>
             <!--logo end-->
 
             <div class="nav search-row" id="top_menu">
