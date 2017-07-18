@@ -8,8 +8,8 @@
                     <div class="book-form">
                         <div class="row">
                             <div class="col-xs-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="pname" name="pname" placeholder="Patient Name" required="required">
+                                <div class="form-group" >
+                                    <input type="text" class="form-control" id="pname" name="pname" placeholder="Patient Name" >
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="age" name="age" placeholder="Patient Age" required>
@@ -27,24 +27,33 @@
                                     <div id="checktel"></div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="lan" name="lan"  placeholder="Language" required>
+                                    <select id="lan" name="lan" class="form-control" >
+                                            <option value="Sinhala" name="lan">Sinhala</option>
+                                            <option value="Tamil" name="lan">Tamil</option>
+                                            <option value="English" name="lan">English</option>
+                                    </select>
                                 </div>
                                 <div class="form-group select" required>
                                     <select name="gender" id="gender">
-                                        <option value="0" name="gender">Female</option>
-                                        <option value="1" name="gender">Male</option>
+                                        <option value="Female" name="gender">Female</option>
+                                        <option value="Male" name="gender">Male</option>
                                     </select>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="sch" name="sch" placeholder="School" required>
-                                </div>
+                                
                             </div>
                             <div class="col-xs-6">
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="gur" name="gur" placeholder="Guardian Name" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="rel" name="rel" placeholder="Relationship" required>
+                                    <input type="text" list="gar" class="form-control" id="rel" name="rel" placeholder="Relationship" required>
+                                      <datalist id="gar">
+                                        <option value="Father">
+                                        <option value="Mother">
+                                      </datalist>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="sch" name="sch" placeholder="School" required>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="ref" name="ref" placeholder="Referred By" required>
@@ -58,11 +67,11 @@
                                 <div class="form-group">
                                     <div id="checkpass"></div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="div" name="div" placeholder="Divisional Secretariet" required>
+                                <div class="form-group" hidden>
+                                    <input  type="text" class="form-control" id="div" value="Karapitiya" name="div" placeholder="Divisional Secretariet" >
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" readonly class="form-control" id="date" name="date" placeholder=""  value="<?php echo date('Y-m-d');?>" required>
+                                <div class="form-group" hidden>
+                                    <input type="text"  class="form-control" id="date" name="date" placeholder=""  value="<?php echo date('Y-m-d');?>" >
                                 </div>
                                 <!--div class="form-group">
                                     <input type="text" class="form-control date-pick" id="appointmentdate" name="appointmentdate" placeholder="Appointment Date" required>
@@ -71,7 +80,7 @@
                         </div>
                         <textarea class="form-control" id="address" name="address" rows="2" placeholder="Address"></textarea>
                         <button type="submit" id="register_btn" class="btn btn-default">Send Your Request</button>
-                        <h4><div class="text-center" id="messagereg"></div></h4>
+                    <div class="text-center" id="messagereg"></div>
                     </div>
                 </div>
                 </div>
@@ -84,7 +93,7 @@
         $('#cpass').keyup(function(){
             if($(this).val()== $('#pass').val()){
                 document.getElementById('register_btn').disabled = false ;
-                $('#checkpass').html('matching!!!').css('color', 'green');
+                $('#checkpass').html('Matching!!!').css('color', 'green');
             }else{
                 document.getElementById('register_btn').disabled = true ;
                 $('#checkpass').html('not matching with password!!!').css('color', 'red');
@@ -96,7 +105,7 @@
             var reg = /^[1-9]{0,3}$/;
             if(!(reg.test($(this).val()))){
                 document.getElementById('register_btn').disabled = true ;
-                $('#checkage').html('this is not valid').css('color', 'red');
+                $('#checkage').html('Please Enter Valid Age').css('color', 'red');
             }else{
                 document.getElementById('register_btn').disabled = false ;
                 $('#checkage').html('');
@@ -114,16 +123,17 @@
                 document.getElementById('register_btn').disabled = true ;
             }else{
                 document.getElementById('register_btn').disabled = true ;
-                $('#checktel').html('this is not valid').css('color', 'red');
+                $('#checktel').html('Please Enter a Valid Contact Number').css('color', 'red');
             }
         });
 
         $('#register_btn').click(function(){
+
             var pname =  $('#pname').val();
             var page =  $('#age').val();
             var pdob =  $('#dob').val();
             var ptel =  $('#tel').val();
-            var plan =  $('#lan').val();
+            var plan =  $( "#lan option:selected" ).val();
             var psch =  $('#sch').val();
             var pgur =  $('#gur').val();
             var prel =  $('#rel').val();
@@ -133,14 +143,10 @@
             var pdate =  $('#date').val();
             var paddre =  $('#address').val();
             var pgen =  $( "#gender option:selected" ).val();
-
+            
             $.ajax({
                 type: "post",
-<<<<<<< HEAD:Group-07/Healthy_life/application/views/patientregistration.php
                 url: "http://[::1]/project/Group-07/Healthy_life/Register/reg_patient/",
-=======
-                url: "http://[::1]/new4/Healthy_life/Register/reg_patient/",
->>>>>>> dd9595d42c59244d49c19c907f9097501ce54ea5:Healthy_life/application/views/patientregistration.php
                 cache: false,
                 data: {regbtn: "regbtn",pname:pname,age:page,dob:pdob,tel:ptel,lan:plan,gender:pgen,sch:psch,address:paddre,gur:pgur,rel:prel,ref:pref,pass:ppass,div:pdiv,date:pdate},
                 success: function (data) {
@@ -166,6 +172,7 @@
                         setTimeout(function() {
                             $("#checkpass").hide('blind', {}, 0)
                         }, 0);
+                        
                     }else{
                         $('#pname').val("");
                         $('#age').val("");
@@ -188,10 +195,12 @@
                         setTimeout(function() {
                             $("#checkpass").hide('blind', {}, 0);
                         }, 0);
+
                     }
                 }
 
             });
+            
 
         });
 

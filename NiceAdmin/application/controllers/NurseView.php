@@ -983,11 +983,18 @@ class NurseView extends CI_Controller {
     public function patientSearch(){
         $patient_id = $this->input->post('id');
         
-
-        
                 echo 
                  '<div class="correct">'.$patient_id.'</div>';
             
+    }
+    public function getAge(){
+        if(isset($_POST['pati'])){
+            $pati = $_POST['pati'];
+            $patiAge = $this->doc_model->getAge($pati);
+            foreach ($patiAge as $pat) {
+                echo $pat->age;
+            }
+        }
     }
 
 

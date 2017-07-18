@@ -8,16 +8,14 @@
 
 
 class GraphData extends CI_Model{
-    public function getDates(){
-        $patient = $this->session->userdata('patient_sess');
-        $doctor = $this->session->userdata('doc_sess');
-        $query1 = $this->db->query('SELECT DISTINCT date FROM patient_goal WHERE patient_id="PID_A003"  AND doc_name="Prasad Samaradiwakara" ');
+    public function getDates($doctor,$patient){
+        $query1 = $this->db->query('SELECT DISTINCT date FROM patient_goal WHERE patient_id="'.$patient.'"   AND doc_name="'.$doctor.'" ');
         return $query1->result();
     }
     
-    public function getGraphData($q1){
+    public function getGraphData($q1,$doctor,$patient){
            
-           $query2 = $this->db->query('SELECT * FROM patient_goal WHERE date="'.$q1->date.'" AND patient_id="PID_A003"   AND doc_name="Prasad Samaradiwakara"  GROUP BY  goal,date ORDER BY date ');
+           $query2 = $this->db->query('SELECT * FROM patient_goal WHERE date="'.$q1->date.'" AND patient_id="'.$patient.'"   AND doc_name="'.$doctor.'"  GROUP BY  goal,date ORDER BY date ');
            return $query2->result();
        
         

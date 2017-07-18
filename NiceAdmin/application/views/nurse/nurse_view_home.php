@@ -245,6 +245,7 @@
                                             <h2 class="text-center">Reference form</h2><hr>
                                             <div class="row">
                                                 <div class="col-sm-4">
+
                                                     <select  class="form-control"id="patientrefId" >
                                                         <?php foreach($patients as $pat):?>
                                                         <option   value="<?php echo $pat->patient_id;?>"><?php echo $pat->patient_name;?></option>
@@ -269,7 +270,7 @@
                                                 </div>
                                                 <div class="form-group col-sm-6">
                                                     <label for="age">Age:</label>
-                                                    <input type="text" class="form-control" name="age" value="" placeholder="Enter Age">
+                                                    <input type="text" class="form-control" id="refAge" name="age" value="" placeholder="Enter Age">
                                                 </div>
                                                 
                                                 <div class="form-group">
@@ -309,9 +310,9 @@
                                 </div>
                                 <input type="hidden"  value="" />
                                 <div class="col-sm-4">
-                                    <select  class="form-control" id="patientcogid" required name="patientid" >
+                                    <select   id="patientcogid" required name="patientid" class="form-control" >
                                         <?php foreach($patients as $pat):?>
-                                        <option   value="<?php echo $pat->patient_id;?>"><?php echo $pat->patient_name;?></option>
+                                        <option   value="<?php echo $pat->patient_id;?>"><?php echo $pat->patient_name?></option>
                                         <?php endforeach;?>
                                     </select>
                                 </div>
@@ -379,17 +380,17 @@
                                 <div class="form-group">
                                     <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11">
                                     <select id="lan" name="lan" class="form-control" >
-                                            <option value="0" name="lan">Sinhala</option>
-                                            <option value="1" name="lan">Tamil</option>
-                                            <option value="2" name="lan">English</option>
+                                            <option value="Sinhala" name="lan">Sinhala</option>
+                                            <option value="Tamil" name="lan">Tamil</option>
+                                            <option value="English" name="lan">English</option>
                                     </select>
                                     </div></div>
                                 </div>
                                 <div class="form-group select" required>
                                     <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11">
                                         <select name="gender" id="gender" class="form-control" >
-                                            <option value="0" name="gender">Female</option>
-                                            <option value="1" name="gender">Male</option>
+                                            <option value="Female" name="gender">Female</option>
+                                            <option value="Male" name="gender">Male</option>
                                         </select>
                                     </div></div>    
                                 </div>
@@ -713,8 +714,19 @@
     function setRefName(){
         $('#refer').val($( "#patientrefId option:selected" ).text());
     }
+
     $('#patientrefId').on('change',function(){
         setRefName();
+        var p = $( "#patientrefId option:selected" ).text(); 
+        $.ajax({
+            type: "post",
+            url: "http://[::1]/project/Group-07/NiceAdmin/NurseView/getAge/",
+            cache: false,
+            data: {pati:p},
+            success: function (data) {
+                $('#refAge').val(data.trim())
+            }
+        });
     });
     
 </script>
@@ -724,7 +736,7 @@
         //validate password and confirm password
         $('#cpass').keyup(function(){
             if($(this).val()== $('#pass').val()){
-                $('#checkpass').html('matching!!!').css('color', 'green');
+                $('#checkpass').html('Matching!!!').css('color', 'green');
             }else{
                 document.getElementById('register_btn').disabled = true ;
                 $('#checkpass').html('not matching with password!!!').css('color', 'red');
@@ -736,7 +748,7 @@
             var reg = /^[1-9]{0,3}$/;
             if(!(reg.test($(this).val()))){
                 document.getElementById('register_btn').disabled = true ;
-                $('#checkage').html('this is not valid').css('color', 'red');
+                $('#checkage').html('Please Enter a Valid Age').css('color', 'red');
             }else{
                 $('#checkage').html('');
             }
@@ -752,7 +764,7 @@
                 document.getElementById('register_btn').disabled = true ;
             }else{
                 document.getElementById('register_btn').disabled = true ;
-                $('#checktel').html('this is not valid').css('color', 'red');
+                $('#checktel').html('Please Enter a Valid Contact Number').css('color', 'red');
             }
         });
         $('#register_btn').click(function(){
@@ -799,6 +811,7 @@
                         setTimeout(function() {
                             $("#checkpass").hide('blind', {}, 0)
                         }, 0);
+                        location.reload();
                     }else{
                         $('#pname').val("");
                         $('#age').val("");
@@ -821,6 +834,7 @@
                         setTimeout(function() {
                             $("#checkpass").hide('blind', {}, 0);
                         }, 0);
+                        location.reload();
                     }
                 }
 

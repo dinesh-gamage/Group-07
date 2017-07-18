@@ -13,13 +13,22 @@ class Registerpatient extends CI_Model{
 
     }
     public function get_lstid(){
-       $query = $this->db->query('SELECT * FROM patient_register ORDER BY serial_no DESC LIMIT 1'); 
+       $this->db->select('*');
+       $this->db->from('patient_register');
+       $this->db->order_by('serial_no','desc');
+       $this->db->limit('1');
+       $query = $this->db->get();
        return $query->result();
        
     }
-    public function register_patient($pid,$name,$age,$dob,$tel,$lan,$gen,$sch,$addr,$gur,$rel,$ref,$pass,$div,$date){
+    public function register_patient($name,$age,$dob,$tel,$lan,$gen,$sch,$addr,$gur,$rel,$ref,$pass,$div,$date){
+        $pid = 0;
+        $iid = $this-> get_lstid();
+        foreach ($iid as $key) {
+             $this->pid=$key->serial_no;
+        }
         $data = array(
-            'patient_id'=>$pid,
+            'patient_id'=>($this->pid+1),
             'password'=>$pass,
             'patient_name'=>$name,
             'regitration_date'=>$date,
@@ -34,7 +43,7 @@ class Registerpatient extends CI_Model{
             'refered_by'=>$ref,
             'school'=>$sch,
             'division'=>$div,
-            'status'=>1
+            'status'=>0
         );
 
         return $this->db->insert('patient_register',$data);

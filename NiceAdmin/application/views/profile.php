@@ -296,7 +296,7 @@ $(document).ready(function (){
 <script src="<?php echo base_url()."asserts/assets/jquery-knob/js/jquery.knob.js"?>"></script>
 <!--custome script for all page-->
 <script src="<?php echo base_url()."asserts/js/scripts.js"?>"></script>
-
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
 
 //knob

@@ -307,6 +307,12 @@ class doc_model extends CI_Model{
 
 
     }
+    public function getAge($patient_name){
+        $this->db->select('*');
+        $this->db->where('patient_name',$patient_name);
+        $query = $this->db->get('patient_register');
+        return $query->result();
+    }
     
 }
 

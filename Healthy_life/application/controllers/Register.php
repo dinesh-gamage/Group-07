@@ -18,17 +18,15 @@ class Register extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-//         var $pid =4446;
-         
+  
+  
     public function __construct(){
         parent::__construct();
         $this->load->model('registerpatient');
     }
-    public function getpid(){
-        $this->pids = $this->registerpatient->get_lstid();
-    }
+
     public function reg_patient(){
-        $pid = $this->registerpatient->get_lstid();
+        $iid = $this->registerpatient->get_lstid();
         if(isset($_POST['regbtn'])) {
             $name = $this->input->post('pname');
             $age = $this->input->post('age');
@@ -43,12 +41,13 @@ class Register extends CI_Controller {
             $ref = $this->input->post('ref');
             $pass = $this->input->post('pass');
             $div = $this->input->post('div');
-            $date = $this->input->post('date');
-            $success_doc_insert = $this->registerpatient->register_patient($pid[0]->serial_no,$name,$age,$dob,$tel,$lan,$gen,$sch,$addr,$gur,$rel,$ref,$pass,$div,$date);
-            if ($success_doc_insert) {
+            $date = $this->input->post('date'); 
+            $success_doc_insert = $this->registerpatient->register_patient($name,$age,$dob,$tel,$lan,$gen,$sch,$addr,$gur,$rel,$ref,$pass,$div,$date);
+            if ($success_doc_insert) {    
                 echo "true";
+               
             } else {
-                echo "false";
+                echo "false";   
             }
         }
     }

@@ -1019,7 +1019,7 @@ border-radius: 20px;
                                                 </table>
                                             </div>
 
-                                            <?php }else{ ?>
+                                            <!-- <?php }else{ ?>
                                             <div class="col-lg-12">
                                                 <table class="table table-condensed table-bordered"> 
                                                     <thead>
@@ -1052,7 +1052,7 @@ border-radius: 20px;
                                             <?php 
                                                 }
                                             endforeach;
-                                            ?>
+                                            ?> -->
                                         </div>
                                     </div>
                                     <div id="meicationsHistory" class="tab-pane fade">
@@ -2906,6 +2906,8 @@ border-radius: 20px;
                     
 <!-- progress -->
                 <div id="progress" style="display: none" >
+                    <input hidden id="curr_patient" type="text" value="<?php echo $patient_id?>" />
+                    <input hidden id= "doc_name_curr" type="text" value="<?php echo $name?>" />
                     <div class="white_back container">
                         <script type="text/javascript" src="<?php echo base_url() . "asserts/js/Chart.min.js" ?>"></script>
 <!--                        <script type="text/javascript" src="js/Chart.min.js"></script>-->
@@ -2930,10 +2932,12 @@ border-radius: 20px;
                                 return r;
                             }
                             function getGraphData(){
+                                var doc = $('#doc_name_curr').val();
+                                var patient = $('#curr_patient').val();
                                 $.ajax({
-                                    url: 'http://[::1]/new4/NiceAdmin/DoctorView/getGraphData/',
+                                    url: 'http://[::1]/project/Group-07/NiceAdmin/DoctorView/getGraphData/',
                                     type: "POST",
-                                    data: {graph:"graph"},
+                                    data: {graph:"graph",pati_id:patient,doc :doc},
                                     success: function(one) {
                                         var two = [];
                                         var x = one.split(']');
@@ -3015,7 +3019,7 @@ border-radius: 20px;
                                     
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <textarea name="doc_notes" class="form-control"   placeholder=""></textarea>
+                                            <textarea name="doc_notes" class="form-control"  required="required" placeholder=""></textarea>
                                         </div>
                                     </div>  
                                     
@@ -3148,7 +3152,7 @@ border-radius: 20px;
                         
                     </div>
                     
-                    <div class="white_back container">
+                    <!-- <div class="white_back container">
                         <?php
                             foreach($finalmarks as $final):
                             if ($final->test_type == "A"){
@@ -3183,8 +3187,8 @@ border-radius: 20px;
                                 </tfoot>
                             </table>
                         </div>
-                        
-                        <?php }else{ ?>
+                         -->
+                       <!--  <?php }else{ ?>
                         <div class="col-lg-6">
                             <table class="table table-condensed table-bordered"> 
                                 <thead>
@@ -3217,9 +3221,9 @@ border-radius: 20px;
                         <?php 
                             }
                         endforeach;
-                        ?>
-                    </div>
-                    <div class="white_back container">
+                        ?> -->
+                 <!--    </div> -->
+                    <!-- <div class="white_back container">
                         <h3 class="success text-center" >Add Final Marks</h3>
                         <?php 
                             $attri = array(
@@ -3243,14 +3247,14 @@ border-radius: 20px;
                                 <input type="text" class="form-control" placeholder="Deviation Quotients" name="dq" required >
                             </div>
                             <div class="col-sm-4">
-                                <!-- Trigger the modal with a button -->
+                                Trigger the modal with a button 
                                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#dq">View Deviation Quotients table </button>
 
-                                <!-- Modal -->
+                                Modal 
                                 <div id="dq" class="modal fade" role="dialog">
                                     <div class="modal-dialog modal-lg">
 
-                                        <!-- Modal content-->
+                                         Modal content
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -3354,14 +3358,13 @@ border-radius: 20px;
                                 <input type="text" class="form-control" placeholder="Percentile Ranks" name="pr" required >
                             </div>
                             <div class="col-sm-4">
-                                <!-- Trigger the modal with a button -->
+                                 Trigger the modal with a button 
                                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#pr">View Percentile Ranks table </button>
 
-                                <!-- Modal -->
+                                 Modal 
                                 <div id="pr" class="modal fade" role="dialog">
                                     <div class="modal-dialog modal-lg">
-
-                                        <!-- Modal content-->
+                                         Modal content
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -3578,14 +3581,14 @@ border-radius: 20px;
                                 </select>
                             </div>
                             <div class="col-sm-4">
-                                <!-- Trigger the modal with a button -->
+                                 Trigger the modal with a button 
                                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#desc">View Description table </button>
 
-                                <!-- Modal -->
+                                 Modal 
                                 <div id="desc" class="modal fade" role="dialog">
                                     <div class="modal-dialog modal-lg">
 
-                                        <!-- Modal content-->
+                                         Modal content
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -3643,7 +3646,7 @@ border-radius: 20px;
 
                     ?>
                     </div>
-
+ -->
                 </div>
 
 <!-- discharge -->
