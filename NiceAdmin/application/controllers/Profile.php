@@ -31,6 +31,7 @@ class Profile extends CI_Controller {
 
 	public function index()
 	{
+
         $data1['newpatient'] = $this->indexmodel->get_new_patients();
         $this->load->model('register_doctor_model');
         $data1['doc_data'] = $this->profilemodel->get_doc_data();
@@ -39,7 +40,7 @@ class Profile extends CI_Controller {
         if(isset($currpass)) {
             $check = $this->profilemodel->current_pass($currpass);
             foreach ($check as $ck) {
-                if($currpass == $ck->password){
+                if($currpass == $this->encrypt->decode($ck->password)){
                     echo "true";
                 }else{
                     echo "fals";
@@ -54,7 +55,7 @@ class Profile extends CI_Controller {
                 $this->doc_name = $_POST['doc_name'];
             }
             if(isset($_POST['doc_pass'])) {
-                $this->doc_pass = $_POST['doc_pass'];
+                $this->doc_pass = $this->encrypt->encode($_POST['doc_pass']);
             }
             if(isset($_POST['contact'])) {
                 $this->contact = $_POST['contact'];

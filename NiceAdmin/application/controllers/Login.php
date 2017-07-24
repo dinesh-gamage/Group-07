@@ -109,7 +109,6 @@ Class Login extends CI_Controller {
             $result = $this->login_database->login($data);
             $result2 = $this->login_database->nurse_login($data);
             if ($result == TRUE) {
-
                 $username = $this->input->post('username');
                 $result = $this->login_database->read_user_information($username);
                 if($result[0]->is_admin == 1){
@@ -186,6 +185,12 @@ Class Login extends CI_Controller {
         //$data['message_display'] = 'Successfully Logout';
         
         $this->load->view('login/login_form');//, $data);
+    }
+    function checkUsername(){
+        if(isset($_POST['cuser'])){
+            $cuser = $this->login_database->cUsername($_POST['cuser']);
+            echo $cuser;
+        }
     }
 
 }

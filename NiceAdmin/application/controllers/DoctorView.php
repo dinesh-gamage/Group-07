@@ -26,7 +26,6 @@ class DoctorView extends CI_Controller {
         $data['refernces'] = $this->doc_model->get_All_references();
         $data['searchPatients'] = "null";
         
-        
 
         $this->load->library("pagination");
         //Set config options

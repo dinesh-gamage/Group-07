@@ -1257,7 +1257,7 @@ border-radius: 20px;
                                     <label for="problem" class="control-label text-center">Problem </label>
                                 </div>
                                 <div class="form-group col-lg-9">
-                                    <textarea name="problem" class="form-control"   placeholder=""></textarea>
+                                    <textarea name="problem" class="form-control" required  placeholder=""></textarea>
                                 </div>
 
                                 <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
@@ -2724,7 +2724,7 @@ border-radius: 20px;
                                                     
                                                 </div>
                                                 <div class="col-sm-5">
-                                                    <input type="text" name="goal1" class="form-control"   placeholder="Goal">
+                                                    <input  type="text" name="goal1" class="form-control"   placeholder="Goal">
                                                 </div>
                                                 <div class="col-sm-5">
                                                     <input type="text" name="criteria1" class="form-control"   placeholder="criteria">
@@ -2823,7 +2823,7 @@ border-radius: 20px;
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <button type="submit" name='save' class="btn btn-primary">Submit</button>
+                                                    <button type="submit" name='save' id="goalsave"class="btn btn-primary">Submit</button>
                                                 </div>
                                                     
                                             </div>
@@ -3070,20 +3070,20 @@ border-radius: 20px;
                                                 </div>
                                                 <div class="form-group col-sm-6">
                                                     <label for="clno">Clinic No:</label>
-                                                    <input type="text" class="form-control" name="clinic" placeholder="Enter clinic number">
+                                                    <input required type="text" class="form-control" name="clinic" placeholder="Enter clinic number">
                                                 </div>
                                                 <div class="form-group col-sm-6">
                                                     <label for="ref">Ref.Name:</label>
-                                                    <input type="text" class="form-control" name="ref"  value="<?php echo $patient->patient_name; ?>" placeholder="Enter Reference name">
+                                                    <input type="text" class="form-control" readonly  name="ref"  value="<?php echo $patient->patient_name; ?>" placeholder="Enter Reference name">
                                                 </div>
                                                 <div class="form-group col-sm-6">
                                                     <label for="age">Age:</label>
-                                                    <input type="text" class="form-control" name="age" value="<?php echo $patient->age ; ?>" placeholder="Enter Age">
+                                                    <input readonly type="text" class="form-control" name="age" value="<?php echo $patient->age ; ?>" placeholder="Enter Age">
                                                 </div>
                                                 
                                                 <div class="form-group">
                                                     <label for="des">Description:</label>
-                                                    <textarea class="form-control" rows="5" name="des"></textarea>
+                                                    <textarea class="form-control" required rows="5" name="des"></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                    <button type="submit" class="btn btn-info" >Submit</button>
@@ -4073,8 +4073,12 @@ $("#calculateB").click(function() {
     });
     }
     
-</script>
 
+
+    $('#goalsave').on('click',function(){
+        
+    });
+</script>
 
 
 

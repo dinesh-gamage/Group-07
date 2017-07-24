@@ -18,9 +18,10 @@ class Registerpatient extends CI_Model{
        
     }
     public function register_patient($pid,$name,$age,$dob,$tel,$lan,$gen,$sch,$addr,$gur,$rel,$ref,$pass,$div,$date){
+        
         $data = array(
             'patient_id'=>$pid,
-            'password'=>$pass,
+            'password'=>$encpass,
             'patient_name'=>$name,
             'regitration_date'=>$date,
             'address'=>$addr,

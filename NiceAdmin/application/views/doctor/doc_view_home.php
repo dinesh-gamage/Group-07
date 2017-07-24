@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="white_back container">
+                <div class="white_back container" style="overflow-y:auto; height: 527px;">
                     <div id="searchResults">
                         <div class="text-center"><span style="color: red" id="searchNoResults"></span> </div>
                     </div>
@@ -85,18 +85,18 @@
                             <form name="myform" id="myform" action="<?php echo base_url() ?>/DoctorView/getPatient/" method="post">
                                 <input type="hidden" name="patientid" id="id" value="<?php echo $patient->patient_id; ?>" />
                                 <div class="patient">
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-9">
                                         <?php 
-                                            echo "<div class=\"col-sm-8 padding10top\">";
+                                            echo "<div class=\"col-sm-7 padding10top\">";
                                                 echo $patient->patient_name;
                                             echo "</div>";
                                             //echo str_repeat("&nbsp;", 6); 
-                                            echo "<div class=\"col-sm-4 padding10top\">";
+                                            echo "<div class=\"col-sm-5 padding10top\">";
                                                 echo $patient->regitration_date;
                                             echo "</div>";
                                         ?>
                                     </div>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-3">
                                         <button type="button" class="btn btn-info" onclick="javascript: submit()" >View</button>
                                     </div>
                                 </div>                                    
@@ -117,18 +117,18 @@
                             <form name="myform" id="myform" action="<?php echo base_url() ?>/DoctorView/getPatient/" method="post">
                                 <input type="hidden" name="patientid" id="id" value="<?php echo $patient->patient_id; ?>" />
                                 <div class="patient">
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-9">
                                         <?php 
-                                            echo "<div class=\"col-sm-8 padding10top\">";
+                                            echo "<div class=\"col-sm-7 padding10top\">";
                                                 echo $patient->patient_name;
                                             echo "</div>";
                                             //echo str_repeat("&nbsp;", 6); 
-                                            echo "<div class=\"col-sm-4 padding10top\">";
+                                            echo "<div class=\"col-sm-5 padding10top\">";
                                                 echo $patient->regitration_date;
                                             echo "</div>";
                                         ?>
                                     </div>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-3">
                                         <button type="button" class="btn btn-success" onclick="javascript: submit()" >View</button>
                                     </div>
                                 </div>                                    
@@ -150,18 +150,18 @@
                             <form name="myform" id="myform" action="<?php echo base_url() ?>/DoctorView/getPatient/" method="post">
                                 <input type="hidden" name="patientid" id="id" value="<?php echo $patient->patient_id; ?>" />
                                 <div class="patient">
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-9">
                                         <?php 
-                                            echo "<div class=\"col-sm-8 padding10top\">";
+                                            echo "<div class=\"col-sm-7 padding10top\">";
                                                 echo $patient->patient_name;
                                             echo "</div>";
                                             //echo str_repeat("&nbsp;", 6); 
-                                            echo "<div class=\"col-sm-4 padding10top\">";
+                                            echo "<div class=\"col-sm-5 padding10top\">";
                                                 echo $patient->regitration_date;
                                             echo "</div>";
                                         ?>
                                     </div>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-3">
                                         <button type="button" class="btn btn-default" onclick="javascript: submit()" >View</button>
                                     </div>
                                 </div>                                    

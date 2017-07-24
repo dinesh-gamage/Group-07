@@ -43,6 +43,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:600,600i,700i" /> <!-- google fonts -->
     <link rel="icon" type="image/icon" href="<?php echo base_url()."asserts/images/favicon/favicon.ico"?>"> <!-- favicon-icon -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+    <style type="text/css">
+        .bordercolor{
+            border: 1px solid red;
+            outline: none;
+        }
+
+    </style>
     
 </head>
 

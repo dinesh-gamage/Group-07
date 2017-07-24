@@ -20,8 +20,10 @@ class DoctorStyle1 extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->model('doctordetails');
+		$data['doctor'] = $this->doctordetails->getDoctor();
 		$this->load->view('header');
-		$this->load->view('doctor-style-1');
+		$this->load->view('doctor-style-1',$data);
 		$this->load->view('footer');
 	}
 }

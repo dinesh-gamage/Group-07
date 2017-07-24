@@ -38,7 +38,7 @@ class NurseProfile extends CI_Controller {
         if(isset($currpass)) {
             $check = $this->profilemodel->current_nurpass($currpass);
             foreach ($check as $ck) {
-                if($currpass == $ck->password){
+                if($currpass == $this->encrypt->decode($ck->password)){
                     echo "true";
                 }else{
                     echo "false";
@@ -53,7 +53,7 @@ class NurseProfile extends CI_Controller {
                 $this->nur_name = $_POST['nur_name'];
             }
             if(isset($_POST['nur_pass'])) {
-                $this->nur_pass = $_POST['nur_pass'];
+                $this->nur_pass = $this->encrypt->encode($_POST['nur_pass']);
             }
             if(isset($_POST['contact'])) {
                 $this->contact = $_POST['contact'];

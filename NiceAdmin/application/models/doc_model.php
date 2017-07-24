@@ -307,10 +307,124 @@ class doc_model extends CI_Model{
 
 
     }
-    public function getAge($patient_name){
+    public function getAge($patient_id){
         $this->db->select('*');
-        $this->db->where('patient_name',$patient_name);
+        $this->db->where('patient_id',$patient_id);
         $query = $this->db->get('patient_register');
+        return $query->result();
+    }
+    public function getMaleFemale(){
+        $array = [];
+        $m1=$m2=$m3=$m4=$m5=$m6=$m7=$m8=$m9=$m10=$m11=$m12=$f1=$f2=$f3=$f4=$f5=$f6=$f7=$f8=$f9=$f10=$f11=$f12=0;
+        $reco = $this->getAllPatients();
+        foreach ($reco as $records) {
+            
+            if(substr($records->regitration_date,5,2)==='01' && strtolower($records->gender)==="male"){
+                $m1++;
+            }else if(substr($records->regitration_date,5,2)==='02' && strtolower($records->gender)==="male"){
+                $m2++;
+            }else if(substr($records->regitration_date,5,2)==='03' && strtolower($records->gender)==="male"){
+                $m3++;
+            }else if(substr($records->regitration_date,5,2)==='04' && strtolower($records->gender)==="male"){
+                $m4++;
+            }else if(substr($records->regitration_date,5,2)==='05' && strtolower($records->gender)==="male"){
+                $m5++;
+            }else if(substr($records->regitration_date,5,2)==='06' && strtolower($records->gender)==="male"){
+                $m6++;
+            }else if(substr($records->regitration_date,5,2)==='07' && strtolower($records->gender)==="male"){
+                $m7++;
+            }else if(substr($records->regitration_date,5,2)==='08' && strtolower($records->gender)==="male"){
+                $m8++;
+            }else if(substr($records->regitration_date,5,2)==='09' && strtolower($records->gender)==="male"){
+                $m9++;
+            }else if(substr($records->regitration_date,5,2)==='10' && strtolower($records->gender)==="male"){
+                $m10++;
+            }else if(substr($records->regitration_date,5,2)==='11' && strtolower($records->gender)==="male"){
+                $m11++;
+            }else if(substr($records->regitration_date,5,2)==='12' && strtolower($records->gender)==="male"){
+                $m12++;
+            }else if(substr($records->regitration_date,5,2)==='01' && strtolower($records->gender)==="female"){
+                $f1++;
+            }else if(substr($records->regitration_date,5,2)==='02' && strtolower($records->gender)==="female"){
+                $f2++;
+            }else if(substr($records->regitration_date,5,2)==='03' && strtolower($records->gender)==="female"){
+                $f3++;
+            }else if(substr($records->regitration_date,5,2)==='04' && strtolower($records->gender)==="female"){
+                $f4++;
+            }else if(substr($records->regitration_date,5,2)==='05' && strtolower($records->gender)==="female"){
+                $f5++;
+            }else if(substr($records->regitration_date,5,2)==='06' && strtolower($records->gender)==="female"){
+                $f6++;
+            }else if(substr($records->regitration_date,5,2)==='07' && strtolower($records->gender)==="female"){
+                $f7++;
+            }else if(substr($records->regitration_date,5,2)==='08' && strtolower($records->gender)==="female"){
+                $f8++;
+            }else if(substr($records->regitration_date,5,2)==='09' && strtolower($records->gender)==="female"){
+                $f9++;
+            }else if(substr($records->regitration_date,5,2)==='10' && strtolower($records->gender)==="female"){
+                $f10++;
+            }else if(substr($records->regitration_date,5,2)==='11' && strtolower($records->gender)==="female"){
+                $f11++;
+            }else if(substr($records->regitration_date,5,2)==='12' && strtolower($records->gender)==="female"){
+                $f12++;
+            }
+        }
+        $array[1]=$m1;
+        $array[2]=$m2;
+        $array[3]=$m3;
+        $array[4]=$m4;
+        $array[5]=$m5;
+        $array[6]=$m6;
+        $array[7]=$m7;
+        $array[8]=$m8;
+        $array[9]=$m9;
+        $array[10]=$m10; 
+        $array[11]=$m11;
+        $array[12]=$m12;
+        $array[13]=$f1;
+        $array[14]=$f2;
+        $array[15]=$f3;
+        $array[16]=$f4;
+        $array[17]=$f5;
+        $array[18]=$f6;
+        $array[19]=$f7;
+        $array[20]=$f8;
+        $array[21]=$f9;
+        $array[22]=$f10; 
+        $array[23]=$f11;
+        $array[24]=$f12;
+        return $array;
+    }
+    public function ffvisit(){
+        $condition = "gender ='Female' AND status='0'";
+        $this->db->select('*');
+        $this->db->where($condition);
+        $query = $this->db->get('patient_register');
+        return $query->result();
+    }
+     public function fsvisit(){
+        $condition = "gender ='Female' AND status!='0'";
+        $this->db->select('*');
+        $this->db->where($condition);
+        $query = $this->db->get('patient_register');
+        return $query->result();
+    }
+     public function mfvisit(){
+        $condition = "gender ='Male' AND status='0'";
+        $this->db->select('*');
+        $this->db->where($condition);
+        $query = $this->db->get('patient_register');
+        return $query->result();
+    }
+     public function msvisit(){
+        $condition = "gender =' Male' AND status!='0'";
+        $this->db->select('*');
+        $this->db->where($condition);
+        $query = $this->db->get('patient_register');
+        return $query->result();
+    }
+    public function diagnoseProblem(){
+        $query=$this->db->get('diagnisis_problem');
         return $query->result();
     }
     

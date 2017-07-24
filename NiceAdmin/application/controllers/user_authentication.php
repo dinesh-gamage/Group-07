@@ -69,21 +69,22 @@ $data = array(
 'doctor_id' => $this->input->post('userid'),
 'doc_name' => $this->input->post('myname'),
 'user_name' => $this->input->post('username'),
-'password' => $this->input->post('password'),
+'password' => $this->encrypt->encode($this->input->post('password')),
 'speciality' => $this->input->post('spec'),
 'email' => $this->input->post('email_value'),
 'telephone' => $this->input->post('contact'),
-'profile_pic' => 'uploads/'.$picture
+'doc_img' => 'uploads/'.$picture,
+'is_admin' =>0
 
 );
 
 $result = $this->login_database->registration_insert($data);
 if ($result == TRUE) {
 $data['message_display'] = 'Registration Successfully !';
-$this->load->view('login_form', $data);
+$this->load->view('login/registration_form', $data);
 } else {
 $data['message_display'] = 'Username already exist!';
-$this->load->view('registration_form', $data);
+$this->load->view('login/registration_form', $data);
 }
 
 }

@@ -16,7 +16,7 @@ class Loginmodel extends CI_Model{
     public function get_patient($username,$password){
         $this->db->select('*');
         $this->db->from('patient_register');
-        $this->db->where('patien_name',$username);
+        $this->db->where('patient_name',$username);
         $this->db->where('password',$password);
         $query = $this->db->get();
         return $query->num_rows();

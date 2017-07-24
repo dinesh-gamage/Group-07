@@ -278,8 +278,12 @@ $(document).ready(function (){
           $('#checktel').html('');
           document.getElementById('submitbtn').disabled = false ;
       }else{
-          document.getElementById('submitbtn').disabled = true ;
-          $('#checktel').html('Please Enter a Valid Contact Number!!!').css('color', 'red');
+          if($(this).val()!==""){
+              $('#checktel').html('Please Enter a Valid Contact Number').css('color', 'red');
+              document.getElementById('submitbtn').disabled = true ;
+          }else{
+              $('#checktel').html('Please Enter a Contact Number').css('color', 'red');
+          }
       }
   });
 });

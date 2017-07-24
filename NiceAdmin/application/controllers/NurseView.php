@@ -25,6 +25,16 @@ class NurseView extends CI_Controller {
         
         $data['events'] = $this->calendarmodel->cal();
         $data['patients'] = $this->doc_model->getAllPatients();
+
+
+        $data['mfcount'] = $this->doc_model->getMaleFemale();
+        $data['ffvisit'] = $this->doc_model->ffvisit();
+        $data['fsvisit'] = $this->doc_model->fsvisit();
+        $data['mfvisit'] = $this->doc_model->mfvisit();
+        $data['msvisit'] = $this->doc_model->msvisit();
+
+        $data['diagnose'] = $this->doc_model->diagnoseProblem();
+
         $data['goals'] = $this->doc_model->getAllGoals();
         $data1['nur_data'] = $this->profilemodel->get_nur_data();
         $data['refernces'] = $this->doc_model->get_All_references();
@@ -996,6 +1006,9 @@ class NurseView extends CI_Controller {
             }
         }
     }
+    
+        
+    
 
 
 }

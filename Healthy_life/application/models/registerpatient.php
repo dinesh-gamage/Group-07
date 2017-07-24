@@ -22,6 +22,7 @@ class Registerpatient extends CI_Model{
        
     }
     public function register_patient($name,$age,$dob,$tel,$lan,$gen,$sch,$addr,$gur,$rel,$ref,$pass,$div,$date){
+        
         $pid = 0;
         $iid = $this-> get_lstid();
         foreach ($iid as $key) {
