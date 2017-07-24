@@ -3793,7 +3793,29 @@ border-radius: 20px;
                         <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
                     
                     <div class="overlay">
-                        <div class="text">Activities</div>
+                        <div class="text">Activities<br/>level3</div>
+                    </div>
+                </div>
+                </a>
+
+                <a target="_blank" href="<?php echo base_url()."GameLevel2"; ?> ">
+                <div class="col-sm-2 col-icon-box ">
+                    
+                        <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    
+                    <div class="overlay">
+                        <div class="text">Activities<br/>level2</div>
+                    </div>
+                </div>
+                </a>
+
+                <a target="_blank" href="<?php echo base_url()."GameLevel1"; ?> ">
+                <div class="col-sm-2 col-icon-box ">
+                    
+                        <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    
+                    <div class="overlay">
+                        <div class="text">Activities<br/>level1</div>
                     </div>
                 </div>
                 </a>
