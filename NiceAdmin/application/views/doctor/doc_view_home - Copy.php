@@ -6,6 +6,7 @@
             $name = ($this->session->userdata['logged_in']['name']);
             $picture = ($this->session->userdata['logged_in']['picture']);
             $status = ($this->session->userdata['logged_in']['status']);
+            $doctorID = ($this->session->userdata['logged_in']['doctorId']);
             
             if($status != 'Doctor'){
                 redirect('/Login');
@@ -14,8 +15,9 @@
             redirect('/Login');
         }
     ?>
-<!--main content start-->
-<!--section id="main-content"-->
+
+
+
 <section class="wrapper">
     <div class="contentContainer">
     <!--overview start-->
@@ -23,12 +25,28 @@
             <div class="col-lg-12">
 <!--                    <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>-->
                 <ol class="breadcrumb">
-                    <li><i class="fa fa-home"></i><a href="<?php echo base_url() . "Index1" ?>">Home</a></li>
-                    <li><i class="fa fa-laptop"></i>All Patients</li>					  	
+                    <li><i class="fa fa-home"></i><a href="<?php echo base_url() . "DoctorView" ?>">Home</a></li>
+                    <li><i class="fa fa-laptop"></i>All Patients</li>	
+                    
                 </ol>
-            </div>
+                
+            </div>  
         </div>
-
+        <div class="row">
+          <div class="col-lg-4 col-lg-offset-8">
+              <div class="searchDiv">
+                <div class="input-group">
+                    <input type="text" class="form-control col-sm-11" placeholder="Enter Patient ID" name="patientSearch" id="patientSearch" />
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" id="searchButton" type="submit" >
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>  
+          </div>
+        </div>
         <div class="row">
             <div class="col-lg-2">
                 <div class="col-sm-2 col-icon-box " onclick="viewNewPatients()" >
@@ -43,9 +61,20 @@
                         <div class="text">Progressing<br> Patients</div>
                     </div>
                 </div>
+                <div class="col-sm-2 col-icon-box "  onclick="viewDisPatients()">
+                    <img src="<?php echo base_url()."asserts/images/icons/dischargd_patients.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    <div class="overlay">
+                        <div class="text">Discharged<br> Patients</div>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-4">
-                <div class="white_back container">
+                <div class="white_back container" style="overflow-y:auto; height: 527px;">
+                    <div id="searchResults">
+                        <div class="text-center"><span style="color: red" id="searchNoResults"></span> </div>
+                    </div>
+                    <br/>
+                    <hr/>
                     <div id="newPatientList">
                         <h4 class="text-center">New Patients</h4><hr>
                          <?php
@@ -56,18 +85,18 @@
                             <form name="myform" id="myform" action="<?php echo base_url() ?>/DoctorView/getPatient/" method="post">
                                 <input type="hidden" name="patientid" id="id" value="<?php echo $patient->patient_id; ?>" />
                                 <div class="patient">
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-9">
                                         <?php 
-                                            echo "<div class=\"col-sm-8 padding10top\">";
+                                            echo "<div class=\"col-sm-7 padding10top\">";
                                                 echo $patient->patient_name;
                                             echo "</div>";
                                             //echo str_repeat("&nbsp;", 6); 
-                                            echo "<div class=\"col-sm-4 padding10top\">";
+                                            echo "<div class=\"col-sm-5 padding10top\">";
                                                 echo $patient->regitration_date;
                                             echo "</div>";
                                         ?>
                                     </div>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-3">
                                         <button type="button" class="btn btn-info" onclick="javascript: submit()" >View</button>
                                     </div>
                                 </div>                                    
@@ -88,18 +117,18 @@
                             <form name="myform" id="myform" action="<?php echo base_url() ?>/DoctorView/getPatient/" method="post">
                                 <input type="hidden" name="patientid" id="id" value="<?php echo $patient->patient_id; ?>" />
                                 <div class="patient">
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-9">
                                         <?php 
-                                            echo "<div class=\"col-sm-8 padding10top\">";
+                                            echo "<div class=\"col-sm-7 padding10top\">";
                                                 echo $patient->patient_name;
                                             echo "</div>";
                                             //echo str_repeat("&nbsp;", 6); 
-                                            echo "<div class=\"col-sm-4 padding10top\">";
+                                            echo "<div class=\"col-sm-5 padding10top\">";
                                                 echo $patient->regitration_date;
                                             echo "</div>";
                                         ?>
                                     </div>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-3">
                                         <button type="button" class="btn btn-success" onclick="javascript: submit()" >View</button>
                                     </div>
                                 </div>                                    
@@ -109,7 +138,42 @@
                                 }
                             endforeach;
                         ?>
-                    </div> 
+                    </div>
+                    
+                    <div id="disPatientList" style="display: none" >
+                        <h4 class="text-center">Discharged Patients</h4><hr>
+                        <?php
+                            foreach($patients as $patient):
+                                if ($patient->status == '2'){
+                        ?>
+
+                            <form name="myform" id="myform" action="<?php echo base_url() ?>/DoctorView/getPatient/" method="post">
+                                <input type="hidden" name="patientid" id="id" value="<?php echo $patient->patient_id; ?>" />
+                                <div class="patient">
+                                    <div class="col-lg-9">
+                                        <?php 
+                                            echo "<div class=\"col-sm-7 padding10top\">";
+                                                echo $patient->patient_name;
+                                            echo "</div>";
+                                            //echo str_repeat("&nbsp;", 6); 
+                                            echo "<div class=\"col-sm-5 padding10top\">";
+                                                echo $patient->regitration_date;
+                                            echo "</div>";
+                                        ?>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <button type="button" class="btn btn-default" onclick="javascript: submit()" >View</button>
+                                    </div>
+                                </div>                                    
+                            </form>
+
+                        <?php
+                                }
+                            endforeach;
+                        ?>
+                    </div>
+                    
+                    
                 </div>
             </div>
 <!-- paging -->
@@ -178,7 +242,8 @@
                               <input type="text" name="end" class="form-control" id="end" readonly>
                             </div>
                           </div>
-
+                                <input type="hidden" name="doctorName" value="<?php echo $doctorID; ?>" />
+                          
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -249,20 +314,12 @@
                     </div>
                   </div>
                 </div>
-
+              </div>
+            </div>
     <script src="<?php echo base_url() ?>scripts/fullcalendar/lib/moment.min.js"></script>
     <script src="<?php echo base_url() ?>scripts/fullcalendar/fullcalendar.min.js"></script>
     <script src="<?php echo base_url() ?>scripts/fullcalendar/gcal.js"></script>
-    
-    <!-- jQuery Version 1.11.1 -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-	
-	<!-- FullCalendar -->
-	<script src='js/moment.min.js'></script>
-	<script src='js/fullcalendar.min.js'></script>
+    <script type="text/javascript" src="<?php echo base_url() . "asserts/js/bootstrap.min.js" ?>"></script>
 	
 	<script>
 
@@ -315,6 +372,7 @@
 	},
 			events: [
 			<?php foreach($events as $event): 
+                if ($event->doctor_id == $doctorID){
 			
 				$start = explode(" ", $event->start);
 				$end = explode(" ", $event->end);
@@ -336,7 +394,9 @@
 					end: '<?php echo $event->end; ?>',
 					color: '<?php echo $event->color; ?>',
 				},
-			<?php endforeach; ?>
+			<?php 
+                }
+                    endforeach; ?>
 			]
         });
 
@@ -394,24 +454,51 @@
     });
 
 
+    
+
 
 </script>
             
             
-            </div>
+          
 
 
-        </div>
+       
     </div>
 </section>
 <script>
     function viewNewPatients() {
         $("#newPatientList").show();  
-        $("#proPatientList").hide();   
+        $("#proPatientList,#disPatientList").hide();   
     }
     function viewProPatients() {
         $("#proPatientList").show();
-        $("#newPatientList").hide(); 
+        $("#newPatientList,#disPatientList").hide(); 
     }
+    function viewDisPatients() {
+        $("#disPatientList").show();
+        $("#newPatientList,#proPatientList").hide(); 
+    }
+    
 </script>
+
+<script type="text/javascript">
+  $('#searchButton').click(function(){
+      var search = $('#patientSearch').val();
+      $.ajax({
+         url: 'http://[::1]/project/Group-07/NiceAdmin/DoctorView/search',
+         type: "POST",
+         data: {searchitem:search},
+         success: function(data) {
+            if(data.trim() != "false"){
+                $('#searchResults').html(data);
+            }else{
+                $('#searchNoResults').html("There are no patients with "+ search +" PatientId");
+            }
+         }
+      });
+
+
+  });
+</script>>
 <!--/section-->

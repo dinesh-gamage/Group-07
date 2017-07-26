@@ -73,24 +73,29 @@
                             <?php
                                 
                                 $quest=array();
+                                $rowCount = 0;
                             foreach($questions as $question):
               
                                 array_push($quest,$question->question_id);
+                                $rowCount = $rowCount + 1;
                                 //echo $question->question_id;
                             endforeach;
                             //print_r($quest);
+                            //echo $rowCount;
                             ?>
                             
                             <?php
                             $sequence = $sequence;
                             foreach($questions as $question):
-                                if($question->question_id == $quest[$sequence]){
-                                    echo form_open_multipart('CogTestQuiz/add_marks');
+                                if($sequence < $rowCount){
+                                    if($question->question_id == $quest[$sequence]){
+                                        echo form_open_multipart('CogTestQuiz/add_marks');
                                     
                             ?>
                                    
                                     <div class="col-md-12 text-center">
                                         <div class="panel panel-info">
+                                            <span class="questionNumber"><?php echo $quest[$sequence]; ?></span>
                                             <div class="panel-body">
                                                 <img src="<?php echo base_url($question->question); ?>" class="img-thumbnail" width="380px" height="250px" />
                                             </div>
@@ -135,6 +140,26 @@
                                     </div> 
                             
                             <?php 
+                                    }
+                                }else{
+                            ?>
+                                    <script> //alert('3 wrong answers within 5'); 
+                            
+                                        swal({
+                                            title: "Test Completed",
+                                            text: "",
+                                            type: "success",
+                                            showCancelButton: false,
+                                            confirmButtonColor: "#DD6B55",
+                                            confirmButtonText: "Ok, Finish Test!",
+                                            closeOnConfirm: false
+                                        },
+                                             function(){
+                                            //swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                            window.close();
+                                        });
+                                    </script>
+                            <?php
                                 }
                                 echo form_close();
                                 endforeach; 
