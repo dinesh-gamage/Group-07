@@ -131,7 +131,11 @@ $result = $this->login_database->read_user_information($username);
 
 if ($result != false) {
 $session_data = array(
+<<<<<<< HEAD
 'username' => $result[0]->patient_name,
+=======
+'username' => $result[0]->user_name,
+>>>>>>> 9cfd15dd57bf5b772d31f405ec96ee960ed1dd60
 //'email' => $result[0]->email,
 
 );
@@ -143,7 +147,10 @@ $this->session->set_userdata('logged_in', $session_data);
 $uname = $this->session->userdata['logged_in']['username'];
 $details = $this->appointment->get_by_name($uname);
 $data['appo'] = $details;
+<<<<<<< HEAD
 $data['sess'] = $uname ;
+=======
+>>>>>>> 9cfd15dd57bf5b772d31f405ec96ee960ed1dd60
 
 $this->load->view('header');
 $this->load->view('patient', $data);

@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "fish2.data.unityweb",
+"asmCodeUrl": "fish2.asm.code.unityweb",
+"asmMemoryUrl": "fish2.asm.memory.unityweb",
+"asmFrameworkUrl": "fish2.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}

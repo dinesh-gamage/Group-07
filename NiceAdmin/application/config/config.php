@@ -25,6 +25,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['base_url'] = '';
 
+$config['file_path']=$_SERVER['DOCUMENT_ROOT']."/project/Group-07/NiceAdmin/uploads/recodrs/reference_letters/";
+
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -324,7 +326,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'iiuoiuoiuiuiuoiu9u9uoijoijiojih88y8iyijhiuj';
 
 /*
 |--------------------------------------------------------------------------
