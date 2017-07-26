@@ -131,7 +131,7 @@ $result = $this->login_database->read_user_information($username);
 
 if ($result != false) {
 $session_data = array(
-'username' => $result[0]->user_name,
+'username' => $result[0]->patient_name,
 //'email' => $result[0]->email,
 
 );

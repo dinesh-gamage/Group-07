@@ -55,10 +55,23 @@ class DoctorView extends CI_Controller {
             $this->session->set_userdata('current_patient', $_POST['pid']);
         }
 	}
+    public function administrativeWork(){
+        $data['nurse'] = $this->profilemodel->getNurse();
+        $data['doctors'] = $this->profilemodel->getDoctors();
+        $data1['doc_data'] = $this->profilemodel->get_doc_data();
+        $this->load->view('main/doc_header',$data1);
+        $this->load->view('admin/admin_view_admin',$data);
+    }
     
     public function getPatient()
     {
+        
+
+        $patientstatus  = $this->input->post('patientstatus');
         $patient_id = $this->input->post('patientid');
+        if($patientstatus === "0"){
+            $this->doc_model->updatePati($patient_id);
+        }
         $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
         $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
         $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
@@ -894,11 +907,11 @@ class DoctorView extends CI_Controller {
      public function getGraphData(){
         $this->load->model('graphData');
         if(isset($_POST['graph'])&&isset($_POST['pati_id'])&&isset($_POST['doc'])){
-            $patient = $_POST['pati_id'];
-            $doctor =  $_POST['doc'];
-            $dates = $this->graphData->getDates($doctor,$patient);
+            $patientcur = $_POST['pati_id'];
+            $doctorcur =  $_POST['doc'];
+            $dates = $this->graphData->getDates($doctorcur,$patientcur);
             foreach($dates as $d){
-                $graphRes = $this->graphData->getGraphData($d,$doctor,$patient);
+                $graphRes = $this->graphData->getGraphData($d,$doctorcur,$patientcur);
                 echo json_encode($graphRes);
                 
             }
@@ -1012,6 +1025,33 @@ class DoctorView extends CI_Controller {
         }
 
    }
+
+    public function deleteDoctor(){
+        if(isset($_POST['deld'])){
+            $res = $this->profilemodel->deleteDoctor($_POST['deld']);
+            echo $res;
+        }
+   }
+    public function deleteNurse(){
+        if(isset($_POST['deln'])){
+            $res = $this->profilemodel->deleteNurse($_POST['deln']);
+            echo $res;
+        }
+   }
+   public function viewDoc(){
+        if (isset($_POST['viewd'])) {
+           $view = $this->profilemodel->viewDoc($_POST['viewd']);
+           echo json_encode($view);
+        }
+        
+   } 
+   public function viewNur(){
+        if (isset($_POST['viewn'])) {
+           $view = $this->profilemodel->viewNur($_POST['viewn']);
+           echo json_encode($view);
+        }
+        
+   } 
     
 
 }

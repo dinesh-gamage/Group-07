@@ -142,14 +142,14 @@ Class Login extends CI_Controller {
                             'status' => $status,
                             'name' => $result[0]->doc_name,
                             'picture' => $result[0]->doc_img,
-                            'adminId' => $result[0]->doctor_id,
+                            'doctorId' => $result[0]->doctor_id,
                             
                             
 
                         );
                         $this->session->set_userdata('logged_in', $session_data);
                         $data1['doc_data'] = $this->profilemodel->get_doc_data();                    
-                        redirect('/MainHome/');
+                        redirect('/DoctorView/');
                     }
                     
                 }

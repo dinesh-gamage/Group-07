@@ -41,7 +41,7 @@
         $status = ($this->session->userdata['logged_in']['status']);
         $doctorID = ($this->session->userdata['logged_in']['doctorId']);
 
-        if($status != 'Doctor'){
+        if($status != 'Doctor' && $status != 'Admin' ){
             redirect('/Login');
         }
     } else{

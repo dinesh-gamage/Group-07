@@ -8,7 +8,7 @@
             $status = ($this->session->userdata['logged_in']['status']);
             $doctorID = ($this->session->userdata['logged_in']['doctorId']);
             
-            if($status != 'Doctor'){
+            if($status != 'Doctor' && $status != 'Admin' ){
                 redirect('/Login');
             }
         } else{
@@ -83,6 +83,7 @@
                         ?>
 
                             <form name="myform" id="myform" action="<?php echo base_url() ?>/DoctorView/getPatient/" method="post">
+                                <input type="hidden" name="patientstatus"  value="<?php echo $patient->status; ?>" />
                                 <input type="hidden" name="patientid" id="id" value="<?php echo $patient->patient_id; ?>" />
                                 <div class="patient">
                                     <div class="col-lg-9">

@@ -17,6 +17,11 @@ class doc_model extends CI_Model{
         return $query->result();
     }
     
+    public function updatePati($patient_id){
+        $data = array('status' => 1  );
+        $this->db->where('patient_id', $patient_id);
+        $this->db->update('patient_register',$data);
+    }
     public function getAllGoalsByID($patient_id){
         $condition = "patient_id =" . "'" . $patient_id . "'";
         $this->db->select('*');

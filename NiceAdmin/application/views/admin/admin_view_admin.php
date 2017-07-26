@@ -4,7 +4,7 @@
             <div class="col-lg-12">
 <!--                    <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>-->
                 <ol class="breadcrumb">
-                    <li><i class="fa fa-home"></i><a href="<?php echo base_url() . "MainHome" ?>">Home</a></li>
+                    <li><i class="fa fa-home"></i><a href="<?php echo base_url() . "DoctorView" ?>">Home</a></li>
                     <li><i class="fa fa-laptop"></i>All Patients</li> 
                     
                 </ol>
@@ -13,7 +13,27 @@
         </div>
 
 	    <div class="row">
-		    <div class="col-lg-8">
+	    	<div class="col-lg-2">
+	    		<div class="col-sm-2 col-icon-box "  onclick="doctors()">
+	                    <img src="<?php echo base_url()."asserts/images/icons/doctor.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+	                    <div class="overlay">
+	                        <div class="text">Doctors</div>
+	                    </div>
+	                </div>
+	                <div class="col-sm-2 col-icon-box "  onclick="nurse()">
+	                    <img src="<?php echo base_url()."asserts/images/icons/nurse.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+	                    <div class="overlay">
+	                        <div class="text">Nurse</div>
+	                    </div>
+	                </div>
+	                <div class="col-sm-2 col-icon-box " onclick="register()">
+	                    <img src="<?php echo base_url()."asserts/images/icons/register.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+	                    <div class="overlay">
+	                        <div class="text">Register</div>
+	                    </div>
+	                </div>
+	    	</div>
+		    <div class="col-lg-6">
 		    	<div id="viewDoctor"  >
                     <div class="white_back container" style="overflow-y:auto; height: 490px";>
                     	<h4 class="text-center">Doctors</h4><hr>
@@ -335,40 +355,98 @@
 
 		    <div class="clo-lg-4">
 		    	<div class="row">
-			    	<div class="col-sm-2 col-icon-box "  onclick="doctors()">
-	                    <img src="<?php echo base_url()."asserts/images/icons/doctor.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-	                    <div class="overlay">
-	                        <div class="text">Doctors</div>
-	                    </div>
-	                </div>
-	                <div class="col-sm-2 col-icon-box "  onclick="nurse()">
-	                    <img src="<?php echo base_url()."asserts/images/icons/nurse.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-	                    <div class="overlay">
-	                        <div class="text">Nurse</div>
-	                    </div>
-	                </div>
-	                <div class="col-sm-2 col-icon-box " onclick="register()">
-	                    <img src="<?php echo base_url()."asserts/images/icons/register.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-	                    <div class="overlay">
-	                        <div class="text">Register</div>
-	                    </div>
-	                </div>
+			    	
 	                <div id="docdetails" class="col-sm-4" >
-	                	
-	                
+	                <div style="padding-top: 10px;">
+                    <div class="panel " style="height:490px; ">
+                        <div class="panel-heading">
+                          <h3 class="panel-title" id="dtitle"></h3>
+                        </div>
+                        <div class="panel-body" style="height:450px;">
+                          <div class="row">
+                            
+                            <div class=" col-md-12 col-lg-12 "> 
+                            <div class="" style="height: 150px;" align="center"> <img alt="User Pic" style="height: 150px;" id="docimage" src="" class=" img-responsive"> </div>
+                            <br/>
+                              <table class="table table-user-information">
+                                <tbody>
+                                  <tr>
+                                    <td >Username:  <span id="duser"></span></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Speciality:  <span id="dsep"></span></td>
+                                    <td>'</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Contact Number:  <span id="dcon"></span></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    
+                                    <td>Email: <a href=""> <span id="demail"></span></a></td>
+                                  </tr>
+                                 		
+                                </tbody>
+                              </table>
+                              
+                              
+                            </div>
+                          </div>
+                    	</div>   
+	                   </div>
 
+	                  </div>
 	                </div>
 	                <div id="nurdetails" style="display: none;" class="col-sm-4">
-	                	
+	                	<div style="padding-top: 10px;">
+                    <div class="panel " style="height:490px; ">
+                        <div class="panel-heading">
+                          <h3 class="panel-title" id="ntitle"></h3>
+                        </div>
+                        <div class="panel-body" style="height:450px;">
+                          <div class="row">
+                            
+                            <div class=" col-md-12 col-lg-12 "> 
+                            <div class="" style="height: 150px;" align="center"> <img alt="User Pic" style="height: 150px;" id="nurimage" src="" class=" img-responsive"> </div>
+                            <br/>
+                              <table class="table table-user-information">
+                                <tbody>
+                                  <tr>
+                                    <td >Username:  <span id="nuser"></span></td>
+                                    <td></td>
+                                  </tr>
+                                 
+                                  <tr>
+                                    <td>Contact Number:  <span id="ncon"></span></td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    
+                                    <td>Email: <a href=""> <span id="nemail"></span></a></td>
+                                  </tr>
+                                 		
+                                </tbody>
+                              </table>
+                              
+                              
+                            </div>
+                          </div>
+                    	</div>   
+	                   </div>
+
+	                  </div>
+
 	             
 
 	                </div>
+	               </div> 
                 </div>
                
-		    </div>
+		 </div>
 
 
-	    </div>
+	    
     </div>
 </section>  
 <script type="text/javascript">
@@ -420,7 +498,7 @@
      		var doc = $('#doc_id'+id).val();
      		$.ajax({
             type: "post",
-            url: "http://[::1]/project/Group-07/NiceAdmin/AdminView/deleteDoctor/",
+            url: "http://[::1]/project/Group-07/NiceAdmin/DoctorView/deleteDoctor/",
             cache: false,
             data: {deld:doc},
             success: function (data) {
@@ -441,7 +519,7 @@
      		var nur = $('#nur_id'+id).val();
      		$.ajax({
 	            type: "post",
-	            url: "http://[::1]/project/Group-07/NiceAdmin/AdminView/deleteNurse/",
+	            url: "http://[::1]/project/Group-07/NiceAdmin/DoctorView/deleteNurse/",
 	            cache: false,
 	            data: {deln:nur},
 	            success: function (data) {
@@ -457,26 +535,72 @@
      }
      }
      function viewDoctor(docId){
+     	one = [];
      	$.ajax({
 	            type: "post",
-	            url: "http://[::1]/project/Group-07/NiceAdmin/AdminView/viewDoc/",
+	            url: "http://[::1]/project/Group-07/NiceAdmin/DoctorView/viewDoc/",
 	            cache: false,
 	            data: {viewd:docId},
 	            success: function (data) {
-	            	$('#docdetails').html('');
-	            	$('#docdetails').html(data);
+	            	var array = [];
+	            	var two = [];
+                    var x = data.split(']');
+                    for(var i=0 ; i<x.length-1;i++){
+                        two[i] = JSON.parse(x[i]+']');
+                    }
+                    for(var z = 0;z<two.length;z++){
+                       	for(var i =0;i<two[z].length;i++) {
+                       		array[i] =  two[z][i].doc_name;
+                       		array[i+1] =  two[z][i].user_name;
+                       		array[i+2] =  two[z][i].speciality;
+                       		array[i+3] =  two[z][i].email;
+                       		array[i+4] =  two[z][i].telephone;
+                       		array[i+5] =  two[z][i].doc_img;
+                       	}
+                    }	
+                    $('#dtitle').html(array[0]);
+                   	$('#duser').html(array[1]);
+                   	$('#dsep').html(array[2]);
+                   	$('#demail').html(array[3]);
+                   	$('#dcon').html(array[4]);
+                  
+                   	$('#docimage').attr('src','http://[::1]/project/Group-07/NiceAdmin/'+array[5]+'');
+	            	// one = data;
+	            	// for(i=0;i<one.length;i++){
+	            	// 		alert(one[i]);
+	            	// }
+	            	// $('#docdetails').html('');
+	            	// $('#docdetails').html(data);
             	}
         	});
      }
      function viewNurse(nurId){
      	$.ajax({
 	            type: "post",
-	            url: "http://[::1]/project/Group-07/NiceAdmin/AdminView/viewNur/",
+	            url: "http://[::1]/project/Group-07/NiceAdmin/DoctorView/viewNur/",
 	            cache: false,
 	            data: {viewn:nurId},
 	            success: function (data) {
-	            	$('#nurdetails').html('');
-	            	$('#nurdetails').html(data);
+	            	var array = [];
+	            	var two = [];
+                    var x = data.split(']');
+                    for(var i=0 ; i<x.length-1;i++){
+                        two[i] = JSON.parse(x[i]+']');
+                    }
+                    for(var z = 0;z<two.length;z++){
+                       	for(var i =0;i<two[z].length;i++) {
+                       		array[i] =  two[z][i].nurse_name;
+                       		array[i+1] =  two[z][i].user_name;
+                       		array[i+2] =  two[z][i].email;
+                       		array[i+3] =  two[z][i].telephone;
+                       		array[i+4] =  two[z][i].nur_image;
+                       	}
+                    }	
+                    $('#ntitle').html(array[0]);
+                   	$('#nuser').html(array[1]);
+                   	$('#nemail').html(array[2]);
+                   	$('#ncon').html(array[3]);
+                   	$('#nurimage').attr('src','http://[::1]/project/Group-07/NiceAdmin/'+array[4]+'');
             	}
         	});
      }
@@ -512,3 +636,4 @@
 
 
 </script>  
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

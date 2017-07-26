@@ -12,7 +12,7 @@
                             <!--div class="book-top-bar text-center">
                                 <span><i class="flaticon-notes hidden-xs"></i>Register Now</span>
                             </div-->
-                            <form class="book-form" method="post" action="<?php echo base_url() ?>index.php/send_email/send">
+                            <form class="book-form" method="post" action="<?php echo base_url() ?>index.php/forgetpassword/forget" >  
                                 
                                 
                              
@@ -24,10 +24,20 @@
 
                                  
                                 <div class="form-group">                   
-                                   <input type="text" class="form-control" id="email"  name="email"  placeholder="your recovery Email" required>
+
+                                   <div class="form-group">
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="Patient Name" required="required">
+                                   </div>
+                                   <div class="form-group">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                                   </div>
+                                   <div class="form-group">
+                                    <input type="password" class="form-control" id="cpass" name="cpass" placeholder="Confirm Password" required>
+                                   </div>
+                                   
 
                                 </div>                
-                                <button type="submit" class="btn btn-default" id = "forget_btn"> send </button>
+                                <button type="submit" class="btn btn-default" id = "forget_btn"> Reset </button>
                                 
                             </form>
                                  

@@ -1,7 +1,8 @@
 <div id="about" class="about-main-block">
     <div class="container">
         <div class = "col-lg-9">
-            <p> you are loggined as </p>
+            <p> you are loggined as <?php echo $this->session->userdata['logged_in']['username']?> </p>
+            <a href="<?php echo base_url()."user_authentication/logout" ?>"><img src='<?php echo base_url().'asserts/images/logout.jpg'?>'</a>
         </div>
 
 
@@ -17,10 +18,10 @@
 
             <div class="tab-content">
                 <div id="makeAppointment" class="tab-pane fade in active">
-                    <form class="book-form" method="post" action="http://thegenius.co/lamadic-html/version1/index-appointment.php">
+                    <form class="book-form" method="post" action="<?php echo base_url()?>patient/index">
                      
                         <div class="form-group select" required>
-                            <select>
+                            <select name="clinic">
                                 <option value="" name="clinic">Select a clinic </option>
                                 <option value="doc1" name="clinic">clinic 2</option>
                                 <option value="doc1" name="clinic">clinic 3</option>
@@ -30,13 +31,12 @@
                             </select>
                         </div>
                         <div class="form-group select" required>
-                            <select>
+                            <select name="doctor">
                                 <option value="" name="doctor">Select a doctor </option>
-                                <option value="doc1" name="doctor">doctor 2</option>
-                                <option value="doc1" name="doctor">doctor 3</option>
-                                <option value="doc1" name="doctor">doctor 4</option>
-                                <option value="doc1" name="doctor">doctor 5</option>
-                                <option value="doc1" name="doctor">doctor 6</option>
+                                <option value="doc1" name="doctor">Prasad Samaradiwakara</option>
+                                <option value="doc1" name="doctor">Ranmini Shakya</option>
+                                <option value="doc1" name="doctor">Udaya Ranawaka</option>
+                                \
                             </select>
                         </div>
 
@@ -45,16 +45,14 @@
                             <input type="text" class="form-control date-pick" id="appointmentdate" name="appointmentdate" placeholder="Appointment Date" required>
                         </div-->
 
-                        <textarea class="form-control" name="available" rows="2" placeholder="available time slot"></textarea>  
-                        <div class="form-group">                   
-                            <input type="text" class="form-control" id="timeslot" name="timeslot" placeholder="your time slot" required>
-                        </div>                
+                       
+                                     
                         <button type="submit" class="btn btn-default"><a href="<?php echo base_url()."patient"?>"></a>Make appointment</button>
                         
                     </form>
                 </div>
                 <div id="cancelAppointment" class="tab-pane fade">
-                    <form class="book-form" method="post" action="http://thegenius.co/lamadic-html/version1/index-appointment.php">
+                    <form class="book-form" method="post" action="<?php echo base_url()?>patient/delete">
                                 
                                 
                                 
@@ -66,7 +64,7 @@
 
                                 
                                 <div class="form-group">                   
-                                    <input type="text" class="form-control" id="timeslot" name="timeslot" placeholder="appointment number" required>
+                                    <input type="text" class="form-control" id="num" name="num" placeholder="appointment number" required>
                                 </div>                
                                 
                                 <button  type="submit " class="btn btn-default"> Delete  </button>

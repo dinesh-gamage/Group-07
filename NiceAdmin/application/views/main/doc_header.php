@@ -23,6 +23,7 @@
             $email = ($this->session->userdata['logged_in']['email']);
             $name = ($this->session->userdata['logged_in']['name']);
             $picture = ($this->session->userdata['logged_in']['picture']);
+            $status = $this->session->userdata['logged_in']['status'];
             $this->session->set_userdata('doc_sess',$name );
         } else{
             redirect('/Login');
@@ -56,6 +57,7 @@
 -->
     <!--\link href="<-?php echo base_url()."asserts/css/bootstrap.min.css"?>" rel="stylesheet" /-->
     <!--link href="<-?php echo base_url()."asserts/css/bootstrap-theme.css"?>" rel="stylesheet" /-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="http://www.amcharts.com/lib/style.css" type="text/css">
     
     <style type="text/css">
@@ -97,7 +99,7 @@
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-jvectormap-1.2.2.min.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-jvectormap-world-mill-en.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/gdp-data.js" ?>"></script>	
-    
+    <!-- <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
     
     <script>
           //knob
@@ -217,6 +219,8 @@
                 setInterval(countnewSessions, 10);
             });
 
+            
+
   </script>
     
     
@@ -254,7 +258,7 @@
                     <li id="alert_notificatoin_bar" class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 
-                            <i class="icon-bell-l"></i>
+                            <i  style="color:gray;"class="glyphicon glyphicon-user"></i>
                             <span class="badge bg-important"><div class="countnewpatient"></div></span>
                         </a>
                         <ul class="dropdown-menu extended notification" >
@@ -298,9 +302,15 @@
                             <li class="eborder-top">
                                 <a href="<?php echo base_url()."Profile"?>"><i class="icon_profile"></i> My Profile</a>
                             </li>
-                            <li>
+                            <li >
                                 <a href="<?php echo base_url()."user_authentication/logout"?>"><i class="icon_key_alt"></i> Log Out</a>
                             </li>
+                            <?php if($status==="Admin"){?>
+                                <li>
+                                    <a href="<?php echo base_url()?>/DoctorView/administrativeWork"><i class="glyphicon glyphicon-th"></i>Admin Dashboard</a>
+                                    <a href="<?php echo base_url()."DoctorView"?>"><i class="material-icons">&#xe7fb;</i>Patient Dashboard</a>
+                                </li>
+                            <?php }?>
                         </ul>
                     </li>
                     <?php endforeach;?>
@@ -313,7 +323,13 @@
             </div>
         </header>      
   
-        
+  <script type="text/javascript">
+     function patient(){
+        var t = $(this).getAttribute('id');
+        alert(t);
+     }
+
+  </script>      
    
        
  

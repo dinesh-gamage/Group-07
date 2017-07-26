@@ -21,9 +21,10 @@ class Header extends CI_Controller{
             $result = $this->indexmodel->get_new_patients();
 
                 foreach($result as $newpatient){
+                    $pati = $newpatient->patient_name;
                     $res = '
                             <li  >
-                                    <a id="newpatient" onclick="loadpatient( '.$newpatient->patient_id.');">
+                                    <a id="newpatient" onclick="patient(this)" >
                                         <span class="label label-primary"><i class="icon_profile"></i></span>
                                         '.$newpatient->patient_name.'
                                         <span class="small italic pull-right"></span>
@@ -50,9 +51,9 @@ class Header extends CI_Controller{
                     $res = '
                             <li  >
                                     <a id="monthsession" >
-                                        <span class="label label-primary"><i class="icon_profile"></i></span>
-                                        '.$sessions->title.' =>
-                                         '.$sessions->start.'
+                                        <span class="label label-danger"><i class="icon_book_alt"></i></span>
+                                        '.$sessions->title.' <br/>
+                                        '.$sessions->start.'
                                         <span class="small italic pull-right"></span>
                                     </a>
                                 </li>

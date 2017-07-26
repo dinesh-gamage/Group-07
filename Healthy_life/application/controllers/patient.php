@@ -23,11 +23,37 @@ class patient extends CI_Controller {
 		$this->load->model('appointment');
 		$clinic = $this->input->post('clinic');
 		$doctor = $this->input->post('doctor');
-		$timeslot = $this->input->post('timeslot');
+		$name =$this->session->userdata['logged_in']['username'];
 		
-        $data = array('clinic'=>$clinic,'doctor'=>$doctor,'timeslot'=>$timeslot);
+        $data = array('clinic'=>$clinic,'doctor'=>$doctor,'name'=>$name);
 
         
         $this->appointment->add($data);
+        $this->load->view('header');
+        $this->load->view('patient');
+        $this->load->view('footer');
+	}
+	public function delete (){
+		$this->load->model('appointment');
+		$name = $this->session->userdata['logged_in']['username'];
+		$id = $this->input->post('num');
+		$this->appointment->delete($id);
+		$this->load->view('header');
+        $this->load->view('patient');
+        $this->load->view('footer');
+
+	}
+
+	public function show (){
+		$this->load->model ('appointment');
+		$uname = $this->session->userdata['logged_in']['username'];
+		$result =$this->appointment-> get_by_name ( $uname  );
+		if (!empty($result)) {
+			$data[] = $result;
+			$this->load->view('header');
+			$this->load->view('patient',$data);
+			$this->load->view('footer');
+
+		}
 	}
 }
