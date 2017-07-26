@@ -185,10 +185,29 @@ class doc_model extends CI_Model{
         return $query->result();
     }
     
-    public function add_doc_notes($data){
+    public function add_doc_notes($data,$patient_id){
         $this->db->insert('doc_notes',$data);
             if ($this->db->affected_rows() > 0) {
                     return true;
+                }else {
+                    return false;
+                }
+    }
+    
+    public function discharge($data){
+        $this->db->insert('discharge',$data);
+        if ($this->db->affected_rows() > 0) {
+                    return true;                
+                }else {
+                    return false;
+                }
+    }
+    
+    public function updateStatus($data2,$patient_id){
+        $this->db->where('patient_id', $patient_id);
+        $this->db->update('patient_register', $data2);
+        if ($this->db->affected_rows() > 0) {
+                    return true;                
                 }else {
                     return false;
                 }

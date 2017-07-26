@@ -225,7 +225,26 @@
                                             </table>
                                         </div>
                                     </div>
-                                    <?php
+                                    
+                                            <!--report generation using fpdf -->
+                                         <form action="<?php echo site_url('Report'); ?>" method="post" target="_blank">
+                                                <input type="hidden" name="pname" value="<?php echo $patient->patient_name; ?>">
+                                                <input type="hidden" name="pgender" value="<?php echo $patient->gender; ?>">
+                                                <input type="hidden" name="planguage" value="<?php echo $patient->language; ?>">
+                                                <input type="hidden" name="page" value="<?php echo $patient->age; ?>">
+                                                <input type="hidden" name="pdob" value="<?php echo $patient->dob; ?>">
+                                                <input type="hidden" name="pschool" value="<?php echo $patient->school; ?>">
+                                                <input type="hidden" name="pguard" value="<?php echo $patient->guardian_name; ?>">
+                                                <input type="hidden" name="grelation" value="<?php echo $patient->relationship; ?>">
+                                                <input type="hidden" name="gaddress" value="<?php echo $patient->address; ?>">
+                                                <input type="hidden" name="ptelephone" value="<?php echo $patient->telephone; ?>">
+                                                <input type="hidden" name="pdivision" value="<?php echo $patient->division; ?>">
+                                                <input type="hidden" name="refer" value="<?php echo $patient->refered_by; ?>">
+                                                <input type="hidden" name="reg" value="<?php echo $patient->regitration_date; ?>">
+
+                                                <button class="btn btn-primary">Print</button>
+                                        </form>
+                                        <?php
                                             }
                                     endforeach;
                                     ?>
@@ -261,6 +280,14 @@
                                                     }else{
                                                         $diagnosisCount +=0;                                            
                                                     }
+                                            ?>
+                                            <form action="<?php echo site_url('Report2'); ?>" method="post" target="_blank">
+                                                <input type="hidden" name="doc_name" value="<?php echo $diagnosis->doc_name; ?>">
+                                                <input type="hidden" name="date" value="<?php echo $diagnosis->date; ?>">
+                                                <input type="hidden" name="time" value="<?php echo $diagnosis->time; ?>">
+                                                <button class="btn btn-primary">Print</button>
+                                            </form>
+                                            <?php
                                                 endforeach;
                                                 if ($diagnosisCount == 0){
                                             ?>
@@ -463,6 +490,38 @@
                                                             }else{
                                                                     $familyCount += 0;
                                                                 }
+                                                        ?>
+                                                        
+                                                            <form action="<?php echo site_url('Report3');?>" method="post" target="_blank">
+                                                                <input type="hidden" name="dad" value="<?php echo $familyHistory->father; ?>">
+                                                                <input type="hidden" name="mom" value="<?php echo $familyHistory->mother; ?>">
+                                                                <input type="hidden" name="noSibling" value="<?php echo $familyHistory->no_of_sibilings; ?>">
+                                                                <input type="hidden" name="nameSibling" value="<?php echo $familyHistory->names_of_sibilings; ?>">
+                                                                <input type="hidden" name="home" value="<?php echo $familyHistory->home_situation; ?>">
+                                                                <input type="hidden" name="present" value="<?php echo $familyHistory->presenting_problems; ?>">
+                                                                <input type="hidden" name="preg" value="<?php echo $familyHistory->during_pregnancy; ?>">
+                                                                <input type="hidden" name="birth" value="<?php echo $familyHistory->at_birth; ?>">
+                                                                <input type="hidden" name="delivery" value="<?php echo $familyHistory->mode_of_dilivery; ?>">
+                                                                <input type="hidden" name="weight" value="<?php echo $familyHistory->birth_weight; ?>">
+                                                                <input type="hidden" name="cry" value="<?php echo $familyHistory->birth_cry; ?>">
+                                                                <input type="hidden" name="afterBirth" value="<?php echo $familyHistory->after_birth; ?>">
+                                                                <input type="hidden" name="rel_ill" value="<?php echo $familyHistory->relevent_illnesses; ?>">
+                                                                <input type="hidden" name="med" value="<?php echo $familyHistory->medications; ?>">
+                                                                <input type="hidden" name="audiolog" value="<?php echo $familyHistory->audiology; ?>">
+                                                                <input type="hidden" name="aud_left" value="<?php echo $familyHistory->audio_left; ?>">
+                                                                <input type="hidden" name="aud_right" value="<?php echo $familyHistory->audiio_right; ?>">
+                                                                <input type="hidden" name="vision" value="<?php echo $familyHistory->vision; ?>">
+                                                                <input type="hidden" name="vision_left" value="<?php echo $familyHistory->vision_left; ?>">
+                                                                <input type="hidden" name="vision_right" value="<?php echo $familyHistory->vision_right; ?>">
+                                                                <input type="hidden" name="relate_his" value="<?php echo $familyHistory->related_history_family; ?>">
+                                                                <input type="hidden" name="doc" value="<?php echo $familyHistory->doc_name; ?>">
+                                                                <input type="hidden" name="date" value="<?php echo $familyHistory->date; ?>">
+                                                                <input type="hidden" name="time" value="<?php echo $familyHistory->time; ?>">
+
+                                                                <button class="btn btn-primary">print</button>
+                                                            </form>    
+                                                        
+                                                        <?php
 
                                                             endforeach;
                                                             if($familyCount == 0){
@@ -1552,7 +1611,7 @@
                                                 <div class="form-group">
                                                     <div class="col-sm-7"></div>
                                                     <div class="col-sm-2">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                        <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <button type="submit" name='save' class="btn btn-primary">Submit</button>
@@ -2076,7 +2135,7 @@
                                                 <div class="form-group">
                                                     <div class="col-sm-7"></div>
                                                     <div class="col-sm-2">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                        <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <button type="submit" name='save' class="btn btn-primary">Submit</button>
@@ -2268,7 +2327,7 @@
                                     <div class="form-group">
                                         <div class="col-sm-7"></div>
                                         <div class="col-sm-2">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                            <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                         </div>
                                         <div class="col-sm-3">
                                             <button type="submit" name='save' class="btn btn-primary">Submit</button>
@@ -2534,7 +2593,7 @@
                                             <div class="form-group">
                                                 <div class="col-sm-7"></div>
                                                 <div class="col-sm-2">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <button type="submit" name='save' class="btn btn-primary">Submit</button>
@@ -2597,7 +2656,7 @@
                                             <div class="form-group">
                                                 <div class="col-sm-7"></div>
                                                 <div class="col-sm-2">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <button type="submit" name='save' class="btn btn-primary">Submit</button>
@@ -2689,7 +2748,7 @@
                                 <div class="form-group">
                                     <div class="col-sm-7"></div>
                                     <div class="col-sm-2">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                     </div>
                                     <div class="col-sm-3">
                                         <button type="submit" name='save' class="btn btn-primary">Save</button>
@@ -2746,7 +2805,7 @@
                                 <div class="form-group">
                                     <div class="col-sm-7"></div>
                                     <div class="col-sm-2">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                     </div>
                                     <div class="col-sm-3">
                                         <button type="submit" name='save' class="btn btn-primary">Save</button>
@@ -2764,7 +2823,230 @@
                 <div id="medication" style="display: none" >
                     <div class="white_back">
                         <h3 class="text-center">Medications</h3><hr>
-                        
+                            <?php 
+                                        $attri = array('class'=>'form-horizontal');
+                                        echo form_open('DoctorView/add_medication',$attri);
+                                    ?>
+
+                                            <div class="form-group">
+                                                <div class="col-sm-5">
+                                                    <input type="text" id="" class="form-control" placeholder="Type or Select Medicine" name="medicine1" list="medicine1" >
+                                                        <datalist id="medicine1">
+                                                            <option value="Fluanelue">Fluanelue</option>
+                                                            <option value="Seshialin">Seshialin</option>
+                                                            <option value="Citzlopren">Citzlopren</option>
+                                                            <option value="Mellylphenidone">Mellylphenidone</option>
+                                                            <option value="Rispenidone">Rispenidone</option>
+                                                            <option value="Oluezepine">Oluezepine</option>
+                                                            <option value="Quoticapine">Quoticapine</option>
+                                                            <option value="Clonidine">Clonidine</option>
+                                                            <option value="Aripimazole">Aripimazole</option>
+                                                            <option value="Unazepene">Unazepene</option>
+                                                        </datalist>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input type="text" id="" class="form-control" placeholder="Type or Select dose (mg)" name="dose1" list="dose1">
+                                                        <datalist id="dose1">
+                                                            <option value="5mg">5mg</option>
+                                                            <option value="10mg">10mg</option>
+                                                            <option value="15mg">15mg</option>
+                                                            <option value="20mg">20mg</option>
+                                                        </datalist>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <input type="text" id="" class="form-control" placeholder="Type or Select frequency" name="frequency1" list="frequency1">
+                                                        <datalist id="frequency1">
+                                                            <option value="Once a day">Once a day</option>
+                                                            <option value="Twice a day">Twice a day</option>
+                                                            <option value="T.D.S.">T.D.S.</option>
+                                                            <option value="E.O.D.">E.O.D.</option>
+                                                        </datalist>
+                                                </div>
+                                                <input type="hidden" name="doc[0][patient_id]" id="id" value="<?php echo $patient_id; ?>" />
+                                                <input type="hidden" name="doc[0][time]" id="id" value="<?php echo date('H:i:s'); ?>" />
+                                                <input type="hidden" name="doc[0][date]" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                                                <input type="hidden" name="doc[0][doc_name]" id="id" value="<?php echo $name; ?>" />
+                                            </div> 
+                                            
+                                            <div class="form-group">
+                                                <div class="col-sm-5">
+                                                    <input type="text" id="" class="form-control" placeholder="Type or Select medicine" name="medicine2" list="medicine2" >
+                                                        <datalist id="medicine2">
+                                                            <option value="Fluanelue">Fluanelue</option>
+                                                            <option value="Seshialin">Seshialin</option>
+                                                            <option value="Citzlopren">Citzlopren</option>
+                                                            <option value="Mellylphenidone">Mellylphenidone</option>
+                                                            <option value="Rispenidone">Rispenidone</option>
+                                                            <option value="Oluezepine">Oluezepine</option>
+                                                            <option value="Quoticapine">Quoticapine</option>
+                                                            <option value="Clonidine">Clonidine</option>
+                                                            <option value="Aripimazole">Aripimazole</option>
+                                                            <option value="Unazepene">Unazepene</option>
+                                                        </datalist>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input type="text" id="" class="form-control" placeholder="Type or Select dose (mg)" name="dose2" list="dose2" >
+                                                        <datalist id="dose2">
+                                                            <option value="5mg">5mg</option>
+                                                            <option value="10mg">10mg</option>
+                                                            <option value="15mg">15mg</option>
+                                                            <option value="20mg">20mg</option>
+                                                        </datalist>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <input type="text" id="" class="form-control" placeholder="Type or Select frequency" name="frequency2" list="frequency2" >
+                                                        <datalist id="frequency2">
+                                                            <option value="Once a day">Once a day</option>
+                                                            <option value="Twice a day">Twice a day</option>
+                                                            <option value="T.D.S.">T.D.S.</option>
+                                                            <option value="E.O.D.">E.O.D.</option>
+                                                        </datalist>
+                                                </div>
+                                                <input type="hidden" name="doc[0][patient_id]" id="id" value="<?php echo $patient_id; ?>" />
+                                                <input type="hidden" name="doc[0][time]" id="id" value="<?php echo date('H:i:s'); ?>" />
+                                                <input type="hidden" name="doc[0][date]" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                                                <input type="hidden" name="doc[0][doc_name]" id="id" value="<?php echo $name; ?>" />
+                                            </div> 
+                    
+                                            <div class="form-group">
+                                                <div class="col-sm-5">
+                                                    <input type="text" id="" class="form-control" placeholder="Type or Select medicine" name="medicine3" list="medicine3" >
+                                                        <datalist id="medicine3">
+                                                            <option value="Fluanelue">Fluanelue</option>
+                                                            <option value="Seshialin">Seshialin</option>
+                                                            <option value="Citzlopren">Citzlopren</option>
+                                                            <option value="Mellylphenidone">Mellylphenidone</option>
+                                                            <option value="Rispenidone">Rispenidone</option>
+                                                            <option value="Oluezepine">Oluezepine</option>
+                                                            <option value="Quoticapine">Quoticapine</option>
+                                                            <option value="Clonidine">Clonidine</option>
+                                                            <option value="Aripimazole">Aripimazole</option>
+                                                            <option value="Unazepene">Unazepene</option>
+                                                        </datalist>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input type="text" id="" class="form-control" placeholder="Type or Select dose (mg)" name="dose3" list="dose3" >
+                                                        <datalist id="dose3">
+                                                            <option value="5mg">5mg</option>
+                                                            <option value="10mg">10mg</option>
+                                                            <option value="15mg">15mg</option>
+                                                            <option value="20mg">20mg</option>
+                                                        </datalist>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <input type="text" id="" class="form-control" placeholder="Type or Select frequency" name="frequency3" list="frequency3" >
+                                                        <datalist id="frequency3">
+                                                            <option value="Once a day">Once a day</option>
+                                                            <option value="Twice a day">Twice a day</option>
+                                                            <option value="T.D.S.">T.D.S.</option>
+                                                            <option value="E.O.D.">E.O.D.</option>
+                                                        </datalist>
+                                                </div>
+                                                <input type="hidden" name="doc[0][patient_id]" id="id" value="<?php echo $patient_id; ?>" />
+                                                <input type="hidden" name="doc[0][time]" id="id" value="<?php echo date('H:i:s'); ?>" />
+                                                <input type="hidden" name="doc[0][date]" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                                                <input type="hidden" name="doc[0][doc_name]" id="id" value="<?php echo $name; ?>" />
+                                            </div> 
+                    
+                                            <div class="form-group">
+                                                <div class="col-sm-5">
+                                                    <input type="text" id="" class="form-control" placeholder="Type or Select medicine" name="medicine4" list="medicine4" >
+                                                        <datalist id="medicine4">
+                                                            <option value="Fluanelue">Fluanelue</option>
+                                                            <option value="Seshialin">Seshialin</option>
+                                                            <option value="Citzlopren">Citzlopren</option>
+                                                            <option value="Mellylphenidone">Mellylphenidone</option>
+                                                            <option value="Rispenidone">Rispenidone</option>
+                                                            <option value="Oluezepine">Oluezepine</option>
+                                                            <option value="Quoticapine">Quoticapine</option>
+                                                            <option value="Clonidine">Clonidine</option>
+                                                            <option value="Aripimazole">Aripimazole</option>
+                                                            <option value="Unazepene">Unazepene</option>
+                                                        </datalist>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input type="text" id="" class="form-control" placeholder="Type or Select dose (mg)" name="dose4" list="dose4" >
+                                                        <datalist id="dose4">
+                                                            <option value="5mg">5mg</option>
+                                                            <option value="10mg">10mg</option>
+                                                            <option value="15mg">15mg</option>
+                                                            <option value="20mg">20mg</option>
+                                                        </datalist>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <input type="text" id="" class="form-control" placeholder="Type or Select frequency" name="frequency4" list="frequency4" >
+                                                        <datalist id="frequency4">
+                                                            <option value="Once a day">Once a day</option>
+                                                            <option value="Twice a day">Twice a day</option>
+                                                            <option value="T.D.S.">T.D.S.</option>
+                                                            <option value="E.O.D.">E.O.D.</option>
+                                                        </datalist>
+                                                </div>
+                                                <input type="hidden" name="doc[0][patient_id]" id="id" value="<?php echo $patient_id; ?>" />
+                                                <input type="hidden" name="doc[0][time]" id="id" value="<?php echo date('H:i:s'); ?>" />
+                                                <input type="hidden" name="doc[0][date]" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                                                <input type="hidden" name="doc[0][doc_name]" id="id" value="<?php echo $name; ?>" />
+                                            </div> 
+                    
+                                            <div class="form-group">
+                                                <div class="col-sm-5">
+                                                    <input type="text" id="" class="form-control" placeholder="Type or Select medicine" name="medicine5" list="medicine5">
+                                                        <datalist id="medicine5">
+                                                            <option value="Fluanelue">Fluanelue</option>
+                                                            <option value="Seshialin">Seshialin</option>
+                                                            <option value="Citzlopren">Citzlopren</option>
+                                                            <option value="Mellylphenidone">Mellylphenidone</option>
+                                                            <option value="Rispenidone">Rispenidone</option>
+                                                            <option value="Oluezepine">Oluezepine</option>
+                                                            <option value="Quoticapine">Quoticapine</option>
+                                                            <option value="Clonidine">Clonidine</option>
+                                                            <option value="Aripimazole">Aripimazole</option>
+                                                            <option value="Unazepene">Unazepene</option>
+                                                        </datalist>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <input type="text" id="" class="form-control" placeholder="Type or Select dose (mg)" name="dose5" list="dose5">
+                                                        <datalist id="dose5">
+                                                            <option value="5mg">5mg</option>
+                                                            <option value="10mg">10mg</option>
+                                                            <option value="15mg">15mg</option>
+                                                            <option value="20mg">20mg</option>
+                                                        </datalist>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <input type="text" id="" class="form-control" placeholder="Type or Select frequency" name="frequency5" list="frequency5" >
+                                                        <datalist id="frequency5">
+                                                            <option value="Once a day">Once a day</option>
+                                                            <option value="Twice a day">Twice a day</option>
+                                                            <option value="T.D.S.">T.D.S.</option>
+                                                            <option value="E.O.D.">E.O.D.</option>
+                                                        </datalist>
+                                                </div>
+                                                <input type="hidden" name="doc[0][patient_id]" id="id" value="<?php echo $patient_id; ?>" />
+                                                <input type="hidden" name="doc[0][time]" id="id" value="<?php echo date('H:i:s'); ?>" />
+                                                <input type="hidden" name="doc[0][date]" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                                                <input type="hidden" name="doc[0][doc_name]" id="id" value="<?php echo $name; ?>" />
+                                            </div> 
+                    
+                                            <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
+                                                <input type="hidden" name="time" id="id" value="<?php echo date('H:i:s'); ?>" />
+                                                <input type="hidden" name="date" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                                                <input type="hidden" name="doc_name" id="id" value="<?php echo $name; ?>" />
+                                            <div class="form-group">
+                                                <div class="col-sm-7"></div>
+                                                <div class="col-sm-2">
+                                                    <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <button type="submit" name='save' id="goalsave"class="btn btn-primary">Submit</button>
+                                                </div>
+                                                    
+                                            </div>
+
+                                    <?php 
+                                        echo form_close();                                        
+                                    ?> 
+
                     </div>
                 </div>
                 
@@ -2893,7 +3175,7 @@
                                             <div class="form-group">
                                                 <div class="col-sm-7"></div>
                                                 <div class="col-sm-2">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                                    <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <button type="submit" name='save' id="goalsave"class="btn btn-primary">Submit</button>
@@ -2955,7 +3237,7 @@
                                         <div class="col-sm-2">
                                             <br/>
                                             <br/>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                            <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                         </div>
                                         <div class="col-sm-3">
                                             <br/>
@@ -3104,7 +3386,7 @@
                             <div class="col-sm-2">
                                 <br/>
                                 <br/>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
                             </div>
                             <div class="col-sm-3">
                                 <br/>
@@ -3137,7 +3419,7 @@
                                 </div>
                                 <input type="hidden" name="patientid" id="patientcogid" value="<?php echo $patient_id; ?>" />
                                 <div class="col-sm-4">
-                                    <button type="button" id="start" class="btn btn-info" onclick="javascript: submit()" >Start Test Now</button>
+                                    <button type="reset" id="start" class="btn btn-info" onclick="javascript: submit()" >Start Test Now</button>
                                 </div>
                             </div>
                             <div class="form-group"></div>
@@ -3167,14 +3449,6 @@
                             
                         </div>
                         
-                        
-                    </div>
-                </div>
-                
-                <!-- | Activities | -->
-                <div id="activities" style="display: none" >
-                    <div class="white_back">
-                        <h3 class="text-center">Activities</h3><hr>
                         
                     </div>
                 </div>
@@ -3291,7 +3565,94 @@
                 <div id="discharge" style="display: none" >
                     <div class="white_back">
                         <h3 class="text-center">Discharge Plan</h3><hr>
+                        <?php
+                            $attri = array('class'=>'form-horizontal');
+                            echo form_open('DoctorView/add_discharge_plan',$attri);
+                        ?>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Discharge Date </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="date" value="<?php echo date('Y-m-d'); ?>" class="form-control"   placeholder="Discharge Date" readonly />
+                                </div>
+                                
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Diagnosis on Discharge </label>
+                                <div class="col-lg-9">
+                                    <select name="diagnosis" class="form-control">
+                                        <option value="No Diagnosis">No Diagnosis</option>
+                                        <option value="ASD">ASD</option>
+                                        <option value="ODD">ODD</option>
+                                        <option value="ADHD">ADHD</option>
+                                        <option value="SDLSS">SDLSS</option>
+                                        <option value="OCD">OCD</option>
+                                        <option value="PTSD">PTSD</option>
+                                        <option value="GAD">GAD</option>
+                                        <option value="Ajustment Disorder">Ajustment Disorder</option>
+                                        <option value="Acute Stress Disorder">Acute Stress Disorder</option>
+                                        <option value="MR">MR</option>
+                                        <option value="Conduct Disorder">Conduct Disorder</option>
+                                        <option value="Dissociative Disorder">Dissociative Disorder</option>
+                                        <option value="Non Organic Enuresis">Non Organic Enuresis</option>
+                                        <option value="Somatization Disorder">Somatization Disorder</option>
+                                        <option value="Selective Mutism">Selective Mutism</option>
+                                        <option value="Reactive Attachment Disorder">Reactive Attachment Disorder</option>
+                                        <option value="Tie Disorder">Tie Disorder</option>
+                                        <option value="Panic Disorder">Panic Disorder</option>
+                                        <option value="Seperation Anxiety Disorder">Seperation Anxiety Disorder</option>
+                                        <option value="Mental Behavioural Disorder">Mental Behavioural Disorder</option>
+                                        <option value="Pshycotic Disorder">Pshycotic Disorder</option>
+                                        <option value="No Mental Illness">No Mental Illness</option>
+                                        <option value="Expressive Language Dificult Speach Delay">Expressive Language Dificult Speach Delay</option>
+                                    </select>
+
+                                </div>  
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Patient status on Discharge </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="status"  class="form-control"   placeholder="" required list="status"/>
+                                    <datalist id="status">
+                                        <option value="Fully Recovered">Fully Recovered</option>
+                                        <option value="Not Recovered">Not Recovered</option>
+                                        <option value="Moderate">Moderate</option>
+                                        <option value="Satisfied">Satisfied</option>
+                                    </datalist>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Suggested Other treatments </label>
+                                <div class="col-sm-9">
+                                    <input type="checkbox" name="other" value="Psycho Therepy" >&nbsp;&nbsp; Psycho Therepy <br/>
+                                    <input type="checkbox" name="other" value="Speech Therepy">&nbsp;&nbsp; Speech Therepy <br/>
+                                    <input type="checkbox" name="other" value="Occupational Therepy" >&nbsp;&nbsp; Occupational Therepy <br/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Notes on Discharge </label>
+                                <div class="col-sm-9">
+                                    <textarea name="dischargenote" class="form-control"   placeholder=""  ></textarea>
+                                </div>
+                            </div>
                         
+                            <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
+                            <input type="hidden" name="time" id="id" value="<?php echo date('H:i:s'); ?>" />
+                            <input type="hidden" name="date" id="id" value="<1?php echo date('Y-m-d'); ?>" />
+                            <input type="hidden" name="doctorid" id="id" value="<?php echo $name; ?>" />
+
+                            <div class="form-group">
+                                <div class="col-sm-7"></div>
+                                <div class="col-sm-2">
+                                    <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button type="submit" name='save' class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+
+                        <?php 
+                            echo form_close();
+                        ?>
                     </div>
                 </div>
                 
@@ -3353,12 +3714,16 @@
                         <div class="text">Cognitive <br/>Test</div>
                     </div>
                 </div>
-                <div class="col-sm-2 col-icon-box " onclick="activities()">
-                    <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-                    <div class="overlay">
-                        <div class="text">Activities</div>
+                <a target="_blank" href="<?php echo base_url()."DoctorView/getActivities"; ?> ">
+                    <div class="col-sm-2 col-icon-box ">
+
+                            <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+
+                        <div class="overlay">
+                            <div class="text">Activities</div>
+                        </div>
                     </div>
-                </div>
+                </a>
                 <div class="col-sm-2 col-icon-box "  onclick="references()">
                     <img src="<?php echo base_url()."asserts/images/icons/reference_letters.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
                     <div class="overlay">
@@ -3378,42 +3743,7 @@
                         <div class="text">Discharge<br/> Plan</div>
                     </div>
                 </div>
-                
-                
-                <a target="_blank" href="<?php echo base_url()."Game"; ?> ">
-                <div class="col-sm-2 col-icon-box ">
-                    
-                        <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-                    
-                    <div class="overlay">
-                        <div class="text">Activities<br/>level3</div>
-                    </div>
-                </div>
-                </a>
-
-                <a target="_blank" href="<?php echo base_url()."GameLevel2"; ?> ">
-                <div class="col-sm-2 col-icon-box ">
-                    
-                        <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-                    
-                    <div class="overlay">
-                        <div class="text">Activities<br/>level2</div>
-                    </div>
-                </div>
-                </a>
-
-                <a target="_blank" href="<?php echo base_url()."GameLevel1"; ?> ">
-                <div class="col-sm-2 col-icon-box ">
-                    
-                        <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-                    
-                    <div class="overlay">
-                        <div class="text">Activities<br/>level1</div>
-                    </div>
-                </div>
-                </a>
-                
-                
+   
             </div>
             
             
@@ -3701,6 +4031,11 @@ $("#calculateB").click(function() {
     $('#goalsave').on('click',function(){
         
     });
-</script>                      
+</script>  
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </section>
