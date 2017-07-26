@@ -108,7 +108,7 @@ Class Login extends CI_Controller {
             );
             $result = $this->login_database->login($data);
             $result2 = $this->login_database->nurse_login($data);
-            if ($result == TRUE) {
+            if ($result) {
                 $username = $this->input->post('username');
                 $result = $this->login_database->read_user_information($username);
                 if($result[0]->is_admin == 1){
@@ -117,29 +117,43 @@ Class Login extends CI_Controller {
                     $status = 'Doctor';
                 }
                 if ($result != false) {
-                    $session_data = array(
-                        'username' => $result[0]->user_name,
-                        'email' => $result[0]->email,
-                        'status' => $status,
-                        'name' => $result[0]->doc_name,
-                        'picture' => $result[0]->doc_img,
-                        'doctorId' => $result[0]->doctor_id,
-
-                    );
+                   
 
                     
                     // Add user data in session
-                    $this->session->set_userdata('logged_in', $session_data);
+                    
                     if($status==="Doctor"){
+                         $session_data = array(
+                            'username' => $result[0]->user_name,
+                            'email' => $result[0]->email,
+                            'status' => $status,
+                            'name' => $result[0]->doc_name,
+                            'picture' => $result[0]->doc_img,
+                            'doctorId' => $result[0]->doctor_id,
+
+                        );
+                        $this->session->set_userdata('logged_in', $session_data);
                         $data1['doc_data'] = $this->profilemodel->get_doc_data();                    
                         redirect('/DoctorView/');
                     }else{
+                        $session_data = array(
+                            'username' => $result[0]->user_name,
+                            'email' => $result[0]->email,
+                            'status' => $status,
+                            'name' => $result[0]->doc_name,
+                            'picture' => $result[0]->doc_img,
+                            'adminId' => $result[0]->doctor_id,
+                            
+                            
+
+                        );
+                        $this->session->set_userdata('logged_in', $session_data);
                         $data1['doc_data'] = $this->profilemodel->get_doc_data();                    
-                        redirect('/AdminView/');
+                        redirect('/MainHome/');
                     }
                     
                 }
-            } else if($result2==TRUE){
+            } else if($result2){
                 $username = $this->input->post('username');
                 $result3 = $this->login_database->read_nurse_information($username);
                 if($result3[0]->is_director == 1){
@@ -186,11 +200,18 @@ Class Login extends CI_Controller {
         
         $this->load->view('login/login_form');//, $data);
     }
-    function checkUsername(){
+    public function checkUsername(){
         if(isset($_POST['cuser'])){
             $cuser = $this->login_database->cUsername($_POST['cuser']);
             echo $cuser;
         }
+    }
+    public function checkUsernamenur(){
+        if(isset($_POST['cnur'])){
+            $cuser = $this->login_database->cnurUsername($_POST['cnur']);
+            echo $cuser;
+        }
+
     }
 
 }

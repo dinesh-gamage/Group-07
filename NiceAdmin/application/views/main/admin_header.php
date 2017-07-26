@@ -97,7 +97,7 @@
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-jvectormap-1.2.2.min.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-jvectormap-world-mill-en.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/gdp-data.js" ?>"></script>	
-    
+    <!-- <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
     
     <script>
           //knob
@@ -230,7 +230,7 @@
     
 
             <!--logo start-->
-            <a href="<?php echo base_url()."DoctorView"?>" class="logo">Healthy<span class="lite">Life</span></a>
+            <a href="<?php echo base_url()."AdminView"?>" class="logo">Healthy<span class="lite">Life</span></a>
             <!--logo end-->
 
 <!--            <div class="nav search-row" id="top_menu">-->
@@ -283,6 +283,7 @@
                             </div>
                         </ul>
                     </li>
+
                     <!-- user login dropdown start-->
                     <?php foreach($doc_data as $doc_row):?>
                     <li class="dropdown">
@@ -305,7 +306,7 @@
                     </li>
                     <?php endforeach;?>
   
-   
+                    
                    
  
                 </ul>

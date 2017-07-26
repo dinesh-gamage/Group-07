@@ -36,14 +36,13 @@ class NurseProfile extends CI_Controller {
         $nurDetails ['records'] = $this->profilemodel->get_nur_data();
         $currpass = $this->input->post('curpass');
         if(isset($currpass)) {
-            $check = $this->profilemodel->current_nurpass($currpass);
-            foreach ($check as $ck) {
-                if($currpass == $this->encrypt->decode($ck->password)){
-                    echo "true";
-                }else{
-                    echo "false";
-                }
+            $check = $this->profilemodel->current_nurpass($currpass);           
+            if($check){
+                echo "true";
+            }else{
+                echo "false";
             }
+            
         }
         $this->load->view('main/nurse_header',$data1);
         $this->load->view('nurseProfile',$nurDetails);
@@ -53,7 +52,7 @@ class NurseProfile extends CI_Controller {
                 $this->nur_name = $_POST['nur_name'];
             }
             if(isset($_POST['nur_pass'])) {
-                $this->nur_pass = $this->encrypt->encode($_POST['nur_pass']);
+                $this->nur_pass = sha1($_POST['nur_pass']);
             }
             if(isset($_POST['contact'])) {
                 $this->contact = $_POST['contact'];
