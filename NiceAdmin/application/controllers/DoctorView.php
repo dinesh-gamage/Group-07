@@ -83,6 +83,12 @@ class DoctorView extends CI_Controller {
         $this->load->view('main/doc_header',$data1);
 		$this->load->view('doctor/doc_view_patient',$data);
     }
+
+    public function getActivities(){
+        $data1['doc_data'] = $this->profilemodel->get_doc_data();
+        $this->load->view('main/doc_header',$data1);
+        $this->load->view('activities');
+    }
       
     public function add_family_history()
     {

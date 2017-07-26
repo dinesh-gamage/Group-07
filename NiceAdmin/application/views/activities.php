@@ -6,11 +6,19 @@
 
 
 <br><br>
+<<<<<<< HEAD
 <!--div class="w3-content w3-section" style="width: 100%;">
   <img class="mySlides" src="<-?php echo base_url()."asserts/images/doc_img/blog-1.jpg"; ?>" style="width:100%; height: 300px;">
   <img class="mySlides" src="<-?php echo base_url()."asserts/images/doc_img/speecialist-05.jpg"; ?>" style="width:100%; height: 300px;">
   <img class="mySlides" src="<-?php echo base_url()."asserts/images/doc_img/speecialist-062.jpg"; ?>" style="width:100%; height: 300px;">
 </div-->
+=======
+<div class="w3-content w3-section" style="width: 100%;">
+  <img class="mySlides" src="<?php echo base_url()."asserts/images/doc_img/blog-1.jpg"; ?>" style="width:100%; height: 300px;">
+  <img class="mySlides" src="<?php echo base_url()."asserts/images/doc_img/speecialist-05.jpg"; ?>" style="width:100%; height: 300px;">
+  <img class="mySlides" src="<?php echo base_url()."asserts/images/doc_img/speecialist-062.jpg"; ?>" style="width:100%; height: 300px;">
+</div>
+>>>>>>> 5e9b9ba8f4dbb0bdc1e1605b1234a7a9ced96a97
 
 <div class="container">
   <h3>Fish Tank</h3>
@@ -52,5 +60,9 @@ function carousel() {
 </script>
 
 
+<<<<<<< HEAD
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+=======
+
+>>>>>>> 5e9b9ba8f4dbb0bdc1e1605b1234a7a9ced96a97
 
