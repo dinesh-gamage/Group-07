@@ -263,15 +263,41 @@ border-radius: 20px;
                                                         </tr>
 
                                                     </table>
+                                                    
                                                 </div>
+
                                             </div>
+                                            
                                         <?php
                                                     }
 
+                                                
+                                        ?>
+                                        <!--report generation using fpdf -->
+                                         <form action="<?php echo site_url('Report'); ?>" method="post" target="_blank">
+                                                <input type="hidden" name="pname" value="<?php echo $patient->patient_name; ?>">
+                                                <input type="hidden" name="pgender" value="<?php echo $patient->gender; ?>">
+                                                <input type="hidden" name="planguage" value="<?php echo $patient->language; ?>">
+                                                <input type="hidden" name="page" value="<?php echo $patient->age; ?>">
+                                                <input type="hidden" name="pdob" value="<?php echo $patient->dob; ?>">
+                                                <input type="hidden" name="pschool" value="<?php echo $patient->school; ?>">
+                                                <input type="hidden" name="pguard" value="<?php echo $patient->guardian_name; ?>">
+                                                <input type="hidden" name="grelation" value="<?php echo $patient->relationship; ?>">
+                                                <input type="hidden" name="gaddress" value="<?php echo $patient->address; ?>">
+                                                <input type="hidden" name="ptelephone" value="<?php echo $patient->telephone; ?>">
+                                                <input type="hidden" name="pdivision" value="<?php echo $patient->division; ?>">
+                                                <input type="hidden" name="refer" value="<?php echo $patient->refered_by; ?>">
+                                                <input type="hidden" name="reg" value="<?php echo $patient->regitration_date; ?>">
+
+                                                <button class="btn btn-primary">Print</button>
+                                        </form>
+                                        <?php
                                                 }
                                             endforeach;
                                         ?>
+                                       
                                     </div>
+                                    
                                     
                                     <div id="caseHistoryHistory" class="tab-pane fade">
                                         <div class="col-md-12">                           
@@ -885,6 +911,17 @@ border-radius: 20px;
                                                 }else{
                                                         $diagCount+=0;
                                                     }
+                                            ?>
+
+                                            <form action="<?php echo site_url('Report2'); ?>" method="post" target="_blank">
+                                                <input type="hidden" name="doc_name" value="<?php echo $diagnosis->doc_name; ?>">
+                                                <input type="hidden" name="date" value="<?php echo $diagnosis->date; ?>">
+                                                <input type="hidden" name="time" value="<?php echo $diagnosis->time; ?>">
+                                                <button class="btn btn-primary">Print</button>
+                                            </form>
+                                            
+
+                                            <?php
                                                 endforeach;
                                                 if($diagCount == 0){
                                                     echo "<div class=\"alert warning\">";
@@ -893,6 +930,7 @@ border-radius: 20px;
                                                 }                                                         
 
                                             ?>
+                                                
                                                 </div>
                                                 
                                         </div>
@@ -930,7 +968,7 @@ border-radius: 20px;
                                                 </div>
                                             
                                         </div>
-                     
+                                        
                                     </div>
                                     <div id="goalEvaluationHistory" class="tab-pane fade">
                                         <h3 class="success text-center">Goal Evaluation</h3>
@@ -1422,6 +1460,39 @@ border-radius: 20px;
                                                 </table>
                                     <?php 
                                         }
+                                    ?>
+
+                                    <form action="<?php echo site_url('Report3');?>" method="post" target="_blank">
+                                        <input type="hidden" name="dad" value="<?php echo $familyHistory->father; ?>">
+                                        <input type="hidden" name="mom" value="<?php echo $familyHistory->mother; ?>">
+                                        <input type="hidden" name="noSibling" value="<?php echo $familyHistory->no_of_sibilings; ?>">
+                                        <input type="hidden" name="nameSibling" value="<?php echo $familyHistory->names_of_sibilings; ?>">
+                                        <input type="hidden" name="home" value="<?php echo $familyHistory->home_situation; ?>">
+                                        <input type="hidden" name="present" value="<?php echo $familyHistory->presenting_problems; ?>">
+                                        <input type="hidden" name="preg" value="<?php echo $familyHistory->during_pregnancy; ?>">
+                                        <input type="hidden" name="birth" value="<?php echo $familyHistory->at_birth; ?>">
+                                        <input type="hidden" name="delivery" value="<?php echo $familyHistory->mode_of_dilivery; ?>">
+                                        <input type="hidden" name="weight" value="<?php echo $familyHistory->birth_weight; ?>">
+                                        <input type="hidden" name="cry" value="<?php echo $familyHistory->birth_cry; ?>">
+                                        <input type="hidden" name="afterBirth" value="<?php echo $familyHistory->after_birth; ?>">
+                                        <input type="hidden" name="rel_ill" value="<?php echo $familyHistory->relevent_illnesses; ?>">
+                                        <input type="hidden" name="med" value="<?php echo $familyHistory->medications; ?>">
+                                        <input type="hidden" name="audiolog" value="<?php echo $familyHistory->audiology; ?>">
+                                        <input type="hidden" name="aud_left" value="<?php echo $familyHistory->audio_left; ?>">
+                                        <input type="hidden" name="aud_right" value="<?php echo $familyHistory->audiio_right; ?>">
+                                        <input type="hidden" name="vision" value="<?php echo $familyHistory->vision; ?>">
+                                        <input type="hidden" name="vision_left" value="<?php echo $familyHistory->vision_left; ?>">
+                                        <input type="hidden" name="vision_right" value="<?php echo $familyHistory->vision_right; ?>">
+                                        <input type="hidden" name="relate_his" value="<?php echo $familyHistory->related_history_family; ?>">
+                                        <input type="hidden" name="doc" value="<?php echo $familyHistory->doc_name; ?>">
+                                        <input type="hidden" name="date" value="<?php echo $familyHistory->date; ?>">
+                                        <input type="hidden" name="time" value="<?php echo $familyHistory->time; ?>">
+
+                                        <button class="btn btn-primary">print</button>
+                                    </form>
+                                    
+
+                                    <?php
                                        
                                         endforeach;
                                     ?>
@@ -3787,7 +3858,7 @@ border-radius: 20px;
                         <div class="text">Upload<br/> Records</div>
                     </div>
                 </div>
-                <a target="_blank" href="<?php echo base_url()."Game"; ?> ">
+                <!-- <a target="_blank" href="<?php echo base_url()."Game"; ?> ">
                 <div class="col-sm-2 col-icon-box ">
                     
                         <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
@@ -3796,9 +3867,9 @@ border-radius: 20px;
                         <div class="text">Activities<br/>level3</div>
                     </div>
                 </div>
-                </a>
+                </a> -->
 
-                <a target="_blank" href="<?php echo base_url()."GameLevel2"; ?> ">
+                <!-- <a target="_blank" href="<?php echo base_url()."GameLevel2"; ?> ">
                 <div class="col-sm-2 col-icon-box ">
                     
                         <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
@@ -3807,15 +3878,38 @@ border-radius: 20px;
                         <div class="text">Activities<br/>level2</div>
                     </div>
                 </div>
-                </a>
+                </a> -->
 
-                <a target="_blank" href="<?php echo base_url()."GameLevel1"; ?> ">
+                <!-- <a target="_blank" href="<?php echo base_url()."GameLevel1"; ?> ">
                 <div class="col-sm-2 col-icon-box ">
                     
                         <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
                     
                     <div class="overlay">
                         <div class="text">Activities<br/>level1</div>
+                    </div>
+                </div>
+                </a> -->
+
+                <!-- <a target="_blank" href="<?php echo base_url()."RollaBall1"; ?> ">
+                <div class="col-sm-2 col-icon-box ">
+                    
+                        <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    
+                    <div class="overlay">
+                        <div class="text">Activities<br/>level4</div>
+                    </div>
+                </div>
+                </a> -->
+
+
+                <a target="_blank" href="<?php echo base_url()."DoctorView/getActivities"; ?> ">
+                <div class="col-sm-2 col-icon-box ">
+                    
+                        <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    
+                    <div class="overlay">
+                        <div class="text">Activities</div>
                     </div>
                 </div>
                 </a>
