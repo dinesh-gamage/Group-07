@@ -39,13 +39,12 @@ class Profile extends CI_Controller {
         $currpass = $this->input->post('curpass');
         if(isset($currpass)) {
             $check = $this->profilemodel->current_pass($currpass);
-            foreach ($check as $ck) {
-                if($currpass == $this->encrypt->decode($ck->password)){
-                    echo "true";
-                }else{
-                    echo "fals";
-                }
+            if($check){
+                echo "true";
+            }else{
+                echo "fals";
             }
+            
         }
         $this->load->view('main/doc_header',$data1);
         $this->load->view('profile',$docDetails);
@@ -55,7 +54,7 @@ class Profile extends CI_Controller {
                 $this->doc_name = $_POST['doc_name'];
             }
             if(isset($_POST['doc_pass'])) {
-                $this->doc_pass = $this->encrypt->encode($_POST['doc_pass']);
+                $this->doc_pass = sha1($_POST['doc_pass']);
             }
             if(isset($_POST['contact'])) {
                 $this->contact = $_POST['contact'];

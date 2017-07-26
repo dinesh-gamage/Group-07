@@ -38,5 +38,24 @@ class Indexmodel extends CI_Model{
         return $query->result();
     }
 
+    public function get_sessions(){
+        $doc  = "";
+        if(isset($this->session->userdata['logged_in']['adminId'])){
+            $doc = $this->session->userdata['logged_in']['adminId'];
+
+        }else if(isset($this->session->userdata['logged_in']['adminId'])){
+             $doc = $this->session->userdata['logged_in']['doctorId'];
+        }
+        $condition = "start LIKE " . "'%" . date('m') . "%' AND " . "doctor_id LIKE" . "'" . $doc . "'";
+        $this->db->select('*');
+        $this->db->from('events');
+        $this->db->where($condition);
+        $query = $this->db->get();
+        return $query->result();
+
+
+    }
+   
+
 
 }

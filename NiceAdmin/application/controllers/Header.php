@@ -41,4 +41,31 @@ class Header extends CI_Controller{
         echo count($result);
     }
 
+
+    public function getSessions(){
+        if($this->input->post('daysess')) {
+            $result = $this->indexmodel->get_sessions();
+
+                foreach($result as $sessions){
+                    $res = '
+                            <li  >
+                                    <a id="monthsession" >
+                                        <span class="label label-primary"><i class="icon_profile"></i></span>
+                                        '.$sessions->title.' =>
+                                         '.$sessions->start.'
+                                        <span class="small italic pull-right"></span>
+                                    </a>
+                                </li>
+                    ';
+                    echo $res;
+                }
+
+        }
+    }
+
+    public function countSessions(){
+        $result = $this->indexmodel->get_sessions();
+        echo count($result);
+    }
+
 }

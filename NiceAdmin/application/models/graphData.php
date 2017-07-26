@@ -8,6 +8,7 @@
 
 
 class GraphData extends CI_Model{
+	
     public function getDates($doctor,$patient){
         $query1 = $this->db->query('SELECT DISTINCT date FROM patient_goal WHERE patient_id="'.$patient.'"   AND doc_name="'.$doctor.'" ');
         return $query1->result();
