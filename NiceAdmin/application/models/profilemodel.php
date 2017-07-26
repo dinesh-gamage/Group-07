@@ -11,6 +11,11 @@ class Profilemodel extends CI_Model {
        $query = $this->db->get('doctors');
        return $query->result();
     }
+     public function get_admin_data(){
+       $this->db->where('doctor_id',$this->session->userdata['logged_in']['adminId']);
+       $query = $this->db->get('doctors');
+       return $query->result();
+    }
     public function get_nur_data(){
        $this->db->where('nurse_name',$this->session->userdata('nur_name'));
        $query = $this->db->get('nurse');
@@ -172,12 +177,38 @@ class Profilemodel extends CI_Model {
     }
     public function current_pass($curr){
         $this->db->select('password');
-        $this->db->where('doc_name',$this->session->userdata('doc_sess'));
+        $this->db->where('password',sha1($curr));
         $query = $this->db->get('doctors');
+        if( $query->num_rows()===1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function getDoctors(){
+        $this->db->select('*');
+        $this->db->from('doctors');
+        $this->db->where('is_admin',0);
+        $query = $this->db->get();
         return $query->result();
     }
 
-    
+    public function deleteDoctor($del_id){
+        $this->db->where('doctor_id',$del_id);
+        $query = $this->db->delete('doctors');
+        return $query;
+    }
+
+    public function viewDoc($view){
+        $condition = "doctor_id =" . "'" . $view . "' AND " . "is_admin =" . "'" . 0 . "'";
+        $this->db->select('*');
+        $this->db->from('doctors');
+        $this->db->where($condition);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     
     //.....................nurse profile...........................//
     
@@ -255,12 +286,33 @@ class Profilemodel extends CI_Model {
     
     public function current_nurpass($curr){
         $this->db->select('password');
-        $this->db->where('nurse_name',$this->session->userdata('nur_name'));
+        $this->db->where('password',sha1($curr));
+        $query = $this->db->get('nurse');
+        
+        if( $query->num_rows()===1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public function getNurse(){
         $query = $this->db->get('nurse');
         return $query->result();
     }
-    
-    
+     public function deleteNurse($nur_id){
+        $this->db->where('nurse_id',$nur_id);
+        $query = $this->db->delete('nurse');
+        return $query;
+    }
+
+    public function viewNur($view){
+        $this->db->select('*');
+        $this->db->from('nurse');
+        $this->db->where('nurse_id',$view);
+        $query = $this->db->get();
+        return $query->result();
+    }
     //.....................nurse profile...........................//
     
     

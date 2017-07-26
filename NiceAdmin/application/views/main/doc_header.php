@@ -73,8 +73,8 @@
     </style>
     
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<!--    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<!--    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>-->
 
 <!--    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 <!--    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>-->
@@ -188,6 +188,34 @@
                     }
                 });
             }
+            function countnewSessions(){
+                $.ajax({
+                    type: "post",
+                    url: "http://[::1]/project/Group-07/NiceAdmin/Header/countSessions",
+                    cache: false,
+                    data: {daysess: "daysess"},
+                    success: function (data) {
+                        $('.countsess').html(data);
+                    }
+                });
+            }
+            function getSessions(){
+                $.ajax({
+                    type: "post",
+                    url: "http://[::1]/project/Group-07/NiceAdmin/Header/getSessions",
+                    cache: false,
+                    data: {daysess: "daysess"},
+                    success: function (data) {
+                        $('#sessions').html(data);
+                    }
+                });
+            }
+             $(document).ready(function (){
+                setInterval(getSessions, 1000);
+            });
+            $(document).ready(function (){
+                setInterval(countnewSessions, 10);
+            });
 
   </script>
     
@@ -240,6 +268,21 @@
                         </ul>
                     </li>
                     <!-- alert notification end-->
+                    <li id="alert_notificatoin_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="icon-bell-l"></i>
+                            <span class="badge bg-important"><div class="countsess"></div></span>
+                        </a>
+                        <ul class="dropdown-menu extended notification" >
+                            <div class="notify-arrow notify-arrow-blue"></div>
+                            <li>
+                                <p class="blue">You have <span class="countsess"></span> new notifications</p>
+                            </li>
+                            <div style="height:250px;overflow-y: scroll;" id="sessions">
+                                <!--content is load using ajax getSessions function .content is in Header controller and load data using index model's get_new_patient function this content is loading continuously.....................-->
+                            </div>
+                        </ul>
+                    </li>
                     <!-- user login dropdown start-->
                     <?php foreach($doc_data as $doc_row):?>
                     <li class="dropdown">

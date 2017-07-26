@@ -16,6 +16,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div id="checkage"></div>
+<<<<<<< HEAD
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="dob" onfocus="(this.type='date')" name="dob"  placeholder="Date Of Birth" required>
@@ -24,6 +25,16 @@
                                     <input type="text" class="form-control" id="tel" name="tel" placeholder="Phone Number" required>
                                 </div>
                                 <div class="form-group">
+=======
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="dob" onfocus="(this.type='date')" name="dob"  placeholder="Date Of Birth" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="tel" name="tel" placeholder="Phone Number" required>
+                                </div>
+                                <div class="form-group">
+>>>>>>> 9cfd15dd57bf5b772d31f405ec96ee960ed1dd60
                                     <div id="checktel"></div>
                                 </div>
                                 <div class="form-group">
@@ -129,7 +140,10 @@
 
         $('#register_btn').click(function(){
 
+<<<<<<< HEAD
+=======
             var cpass = $('#cpass').val();
+>>>>>>> 9cfd15dd57bf5b772d31f405ec96ee960ed1dd60
             var pname =  $('#pname').val();
             var page =  $('#age').val();
             var pdob =  $('#dob').val();
@@ -144,6 +158,66 @@
             var pdate =  $('#date').val();
             var paddre =  $('#address').val();
             var pgen =  $( "#gender option:selected" ).val();
+<<<<<<< HEAD
+            
+            $.ajax({
+                type: "post",
+                url: "http://[::1]/project/Group-07/Healthy_life/Register/reg_patient/",
+                cache: false,
+                data: {regbtn: "regbtn",pname:pname,age:page,dob:pdob,tel:ptel,lan:plan,gender:pgen,sch:psch,address:paddre,gur:pgur,rel:prel,ref:pref,pass:ppass,div:pdiv,date:pdate},
+                success: function (data) {
+                    if(data){
+                        $('#pname').val("");
+                        $('#age').val("");
+                        $('#dob').val("");
+                        $('#tel').val("");
+                        $('#lan').val("");
+                        $('#sch').val("");
+                        $('#gur').val("");
+                        $('#rel').val("");
+                        $('#ref').val("");
+                        $('#pass').val("");
+                        $('#div').val("");
+                        $('#date').val("");
+                        $('#address').val("");
+                        $('#cpass').val("");
+                        $('#messagereg').html('Successfully Registered!!!').css('color','green');
+                        setTimeout(function() {
+                            $("#messagereg").hide('blind', {}, 500)
+                        }, 5000);
+                        setTimeout(function() {
+                            $("#checkpass").hide('blind', {}, 0)
+                        }, 0);
+                        
+                    }else{
+                        $('#pname').val("");
+                        $('#age').val("");
+                        $('#dob').val("");
+                        $('#tel').val("");
+                        $('#lan').val("");
+                        $('#sch').val("");
+                        $('#gur').val("");
+                        $('#rel').val("");
+                        $('#ref').val("");
+                        $('#pass').val("");
+                        $('#div').val("");
+                        $('#date').val("");
+                        $('#address').val("");
+                        $('#cpass').val("");
+                        $('#messagereg').html('Error occuered while registering .Please Try Again!!!').css('color','red');
+                        setTimeout(function() {
+                            $("#messagereg").hide('blind', {}, 500)
+                        }, 5000);
+                        setTimeout(function() {
+                            $("#checkpass").hide('blind', {}, 0);
+                        }, 0);
+
+                    }
+                }
+
+            });
+            
+=======
             if(pname!="" && page!="" && pdob!="" && ptel!="" && plan!="" && psch!="" && pgur!="" && prel!="" && pref!="" && ppass!="" && pdiv!="" && pdate!="" && paddre!="" && pgen!="" ){
                 $.ajax({
                     type: "post",
@@ -262,6 +336,7 @@
 
 
             }    
+>>>>>>> 9cfd15dd57bf5b772d31f405ec96ee960ed1dd60
 
         });
 

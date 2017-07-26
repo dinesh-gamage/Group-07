@@ -1,20 +1,35 @@
 <?php
-        if (isset($this->session->userdata['logged_in'])) // Check if user has logged in 
+        if (isset($this->session->userdata['logged_in'])) 
         {
             $username = ($this->session->userdata['logged_in']['username']);
             $email = ($this->session->userdata['logged_in']['email']);
             $name = ($this->session->userdata['logged_in']['name']);
             $picture = ($this->session->userdata['logged_in']['picture']);
             $status = ($this->session->userdata['logged_in']['status']);
+            $doctorID = ($this->session->userdata['logged_in']['doctorId']);
             
-            if($status != 'Doctor'){   //Check if the logged user is a doctor
+            if($status != 'Doctor'){
                 redirect('/Login');
             }
         } else{
             redirect('/Login');
         }
     ?>
+<style>
+    .modal-dialog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 2%;
+border-radius: 20px;
+}
 
+.modal-content {
+  height: auto;
+  
+  
+}
+</style>
 <section class="wrapper">
     <div class="contentContainer">
         <div class="row">
@@ -23,10 +38,12 @@
                     <li><i class="fa fa-home"></i><a href="<?php echo base_url() . "DoctorView" ?>">Home </a></li>   			  	
                     <li>Patient : &nbsp;   <!-- Current Page -->
                         <?php
+                            
                          foreach ($patients as $patient):
                                 if($patient->patient_id == $patient_id){
                                     echo $patient->patient_name; // Print patient name
                                 }
+                                $this->session->set_userdata('patient_sess',$patient->patient_id);
                         endforeach;                             
                         ?>                             
                     </li>					  	
@@ -35,7 +52,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-lg-8">
                 <!-- display error messages or success messages -->
                 <?php
                     echo "<div class='error_msg'>";
@@ -47,7 +64,7 @@
                         {
                 ?>
                         <script>
-                            swal('congratulations!', '<?php  echo $successMessage ?>','success') //Success message
+                            swal('', '<?php  echo $successMessage ?>','success') //Success message
                         </script>
                 <?php 
                         }
@@ -67,174 +84,1205 @@
                 
   <!--  View Patient Details -->  
                 <div id="viewPatient" style="display: none"> <!-- hide div by default -->
-                    <div class="col-md-11" >
+                    <div class="col-md-12" >
+                        
+                            <div class="col-md-3">
+                                <div class="white_back container" >
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li class="active"><a data-toggle="pill" href="#generalDetails">Genaral Details</a></li>
+                                    <li><a data-toggle="pill" href="#problemHistory">Problem/Diagnosis</a></li>
+                                    <li><a data-toggle="pill" href="#caseHistoryHistory">Case History</a></li>
+                                    <li><a data-toggle="pill" href="#goalEvaluationHistory">Goals Evaluation</a></li>
+                                    <li><a data-toggle="pill" href="#cognitiveTestHistory">Cognitive Test</a></li>
+                                    <li><a data-toggle="pill" href="#meicationsHistory">Medications</a></li>
+                                    <li><a data-toggle="pill" href="#notesHistory">Doctor's Notes</a></li>
+                                    <li><a data-toggle="pill" href="#referncesHistory">References</a></li>
+                                    <li><a data-toggle="pill" href="#dischargePlan">Discharge Plan</a></li>
+                                </ul>
+                                    </div>
+                            </div>
+                        
+                        <div class="col-md-9">
+                            <div class="white_back container" >
+                                <div class="tab-content">
+                                    <div id="generalDetails" class="tab-pane fade in active">
+                                        
+                                        <?php
+                                            foreach ($patients as $patient):
+                                                if($patient->patient_id == $patient_id){
+                                                    //if ($patient->status == "0"){
+                                        ?>
+                                            <div class="panel panel-info">
+                                                <div class="panel-heading">Genaral Details : &nbsp; <?php echo $patient->patient_name; ?> </div>
+                                                <div class="panel-body">
+                                                    <table class="table" border="0">
+                                                        <tr>
+                                                            <td>Name </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->patient_name; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Gender </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->gender; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Language </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->language; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Age </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->age; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Date of birth </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->dob; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>School </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->school; ?></td>
+                                                        </tr>
+                                                        <tr class="info"><td colspan="3" ></td></tr>
+                                                        <tr>
+                                                            <td>Guardian's Name </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->guardian_name; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Guardian's Relationship </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->relationship; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Address </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->address; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Telephone </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->telephone; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> Division </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->division; ?></td>
+                                                        </tr>
+                                                        <tr class="info"><td colspan="3" ></td></tr>
+                                                        <tr>
+                                                            <td> Refered By </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->refered_by; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> Registered date </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->regitration_date; ?></td>
+                                                        </tr>
 
-                        <?php
-                            foreach ($patients as $patient):
-                                if($patient->patient_id == $patient_id){
-                                    if ($patient->status == "0"){
-                        ?>
-                            <div class="panel panel-info">
-                                <div class="panel-heading">Genaral Details : &nbsp; <?php echo $patient->patient_name; ?> &nbsp; ( New patient )</div>
-                                <div class="panel-body">
-                                    <table class="table" border="0">
-                                        <tr>
-                                            <td>Name </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->patient_name; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Gender </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->gender; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Language </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->language; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Age </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->age; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Date of birth </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->dob; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>School </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->school; ?></td>
-                                        </tr>
-                                        <tr class="info"><td colspan="3" ></td></tr>
-                                        <tr>
-                                            <td>Guardian's Name </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->guardian_name; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Guardian's Relationship </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->relationship; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Address </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->address; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Telephone </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->telephone; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td> Division </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->division; ?></td>
-                                        </tr>
-                                        <tr class="info"><td colspan="3" ></td></tr>
-                                        <tr>
-                                            <td> Refered By </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->refered_by; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td> Registered date </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->regitration_date; ?></td>
-                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        <?php
+                                                    }
+                                                    /*if ($patient->status == "1"){ 
+                                        ?>
+                                            <div class="panel panel-success">
+                                                <div class="panel-heading">Genaral Details : &nbsp; <?php echo $patient->patient_name; ?></div>
+                                                <div class="panel-body">
+                                                    <table class="table" border="0">
+                                                        <tr>
+                                                            <td>Name </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->patient_name; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Gender </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->gender; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Language </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->language; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Age </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->age; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Date of birth </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->dob; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>School </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->school; ?></td>
+                                                        </tr>
+                                                        <tr class="success"><td colspan="3" ></td></tr>
+                                                        <tr>
+                                                            <td>Guardian's Name </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->guardian_name; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Guardian's Relationship </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->relationship; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Address </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->address; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Telephone </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->telephone; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> Division </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->division; ?></td>
+                                                        </tr>
+                                                        <tr class="success"><td colspan="3" ></td></tr>
+                                                        <tr>
+                                                            <td> Refered By </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->refered_by; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td> Registered date </td>
+                                                            <td>:</td>
+                                                            <td><?php echo $patient->regitration_date; ?></td>
+                                                        </tr>
 
-                                    </table>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        <?php
+                                                    }*/
+
+                                                //}
+                                            endforeach;
+                                        ?>
+                                    </div>
+                                    
+                                    <div id="caseHistoryHistory" class="tab-pane fade">
+                                        <div class="col-md-12">                           
+                                            <ul class="nav nav-pills nav-justified">
+                                                <li class="active"><a data-toggle="pill" href="#familyHistory">Family/Medical</a></li>
+                                                <li><a data-toggle="pill" href="#commhistory">communicationn</a></li>
+                                                <li><a data-toggle="pill" href="#mortorhistory">Mortor</a></li>
+                                                <li><a data-toggle="pill" href="#coghistory">Cognitive</a></li>
+                                                <li><a data-toggle="pill" href="#case_noteshistory">Notes</a></li>
+                                            </ul>
+
+                    <!-- display tab pane body -->
+                                            <div class="tab-content">
+
+                    <!-- family history display -->
+                                                <div id="familyHistory" class="tab-pane fade in active">
+                                                    <div class="white_back">
+                                                        <h3 class="text-center">Family and Medical History</h3><hr>
+                                                            
+                                                        <?php
+                                                            
+                                                            foreach ($getFamily as $familyHistory):
+                                                                if($patient_id == $familyHistory->patient_id)
+                                                                {
+                                                        ?>  
+
+                                                                    <table class="table table-condensed table-bordered"> <!-- family history -->
+
+                                                                        <thead>
+                                                                            <tr class="success">
+                                                                                <th class="text-center" colspan="2">Family History</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>Father</td>
+                                                                                <td><?php echo $familyHistory->father; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Mother</td>
+                                                                                <td><?php echo $familyHistory->mother; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>No of Sibilings</td>
+                                                                                <td><?php echo $familyHistory->no_of_sibilings; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Names of Sibilings</td>
+                                                                                <td><?php echo $familyHistory->names_of_sibilings; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Home situation</td>
+                                                                                <td><?php echo $familyHistory->home_situation; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Presenting Problems</td>
+                                                                                <td><?php echo $familyHistory->presenting_problems; ?> </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+
+                                                                    <table class="table table-condensed table-bordered">  <!-- medical history -->
+                                                                        <thead>
+                                                                            <tr class="success">
+                                                                                <th class="text-center" colspan="2">Medical History</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>During Pregnancy</td>
+                                                                                <td><?php echo $familyHistory->during_pregnancy; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>At birth</td>
+                                                                                <td><?php echo $familyHistory->at_birth; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Mode of delivery</td>
+                                                                                <td><?php echo $familyHistory->mode_of_dilivery; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Birth Weight</td>
+                                                                                <td><?php echo $familyHistory->birth_weight; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Birth Cry</td>
+                                                                                <td><?php echo $familyHistory->birth_cry; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>After Birth</td>
+                                                                                <td><?php echo $familyHistory->after_birth; ?> </td>
+                                                                            </tr>  
+                                                                            <tr>
+                                                                                <td>Relevent illnesses</td>
+                                                                                <td><?php echo $familyHistory->relevent_illnesses; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Medications / Investigations</td>
+                                                                                <td><?php echo $familyHistory->medications; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Audiology Results</td>
+                                                                                <td><?php echo $familyHistory->audiology; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Left Side :</td>
+                                                                                <td><?php echo $familyHistory->audio_left; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Right Side :</td>
+                                                                                <td><?php echo $familyHistory->audiio_right; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Vision</td>
+                                                                                <td><?php echo $familyHistory->vision; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Left Side :</td>
+                                                                                <td><?php echo $familyHistory->vision_left; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Right Side :</td>
+                                                                                <td><?php echo $familyHistory->vision_right; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Histry of related Conditions in Family</td>
+                                                                                <td><?php echo $familyHistory->related_history_family; ?> </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    <table class="table table-condensed table-bordered">
+                                                                        <tr class="active">
+                                                                            <td><?php echo "Dr.".$familyHistory->doc_name; ?></td>
+                                                                            <td><?php echo $familyHistory->date; ?></td>
+                                                                            <td><?php echo $familyHistory->time; ?></td>
+                                                                        </tr>
+                                                                    </table>
+                                                        <?php 
+                                                            }else{
+                                                                    $familyCount += 0;
+                                                                }
+
+                                                            endforeach;
+                                                            if($familyCount = 0){
+                                                                echo "<div class=\"alert warning\">";
+                                                                    echo "<span class=\"closebtn\">&times;</span>";  
+                                                                        echo "Family History has not been observed yet.";
+                                                                echo "</div>";
+                                                            }
+                                                        ?>
+                                                             
+                                                    </div>
+                                                </div>
+
+                    <!-- display communication skills -->
+                                                <div id="commhistory" class="tab-pane fade">
+                                                    <div class="white_back">
+                                                        <h3 class="text-center">Communication Skills</h3><hr>
+                                                            
+                                                        <?php
+                                                            $comCount = 0;
+                                                            foreach ($getComm as $communication):
+                                                                if($patient_id == $communication->patient_id)
+                                                                {
+                                                                    $comCount+= 1;
+                                                        ?>
+                                                                    <table class="table table-condensed table-bordered " >
+
+                                                                        <thead>
+                                                                            <tr class="success">
+                                                                                <th class="text-center" colspan="2">Communication</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>Functional Communication</td>
+                                                                                <td><?php echo $communication->func_comm; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Listening Skills</td>
+                                                                                <td><?php echo $communication->listening; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Attention Skills</td>
+                                                                                <td><?php echo $communication->attetion; ?> </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+
+                                                                    <table class="table table-condensed table-bordered " >           
+                                                                        <thead>
+                                                                            <tr class="success">
+                                                                                <th class="text-center" colspan="2">Oral Skills / Examination</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>Sucking</td>
+                                                                                <td><?php echo $communication->sucking; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Chewing </td>
+                                                                                <td><?php echo $communication->chewing; ?> </td>
+                                                                            </tr>
+                                                                                <tr>
+                                                                                <td>Blowing</td>
+                                                                                <td><?php echo $communication->blowing; ?> </td>
+                                                                            </tr>
+                                                                                <tr>
+                                                                                <td>Strow</td>
+                                                                                <td><?php echo $communication->strow; ?> </td>
+                                                                            </tr>
+                                                                                <tr>
+                                                                                <td>Drooling</td>
+                                                                                <td><?php echo $communication->drooling; ?> </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+
+                                                                    <table class="table table-condensed table-bordered " >           
+                                                                        <thead>
+                                                                            <tr class="success">
+                                                                                <th class="text-center" colspan="2">Comprehension</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr class="active">
+                                                                                <td colspan="2">Non verbal</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Facial expressions</td>
+                                                                                <td><?php echo $communication->com_non_facial; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Gestures</td>
+                                                                                <td><?php echo $communication->com_non_gesture; ?> </td>
+                                                                            </tr>
+                                                                            <tr class="active">
+                                                                                <td colspan="2">verbal</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Word Level</td>
+                                                                                <td><?php echo $communication->com_verbal; ?> </td>
+                                                                            </tr>
+
+                                                                        </tbody>
+                                                                    </table>
+
+                                                                    <table class="table table-condensed table-bordered " >           
+                                                                        <thead>
+                                                                            <tr class="success">
+                                                                                <th class="text-center" colspan="2">Expression</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr class="active">
+                                                                                <td colspan="2">Non verbal</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Facial expressions</td>
+                                                                                <td><?php echo $communication->expre_non_facial; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Gestures</td>
+                                                                                <td><?php echo $communication->expre_non_gesture; ?> </td>
+                                                                            </tr>
+                                                                            <tr class="active">
+                                                                                <td colspan="2">verbal</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Word Level</td>
+                                                                                <td><?php echo $communication->expre_verbal; ?> </td>
+                                                                            </tr>
+
+                                                                        </tbody>
+                                                                    </table>
+
+                                                                    <table class="table table-condensed table-bordered " >           
+                                                                        <thead>
+                                                                            <tr class="success">
+                                                                                <th class="text-center" colspan="2">Speech</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+
+                                                                            <tr>
+                                                                                <td>Articulation</td>
+                                                                                <td><?php echo $communication->articulation; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Intelligibility</td>
+                                                                                <td><?php echo $communication->intelligibility; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Phonology(speech sounds & processes )</td>
+                                                                                <td><?php echo $communication->phonollogy; ?> </td>
+                                                                            </tr>
+                                                                            <tr class="active">
+                                                                                <td colspan="2">Syntax & Morphology</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Sentence Structure</td>
+                                                                                <td><?php echo $communication->sentence; ?> </td>
+                                                                            </tr>
+                                                                            <tr class="active">
+                                                                                <td colspan="2">Vocabulary & Semantics</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Words & meanings</td>
+                                                                                <td><?php echo $communication->word_meaning; ?> </td>
+                                                                            </tr>                                            
+                                                                        </tbody>
+                                                                    </table>
+
+                                                                    <table class="table table-condensed table-bordered " >           
+                                                                        <thead>
+                                                                            <tr class="success">
+                                                                                <th class="text-center" colspan="2">Pragmatics</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+
+                                                                            <tr>
+                                                                                <td>Conversations</td>
+                                                                                <td><?php echo $communication->convertations; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Eye contact</td>
+                                                                                <td><?php echo $communication->eye_contact; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Turn Taking</td>
+                                                                                <td><?php echo $communication->turn_taking; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Initiating</td>
+                                                                                <td><?php echo $communication->initiating; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Appropriate Answers</td>
+                                                                                <td><?php echo $communication->appropriate_answer; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Voice</td>
+                                                                                <td><?php echo $communication->voice; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Fluency</td>
+                                                                                <td><?php echo $communication->fluency; ?> </td>
+                                                                            </tr>
+                                                                           <tr>
+                                                                                <td>Other factors/Information</td>
+                                                                                <td><?php echo $communication->other; ?> </td>
+                                                                            </tr><tr>
+                                                                                <td>Prognosis</td>
+                                                                                <td><?php echo $communication->prognosis; ?> </td>
+                                                                            </tr>                                           
+                                                                        </tbody>
+                                                                    </table> 
+                                                                    <table class="table table-condensed table-bordered">
+                                                                        <tr class="active">
+                                                                            <td><?php echo $communication->doc_name; ?></td>
+                                                                            <td><?php echo $communication->date; ?></td>
+                                                                            <td><?php echo $communication->time; ?></td>
+                                                                        </tr>
+                                                                    </table>
+
+                                                        <?php 
+                                                            }else{
+                                                                    $comCount+=0;
+                                                                }
+                                                            endforeach;
+                                                        if($comCount = 0){
+                                                                echo "<div class=\"alert warning\">";
+                                                                    echo "<span class=\"closebtn\">&times;</span>";  
+                                                                        echo "Family History has not been observed yet.";
+                                                                echo "</div>";
+                                                            }
+                                                        ?>
+                                                            
+                                                    </div>
+                                                </div>
+
+                    <!-- display mortor skills -->
+                                                <div id="mortorhistory" class="tab-pane fade">
+                                                    <div class="white_back">
+                                                        <h3 class="text-center">Mortor Skills</h3><hr>
+                                                            
+                                                        <?php
+                                                            foreach ($getMotor as $Motor):
+                                                                if($patient_id == $Motor->patient_id)
+                                                                {
+                                                        ?>
+                                                                    <table class="table table-condensed table-bordered">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>Gross</td>
+                                                                                <td><?php echo $Motor->gross; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Fine</td>
+                                                                                <td><?php echo $Motor->fine; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Social</td>
+                                                                                <td><?php echo $Motor->social; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Feeding</td>
+                                                                                <td><?php echo $Motor->feeding; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Dressing</td>
+                                                                                <td><?php echo $Motor->dressing; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Toileting</td>
+                                                                                <td><?php echo $Motor->toileting; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Independence</td>
+                                                                                <td><?php echo $Motor->independence; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Behaviors/Personality</td>
+                                                                                <td><?php echo $Motor->personality; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Stereotypic behavior</td>
+                                                                                <td><?php echo $Motor->stereotypic_behaviors; ?> </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    <table class="table table-condensed table-bordered">
+                                                                        <tr class="active">
+                                                                            <td><?php echo $Motor->doc_name; ?></td>
+                                                                            <td><?php echo $Motor->date; ?></td>
+                                                                            <td><?php echo $Motor->time; ?></td>
+                                                                        </tr>
+                                                                    </table>
+
+
+                                                        <?php 
+                                                            }
+                                                            endforeach;
+                                                        ?>
+                                                            
+                                                    </div>
+                                                </div>
+
+                    <!-- display cognative skills --> 
+                                                <div id="coghistory" class="tab-pane fade">
+                                                    <div class="white_back">
+                                                        <h3 class="text-center">Cognitive and Communication development</h3><hr>
+                                                            
+                                                        <?php
+                                                            foreach ($getCog as $Cognitive):
+                                                                if($patient_id == $Cognitive->patient_id)
+                                                                {
+                                                        ?>
+                                                                    <table class="table table-condensed table-bordered " >
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>Problem solving : Building blocks</td>
+                                                                                <td><?php echo $Cognitive->problem_solving; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Matching / Sorting</td>
+                                                                                <td><?php echo $Cognitive->matching; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Colors</td>
+                                                                                <td><?php echo $Cognitive->colors; ?> </td>
+                                                                            </tr>
+                                                                             <tr>
+                                                                                <td>Sizes</td>
+                                                                                <td><?php echo $Cognitive->sizes; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Sequencing</td>
+                                                                                <td><?php echo $Cognitive->sequencing; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="2" class="active">Numbers</td>
+
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Counting</td>
+                                                                                <td><?php echo $Cognitive->counting; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Concept</td>
+                                                                                <td><?php echo $Cognitive->concept; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Memory/Tecognition</td>
+                                                                                <td><?php echo $Cognitive->memory; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Play/Iterests/Hobbies</td>
+                                                                                <td><?php echo $Cognitive->hobbies; ?> </td>
+                                                                            </tr>
+
+                                                                        </tbody>
+                                                                    </table>
+
+                                                                    <table class="table table-condensed table-bordered " >
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>Interaction</td>
+                                                                                <td><?php echo $Cognitive->interaction; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Babble</td>
+                                                                                <td><?php echo $Cognitive->babble; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>First Words</td>
+                                                                                <td><?php echo $Cognitive->first_word; ?> </td>
+                                                                            </tr>
+                                                                             <tr>
+                                                                                <td>Words Together</td>
+                                                                                <td><?php echo $Cognitive->word_together; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Expressing Needs</td>
+                                                                                <td><?php echo $Cognitive->eppressing_needs; ?> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Nursery/School/College/Work</td>
+                                                                                <td><?php echo $Cognitive->school; ?> </td>
+                                                                            </tr>
+
+                                                                        </tbody>
+                                                                    </table>
+                                                                    <table class="table table-condensed table-bordered">
+                                                                        <tr class="active">
+                                                                            <td><?php echo $Cognitive->doc_name; ?></td>
+                                                                            <td><?php echo $Cognitive->date; ?></td>
+                                                                            <td><?php echo $Cognitive->time; ?></td>
+                                                                        </tr>
+                                                                    </table>
+
+
+                                                        <?php 
+                                                            }
+                                                                endforeach;
+                                                        ?>
+                                                        
+                                                    </div>
+                                                </div>
+
+                    <!-- display cognative skills --> 
+                                                <div id="case_noteshistory" class="tab-pane fade">
+                                                    <div class="white_back">
+                                                        <h3 class="success text-center">Case notes</h3><hr>
+                                                          
+                                                        <?php
+                                                            foreach ($getNotes as $Notes):
+                                                                if($patient_id == $Notes->patient_id)
+                                                                {
+                                                        ?>
+                                                                    <p>
+                                                                        <?php echo $Notes->note; ?>
+
+                                                                    </p>
+                                                                    <table class="table table-condensed table-bordered">
+                                                                        <tr class="active">
+                                                                            <td><?php echo $Notes->doc_name; ?></td>
+                                                                            <td><?php echo $Notes->date; ?></td>
+                                                                            <td><?php echo $Notes->time; ?></td>
+                                                                        </tr>
+                                                                    </table>
+
+
+                                                        <?php 
+                                                            }endforeach;
+                                                        ?>
+                                                            
+                                                    </div>
+                                                </div>
+                                            </div>                                              
+
+                                        </div>
+                                    </div> 
+                                    
+                                    <div id="problemHistory" class="tab-pane fade">
+                                        <div id="diagnosis_table">
+                                            <div class="white_back">
+                                                <h3 class="success text-center">Diagnosis</h3><hr>
+                                                
+                                            <?php
+                                                $diagCount =0;
+                                                foreach ($getDiagnosis as $diagnosis):
+                                                    if($patient_id == $diagnosis->patient_id)
+                                                    {
+                                                    $diagCount +=1;
+                                            ?>
+                                                <p><?php echo $diagnosis->diagnosis; ?> </p>
+                                                    
+                                                        <table class="table table-condensed table-bordered">
+                                                            <tr class="active">
+                                                                <td><?php echo $diagnosis->doc_name; ?></td>
+                                                                <td><?php echo $diagnosis->date; ?></td>
+                                                                <td><?php echo $diagnosis->time; ?></td>
+                                                            </tr>
+                                                        </table>
+
+                                            <?php 
+                                                }else{
+                                                        $diagCount+=0;
+                                                    }
+                                                endforeach;
+                                                if($diagCount == 0){
+                                                    echo "<div class=\"alert warning\">";
+                                                    echo "Diagnosis has not been identified yet.";
+                                                    echo "</div>";
+                                                }                                                         
+
+                                            ?>
+                                                </div>
+                                                
+                                        </div>
+                                        <div id="problem_table">
+                                            <div class="white_back">
+                                                <h3 class="success text-center">Problem</h3><hr>
+                                                
+                                            <?php
+                                                $problemCount = 0;
+                                                foreach ($getDiagnosis as $problems):
+                                                    if($patient_id == $problems->patient_id)
+                                                    {
+                                                        $problemCount +=1; 
+                                            ?>
+                                                <p><?php echo $problems->problem; ?></p>
+                                                        <table class="table table-condensed table-bordered">
+                                                            <tr class="active">
+                                                                <td><?php echo $problems->doc_name; ?></td>
+                                                                <td><?php echo $problems->date; ?></td>
+                                                                <td><?php echo $problems->time; ?></td>
+                                                            </tr>
+                                                        </table>
+
+                                            <?php 
+                                                }else{
+                                                        $problemCount+=0;
+                                                    }
+                                                endforeach;
+                                                if($problemCount == 0){
+                                            ?>
+                                                <div class="alert warning">
+                                                    Problem has not been identified yet
+                                                </div>
+                                            <?php
+                                                } 
+                                            ?>
+                                                </div>
+                                            
+                                        </div>
+                     
+                                    </div>
+                                    <div id="goalEvaluationHistory" class="tab-pane fade">
+                                        <h3 class="success text-center">Goal Evaluation</h3>
+                                        
+                                        <?php
+                                            $dates = array();
+                                            foreach($goalEvaluation as $goalmarks):
+                                                $date = $goalmarks->date;
+                                                if (in_array($date, $dates)){
+                                                    continue;
+                                                }else{
+                                                    array_push($dates,$date);
+                                                }
+                                            endforeach;
+                                        
+                                            $goalsM = array();
+                                            foreach($goalEvaluation as $goalmarks):
+                                                $goal = $goalmarks->goal;
+                                                $marks = $goalmarks->marks;
+                                                if (in_array($goal, $goalsM)){
+                                                    continue;
+                                                }else{
+                                                    array_push($goalsM,$goal);
+                                                }
+                                            endforeach;
+                                        ?>
+                                        <table class="table table-condensed table-bordered">
+                                            <tr>
+                                                <td></td>
+                                                <?php
+                                                    foreach ($dates as $dates):
+                                                    echo "<td>".$dates."</td>";
+                                                    endforeach;
+                                                ?>
+                                            </tr>
+                                            <?php
+                                                foreach($goalsM as $goalsM):
+                                                echo "<tr><td>".$goalsM."</td>";
+                                                    foreach($goalEvaluation as $goalmarks):
+                                                        if ($goalsM == $goalmarks->goal){
+                                                            echo "<td>".$goalmarks->marks."</td>";
+                                                        }
+                                                    endforeach;
+                                                echo "</tr>";
+                                                endforeach;
+                                                
+                                            ?>
+                                            
+                                        </table> 
+                                    </div>
+                                    <div id="cognitiveTestHistory" class="tab-pane fade">
+                                        <div class="white_back container">
+                                            <h3 class="success text-center">Cognitive Test Final Marks</h3>
+                                            <?php
+                                                foreach($finalmarks as $final):
+                                                if ($final->test_type == "A"){
+                                            ?>
+
+                                            <div class="col-lg-12">
+                                                <table class="table table-condensed table-bordered"> 
+                                                    <thead>
+                                                        <tr class="success">
+                                                            <th class="text-center" colspan="2">Test A Final Marks</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Deviation Quotients</td>
+                                                            <td><?php echo $final->dq; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Percentile Ranks</td>
+                                                            <td><?php echo $final->pr; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Description</td>
+                                                            <td><?php echo $final->description; ?></td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr class="active">
+                                                            <td><?php echo $final->doc_name; ?></td>
+                                                            <td><?php echo $final->date; ?></td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+
+                                            <!-- <?php }else{ ?>
+                                            <div class="col-lg-12">
+                                                <table class="table table-condensed table-bordered"> 
+                                                    <thead>
+                                                        <tr class="success">
+                                                            <th class="text-center" colspan="2">Test B Final Marks</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Deviation Quotients</td>
+                                                            <td><?php echo $final->dq; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Percentile Ranks</td>
+                                                            <td><?php echo $final->pr; ?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Description</td>
+                                                            <td><?php echo $final->description; ?></td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr class="active">
+                                                            <td><?php echo $final->doc_name; ?></td>
+                                                            <td><?php echo $final->date; ?></td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                            <?php 
+                                                }
+                                            endforeach;
+                                            ?> -->
+                                        </div>
+                                    </div>
+                                    <div id="meicationsHistory" class="tab-pane fade">
+                                        <h3>Menu 3</h3>
+                                        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                    </div>
+                                    <div id="notesHistory" class="tab-pane fade">
+                                        <?php 
+                                            foreach($doc_notes as $notes): 
+                                        ?>
+                                        
+                                        <div class="panel-group">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#<?php echo $notes->date; ?>">Doctor's Note: Date - <?php echo $notes->date; ?></a>
+                                                    </h4>
+                                                </div>
+                                                <div id="<?php echo $notes->date; ?>" class="panel-collapse collapse">
+                                                    <div class="panel-body"> <?php echo $notes->note; ?></div>
+                                                    <div class="panel-footer"><?php echo $notes->doc_name; ?></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <?php 
+                                            endforeach; 
+                                        ?>
+                                    </div>
+                                    <div id="referncesHistory" class="tab-pane fade">
+                                    <?php 
+                                        foreach($refernces as $reference):
+                                        if ($patient_id == $reference->patient_id)
+                                        {
+                                    ?>     
+                                        <div class="panel-group" id="accordion">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" href="#<?php echo $reference->clinic_no; ?>">Reference Details: Clinic - <?php echo $reference->clinic_no; ?></a>
+                                                    </h4>
+                                                </div>
+                                                <div id="<?php echo $reference->clinic_no; ?>" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <table class="table" border="0">
+                                                            <tr>
+                                                                <td>Date </td>
+                                                                <td>:</td>
+                                                                <td><?php echo $reference->date; ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Clinic </td>
+                                                                <td>:</td>
+                                                                <td><?php echo $reference->clinic_no; ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Description </td>
+                                                                <td>:</td>
+                                                                <td><?php echo $reference->description; ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Letter</td>
+                                                                <td>:</td>
+                                                                <td><a target="_blank" href="<?php echo base_url($reference->path); ?>">View Letter</a></td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="panel-footer"><?php echo $reference->doc_name; ?></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+
+                                    <?php 
+                                        }
+                                        endforeach; 
+                                    ?>
+                                    </div>
+                                    
                                 </div>
                             </div>
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <div id="diagnosis" style="display: none" >
+                    <div class="white_back">
+                        <h3 class="success text-center">Diagnosis</h3><hr>
+                            <div id="diagnosis_table">
                         <?php
-                                    }
-                                    if ($patient->status == "1"){ 
+                                
+                            foreach ($getDiagnosis as $diagnosis):
+                                if($patient_id == $diagnosis->patient_id)
+                                {
+                                    
                         ?>
-                            <div class="panel panel-success">
-                                <div class="panel-heading">Genaral Details : &nbsp; <?php echo $patient->patient_name; ?></div>
-                                <div class="panel-body">
-                                    <table class="table" border="0">
-                                        <tr>
-                                            <td>Name </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->patient_name; ?></td>
+                                <p><?php echo $diagnosis->diagnosis; ?></p> 
+                                                    
+                                    <table class="table table-condensed table-bordered">
+                                        <tr class="active">
+                                            <td><?php echo $diagnosis->doc_name; ?></td>
+                                            <td><?php echo $diagnosis->date; ?></td>
+                                            <td><?php echo $diagnosis->time; ?></td>
                                         </tr>
-                                        <tr>
-                                            <td>Gender </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->gender; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Language </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->language; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Age </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->age; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Date of birth </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->dob; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>School </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->school; ?></td>
-                                        </tr>
-                                        <tr class="success"><td colspan="3" ></td></tr>
-                                        <tr>
-                                            <td>Guardian's Name </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->guardian_name; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Guardian's Relationship </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->relationship; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Address </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->address; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Telephone </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->telephone; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td> Division </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->division; ?></td>
-                                        </tr>
-                                        <tr class="success"><td colspan="3" ></td></tr>
-                                        <tr>
-                                            <td> Refered By </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->refered_by; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td> Registered date </td>
-                                            <td>:</td>
-                                            <td><?php echo $patient->regitration_date; ?></td>
-                                        </tr>
-
                                     </table>
-                                </div>
-                            </div>
-                        <?php
-                                    }
 
+
+
+                        <?php 
+                            }endforeach;
+                        ?>
+                            </div>
+                            <div id="diagnosis_form">
+                        <?php 
+                            $attri = array('class'=>'form-horizontal');
+                            echo form_open('DoctorView/add_diagnosis',$attri);
+                        ?>
+
+                                <div class="form-group col-lg-3">
+                                    <label for="diagnosis" class="col-sm-3 control-label text-center">Diagnosis </label>
+                                </div>
+                                <div class="form-group col-lg-9">
+                                
+                                    <select name="diagnosis" class="form-control">
+                                        <option value="ASD">ASD</option>
+                                        <option value="ODD">ODD</option>
+                                        <option value="ADHD">ADHD</option>
+                                        <option value="SDLSS">SDLSS</option>
+                                        <option value="OCD">OCD</option>
+                                        <option value="PTSD">PTSD</option>
+                                        <option value="GAD">GAD</option>
+                                        <option value="Ajustment Disorder">Ajustment Disorder</option>
+                                        <option value="Acute Stress Disorder">Acute Stress Disorder</option>
+                                        <option value="MR">MR</option>
+                                        <option value="Conduct Disorder">Conduct Disorder</option>
+                                        <option value="Dissociative Disorder">Dissociative Disorder</option>
+                                        <option value="Non Organic Enuresis">Non Organic Enuresis</option>
+                                        <option value="Somatization Disorder">Somatization Disorder</option>
+                                        <option value="Selective Mutism">Selective Mutism</option>
+                                        <option value="Reactive Attachment Disorder">Reactive Attachment Disorder</option>
+                                        <option value="Tie Disorder">Tie Disorder</option>
+                                        <option value="Panic Disorder">Panic Disorder</option>
+                                        <option value="Seperation Anxiety Disorder">Seperation Anxiety Disorder</option>
+                                        <option value="Mental Behavioural Disorder">Mental Behavioural Disorder</option>
+                                        <option value="Pshycotic Disorder">Pshycotic Disorder</option>
+                                        <option value="No Mental Illness">No Mental Illness</option>
+                                        <option value="Expressive Language Dificult Speach Delay">Expressive Language Dificult Speach Delay</option>
+                                    </select>
+                                    
+                                </div>  
+
+
+                                <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
+                                <input type="hidden" name="time" id="id" value="<?php echo date('H:i:s'); ?>" />
+                                <input type="hidden" name="date" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                                <input type="hidden" name="doctorid" id="id" value="<?php echo $name; ?>" />
+
+                                <div class="form-group">
+                                    <div class="col-sm-7"></div>
+                                    <div class="col-sm-2">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <button type="submit" name='save' class="btn btn-primary">Save</button>
+                                    </div>
+                                </div>
+
+                        <?php  
+                            echo form_close();                                        
+                        ?>                                        
+                            </div>
+                    </div>
+                    <div class="white_back">
+                        <h3 class="success text-center">Problem</h3><hr>
+                            <div id="problem_table">
+                        <?php
+                            foreach ($getDiagnosis as $problems):
+                                if($patient_id == $problems->patient_id){
+                                    if(!empty($problems->problem)){
+                        ?>
+                                    
+                                <p><?php echo $problems->problem; ?></p>
+                                <table class="table table-condensed table-bordered">
+                                    <tr class="active">
+                                        <td><?php echo $problems->doc_name2; ?></td>
+                                        <td><?php echo $problems->date2; ?></td>
+                                        <td><?php echo $problems->time2; ?></td>
+                                    </tr>
+                                </table>
+                        <?php 
                                 }
+                            }   
                             endforeach;
                         ?>
+                            </div>
+                            <div id="problem_form">
+                        <?php 
+                            $attri = array('class'=>'form-horizontal');
+                            echo form_open('DoctorView/add_problem',$attri);
+                        ?>
 
+                                <div class="form-group col-lg-3">
+                                    <label for="problem" class="control-label text-center">Problem </label>
+                                </div>
+                                <div class="form-group col-lg-9">
+                                    <textarea name="problem" class="form-control" required  placeholder=""></textarea>
+                                </div>
+
+                                <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
+                                <input type="hidden" name="time" id="id" value="<?php echo date('H:i:s'); ?>" />
+                                <input type="hidden" name="date" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                                <input type="hidden" name="doctorid" id="id" value="<?php echo $name; ?>" />
+
+                                <div class="form-group">
+                                    <div class="col-sm-7"></div>
+                                    <div class="col-sm-2">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <button type="submit" name='save' class="btn btn-primary">Save</button>
+                                    </div>
+                                </div>
+
+                        <?php 
+                            echo form_close();                                        
+                        ?>                                        
+                            </div>
                     </div>
                 </div>
                 
@@ -368,6 +1416,13 @@
                                                             <td><?php echo $familyHistory->related_history_family; ?> </td>
                                                         </tr>
                                                     </tbody>
+                                                </table>
+                                                <table class="table table-condensed table-bordered">
+                                                    <tr class="active">
+                                                        <td><?php echo $familyHistory->doc_name; ?></td>
+                                                        <td><?php echo $familyHistory->date; ?></td>
+                                                        <td><?php echo $familyHistory->time; ?></td>
+                                                    </tr>
                                                 </table>
                                     <?php 
                                         }
@@ -788,7 +1843,14 @@
                                                             <td><?php echo $communication->prognosis; ?> </td>
                                                         </tr>                                           
                                                     </tbody>
-                                                </table>               
+                                                </table> 
+                                                <table class="table table-condensed table-bordered">
+                                                    <tr class="active">
+                                                        <td><?php echo $communication->doc_name; ?></td>
+                                                        <td><?php echo $communication->date; ?></td>
+                                                        <td><?php echo $communication->time; ?></td>
+                                                    </tr>
+                                                </table>
 
                                     <?php 
                                         }
@@ -1154,6 +2216,13 @@
                                                         </tr>
                                                     </tbody>
                                                 </table>
+                                                <table class="table table-condensed table-bordered">
+                                                    <tr class="active">
+                                                        <td><?php echo $Motor->doc_name; ?></td>
+                                                        <td><?php echo $Motor->date; ?></td>
+                                                        <td><?php echo $Motor->time; ?></td>
+                                                    </tr>
+                                                </table>
 
 
                                     <?php 
@@ -1377,6 +2446,13 @@
 
                                                     </tbody>
                                                 </table>
+                                                <table class="table table-condensed table-bordered">
+                                                    <tr class="active">
+                                                        <td><?php echo $Cognitive->doc_name; ?></td>
+                                                        <td><?php echo $Cognitive->date; ?></td>
+                                                        <td><?php echo $Cognitive->time; ?></td>
+                                                    </tr>
+                                                </table>
 
 
                                     <?php 
@@ -1554,23 +2630,25 @@
 <!-- display cognative skills --> 
                             <div id="case_notes" class="tab-pane fade">
                                 <div class="white_back">
-                                    <h3 class="success">Case notes</h3><hr>
+                                    <h3 class="success text-center">Case notes</h3><hr>
                                         <div id="notes_table">
                                     <?php
                                         foreach ($getNotes as $Notes):
                                             if($patient_id == $Notes->patient_id)
                                             {
                                     ?>
-                                                <table class="table table-condensed table-bordered " >
-
-                                                    <tbody>
-
-                                                        <tr>
-                                                            <td><?php echo $Notes->note; ?> </td>
-                                                        </tr>
-
-                                                        </tbody>
-                                                </table>
+                                                
+                                            <p>
+                                                <?php echo $Notes->note; ?>
+                                                
+                                            </p>
+                                            <table class="table table-condensed table-bordered">
+                                                <tr class="active">
+                                                    <td><?php echo $Notes->doc_name; ?></td>
+                                                    <td><?php echo $Notes->date; ?></td>
+                                                    <td><?php echo $Notes->time; ?></td>
+                                                </tr>
+                                            </table>
 
 
                                     <?php 
@@ -1624,18 +2702,16 @@
 <!-- goals -->
                 <div id="goals" style="display: none" >
                     
-                        <ul class="nav nav-pills nav-justified">
-                            <li class="active"><a data-toggle="pill" href="#setGoals">Set Goals</a></li>
-                            <li><a data-toggle="pill" href="#goalEvaluation">Evaluate Goals</a></li>
-                           
-                        </ul>
+                    <ul class="nav nav-pills nav-justified">
+                        <li class="active"><a data-toggle="pill" href="#setGoals">Set Goals</a></li>
+                        <li><a data-toggle="pill" href="#EvaluateGols">Evaluate Goals</a></li>
+                    </ul>
                         
 <!-- display tab pane body -->
-                        <div class="tab-content">
+                    <div class="tab-content">
 
-<!-- family history display -->
-                            <div id="setGoals" class="tab-pane fade in active">
-                                <div class="white_back">
+                        <div id="setGoals" class="tab-pane fade in active">
+                                <div class="white_back container">
                                 <h3 class="text-center">Set Goals</h3><hr>
                                     <?php 
                                         $attri = array('class'=>'form-horizontal');
@@ -1643,7 +2719,7 @@
                                     ?>
 
                                             <div class="form-group">
-                                                <div class="col-sm-3">
+                                                <div class="col-sm-2">
                                                     <select name="type1" class="form-control">
                                                         <option value="Clinical">Clinical</option>
                                                         <option value="Phsycologycal">Phsycologycal</option>
@@ -1651,8 +2727,11 @@
                                                     </select>
                                                     
                                                 </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" name="goal1" class="form-control"   placeholder="">
+                                                <div class="col-sm-5">
+                                                    <input  type="text" name="goal1" class="form-control"   placeholder="Goal">
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="criteria1" class="form-control"   placeholder="criteria">
                                                 </div>
                                                 <input type="hidden" name="doc[0][patient_id]" id="id" value="<?php echo $patient_id; ?>" />
                                                     <input type="hidden" name="doc[0][time]" id="id" value="<?php echo date('H:i:s'); ?>" />
@@ -1660,7 +2739,7 @@
                                                     <input type="hidden" name="doc[0][doc_name]" id="id" value="<?php echo $name; ?>" />
                                             </div> 
                                             <div class="form-group">
-                                                <div class="col-sm-3">
+                                                <div class="col-sm-2">
                                                     <select name="type2" class="form-control">
                                                         <option value="Clinical">Clinical</option>
                                                         <option value="Phsycologycal">Phsycologycal</option>
@@ -1668,8 +2747,11 @@
                                                     </select>
                                                     
                                                 </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" name="goal2" class="form-control"   placeholder="">
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="goal2" class="form-control"   placeholder="Goal">
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="criteria2" class="form-control"   placeholder="criteria">
                                                 </div>
                                                 
                                                     <input type="hidden" name="doc[1][patient_id]" id="id" value="<?php echo $patient_id; ?>" />
@@ -1678,32 +2760,37 @@
                                                     <input type="hidden" name="doc[1][doc_name]" id="id" value="<?php echo $name; ?>" />
                                             </div> 
                                             <div class="form-group">
-                                                <div class="col-sm-3">
+                                                <div class="col-sm-2">
                                                     <select name="type3" class="form-control">
                                                         <option value="Clinical">Clinical</option>
                                                         <option value="Phsycologycal">Phsycologycal</option>
                                                         <option value="Educational">Educational</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" name="goal3" class="form-control"   placeholder="">
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="goal3" class="form-control"   placeholder="Goal">
                                                 </div>
-                                                
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="criteria3" class="form-control"   placeholder="criteria">
+                                                </div>
                                                     <input type="hidden" name="doc[2][patient_id]" id="id" value="<?php echo $patient_id; ?>" />
                                                     <input type="hidden" name="doc[2][time]" id="id" value="<?php echo date('H:i:s'); ?>" />
                                                     <input type="hidden" name="doc[2][date]" id="id" value="<?php echo date('Y-m-d'); ?>" />
                                                     <input type="hidden" name="doc[2][doc_name]" id="id" value="<?php echo $name; ?>" />
                                             </div>
                                             <div class="form-group">
-                                                <div class="col-sm-3">
+                                                <div class="col-sm-2">
                                                     <select name="type4" class="form-control">
                                                         <option value="Clinical">Clinical</option>
                                                         <option value="Phsycologycal">Phsycologycal</option>
                                                         <option value="Educational">Educational</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" name="goal4" class="form-control"   placeholder="">
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="goal4" class="form-control"   placeholder="Goal">
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="criteria4" class="form-control"   placeholder="criteria">
                                                 </div>
                                                     <input type="hidden" name="doc[3][patient_id]" id="id" value="<?php echo $patient_id; ?>" />
                                                     <input type="hidden" name="doc[3][time]" id="id" value="<?php echo date('H:i:s'); ?>" />
@@ -1711,15 +2798,18 @@
                                                     <input type="hidden" name="doc[3][doc_name]" id="id" value="<?php echo $name; ?>" />
                                             </div> 
                                             <div class="form-group">
-                                                <div class="col-sm-3">
+                                                <div class="col-sm-2">
                                                     <select name="type5" class="form-control">
                                                         <option value="Clinical">Clinical</option>
                                                         <option value="Phsycologycal">Phsycologycal</option>
                                                         <option value="Educational">Educational</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-sm-9">
-                                                    <input type="text" name="goal5" class="form-control"   placeholder="">
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="goal5" class="form-control"   placeholder="Goal">
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <input type="text" name="criteria5" class="form-control"   placeholder="criteria">
                                                 </div>
                                                     
                                                 <input type="hidden" name="doc[4][patient_id]" id="id" value="<?php echo $patient_id; ?>" />
@@ -1737,7 +2827,7 @@
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <button type="submit" name='save' class="btn btn-primary">Submit</button>
+                                                    <button type="submit" name='save' id="goalsave"class="btn btn-primary">Submit</button>
                                                 </div>
                                                     
                                             </div>
@@ -1749,21 +2839,219 @@
                                 </div>
                             </div>
                         
-                            <div id="goalEvaluation" class="tab-pane fade in active">
-                                <div class="white_back">
-                               
+                            <div id="EvaluateGols" class="tab-pane fade">
+                                <div class="white_back container">
+                                    <h4> Evaluvate Goals</h4><hr>
+<!--                                    <form method="get" >-->
+                                   <?php 
+                                        $attri = array('class'=>'form-horizontal');
+                                        echo form_open('DoctorView/add_goal_marks',$attri);
+                                    ?>
+                                    <?php
+//                                        
+                                        foreach ($goals as $goal):
+                                            if($goal->patient_id == $patient_id){
+                                                    //if($goals->type == 'Clinical'){
+                                    ?>
+                                    <div class="col-lg-12">
+                                        <div class="col-lg-5"><?php echo $goal->goal;?></div>
+                                        <div class="col-lg-7">
+                                            <input type="hidden" name="goal<?php echo $goal->sequence;?>" value="<?php echo $goal->goal;?>" />
+                                            <img src="<?php echo base_url('asserts/images/range.png'); ?>" />
+                                            <input class="range" type="range" name="mark<?php echo $goal->sequence;?>" min="0" max="10" step="1" value="0" />
+                                        </div>
+                                        <div class="col-lg-12 info">
+                                            <div class="col-lg-3">
+                                                Evaluation Criteria :
+                                            </div>
+                                            <div class="col-lg-9">
+                                                <?php echo $goal->criteria;?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <?php
+                                                    
+                                                //}
+                                            }
+                                        endforeach;
+                                    ?>
+                                    
+                                    <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
+                                    <input type="hidden" name="time" id="id" value="<?php echo date('H:i:s'); ?>" />
+                                    <input type="hidden" name="date" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                                    <input type="hidden" name="doc_name" id="id" value="<?php echo $name; ?>" />
+                                    <div class="form-group">
+                                        <div class="col-sm-7"></div>
+                                        <div class="col-sm-2">
+                                            <br/>
+                                            <br/>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <br/>
+                                            <br/>
+                                            <button type="submit" name='save' class="btn btn-primary">Save Marks</button>
+                                        </div>
+
+                                    </div>
+
+                                    <?php 
+                                        echo form_close();                                        
+                                    ?> 
+<!--                                    </form>-->
                                 </div>
+                                                                
                             </div>
+                    
                             
                     </div>
                 </div>
                     
 <!-- progress -->
                 <div id="progress" style="display: none" >
+                    <input hidden id="curr_patient" type="text" value="<?php echo $patient_id?>" />
+                    <input hidden id= "doc_name_curr" type="text" value="<?php echo $name?>" />
+                    <div class="white_back container">
+                        <script type="text/javascript" src="<?php echo base_url() . "asserts/js/Chart.min.js" ?>"></script>
+<!--                        <script type="text/javascript" src="js/Chart.min.js"></script>-->
+                        <script type="text/javascript">
+                            function random_rgba() {
+                                var letters = '012345'.split('');
+                                var color = '#';        
+                                color += letters[Math.round(Math.random() * 5)];
+                                letters = '0123456789ABCDEF'.split('');
+                                for (var i = 0; i < 5; i++) {
+                                    color += letters[Math.round(Math.random() * 15)];
+                                }
+                                return color;
+                            }
+                            function ArrNoDupe(a) {
+                                var temp = {};
+                                for (var i = 0; i < a.length; i++)
+                                    temp[a[i]] = true;
+                                var r = [];
+                                for (var k in temp)
+                                    r.push(k);
+                                return r;
+                            }
+                            function getGraphData(){
+                                var doc = $('#doc_name_curr').val();
+                                var patient = $('#curr_patient').val();
+                                $.ajax({
+                                    url: 'http://[::1]/project/Group-07/NiceAdmin/DoctorView/getGraphData/',
+                                    type: "POST",
+                                    data: {graph:"graph",pati_id:patient,doc :doc},
+                                    success: function(one) {
+                                        var two = [];
+                                        var x = one.split(']');
+                                        for(var i=0 ; i<x.length-1;i++){
+                                            two[i] = JSON.parse(x[i]+']');
+                                        }
+                                        var marks = [];
+                                        var goal = [];
+                                        var goalDup = [];
+                                        var date = [];
+                                        var noDupes = [];
+                                        var marksDup = [];
+                                        var marks = [];
+                                        for(var z = 0;z<two.length;z++){
+                                            for(var i =0;i<two[z].length;i++) {
+                                                    goalDup.push("" + two[z][i].goal);
+                                                    marksDup.push(two[z][i].marks);
+                                                    date.push(two[z][i].date);
+                                                    noDupes = ArrNoDupe(date);
+                                                    goal = ArrNoDupe(goalDup);
+                                            }
+                                            marks.push(noDupes[z]);
+                                            marks.push(marksDup);
+                                            marksDup = [];
+                                        }
+            
+                                        var chartdata = {
+                                                labels: goal                                                                                                     
+                                            };
+                                        var datasetValue = [];
+                                        var color ;
+                                        for(var i = 0; i < marks.length; i++){
+                                            if(marks[i].length===10){
+                                                    var color = random_rgba();
+                                                    datasetValue.push({
+                                                        label: ""+marks[i],
+                                                        fill: false,
+                                                        lineTension: 0.1,
+                                                        backgroundColor: ""+color,
+                                                        borderColor: ""+color,
+                                                        pointHoverBackgroundColor: ""+color,
+                                                        pointHoverBorderColor: ""+color,
+                                                        data: marks[i+1]
+                                                    });
+                                            }
+                                        }
+                                        chartdata.datasets = datasetValue;
+                                        var ctx = $("#mycanvas");
+                                            var LineGraph = new Chart(ctx, {
+                                                    type: 'line',
+                                                    data: chartdata
+                                            }); 
+                                    },
+                                    error : function(data) {
+                                    }
+                                });
+                            }
+                            getGraphData();
+                        
+                        </script>
+                        <div class="col-lg-12">
+                            <div id="chart_div"></div>
+                            <div class="chart-container">
+                                <canvas id="mycanvas"></canvas>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
 <!-- notes -->
-                <div id="notes" style="display: none" ></div>
+                <div id="notes" style="display: none" >
+                    <div class="white_back container">
+                        <h4> Doctor's Notes</h4><hr>
+<!--                                    <form method="get" >-->
+                                   <?php 
+                                        $attri = array('class'=>'form-horizontal');
+                                        echo form_open('DoctorView/add_doc_notes',$attri);
+                                    ?>
+                                    
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <textarea name="doc_notes" class="form-control"  required="required" placeholder=""></textarea>
+                                        </div>
+                                    </div>  
+                                    
+                                    <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
+                                    <input type="hidden" name="time" id="id" value="<?php echo date('H:i:s'); ?>" />
+                                    <input type="hidden" name="date" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                                    <input type="hidden" name="doc_name" id="id" value="<?php echo $name; ?>" />
+                                    <div class="form-group">
+                                        <div class="col-sm-7"></div>
+                                        <div class="col-sm-2">
+                                            <br/>
+                                            <br/>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <br/>
+                                            <br/>
+                                            <button type="submit" name='save' class="btn btn-primary">Save Note</button>
+                                        </div>
+
+                                    </div>
+
+                                    <?php 
+                                        echo form_close();                                        
+                                    ?> 
+<!--                                    </form>-->
+                    </div>
+                </div>
 
 <!-- refernces -->
                 <div id="references" style="display: none" >
@@ -1786,24 +3074,26 @@
                                                 </div>
                                                 <div class="form-group col-sm-6">
                                                     <label for="clno">Clinic No:</label>
-                                                    <input type="text" class="form-control" name="clinic" placeholder="Enter clinic number">
+                                                    <input required type="text" class="form-control" name="clinic" placeholder="Enter clinic number">
                                                 </div>
                                                 <div class="form-group col-sm-6">
                                                     <label for="ref">Ref.Name:</label>
-                                                    <input type="text" class="form-control" name="ref"  value="<?php echo $patient->patient_name; ?>" placeholder="Enter Reference name">
+                                                    <input type="text" class="form-control" readonly  name="ref"  value="<?php echo $patient->patient_name; ?>" placeholder="Enter Reference name">
                                                 </div>
                                                 <div class="form-group col-sm-6">
                                                     <label for="age">Age:</label>
-                                                    <input type="text" class="form-control" name="age" value="<?php echo $patient->age ; ?>" placeholder="Enter Age">
+                                                    <input readonly type="text" class="form-control" name="age" value="<?php echo $patient->age ; ?>" placeholder="Enter Age">
                                                 </div>
                                                 
                                                 <div class="form-group">
                                                     <label for="des">Description:</label>
-                                                    <textarea class="form-control" rows="5" name="des"></textarea>
+                                                    <textarea class="form-control" required rows="5" name="des"></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                    <button type="submit" class="btn btn-info" >Submit</button>
                                                 </div>
+                                                <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
+                                                <input type="hidden" name="doc_name" id="id" value="<?php echo $name; ?>" />
                                                 
                                             </form>
                                 
@@ -1846,31 +3136,605 @@
                         
                         <div id="cognitive_marks">
                            
-                            <div class="panel panel-info">
-                                <div class="panel-heading">Patient Answers</div>
-                                <div class="panel-body" id="cogtestmarks">
+                            <div class="col-lg-6 panel panel-info">
+                                <div class="panel-heading">Patient Answers : Test A</div>
+                                <div class="panel-body" id="cogtestmarks_A">
+                                    
+                                </div>
+                                
+                            </div>
+                
+                            <div class="col-lg-6 panel panel-info">
+                                <div class="panel-heading">Patient Answers : Test B</div>
+                                <div class="panel-body" id="cogtestmarks_B">
                                     
                                 </div>
                             </div>
-                
+                            
                         </div>
                         
+                        
                     </div>
+                    
+                    <!-- <div class="white_back container">
+                        <?php
+                            foreach($finalmarks as $final):
+                            if ($final->test_type == "A"){
+                        ?>
+                    
+                        <div class="col-lg-6">
+                            <table class="table table-condensed table-bordered"> 
+                                <thead>
+                                    <tr class="success">
+                                        <th class="text-center" colspan="2">Test A Final Marks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Deviation Quotients</td>
+                                        <td><?php echo $final->dq; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Percentile Ranks</td>
+                                        <td><?php echo $final->pr; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Description</td>
+                                        <td><?php echo $final->description; ?></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="active">
+                                        <td><?php echo $final->doc_name; ?></td>
+                                        <td><?php echo $final->date; ?></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                         -->
+                       <!--  <?php }else{ ?>
+                        <div class="col-lg-6">
+                            <table class="table table-condensed table-bordered"> 
+                                <thead>
+                                    <tr class="success">
+                                        <th class="text-center" colspan="2">Test B Final Marks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Deviation Quotients</td>
+                                        <td><?php echo $final->dq; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Percentile Ranks</td>
+                                        <td><?php echo $final->pr; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Description</td>
+                                        <td><?php echo $final->description; ?></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="active">
+                                        <td><?php echo $final->doc_name; ?></td>
+                                        <td><?php echo $final->date; ?></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <?php 
+                            }
+                        endforeach;
+                        ?> -->
+                 <!--    </div> -->
+                    <!-- <div class="white_back container">
+                        <h3 class="success text-center" >Add Final Marks</h3>
+                        <?php 
+                            $attri = array(
+                                'class'=>'form-horizontal'
+                            );
+                            echo form_open('DoctorView/add_final_marks',$attri);
+                        ?>
+
+                        <div class="form-group">
+                            <label for="test" class="col-sm-3 control-label">Select Test </label>
+                            <div class="col-sm-9">
+                                <select class="form-control" name="type">
+                                    <option value="A">Test A</option>
+                                    <option value="B">Test B</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fine" class="col-sm-3 control-label">Deviation Quotients</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" placeholder="Deviation Quotients" name="dq" required >
+                            </div>
+                            <div class="col-sm-4">
+                                Trigger the modal with a button 
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#dq">View Deviation Quotients table </button>
+
+                                Modal 
+                                <div id="dq" class="modal fade" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+
+                                         Modal content
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title text-center">Deviation Quotients table</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <table class="table table-condensed table-bordered">
+                                                      <tr class="success text-center" style="color:green;"> 	
+                                                          <td>TONI-3 Raw Scores</td>	
+                                                          <td>6-0 to 6-5</td><td>6-6 to 6-11</td><td>7-0 to 7-5</td><td>7-6 to 7-11</td><td>8-0 to 8-5</td><td>8-6 to 8-11</td><td>9-0 to 9-5</td><td>9-6 to 9-11</td><td>10-0 to 10-5</td><td>10-6 to 10-11</td><td>11-0 to11-11</td><td>12-0 to 12-11</td><td>13-0 to 13-11</td><td>14-0 to 14-11</td><td>15-0 to 15-11</td><td>16-0 to 16-11</td><td>17-0 to 54-11</td><td>55-0 to 59-11</td><td>60-0 to 64-11</td><td>65-0 to 69-11</td><td>70-0 to 74-11</td><td>75-0 to 79-11</td><td>80-0 to 89-11</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">        
+                                                          <td>0</td><td>70</td><td>69</td><td>68</td><td>67</td><td>66</td><td>65</td><td>64</td><td>63</td><td>62</td><td>61</td><td>61</td><td>60</td><td>60</td><td>60</td><td>60</td><td>60</td><td>60</td><td>62</td><td>63</td><td>64</td><td>65</td><td>67</td><td>68</td>
+                                                      </tr>
+                                                      <tr class="success text-center" style="color:gray;">
+                                                          <td>1</td><td>75</td><td>70</td><td>69</td><td>68</td><td>67</td><td>66</td><td>65</td><td>64</td><td>64</td><td>63</td><td>63</td><td>62</td><td>62</td><td>62</td><td>62</td><td>61</td><td>61</td><td>63</td><td>64</td><td>65</td><td>67</td><td>68</td><td>70</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>2</td><td>80</td><td>75</td><td>70</td><td>70</td><td>69</td><td>68</td><td>67</td><td>66</td><td>66</td><td>65</td><td>65</td><td>64</td><td>63</td><td>63</td><td>63</td><td>62</td><td>62</td><td>64</td><td>65</td><td>66</td><td>68</td><td>69</td><td>73</td>
+                                                      </tr>
+                                                      <tr class="info text-center" style="color:gray;">
+                                                          <td>3</td><td>85</td><td>81</td><td>75</td><td>72</td><td>70</td><td>69</td><td>69</td><td>68</td><td>68</td><td>67</td><td>67</td><td>66</td><td>65</td><td>65</td><td>64</td><td>63</td><td>63</td><td>65</td><td>66</td><td>67</td><td>69</td><td>70</td><td>75</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>4</td><td>87</td><td>83</td><td>78</td><td>75</td><td>72</td><td>70</td><td>70</td><td>69</td><td>69</td><td>68</td><td>68</td><td>67</td><td>66</td><td>66</td><td>65</td><td>64</td><td>64</td><td>66</td><td>67</td><td>68</td><td>70</td><td>73</td><td>77</td>
+                                                      </tr>
+                                                      <tr class="success text-center" style="color:gray;">
+                                                          <td>5</td><td>89</td><td>85</td><td>81</td><td>78</td><td>75</td><td>73</td><td>72</td><td>70</td><td>70</td><td>69</td><td>69</td><td>68</td><td>67</td><td>67</td><td>66</td><td>65</td><td>65</td><td>67</td><td>68</td><td>69</td><td>72</td><td>75</td><td>79</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>6</td><td>95</td><td>89</td><td>83</td><td>81</td><td>79</td><td>77</td><td>75</td><td>73</td><td>72</td><td>70</td><td>70</td><td>69</td><td>68</td><td>68</td><td>67</td><td>66</td><td>66</td><td>68</td><td>69</td><td>70</td><td>74</td><td>78</td><td>82</td>
+                                                      </tr>
+                                                      <tr class="info text-center" style="color:gray;"> 	
+                                                          <td>7</td><td>100</td><td>93</td><td>85</td><td>83</td><td>81</td><td>80</td><td>79</td><td>75</td><td>74</td><td>73</td><td>72</td><td>70</td><td>69</td><td>69</td><td>68</td><td>67</td><td>67</td><td>69</td><td>70</td><td>72</td><td>76</td><td>80</td><td>85</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>8</td><td>103</td><td>96</td><td>88</td><td>84</td><td>83</td><td>82</td><td>81</td><td>78</td><td>76</td><td>75</td><td>74</td><td>72</td><td>70</td><td>70</td><td>69</td><td>68</td><td>68</td><td>70</td><td>72</td><td>74</td><td>78</td><td>81</td><td>86</td>
+                                                      </tr>
+                                                      <tr class="success text-center" style="color:gray;">
+                                                          <td>9</td><td>104</td><td>97</td><td>89</td><td>85</td><td>84</td><td>83</td><td>82</td><td>79</td><td>78</td><td>77</td><td>76</td><td>75</td><td>73</td><td>72</td><td>70</td><td>69</td><td>69</td><td>71</td><td>73</td><td>75</td><td>81</td><td>85</td><td>87</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>10</td><td>107</td><td>100</td><td>92</td><td>88</td><td>85</td><td>84</td><td>83</td><td>81</td><td>80</td><td>79</td><td>78</td><td>77</td><td>75</td><td>74</td><td>72</td><td>70</td><td>70</td><td>72</td><td>74</td><td>77</td><td>83</td><td>86</td><td>88</td>
+                                                      </tr>
+                                                      <tr class="info text-center" style="color:gray;">
+                                                          <td>11</td><td>109</td><td>102</td><td>94</td><td>90</td><td>89</td><td>85</td><td>84</td><td>82</td><td>81</td><td>80</td><td>79</td><td>78</td><td>76</td><td>75</td><td>74</td><td>73</td><td>72</td><td>74</td><td>75</td><td>79</td><td>85</td><td>87</td><td>89</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>12</td><td>111</td><td>104</td><td>97</td><td>93</td><td>92</td><td>86</td><td>85</td><td>84</td><td>82</td><td>81</td><td>80</td><td>79</td><td>78</td><td>NULL	</td><td>NULL</td><td>75</td><td>NULL</td><td>NULL</td><td>NULL</td><td>80</td><td>86</td><td>88</td><td>90</td>
+                                                      </tr>
+                                                      <tr class="success text-center" style="color:gray;">
+                                                          <td>13</td><td>115</td><td>107</td><td>100</td><td>95</td><td>94</td><td>89</td><td>88</td><td>85</td><td>84</td><td>83</td><td>82</td><td>81</td><td>80</td><td>79</td><td>77</td><td>76</td><td>75</td><td>77</td><td>79</td><td>82</td><td>87</td><td>89</td><td>91</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>14</td><td>117</td><td>109</td><td>103</td><td>97</td><td>95</td><td>91</td><td>89</td><td>88</td><td>85</td><td>84</td><td>83</td><td>82</td><td>81</td><td>80</td><td>78</td><td>77</td><td>76</td><td>78</td><td>80</td><td>85</td><td>88</td><td>90</td><td>92</td>
+                                                      </tr>
+                                                      <tr class="info text-center" style="color:gray;">
+                                                          <td>15</td><td>119</td><td>110</td><td>105</td><td>99</td><td>97</td><td>93</td><td>91</td><td>90</td><td>87</td><td>85</td><td>84</td><td>83</td><td>82</td><td>81</td><td>79</td><td>78</td><td>77</td><td>79</td><td>81</td><td>86</td><td>89</td><td>91</td><td>93</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>16</td><td>121</td><td>115</td><td>107</td><td>100</td><td>99</td><td>95</td><td>93</td><td>92</td><td>89</td><td>88</td><td>85</td><td>84</td><td>83</td><td>82</td><td>81</td><td>80</td><td>79</td><td>80</td><td>83</td><td>87</td><td>90</td><td>92</td><td>94</td>
+                                                      </tr>
+                                                      <tr class="success text-center" style="color:gray;">
+                                                          <td>17</td><td>123</td><td>116</td><td>109</td><td>102</td><td>100</td><td>98</td><td>95</td><td>93</td><td>91</td><td>90</td><td>87</td><td>85</td><td>84</td><td>83</td><td>82</td><td>81</td><td>80</td><td>81</td><td>85</td><td>88</td><td>91</td><td>93</td><td>96</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>18</td><td>125</td><td>117</td><td>112</td><td>105</td><td>102</td><td>99</td><td>98</td><td>97</td><td>93</td><td>92</td><td>89</td><td>88</td><td>85</td><td>84</td><td>83</td><td>82</td><td>81</td><td>82</td><td>86</td><td>89</td><td>92</td><td>94</td><td>98</td>
+                                                      </tr>
+                                                      <tr class="info text-center" style="color:gray;">
+                                                          <td>19</td><td>127</td><td>120</td><td>115</td><td>107</td><td>105</td><td>100</td><td>100</td><td>98</td><td>96</td><td>95</td><td>92</td><td>91</td><td>90</td><td>85</td><td>84</td><td>83</td><td>82</td><td>83</td><td>87</td><td>90</td><td>93</td><td>95</td><td>100</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>20</td><td>129</td><td>122</td><td>116</td><td>110</td><td>108</td><td>103</td><td>102</td><td>100</td><td>98</td><td>97</td><td>95</td><td>93</td><td>91</td><td>90</td><td>85</td><td>84</td><td>83</td><td>85</td><td>88</td><td>92</td><td>95</td><td>98</td><td>102</td>
+                                                      </tr>
+                                                      <tr class="success text-center" style="color:gray;">
+                                                          <td>21</td><td>130</td><td>124</td><td>118</td><td>115</td><td>110</td><td>106</td><td>105</td><td>102</td><td>100</td><td>98</td><td>96</td><td>95</td><td>93</td><td>91</td><td>89</td><td>85</td><td>84</td><td>88</td><td>89</td><td>93</td><td>98</td><td>100</td><td>105</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>22</td><td>131</td><td>126</td><td>121</td><td>118</td><td>115</td><td>110</td><td>108</td><td>105</td><td>103</td><td>100</td><td>98</td><td>97</td><td>96</td><td>93</td><td>89</td><td>86</td><td>85</td><td>87</td><td>90</td><td>95</td><td>100</td><td>101</td><td>107</td>
+                                                      </tr>
+                                                      <tr class="info text-center" style="color:gray;">
+                                                          <td>23</td><td>133</td><td>129</td><td>125</td><td>121</td><td>118</td><td>115</td><td>111</td><td>107</td><td>105</td><td>104</td><td>100</td><td>99</td><td>98</td><td>95</td><td>91</td><td>89</td><td>88</td><td>90</td><td>93</td><td>97</td><td>102</td><td>103</td><td>109</td>
+                                                      </tr>
+                                                      <tr class="active text-center" style="color:gray;">
+                                                          <td>24</td><td>135</td><td>130</td><td>127</td><td>124</td><td>121</td><td>117</td><td>113</td><td>110</td><td>108</td><td>107</td><td>102</td><td>100</td><td>99</td><td>98</td><td>94</td><td>91</td><td>90</td><td>92</td><td>95</td><td>100</td><td>104</td><td>105</td><td>110</td>
+                                                      </tr>
+                                                  </table>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fine" class="col-sm-3 control-label">Percentile Ranks</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" placeholder="Percentile Ranks" name="pr" required >
+                            </div>
+                            <div class="col-sm-4">
+                                 Trigger the modal with a button 
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#pr">View Percentile Ranks table </button>
+
+                                 Modal 
+                                <div id="pr" class="modal fade" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                         Modal content
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title text-center">Percentile Ranks table</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="col-lg-3">
+                                                    <table class="table table-condensed table-bordered">
+                                                          <tr class="success text-center" style="color:green;">
+                                                              <td>Quotients</td><td>Percentiles</td>
+                                                          </tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td>140</td><td>99</td></tr>
+                                                          <tr class="success text-center" style="color:gray;">
+                                                              <td>139</td><td>99</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td>138</td><td>99</td></tr>
+                                                          <tr class="info text-center" style="color:gray;">
+                                                              <td>137</td><td>99</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td>136</td><td>99</td></tr>
+                                                          <tr class="success text-center" style="color:gray;">
+                                                              <td>135</td><td>99</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td>134</td><td>99</td></tr>
+                                                          <tr class="info text-center" style="color:gray;">
+                                                              <td>133</td><td>99</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td>132</td><td>98</td></tr>
+                                                          <tr class="success text-center" style="color:gray;">
+                                                              <td>131</td><td>98</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td>130</td><td>98</td></tr>
+                                                          <tr class="info text-center" style="color:gray;">
+                                                              <td>129</td><td>97</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td>128</td><td>97</td></tr>
+                                                          <tr class="success text-center" style="color:gray;">
+                                                              <td>127</td><td>96</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td>126</td><td>96</td></tr>
+                                                          <tr class="info text-center" style="color:gray;">
+                                                              <td>125</td><td>96</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                              <td> 124</td><td>95</td></tr>
+                                                          <tr class="success text-center" style="color:gray;">
+                                                                <td>123</td><td>94</td></tr>
+                                                          <tr class="active text-center" style="color:gray;">
+                                                                <td>122</td><td>93</td></tr>
+
+                                                    </table>
+                                                      </div>
+                                                      <div class="col-lg-3">
+                                                        <table class="table table-condensed table-bordered">
+                                                            <tr class="success text-center" style="color:green;">
+                                                                <td>Quotients</td><td>Percentiles</td>
+                                                            </tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>121</td><td>92</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>120</td><td>91</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>119</td><td>90</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>118</td><td>88</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>117</td><td>87</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>116</td><td>86</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td> 115</td><td>84</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>114</td><td>83</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>113</td><td>81</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>112</td><td>79</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>111</td><td>76</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>110</td><td>74</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>109</td><td>73</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>108</td><td>70</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>107</td><td>68</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>106</td><td>66</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>105</td><td>63</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>104</td><td>61</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>103</td><td>58</td></tr>
+                                                          </table>
+                                                      </div>
+                                                        <div class="col-lg-3">
+                                                        <table class="table table-condensed table-bordered">
+                                                            <tr class="success text-center" style="color:green;">
+                                                                <td>Quotients</td><td>Percentiles</td>
+                                                            </tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>102</td><td>55</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>101</td><td>52</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>100</td><td>50</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>99</td><td>48</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>98</td><td>45</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>97</td><td>42</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td> 96</td><td>39</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>95</td><td>37</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>94</td><td>34</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>93</td><td>32</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>92</td><td>30</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>91</td><td>27</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td> 90</td><td>26</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>89</td><td>24</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>88</td><td>21</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>87</td><td>19</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>86</td><td>17</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td> 85</td><td>16</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>84</td><td>14</td></tr>
+                                                        </table>
+                                                      </div>
+
+                                                      <div class="col-lg-3">
+                                                        <table class="table table-condensed table-bordered">
+                                                            <tr class="success text-center" style="color:green;">
+                                                                <td>Quotients</td><td>Percentiles</td>
+                                                            </tr>    
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>83</td><td>13</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>82</td><td>12</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>81</td><td>10</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td> 80</td><td>9</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>79</td><td>8</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>78</td><td>7</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>77</td><td>6</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>76</td><td>5</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>75</td><td>5</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>74</td><td>4</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>73</td><td>4</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>72</td><td>3</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>71</td><td>3</td></tr>
+                                                            <tr class="success text-center" style="color:gray;">
+                                                                <td>70</td><td>2</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>69</td><td>2</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>68</td><td>2</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td> 67</td><td>1</td></tr>
+                                                            <tr class="succes text-center" style="color:gray;">
+                                                                <td>66</td><td>1</td></tr>
+                                                            <tr class="active text-center" style="color:gray;">
+                                                                <td>65</td><td>1</td></tr>
+                                                            <tr class="info text-center" style="color:gray;">
+                                                                <td>64</td><td>1</td></tr>
+                                                      </table>
+                                                      </div>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fine" class="col-sm-3 control-label">Description</label>
+                            <div class="col-sm-5">
+                                <select class="form-control" name="desc">
+                                    <option value="Very Superior">Very Superior</option>
+                                    <option value="Superior">Superior</option>
+                                    <option value="Above Average">Above Average</option>
+                                    <option value="Average">Average</option>
+                                    <option value="Below Average">Below Average</option>
+                                    <option value="Poor">Poor</option>
+                                    <option value="Very Poo">Very Poor</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4">
+                                 Trigger the modal with a button 
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#desc">View Description table </button>
+
+                                 Modal 
+                                <div id="desc" class="modal fade" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+
+                                         Modal content
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title text-center">Description table</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <table class="table table-condensed table-bordered">
+                                                    <tr class="success text-center" style="color:green;">
+                                                        <td>Percentile Ranks</td><td>Deviation Quotients</td><td>Description</td><td>%Included</td>
+                                                    </tr>    
+                                                    <tr class="active text-center" style="color:gray;">
+                                                        <td>&gt;98</td><td>&gt;130</td><td>Very Superior</td><td>2.34</td></tr>
+                                                    <tr class="success text-center" style="color:gray;">
+                                                        <td>91-98</td><td>121-130</td><td>Superior</td><td>6.87</td></tr>
+                                                    <tr class="active text-center" style="color:gray;">
+                                                        <td>74-97</td><td>111-120</td><td>Above Average</td><td>16.12</td></tr>
+                                                    <tr class="success text-center" style="color:gray;">
+                                                        <td> 25-73</td><td>90-110</td><td>Average</td><td>49.51</td> </tr>
+                                                    <tr class="active text-center" style="color:gray;">
+                                                        <td>9-24</td><td>80-89</td><td>Below Average</td><td>16.12</td></tr>
+                                                    <tr class="success text-center" style="color:gray;">
+                                                        <td>2-8</td><td>70-79</td><td>Poor</td><td>6.87</td></tr>
+                                                    <tr class="active text-center" style="color:gray;">
+                                                        <td>&lt;2</td><td>&lt;70</td><td>Very Poor</td><td>2.34</td></tr>
+                                                </table>
+                                            </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+
+                        <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
+                        <input type="hidden" name="time" id="id" value="<?php echo date('H:i:s'); ?>" />
+                        <input type="hidden" name="date" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                        <input type="hidden" name="doctorid" id="id" value="<?php echo $name; ?>" />
+
+                        <div class="form-group">
+                            <div class="col-sm-7"></div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="submit" name='save' class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+
+                    <?php 
+                        echo form_close();
+
+                    ?>
+                    </div>
+ -->
                 </div>
 
 <!-- discharge -->
                 <div id="discharge" style="display: none" ></div>
+                
+                <div id="uploads" style="display: none" >
+                    <div class="white_back container">
+                        <h3 class="success text-center">Upload Records</h3>
+                        <div class="col-lg-10">
+                            <?php
+                            $attri = array('class'=>'form-horizontal');
+                            echo form_open_multipart('CognitiveTest/add_question',$attri);
+                            
+                            ?>
+                            <label for="" class="col-sm-3 control-label">Description</label>
+                            <div class="col-sm-4">
+                            <input type="text" class="form-control" placeholder="Type or Select" name="description" list="description" required >
+                            <datalist id="description">
+                                <option value="Blood test"> Blood test</option>
+                                <option value="Urine test"> Urine test</option>
+                                <option value="CTC scan"> CTC scan</option>
+                                <option value="ECG"> ECG</option>
+                                <option value="X-ray"> X-ray</option>
+                            </datalist>
+                            </div>
+                            <?php
+                                                            
+                            //Quewstion lable
+                            echo"<div class='form-group'>";
+                            echo"<div class='col-sm-4'>";
+                            echo form_label('Report : ','class="control-label"');
+                            echo"</div>";
+                            //Question input
+                            echo"<div class='ccol-sm-push-12'>";
+                                $data = array(
+                                    'type' => 'file',
+                                    'name' => 'report',
+                                    'required'=>'required'
+                                );
+                            echo form_input($data,'class="form-control"');
+                            echo"</div>";
+                            echo"</div>";
+
+
+                            //button
+                            echo"<div class='form-group'>";
+                            echo"<div class='col-sm-4'>";
+                            echo "</div>";
+                            echo"<div class='col-sm-push-12'>";
+                            echo form_submit('submit', 'Save');
+                            echo "</div>";
+                            echo "</div>";
+                            echo form_close();
+                            ?>    
+                        </div>              
+                    </div>
+                
+                </div>
+                
                             
             </div>
             
 <!-- Tile navigation -->
-            <div class="col-md-5">
+            <div class="col-lg-4">
                 <div class="col-sm-2 col-icon-box " onclick="viewPatients()" >
                     <img src="<?php echo base_url()."asserts/images/icons/patient.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
                     <div class="overlay">
                         <div class="text">View Patient</div>
                     </div>
                 </div>
+                <div class="col-sm-2 col-icon-box "  onclick="diagnosis()">
+                    <img src="<?php echo base_url()."asserts/images/icons/diagnosis_problem.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    <div class="overlay">
+                        <div class="text">Problem <br>Diagnosis</div>
+                    </div>
+                </div>
+<!--
+                <div class="col-sm-2 col-icon-box "  onclick="problem()">
+                    <img src="</?php echo base_url()."asserts/images/icons/problem.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    <div class="overlay">
+                        <div class="text">Problem</div>
+                    </div>
+                </div>
+-->
                 <div class="col-sm-2 col-icon-box "  onclick="caseHistory()">
                     <img src="<?php echo base_url()."asserts/images/icons/medical_history_icon.jpg"; ?>" class="img-thumbnail" width="100px" height="100px" />
                     <div class="overlay">
@@ -1920,7 +3784,49 @@
                         <div class="text">Discharge<br/> Plan</div>
                     </div>
                 </div>
+                
+                <div class="col-sm-2 col-icon-box " onclick="UploadFiles()" >
+                    <img src="<?php echo base_url()."asserts/images/icons/uploading.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    <div class="overlay">
+                        <div class="text">Upload<br/> Records</div>
+                    </div>
+                </div>
+                <a target="_blank" href="<?php echo base_url()."Game"; ?> ">
+                <div class="col-sm-2 col-icon-box ">
+                    
+                        <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    
+                    <div class="overlay">
+                        <div class="text">Activities<br/>level3</div>
+                    </div>
+                </div>
+                </a>
+
+                <a target="_blank" href="<?php echo base_url()."GameLevel2"; ?> ">
+                <div class="col-sm-2 col-icon-box ">
+                    
+                        <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    
+                    <div class="overlay">
+                        <div class="text">Activities<br/>level2</div>
+                    </div>
+                </div>
+                </a>
+
+                <a target="_blank" href="<?php echo base_url()."GameLevel1"; ?> ">
+                <div class="col-sm-2 col-icon-box ">
+                    
+                        <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
+                    
+                    <div class="overlay">
+                        <div class="text">Activities<br/>level1</div>
+                    </div>
+                </div>
+                </a>
+                
+                
             </div>
+            
             
 
                 
@@ -2040,6 +3946,48 @@
     endforeach;
 ?>
 
+<?php                       //  show/hide form/table for problem
+    foreach ($getDiagnosis as $problems):
+        if($patient_id == $problems->patient_id && !empty($problems->problem)){ 
+?>
+    
+    <script type="text/javascript">
+        document.getElementById('problem_form').style.display = 'none';
+        document.getElementById('problem_table').style.display = 'block';
+    </script>
+<?php
+        }else{
+?>
+    <script type="text/javascript">
+        document.getElementById('problem_form').style.display = 'block';
+        document.getElementById('problem_table').style.display = 'none';
+    </script>
+<?php
+        }
+    endforeach;
+?>
+
+<?php                       //  show/hide form/table for diagnosis
+    foreach ($getDiagnosis as $diagnosis):
+        if($patient_id == $diagnosis->patient_id){
+?>
+    
+    <script type="text/javascript">
+        document.getElementById('diagnosis_form').style.display = 'none';
+        document.getElementById('diagnosis_table').style.display = 'block';
+    </script>
+<?php
+        }else{
+?>
+    <script type="text/javascript">
+        document.getElementById('diagnosis_form').style.display = 'block';
+        document.getElementById('diagnosis_table').style.display = 'none';
+    </script>
+<?php
+        }
+    endforeach;
+?>
+
 
 <script src="<?php echo base_url("js/jquery-1.10.2.js"); ?>" type="text/javascript"></script>
 
@@ -2055,65 +4003,109 @@ $("#start").click(function() {
 });
 </script>
 
+<script type="text/javascript">
+$("#calculateB").click(function() {
+    $.ajax({
+        type: "POST",
+        url: "<?php echo site_url('CogTestQuiz/ViewMarks'); ?>",
+        success: function(data) {
+            $("#cognitive_marks").html(data);
+        }
+    });
+});
+</script>
+
+
 <!-- javascript functions for tile navigation -->
 <script>
     function viewPatients() {
         $("#viewPatient").show();  
-        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#discharge").hide();   
+        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#discharge,#problem,#diagnosis,#uploads").hide();   
     }
     function caseHistory() {
         $("#caseHistory").show();
-        $("#viewPatient,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#discharge").hide(); 
+        $("#viewPatient,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#discharge,#problem,#diagnosis,#uploads").hide(); 
     }
     function medication() {
         $("#medication").show();
-        $("#caseHistory,#viewPatient,#goals,#progress,#notes,#references,#cognitiveTest,#discharge").hide();  
+        $("#caseHistory,#viewPatient,#goals,#progress,#notes,#references,#cognitiveTest,#discharge,#problem,#diagnosis,#uploads").hide();  
     }
     function goals() {
         $("#goals").show();
-        $("#caseHistory,#viewPatient,#medication,#progress,#notes,#references,#cognitiveTest,#discharge").hide(); 
+        $("#caseHistory,#viewPatient,#medication,#progress,#notes,#references,#cognitiveTest,#discharge,#problem,#diagnosis,#uploads").hide(); 
     }
     function progress() {
         $("#progress").show();
-        $("#caseHistory,#viewPatient,#medication,#goals,#notes,#references,#cognitiveTest,#discharge").hide(); 
+        $("#caseHistory,#viewPatient,#medication,#goals,#notes,#references,#cognitiveTest,#discharge,#problem,#diagnosis,#uploads").hide(); 
     }
     function notes() {
         $("#notes").show();
-        $("#caseHistory,#viewPatient,#medication,#goals,#progress,#references,#cognitiveTest,#discharge").hide(); 
+        $("#caseHistory,#viewPatient,#medication,#goals,#progress,#references,#cognitiveTest,#discharge,#problem,#diagnosis,#uploads").hide(); 
     }
     function references() {
         $("#references").show();
-        $("#caseHistory,#viewPatient,#medication,#goals,#progress,#notes,#cognitiveTest,#discharge").hide(); 
+        $("#caseHistory,#viewPatient,#medication,#goals,#progress,#notes,#cognitiveTest,#discharge,#problem,#diagnosis,#uploads").hide(); 
     }
     function cognitiveTest() {
         $("#cognitiveTest").show();
-        $("#caseHistory,#viewPatient,#medication,#goals,#progress,#notes,#references,#discharge").hide(); 
+        $("#caseHistory,#viewPatient,#medication,#goals,#progress,#notes,#references,#discharge,#problem,#diagnosis,#uploads").hide(); 
+    }
+    function diagnosis() {
+        $("#diagnosis").show();  
+        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient,#problem,#uploads").hide();   
     }
     function DischargePlan() {
         $("#discharge").show();  
-        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient").hide();   
+        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient,#problem,#diagnosis,#uploads").hide();   
     }
+    function UploadFiles() {
+        $("#uploads").show();  
+        $("#caseHistory,#medication,#goals,#progress,#notes,#references,#cognitiveTest,#viewPatient,#problem,#diagnosis,#discharge").hide();   
+    }
+    
+    
+    
       $(document).ready(function (){
-                setInterval(getMarks, 100);
+                setInterval(getMarksB, 100);
+                setInterval(getMarksA, 100);
             });
-    function getMarks(){
+    function getMarksB(){
     $(document).ready(function(){
         var id = $('#patientcogid').attr("value");
         $.ajax({
-			 url: 'http://[::1]/project/Group-07/NiceAdmin/CogTestQuiz/getMarks/',
+			 url: 'http://[::1]/project/Group-07/NiceAdmin/CogTestQuiz/getMarksB/',
 			 type: "POST",
 			 data: {id:id},
 			 success: function(data) {
-                    $('#cogtestmarks').html(data);
+                    $('#cogtestmarks_B').html(data);
              }
 			});
-        
-        
-        
-        
-        
-        
+
     });
     }
     
+    function getMarksA(){
+    $(document).ready(function(){
+        var id = $('#patientcogid').attr("value");
+        $.ajax({
+			 url: 'http://[::1]/project/Group-07/NiceAdmin/CogTestQuiz/getMarksA/',
+			 type: "POST",
+			 data: {id:id},
+			 success: function(data) {
+                    $('#cogtestmarks_A').html(data);
+             }
+			});
+ 
+    });
+    }
+    
+
+
+    $('#goalsave').on('click',function(){
+        
+    });
 </script>
+
+
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
