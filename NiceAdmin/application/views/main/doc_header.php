@@ -60,6 +60,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="http://www.amcharts.com/lib/style.css" type="text/css">
     
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+    
     <style type="text/css">
         #regiration_form fieldset:not(:first-of-type) {
           display: none;
@@ -100,6 +103,9 @@
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/jquery-jvectormap-world-mill-en.js" ?>"></script>
     <script type="text/javascript" src="<?php echo base_url() . "asserts/js/gdp-data.js" ?>"></script>	
     <!-- <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    
+    
+    
     
     <script>
           //knob

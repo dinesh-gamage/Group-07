@@ -76,8 +76,12 @@ $data = array(
 'speciality' => $this->input->post('spec'),
 'email' => $this->input->post('email_value'),
 'telephone' => $this->input->post('contact'),
+<<<<<<< HEAD
+//'profile_pic' => 'uploads/'.$picture
+=======
 'doc_img' => 'asserts/images/doc_img/'.$picture,
 'is_admin' =>0
+>>>>>>> 9cfd15dd57bf5b772d31f405ec96ee960ed1dd60
 
 );
 
@@ -199,10 +203,15 @@ $session_data = array(
 'email' => $result[0]->email,
 
 );
+<<<<<<< HEAD
+
+//$pic = array('picture' => $result[0]->profile_pic );
+=======
 $pic = array('picture' => $result[0]->profile_pic );
+>>>>>>> 9cfd15dd57bf5b772d31f405ec96ee960ed1dd60
 // Add user data in session
 $this->session->set_userdata('logged_in', $session_data);
-$this->load->view('header', $pic);
+$this->load->view('header');
 $this->load->view('index1');
 }
 } else {
@@ -228,4 +237,4 @@ $this->load->view('login/login_form', $data);
 
 }
 
-?>
+?>  

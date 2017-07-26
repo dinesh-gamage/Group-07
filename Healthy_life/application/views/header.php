@@ -43,6 +43,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:600,600i,700i" /> <!-- google fonts -->
     <link rel="icon" type="image/icon" href="<?php echo base_url()."asserts/images/favicon/favicon.ico"?>"> <!-- favicon-icon -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<<<<<<< HEAD
+=======
 
     <style type="text/css">
         .bordercolor{
@@ -51,6 +53,7 @@
         }
 
     </style>
+>>>>>>> 9cfd15dd57bf5b772d31f405ec96ee960ed1dd60
     
 </head>
 
