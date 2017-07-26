@@ -1,17 +1,17 @@
 <!-- 
-+==========================================================================================================================+
-                                        **********************************************
-                                            HEALTHY LIFE - CLIIC MANAGEMENT SYSTEM 
-                                        **********************************************
++===============================================================================================================================================+
+                                                    **********************************************
+                                                        HEALTHY LIFE - CLIIC MANAGEMENT SYSTEM 
+                                                    **********************************************
 |   Version     : 1.0
 |   Year        : 2017
 |   Author      : Dinesh Gamage , Kosala Peris, Tharindu Abeywickrama, Harsha Dhananjaya, Pasan Malith, Veena Nanayakkara
 |   Copyright   : Alrights Received by Healthy Life developing team of UCSC (2013/2014)
 
 
-|   Template : Lamadic - Health and Medical HTML Template | Version : 1.0.0 | Author : 
+|   Template : Lamadic - Health and Medical HTML Template | Version : 1.0.0 | Author : Healthy Life developing team of UCSC (2013/2014)
 
-+==========================================================================================================================+
++===============================================================================================================================================+
 -->
 
 <!DOCTYPE html >
@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" /> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:600,600i,700i" /> <!-- google fonts -->
     <link rel="icon" type="image/icon" href="<?php echo base_url()."asserts/images/favicon/favicon.ico"?>"> <!-- favicon-icon -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     
 </head>
 
@@ -113,7 +113,6 @@
                                     <li><a href="<?php echo base_url()."ContactStyle2"?>">Contact</a></li>
                                     <!--li></li>
                                     <span class="btn btn-info"><a href="<?php echo base_url()."ContactStyle2"?>"><h3>Log in</h3></a></span-->
-                                      <li><a href="<?php echo base_url()."gotopatientregistration"?>">Patient registration</a></li>
                                 </ul>
                             </div>
                             
@@ -127,6 +126,6 @@
     </div> 
     </div> 
     
-    <a href="<?php echo base_url()."Login"?>"><div class="hl-float-login" >Log in <!--hr style="color:white; height:3px;"> Register--></div></a>
+   
 
 <!--  end navigation -->

@@ -18,10 +18,44 @@ class Register extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+  
+  
+    public function __construct(){
+        parent::__construct();
+        $this->load->model('registerpatient');
+    }
+
+    public function reg_patient(){
+        $iid = $this->registerpatient->get_lstid();
+        if(isset($_POST['regbtn'])) {
+            $name = $this->input->post('pname');
+            $age = $this->input->post('age');
+            $dob = $this->input->post('dob');
+            $tel = $this->input->post('tel');
+            $lan = $this->input->post('lan');
+            $gen = $this->input->post('gender');
+            $sch = $this->input->post('sch');
+            $addr = $this->input->post('address');
+            $gur = $this->input->post('gur');
+            $rel = $this->input->post('rel');
+            $ref = $this->input->post('ref');
+            $pass = $this->input->post('pass');
+            $div = $this->input->post('div');
+            $date = $this->input->post('date'); 
+            $success_doc_insert = $this->registerpatient->register_patient($name,$age,$dob,$tel,$lan,$gen,$sch,$addr,$gur,$rel,$ref,$pass,$div,$date);
+            if ($success_doc_insert) {    
+                echo "true";
+               
+            } else {
+                echo "false";   
+            }
+        }
+    }
 	public function index()
 	{
 		$this->load->view('header');
-		$this->load->view('register');
+		$this->load->view('patientregistration');
 		$this->load->view('footer');
-	}
+	} 
+	
 }

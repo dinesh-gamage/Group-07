@@ -1,0 +1,49 @@
+.contentContainer{
+    margin: 15px;
+    width: auto;
+    height: auto;
+    padding: 0px;
+    background-color: transparent;
+}
+.contentBackground{
+    width: auto;
+    height: auto;
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 20px;
+    align-content: center;
+}
+.input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+input[type=radio]:checked + label>img {
+  border: 1px solid #fff;
+  box-shadow: 0 0 3px 3px #090;
+}
+
+/* Stuff after this is only to make things more pretty */
+input[type=radio] + label>img {
+  /*border: 1px dashed #444;*/
+  width: 150px;
+  height: 150px;
+  transition: 500ms all;
+}
+
+.correct{
+    width: 100%;
+    background-color: lightgreen;
+    border-left: 4px solid green;
+    color: green;
+    margin-bottom: 2px;
+    padding-left: 5px; 
+}
+.incorrect{
+    width: 100%;
+    background-color: lightpink;
+    border-left: 4px solid red;
+    color: red;
+    margin-bottom: 2px;
+    padding-left: 5px; 
+}

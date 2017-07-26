@@ -36,6 +36,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/Welcome.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/Widgets.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/controllers/user_authentication.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/core/index.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/helpers/index.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/hooks/index.html" afterPath="" />
@@ -45,6 +46,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/libraries/index.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/logs/index.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/models/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/models/login_database.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/third_party/index.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/basic_table.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/buttons.php" afterPath="" />
@@ -69,8 +71,10 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/header.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/index1.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/login_form.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/profile.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/readme.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/registration_form.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/welcome_message.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/application/views/widgets.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/assets/chart-master/.gitignore" afterPath="" />
@@ -525,6 +529,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/owl.carousel.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/style-responsive.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/style_login.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/widgets.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/css/xcharts.min.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/fonts/ElegantIcons.eot" afterPath="" />
@@ -551,6 +556,8 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/avatar-mini4.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/avatar1.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/avatar1_small.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/back.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/back2.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/bg-1.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/chart-texture.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/asserts/img/chat-avatar.jpg" afterPath="" />
@@ -839,6 +846,10 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Xmlrpcs.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/Zip.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/system/libraries/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/uploads/avatar-mini2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/uploads/avatar-mini4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/uploads/avatar1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/uploads/chat-avatar2.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/.buildinfo" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/DCO.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/_downloads/ELDocs.tmbundle.zip" afterPath="" />
@@ -1040,27 +1051,11 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/tutorial/index.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/tutorial/news_section.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Admin/user_guide/tutorial/static_pages.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/addEvent.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/bdd.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/calendar.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/css/fullcalendar.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/editEventDate.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/editevent.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/events.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/js/fullcalendar.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/js/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/FullCalendar-BS3-PHP-MySQL-master/js/moment.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Healthy_life/application/views/header.php" afterPath="$PROJECT_DIR$/Healthy_life/application/views/header.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NiceAdmin/application/controllers/Calsdsendar.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/NiceAdmin/application/views/calendar/index.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NiceAdmin/application/config/autoload.php" afterPath="$PROJECT_DIR$/NiceAdmin/application/config/autoload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NiceAdmin/application/config/database.php" afterPath="$PROJECT_DIR$/NiceAdmin/application/config/database.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -1093,42 +1088,13 @@
     <favorites_list name="Group-07" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="calendar.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NiceAdmin/application/views/calendar/calendar.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="user_authentication.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/NiceAdmin/application/controllers/user_authentication.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="256" column="0" lean-forward="false" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
-              <folding>
-                <marker date="1491563940286" expanded="true" signature="6781:9306" ph="{...}" />
-                <marker date="1491563940286" expanded="true" signature="8779:9299" ph="{...}" />
-                <marker date="1491563940286" expanded="true" signature="9041:9293" ph="{&quot;url&quot;: 'editEventDate.php'...}" />
-                <marker date="1491563940286" expanded="true" signature="9171:9288" ph="{...}" />
-                <marker date="1491563940286" expanded="true" signature="9193:9223" ph="{...}" />
-                <marker date="1491563940286" expanded="true" signature="9227:9282" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Calendar.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/NiceAdmin/application/controllers/Calendar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-971">
+              <caret line="64" column="18" lean-forward="true" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editEventDate.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FullCalendar-BS3-PHP-Mmaster/editEventDate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1458796928000" expanded="true" signature="256:317" ph="UPDATE event... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -1174,8 +1140,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1292,6 +1256,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1312,6 +1278,69 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
@@ -1323,11 +1352,13 @@
       <option name="presentableId" value="Default" />
       <updated>1491560563674</updated>
       <workItem from="1491560566840" duration="3080000" />
+      <workItem from="1491923685412" duration="13000" />
+      <workItem from="1491956348219" duration="171000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3080000" />
+    <option name="totallyTimeSpent" value="3264000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1343,20 +1374,20 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14714494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="7.320644E-4" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="7.320644E-4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1371,43 +1402,85 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Admin/index.php">
+    <entry file="file://$PROJECT_DIR$/NiceAdmin/application/views/calendar/calendar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="115" column="3" lean-forward="true" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="4352">
+          <caret line="256" column="0" lean-forward="false" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
+          <folding>
+            <marker date="1491568685272" expanded="true" signature="6829:6919" ph="{&quot;left&quot;: 'prev,next today'...}" />
+            <marker date="1491568685272" expanded="true" signature="8168:8188" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FullCalendar-BS3-PHP-Mmaster/editEventDate.php">
+    <entry file="file://$PROJECT_DIR$/Admin/application/views/profile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1458796928000" expanded="true" signature="256:317" ph="UPDATE event... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NiceAdmin/application/views/calendar/calendar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="256" column="0" lean-forward="false" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
-          <folding>
-            <marker date="1491563940286" expanded="true" signature="6781:9306" ph="{...}" />
-            <marker date="1491563940286" expanded="true" signature="8779:9299" ph="{...}" />
-            <marker date="1491563940286" expanded="true" signature="9041:9293" ph="{&quot;url&quot;: 'editEventDate.php'...}" />
-            <marker date="1491563940286" expanded="true" signature="9171:9288" ph="{...}" />
-            <marker date="1491563940286" expanded="true" signature="9193:9223" ph="{...}" />
-            <marker date="1491563940286" expanded="true" signature="9227:9282" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NiceAdmin/application/controllers/Calendar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NiceAdmin/application/views/calendar/calendar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4352">
+          <caret line="256" column="0" lean-forward="false" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
+          <folding>
+            <marker date="1491568685272" expanded="true" signature="6829:6919" ph="{&quot;left&quot;: 'prev,next today'...}" />
+            <marker date="1491568685272" expanded="true" signature="8168:8188" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FullCalendar-BS3-PHP-Mmaster/editEventDate.php" />
+    <entry file="file://$PROJECT_DIR$/NiceAdmin/application/controllers/Calendar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="115" column="3" lean-forward="true" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FullCalendar-BS3-PHP-Mmaster/editEventDate.php" />
+    <entry file="file://$PROJECT_DIR$/NiceAdmin/application/controllers/Calendar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/application/views/profile.php" />
+    <entry file="file://$PROJECT_DIR$/NiceAdmin/application/views/calendar/calendar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="256" column="0" lean-forward="false" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
+          <folding>
+            <marker date="1491568685272" expanded="true" signature="6829:6919" ph="{&quot;left&quot;: 'prev,next today'...}" />
+            <marker date="1491568685272" expanded="true" signature="8168:8188" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NiceAdmin/application/controllers/user_authentication.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-971">
+          <caret line="64" column="18" lean-forward="true" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
           <folding />
         </state>
       </provider>

@@ -8,11 +8,7 @@
         </div>
     </div>
 </div-->
-<div class="hl-float opasity50">
-    <span class="vertical-text-box" >
-        <h6 class="vertical-text">Home Page</h6>
-    </span>
-</div>
+
 <!--a href="#top" ><i class="hl-float-top fa fa-arrow-circle-up" style="color: #397df7;" ></i></a-->
 
 <div id="home-banner" class="home-banner-main">
@@ -40,11 +36,11 @@
 <!--  about -->
 <div id="about" class="about-main-block">
     <div class="container">
-        <div class="section">
-            <h2 class="section-heading">Welcome to Healthy Life</h2>              
-        </div> 
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-6">
+                <div class="section">
+                    <h3 class="section-heading">Welcome to Healthy Life</h3>
+                </div>
                 <div class="about-block">              
                     <p class="text_justify">Molestias voluptatem odit, vitae, ratione quam quisquam doloremque, quaerat aliquid tempore laborum voluptas nemo aperiam culpa dignissimos dolores placeat ipsam eligendi! Adipisci atque neque veniam excepturi, in ipsam ipsum similique commodi dolor dolore asperiores! Nihil pariatur quis ducimus sequi illum eum, inventore recusandae obcaecati ipsam, tempora repellendus consequuntur eius sed deserunt voluptatum omnis nulla culpa quidem magni facilis asperiores ullam!</p>
             
@@ -70,42 +66,70 @@
                     </div>
                 </div>            
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="book-appointment">
                     <div class="book-top-bar text-center">
-                        <span><i class="flaticon-notes hidden-xs"></i>Register Now</span>
+                        <span><i class="flaticon-notes hidden-xs"></i>Log In here</span>
                     </div>
-                    <form class="book-form" method="post" action="http://thegenius.co/lamadic-html/version1/index-appointment.php">
-                        <div class="form-group">                   
-                            <input type="text" class="form-control" id="pname" name="pname" placeholder="Patient Name" required>
+
+                    <!-- <div class="book-form" >
+                          <div class="book-form" >
+                                <div class="form-group">                   
+                                    <input type="text" class="form-control" id="uname" name="uname" placeholder="Enter Your User Name/ID" required>
+                                </div>
+                                <div class="form-group">                   
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter your Password" required>
+                                </div>
+                                                  
+                                <button type="submit" id="loginbtn" class="btn btn-default">Log In</button>
+                                <li> <a href="<?php echo base_url()."gotopatientregistration"?>"> signup </a> </li>
+                                <li> <a href="<?php echo base_url()."forgetpassword"?>"> forget password </a> </li>
+                            </div>
+
+
+                    </div> -->
+
+                    <?php
+                    if (isset($logout_message)) {
+                    echo "<div class='message'>";
+                    echo $logout_message;
+                    echo "</div>";
+                    }
+                    ?>
+                    <?php
+                    if (isset($message_display)) {
+                    echo "<div class='message'>";
+                    echo $message_display;
+                    echo "</div>";
+                    }
+                    ?>
+
+                    <div id="main">
+                        <div id="login">
+                            <h2>Login Here</h2>
+                            <hr/>
+                            <?php echo form_open('user_authentication/user_login_process'); ?>
+                            <?php
+                            echo "<div class='error_msg'>";
+                            if (isset($error_message)) {
+                            echo $error_message;
+                            }
+                            echo validation_errors();
+                            echo "</div>";
+                            ?>
+                            
+                            <input type="text" name="username" id="name" placeholder="username"/><br /><br />
+                            
+                            <input type="password" name="password" id="password" placeholder="password"/><br/><br />
+                            <input type="submit" value=" Login " name="submit"/><br />
+                             <a href="<?php echo base_url() ?>index.php/user_authentication/user_registration_show">To SignUp Click Here</a> <br>
+                             <a href="<?php echo base_url() ?>index.php/user_authentication/forget_password_show">forget password</a> 
+
+                            <?php echo form_close(); ?>
+
                         </div>
-                        <div class="form-group">                   
-                            <input type="text" class="form-control" id="age" name="age" placeholder="Patient Age" required>
-                        </div>
-                        <div class="form-group">                   
-                            <input type="text" class="form-control" id="phonenumber" name="phonenumber" placeholder="Phone Number" required>
-                        </div>
-                        <div class="form-group">                   
-                            <input type="email" class="form-control" id="email" name="email"c placeholder="E-mail" required>
-                        </div>
-                        <div class="form-group select" required>
-                            <select>
-                                <option value="" name="doctor">Select A Doctor</option>
-                                <option value="doc1" name="doctor">Doctor 2</option>
-                                <option value="doc1" name="doctor">Doctor 3</option>
-                                <option value="doc1" name="doctor">Doctor 4</option>
-                                <option value="doc1" name="doctor">Doctor 5</option>
-                                <option value="doc1" name="doctor">Doctor 6</option>
-                            </select>
-                        </div>
-                        
-                        <!--div class="form-group">                   
-                            <input type="text" class="form-control date-pick" id="appointmentdate" name="appointmentdate" placeholder="Appointment Date" required>
-                        </div-->
-                        
-                        <textarea class="form-control" name="description" rows="2" placeholder="Description"></textarea>                  
-                        <button type="submit" class="btn btn-default">Send Your Request</button>
-                    </form> 
+                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -114,5 +138,28 @@
     
 </div>
 </div>
+    <script>
+        $(document).ready(function (){
+            $('#loginbtn').click(function(){
+                var username = $('#uname').val();
+                var pass = $('#password').val();
+                $.ajax({
+                    type:"post",
+                    url:"http://[::1]/Third_Year_Project/Healthy_life/Login/check_patient",
+                    data:{uname:username,password:pass},
+                    success:function(data){
+                        if(data=="true"){
+                            window.location.href = "<?php echo base_url('Index1');?>";
+                        }else{
+                            $('#messagelog').html('Invalid username or password!');
+                            $('#uname').val("");
+                            $('#password').val("");
+                        }
+                    }
+                });
 
-<!-- end about -->
+            });
+
+
+        });
+    </script>
