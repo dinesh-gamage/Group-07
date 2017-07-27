@@ -13,6 +13,8 @@ class DoctorView extends CI_Controller {
         $this->load->model('indexmodel');
         $this->load->model('calendarmodel');
         $this->session->userdata('doc_session');
+        $this->load->model('cognitive_test_model');
+        
     }
     
     
@@ -63,11 +65,11 @@ class DoctorView extends CI_Controller {
         $this->load->view('admin/admin_view_admin',$data);
     }
     
-    public function getActivities(){
-        $data1['doc_data'] = $this->profilemodel->get_doc_data();
-        $this->load->view('main/doc_header',$data1);
-        $this->load->view('activities');
-    }
+//    public function getActivities(){
+//        $data1['doc_data'] = $this->profilemodel->get_doc_data();
+//        $this->load->view('main/doc_header',$data1);
+//        $this->load->view('activities');
+//    }
     
     public function getPatient()
     {
@@ -90,9 +92,14 @@ class DoctorView extends CI_Controller {
         $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
         $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
         $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
-        $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        $data['finalmarks'] = $this->doc_model->getAllCogMars();
         
         $data1['doc_data'] = $this->profilemodel->get_doc_data();
+        
+        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        
+        
         $this->load->view('main/doc_header',$data1);
 		$this->load->view('doctor/doc_view_patient',$data);
     }
@@ -1026,7 +1033,7 @@ class DoctorView extends CI_Controller {
             $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id); 
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
             $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
-            $data['successMessage'] = 'Final mark added Successfully !';
+            $data['successMessage'] = 'Patient discharged Successfully !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
@@ -1046,7 +1053,7 @@ class DoctorView extends CI_Controller {
             $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id); 
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
             $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
-            $data['errorMessage'] = 'Final mark added Failed !';
+            $data['errorMessage'] = 'Patient discharge Failed !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);

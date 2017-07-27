@@ -2,7 +2,7 @@
     ** | Navigation | **
     
     * | Patient History
-            * Genaral Details
+            * General Details
             * Problem & Diagnosis
             * Case Notes
             * Case History
@@ -132,7 +132,7 @@
                                     <li><a data-toggle="pill" href="#goalEvaluationHistory">Goals Evaluation</a></li>
                                     <li><a data-toggle="pill" href="#notesHistory">Doctor's Notes</a></li>
                                     <li><a data-toggle="pill" href="#cognitiveTestHistory">Cognitive Test</a></li>
-                                    <li><a data-toggle="pill" href="#activitiesHistory">Activities</a></li>
+                                    <!--li><a data-toggle="pill" href="#activitiesHistory">Activities</a></li-->
                                     <li><a data-toggle="pill" href="#referncesHistory">References</a></li>
                                     <li><a data-toggle="pill" href="#otherHistory">Other Records</a></li>
                                     <li><a data-toggle="pill" href="#dischargePlanHistory">Discharge Plan</a></li>
@@ -268,14 +268,6 @@
                                                             <p><?php echo $diagnosis->diagnosis; ?></p>
                                                         </div>         
 
-<<<<<<< HEAD
-                                                    </table>
-                                                    
-                                                </div>
-
-                                            </div>
-                                            
-=======
                                                         <table class="table table-condensed table-bordered">
                                                             <tr class="info"> <!-- active -->
                                                                 <td><?php echo "Dr. ".$diagnosis->doc_name; ?></td>
@@ -303,14 +295,9 @@
                                                     <p style="color:Gray;"><b>Diagnosis has not been identified yet</b></p>
                                                 </div>
                                             <?php } ?>
-                                        </div>
-                                    </div>
 
-                                    <div id="problem_table">
-                                        <div class="white_back">
                                             <h3 class="text-center">Problem</h3><hr>
 
->>>>>>> 0e37d80274d99733ba4e3121f05097fcf18cff32
                                         <?php
                                             $problemCount = 0;
                                             foreach ($getDiagnosis as $problems):
@@ -333,37 +320,13 @@
                                                     }else{
                                                         $problemCount+=0;
                                                     }
-<<<<<<< HEAD
 
-                                                
-                                        ?>
-                                        <!--report generation using fpdf -->
-                                         <form action="<?php echo site_url('Report'); ?>" method="post" target="_blank">
-                                                <input type="hidden" name="pname" value="<?php echo $patient->patient_name; ?>">
-                                                <input type="hidden" name="pgender" value="<?php echo $patient->gender; ?>">
-                                                <input type="hidden" name="planguage" value="<?php echo $patient->language; ?>">
-                                                <input type="hidden" name="page" value="<?php echo $patient->age; ?>">
-                                                <input type="hidden" name="pdob" value="<?php echo $patient->dob; ?>">
-                                                <input type="hidden" name="pschool" value="<?php echo $patient->school; ?>">
-                                                <input type="hidden" name="pguard" value="<?php echo $patient->guardian_name; ?>">
-                                                <input type="hidden" name="grelation" value="<?php echo $patient->relationship; ?>">
-                                                <input type="hidden" name="gaddress" value="<?php echo $patient->address; ?>">
-                                                <input type="hidden" name="ptelephone" value="<?php echo $patient->telephone; ?>">
-                                                <input type="hidden" name="pdivision" value="<?php echo $patient->division; ?>">
-                                                <input type="hidden" name="refer" value="<?php echo $patient->refered_by; ?>">
-                                                <input type="hidden" name="reg" value="<?php echo $patient->regitration_date; ?>">
-
-                                                <button class="btn btn-primary">Print</button>
-                                        </form>
-                                        <?php
-=======
                                                 }else{
                                                     $problemCount+=0;
->>>>>>> 0e37d80274d99733ba4e3121f05097fcf18cff32
                                                 }
 
                                             endforeach;
-                                            if($problemCount == 0){
+                                            if(($problemCount == 0) || ($diagnosisCount==1 && $problemCount==0) ){
                                         ?>
                                             <div class="warning">
                                                 <p style="color:Gray;"><b>Problem has not been identified yet</b></p>
@@ -371,9 +334,6 @@
                                         <?php
                                             } 
                                         ?>
-<<<<<<< HEAD
-                                       
-=======
                                         </div>
                                     </div>
                                 </div>
@@ -382,21 +342,13 @@
                                 <div id="caseNotes" class="tab-pane fade">
                                     <div class="white_back">
                                         <h3 class="text-center">Case Notes</h3><hr>
-
->>>>>>> 0e37d80274d99733ba4e3121f05097fcf18cff32
                                     </div>
                                 </div>
-                                    
-<<<<<<< HEAD
-                                    
-                                    <div id="caseHistoryHistory" class="tab-pane fade">
-                                        <div class="col-md-12">                           
-=======
+
                                 <!-- | Case History | -->
                                 <div id="caseHistoryHistory" class="tab-pane fade">
                                     <div class="col-md-12">
                                         <div class="white_back">
->>>>>>> 0e37d80274d99733ba4e3121f05097fcf18cff32
                                             <ul class="nav nav-pills nav-justified">
                                                 <li class="active"><a data-toggle="pill" href="#familyHistory">Family/Medical</a></li>
                                                 <li><a data-toggle="pill" href="#commhistory">communicationn</a></li>
@@ -1041,99 +993,70 @@
                                         </div>  
                                     </div>
                                 </div>
-                                    
-<<<<<<< HEAD
-                                    <div id="problemHistory" class="tab-pane fade">
-                                        <div id="diagnosis_table">
-                                            <div class="white_back">
-                                                <h3 class="success text-center">Diagnosis</h3><hr>
-                                                
-                                            <?php
-                                                $diagCount =0;
-                                                foreach ($getDiagnosis as $diagnosis):
-                                                    if($patient_id == $diagnosis->patient_id)
-                                                    {
-                                                    $diagCount +=1;
-                                            ?>
-                                                <p><?php echo $diagnosis->diagnosis; ?> </p>
-                                                    
-                                                        <table class="table table-condensed table-bordered">
-                                                            <tr class="active">
-                                                                <td><?php echo $diagnosis->doc_name; ?></td>
-                                                                <td><?php echo $diagnosis->date; ?></td>
-                                                                <td><?php echo $diagnosis->time; ?></td>
-                                                            </tr>
-                                                        </table>
 
-                                            <?php 
-                                                }else{
-                                                        $diagCount+=0;
-                                                    }
-                                            ?>
-
-                                            <form action="<?php echo site_url('Report2'); ?>" method="post" target="_blank">
-                                                <input type="hidden" name="doc_name" value="<?php echo $diagnosis->doc_name; ?>">
-                                                <input type="hidden" name="date" value="<?php echo $diagnosis->date; ?>">
-                                                <input type="hidden" name="time" value="<?php echo $diagnosis->time; ?>">
-                                                <button class="btn btn-primary">Print</button>
-                                            </form>
-                                            
-
-                                            <?php
-                                                endforeach;
-                                                if($diagCount == 0){
-                                                    echo "<div class=\"alert warning\">";
-                                                    echo "Diagnosis has not been identified yet.";
-                                                    echo "</div>";
-                                                }                                                         
-
-                                            ?>
-                                                
-                                                </div>
-                                                
-                                        </div>
-                                        <div id="problem_table">
-                                            <div class="white_back">
-                                                <h3 class="success text-center">Problem</h3><hr>
-                                                
-                                            <?php
-                                                $problemCount = 0;
-                                                foreach ($getDiagnosis as $problems):
-                                                    if($patient_id == $problems->patient_id)
-                                                    {
-                                                        $problemCount +=1; 
-                                            ?>
-                                                <p><?php echo $problems->problem; ?></p>
-                                                        <table class="table table-condensed table-bordered">
-                                                            <tr class="active">
-                                                                <td><?php echo $problems->doc_name; ?></td>
-                                                                <td><?php echo $problems->date; ?></td>
-                                                                <td><?php echo $problems->time; ?></td>
-                                                            </tr>
-                                                        </table>
-
-                                            <?php 
-                                                }else{
-                                                        $problemCount+=0;
-                                                    }
-                                                endforeach;
-                                                if($problemCount == 0){
-                                                    echo "<div class=\"alert warning\">";
-                                                    echo "Problem has not been identified yet.";
-                                                    echo "</div>";
-                                                } 
-                                            ?>
-                                                </div>
-                                            
-                                        </div>
-                                        
-=======
                                 <!-- | Medication History | -->
                                 <div id="meicationsHistory" class="tab-pane fade">
                                     <div class="white_back">
-                                        <h3 class="text-center">Case notes</h3><hr>
-
->>>>>>> 0e37d80274d99733ba4e3121f05097fcf18cff32
+                                        <h3 class="text-center">Medications</h3><hr>
+                                        <?php
+                                            
+                                            $meddates = array();
+                                            foreach($medicine as $medication):
+                                                if($patient_id == $medication->patient_id){
+                                                    $date = $medication->date;
+                                                    if (in_array($date, $meddates)){
+                                                        continue;
+                                                    }else{
+                                                        array_push($meddates,$date);
+                                                    }
+                                                }
+                                            endforeach;
+                                        
+                                            foreach($meddates as $meddate):
+                                        ?>
+                                            <div class="panel-group">
+                                                <div class="panel panel-defualt">
+                                                    <div class="panel-heading">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" href="#<?php echo $meddate; ?>"><?php echo "Prescription : ".$meddate; ?></a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="<?php echo $meddate; ?>" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                                <table class="table table-condensed table-bordered">
+                                                                    <tr class="success">
+                                                                        <td>Medicine</td>
+                                                                        <td>Dose</td>
+                                                                        <td>Frequency</td>
+                                                                        <td>Doctor</td>
+                                                                    </tr>
+                                                                
+                                                            <?php 
+                                                                foreach($medicine as $medication):
+                                                                    if($patient_id == $medication->patient_id){
+                                                                        if($meddate == $medication->date){
+                                                            ?>
+                                                                    <tr>
+                                                                        <td><?php echo $medication->medicine; ?></td>
+                                                                        <td><?php echo $medication->dose; ?></td>
+                                                                        <td><?php echo $medication->frequency; ?></td>
+                                                                        <td><?php echo $medication->doc_name; ?></td>
+                                                                    </tr>
+                                                            <?php
+                                                                            
+                                                                        }
+                                                                    }
+                                                                endforeach;
+                                                            ?>
+                                                                </table>    
+                                                        </div>
+                                                        <div class="panel-footer"><?php echo "Prescription : ".$meddate; ?></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php
+                                         endforeach;
+                                        ?>
                                     </div>
                                 </div>
                                     
@@ -1298,7 +1221,83 @@
                                 <div id="cognitiveTestHistory" class="tab-pane fade">
                                     <div class="white_back container">
                                         <h3 class="text-center">Cognitive Test</h3><hr>
+                                            <div class="col-lg-6 panel panel-info">
+                                            <div class="panel-heading">Patient Answers : Test A</div>
+                                            <div class="panel-body" id="">
+                                            <?php
+                                                $anscA = 0;
+                                                foreach($finalmarks as $patient_mark):
+                                                    if ($patient_id == $patient_mark->patient_id){
+                                                        
+                                                        $firstLetter = $patient_mark->question_id[0];
+                                                        if($firstLetter =='A'){
+                                                            $anscA += 1;
+                                                            $mrks = $patient_mark->marks;
+                                                            if($mrks == 1){
+                                                                echo 
+                                                                 '<div class="correct">
+                                                                 '.$patient_mark->question_id.'- Correct - '.$mrks.'
+                                                                 </div>';
+                                                            }else{
+                                                                echo
+                                                                 '<div class="incorrect">
+                                                                 '.$patient_mark->question_id.'- Incorrect -'.$mrks.'
+                                                                </div>';
+                                                            }
+                                                        }else{
+                                                            $anscA += 0;
+                                                        }
+                                                    }
+                                                endforeach;
+                                                if($anscA == 0){
+                                            ?>
+                                                <div class="warning">
+                                                    <p style="color: gray"><b>Test is not completed yet</b></p>
+                                                </div>
+                                            <?php
+                                                }
+                                            ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 panel panel-info">
+                                            <div class="panel-heading">Patient Answers : Test B</div>
+                                            <div class="panel-body" id="">
 
+                                            <?php 
+                                                $anscB = 0;
+                                                foreach($finalmarks as $patient_mark):
+                                                    if ($patient_id == $patient_mark->patient_id){
+                                                        
+                                                        $firstLetter = $patient_mark->question_id[0];
+                                                        if($firstLetter =='B'){
+                                                            $anscB += 1;
+                                                            $mrks = $patient_mark->marks;
+                                                            if($mrks == 1){
+                                                                echo 
+                                                                 '<div class="correct">
+                                                                 '.$patient_mark->question_id.'- Correct - '.$mrks.'
+                                                                 </div>';
+                                                            }else{
+                                                                echo
+                                                                 '<div class="incorrect">
+                                                                 '.$patient_mark->question_id.'- Incorrect -'.$mrks.'
+                                                                </div>';
+                                                            }
+                                                        }else{
+                                                            $anscB += 0;
+                                                        }
+                                                    }
+                                                    endforeach;
+                                                if($anscB == 0){
+                                            ?>
+                                                <div class="warning">
+                                                    <p style="color: gray"><b>Test is not completed yet</b></p>
+                                                </div>
+                                            <?php
+                                                }
+                                            ?>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                     
@@ -1383,13 +1382,64 @@
 
                                     </div>
                                 </div>
+                                
                                         
                                 <!-- | Discharge History | -->
                                 <div id="dischargePlanHistory" class="tab-pane fade">
                                     <div class="white_back">
                                         <h3 class="text-center">Discharge Plan</h3><hr>
-
-
+                                        <?php 
+                                            $dis = 0;
+                                            foreach($discharge as $discharge):
+                                                if($patient_id == $discharge->patient_id){
+                                                    $dis +=1;
+                                        ?>
+                                            <table class="table table-condensed table-bordered">
+                                                
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Discharge Date</td>
+                                                        <td><?php echo $discharge->date; ?> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Diagnosis on Discharge</td>
+                                                        <td><?php echo $discharge->diagnosis; ?> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Patient status on Discharge</td>
+                                                        <td><?php echo $discharge->status; ?> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Suggested Other treatments</td>
+                                                        <td><?php echo $discharge->other; ?> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Notes on Discharge</td>
+                                                        <td><?php echo $discharge->notes; ?> </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <table class="table table-condensed table-bordered">
+                                                <tr class="info"> <!-- active -->
+                                                    <td><?php echo "Dr. ".$diagnosis->doc_name; ?></td>
+                                                    <td><?php echo $diagnosis->date; ?></td>
+                                                    <td><?php echo $diagnosis->time; ?></td>
+                                                </tr>
+                                            </table>
+                                            
+                                        <?php
+                                                }else{
+                                                    $dis +=0;
+                                                }
+                                            endforeach;
+                                            if($dis == 0){
+                                        ?>
+                                            <div class="warning">
+                                                <p style="color:Gray;"><b>Patient is in Progressing level</b></p>
+                                            </div>
+                                        <?php
+                                            }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -3675,54 +3725,60 @@
                     <div class="white_back container">
                         <h3 class="text-center">Upload Records</h3>
                         <div class="col-lg-10">
-                            <?php
-                            $attri = array('class'=>'form-horizontal');
-                            echo form_open_multipart('CognitiveTest/add_question',$attri);
                             
-                            ?>
-                            <label for="" class="col-sm-3 control-label">Description</label>
-                            <div class="col-sm-4">
-                            <input type="text" class="form-control" placeholder="Type or Select" name="description" list="description" required >
-                            <datalist id="description">
-                                <option value="Blood test"> Blood test</option>
-                                <option value="Urine test"> Urine test</option>
-                                <option value="CTC scan"> CTC scan</option>
-                                <option value="ECG"> ECG</option>
-                                <option value="X-ray"> X-ray</option>
-                            </datalist>
-                            </div>
-                            <?php
-                                                            
-                            //Quewstion lable
-                            echo"<div class='form-group'>";
-                            echo"<div class='col-sm-4'>";
-                            echo form_label('Report : ','class="control-label"');
-                            echo"</div>";
-                            //Question input
-                            echo"<div class='ccol-sm-push-12'>";
-                                $data = array(
-                                    'type' => 'file',
-                                    'name' => 'report',
-                                    'required'=>'required'
-                                );
-                            echo form_input($data,'class="form-control"');
-                            echo"</div>";
-                            echo"</div>";
+                            <form method="post" id="upload_form" align="center" enctype="multipart/form-data">
+                                <input type="hidden" name="pa_id" value="<?php echo $patient_id; ?>">
+                                <input type="text" class="form-control" placeholder="Type or Select" name="description" list="description" required >
+                                <datalist id="description" name="desc">
+                                    <option value="Blood test"> Blood test</option>
+                                    <option value="Urine test"> Urine test</option>
+                                    <option value="CTC scan"> CTC scan</option>
+                                    <option value="ECG"> ECG</option>
+                                    <option value="X-ray"> X-ray</option>
+                                </datalist>  
+                                <input type="file" name="image_file" id="image_file" />  
+                                <br />  
+                                <br />  
+                                <input type="submit" name="upload" id="upload" value="Upload" class="btn btn-info" />  
+                            </form>  
+                            <br />  
+                            <br />  
+                            <div id="uploaded_image">  
+                            </div> 
+
+                            <script type="text/javascript">
+                            $(document).ready(function(){  
+                                  $('#upload_form').on('submit', function(e){  
+                                       e.preventDefault();  
+                                       if($('#image_file').val() == '')  
+                                       {  
+                                            alert("Please Select the File");  
+                                       }  
+                                       else  
+                                       {  
+                                            $.ajax({  
+                                                 url:"<?php echo base_url(); ?>FileUpload/do_upload",   
+                                                 //base_url() = http://localhost/tutorial/codeigniter  
+                                                 method:"POST",  
+                                                 data:new FormData(this),  
+                                                 contentType: false,                                             
+                                                 cache: false,  
+                                                 processData:false,  
+                                                 success:function(data)  
+                                                 {  
+                                                        alert(data);
+                                                      //$('#uploaded_image').html(data);  
+                                                 }  
+                                            });  
+                                       }  
+                                  });  
+                             });  
+                            </script>
 
 
-                            //button
-                            echo"<div class='form-group'>";
-                            echo"<div class='col-sm-4'>";
-                            echo "</div>";
-                            echo"<div class='col-sm-push-12'>";
-                            echo form_submit('submit', 'Save');
-                            echo "</div>";
-                            echo "</div>";
-                            echo form_close();
-                            ?>    
                         </div>              
                     </div>
-                
+
                 </div>
                 
                 <!-- | Discharge plan | -->
@@ -3730,15 +3786,60 @@
                     <div class="white_back">
                         <h3 class="text-center">Discharge Plan</h3><hr>
                         <?php
+                            $disch =0;
+                            foreach($discharge as $discharges):
+                            //print_r($discharges);
+                                if($patient_id == $discharges->patient_id){
+                                    $disch +=1;
+                            ?>
+                                <table class="table table-condensed table-bordered">
+
+                                    <tbody>
+                                        <tr>
+                                            <td>Discharge Date</td>
+                                            <td><?php echo $discharges->date; ?> </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Diagnosis on Discharge</td>
+                                            <td><?php echo $discharges->diagnosis; ?> </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Patient status on Discharge</td>
+                                            <td><?php echo $discharges->status; ?> </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Suggested Other treatments</td>
+                                            <td><?php echo $discharges->other; ?> </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Notes on Discharge</td>
+                                            <td><?php echo $discharges->notes; ?> </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table table-condensed table-bordered">
+                                    <tr class="info"> <!-- active -->
+                                        <td><?php echo "Dr. ".$discharges->doc_name; ?></td>
+                                        <td><?php echo $discharges->date; ?></td>
+                                        <td><?php echo $discharges->time; ?></td>
+                                    </tr>
+                                </table>
+                        
+                        <?php  
+                            }else{
+                                $disch +=0;
+                            }
+                        endforeach;
+                        if($disch == 0){
                             $attri = array('class'=>'form-horizontal');
-                            echo form_open('DoctorView/add_discharge_plan',$attri);
+                            echo form_open('DoctorView/add_discharge_plan',$attri);   
                         ?>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Discharge Date </label>
                                 <div class="col-sm-9">
                                     <input type="text" name="date" value="<?php echo date('Y-m-d'); ?>" class="form-control"   placeholder="Discharge Date" readonly />
                                 </div>
-                                
+
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">Diagnosis on Discharge </label>
@@ -3798,10 +3899,10 @@
                                     <textarea name="dischargenote" class="form-control"   placeholder=""  ></textarea>
                                 </div>
                             </div>
-                        
+
                             <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
                             <input type="hidden" name="time" id="id" value="<?php echo date('H:i:s'); ?>" />
-                            <input type="hidden" name="date" id="id" value="<1?php echo date('Y-m-d'); ?>" />
+                            <input type="hidden" name="date" id="id" value="<?php echo date('Y-m-d'); ?>" />
                             <input type="hidden" name="doctorid" id="id" value="<?php echo $name; ?>" />
 
                             <div class="form-group">
@@ -3816,7 +3917,10 @@
 
                         <?php 
                             echo form_close();
+                        }
                         ?>
+                        
+                                                                                
                     </div>
                 </div>
                 
@@ -3907,79 +4011,7 @@
                         <div class="text">Discharge<br/> Plan</div>
                     </div>
                 </div>
-<<<<<<< HEAD
-   
-=======
-                
-<<<<<<< HEAD
-                <div class="col-sm-2 col-icon-box " onclick="UploadFiles()" >
-                    <img src="<?php echo base_url()."asserts/images/icons/uploading.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-                    <div class="overlay">
-                        <div class="text">Upload<br/> Records</div>
-                    </div>
-                </div>
-                <!-- <a target="_blank" href="<?php echo base_url()."Game"; ?> ">
-=======
-                
-                <a target="_blank" href="<?php echo base_url()."Game"; ?> ">
->>>>>>> 0e37d80274d99733ba4e3121f05097fcf18cff32
-                <div class="col-sm-2 col-icon-box ">
-                    
-                        <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-                    
-                    <div class="overlay">
-                        <div class="text">Activities<br/>level3</div>
-                    </div>
-                </div>
-                </a> -->
 
-                <!-- <a target="_blank" href="<?php echo base_url()."GameLevel2"; ?> ">
-                <div class="col-sm-2 col-icon-box ">
-                    
-                        <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-                    
-                    <div class="overlay">
-                        <div class="text">Activities<br/>level2</div>
-                    </div>
-                </div>
-                </a> -->
-
-                <!-- <a target="_blank" href="<?php echo base_url()."GameLevel1"; ?> ">
-                <div class="col-sm-2 col-icon-box ">
-                    
-                        <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-                    
-                    <div class="overlay">
-                        <div class="text">Activities<br/>level1</div>
-                    </div>
-                </div>
-                </a> -->
-
-                <!-- <a target="_blank" href="<?php echo base_url()."RollaBall1"; ?> ">
-                <div class="col-sm-2 col-icon-box ">
-                    
-                        <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-                    
-                    <div class="overlay">
-                        <div class="text">Activities<br/>level4</div>
-                    </div>
-                </div>
-                </a> -->
-
-
-                <a target="_blank" href="<?php echo base_url()."DoctorView/getActivities"; ?> ">
-                <div class="col-sm-2 col-icon-box ">
-                    
-                        <img src="<?php echo base_url()."asserts/images/icons/activities.png"; ?>" class="img-thumbnail" width="100px" height="100px" />
-                    
-                    <div class="overlay">
-                        <div class="text">Activities</div>
-                    </div>
-                </div>
-                </a>
-                
-                
->>>>>>> 5e9b9ba8f4dbb0bdc1e1605b1234a7a9ced96a97
             </div>
             
             

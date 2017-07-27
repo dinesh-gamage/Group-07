@@ -190,7 +190,7 @@ class doc_model extends CI_Model{
         return $query->result();
     }
     
-    public function add_doc_notes($data,$patient_id){
+    public function add_doc_notes($data){
         $this->db->insert('doc_notes',$data);
             if ($this->db->affected_rows() > 0) {
                     return true;
@@ -316,9 +316,9 @@ class doc_model extends CI_Model{
     public function getFinalMarks($patient_id){
         $condition = "patient_id ="."'".$patient_id."'";
         $this->db->select('*');
-        $this->db->from('cognitive_final');
+        $this->db->from('patient_mark');
         $this->db->where($condition);
-        $this->db->order_by('test_type','ASC');
+        //$this->db->order_by('type','ASC');
         $query = $this->db->get();
         return $query->result();
     }
@@ -452,6 +452,29 @@ class doc_model extends CI_Model{
         return $query->result();
     }
     
+    public function getAllMedicine(){
+        $this->db->select('*');
+        $query = $this->db->get('patient_medicine');
+        return $query->result();
+        
+    }
+    
+    public function getAllDischarge(){
+        $this->db->select('*');
+        $query = $this->db->get('discharge');
+        return $query->result();
+    }
+    
+    public function getAllCogMars(){
+        //$condition = "patient_id =" . "'" . $patient_id . "'";
+        $this->db->select('*');
+        $this->db->from('patient_mark');
+        //$this->db->where($condition);
+        $this->db->order_by('question_id','ASC');
+        $query = $this->db->get();
+        return $query->result();
+        
+    }
 }
 
 ?>
