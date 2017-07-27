@@ -501,5 +501,7 @@
 
 
   });
-</script>>
+
+  
+</script>
 <!--/section-->

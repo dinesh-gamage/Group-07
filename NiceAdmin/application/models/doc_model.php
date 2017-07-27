@@ -451,7 +451,15 @@ class doc_model extends CI_Model{
         $query=$this->db->get('diagnisis_problem');
         return $query->result();
     }
+    public function allreg(){
+        $query = $this->db->get('patient_register');
+        return $query->result();
+    }
     
+<<<<<<< HEAD
+    
+=======
+>>>>>>> febab6d82d0091de0437885dd91475ceff4e19d0
     public function getAllMedicine(){
         $this->db->select('*');
         $query = $this->db->get('patient_medicine');

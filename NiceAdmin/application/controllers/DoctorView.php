@@ -74,9 +74,13 @@ class DoctorView extends CI_Controller {
     public function getPatient()
     {
         
-
+        $patient_id = "";
         $patientstatus  = $this->input->post('patientstatus');
-        $patient_id = $this->input->post('patientid');
+        if(isset($_POST['patientheader'])){
+            $patient_id = $_POST['patientheader'];    
+        }else{
+            $patient_id = $this->input->post('patientid');
+        } 
         if($patientstatus === "0"){
             $this->doc_model->updatePati($patient_id);
         }

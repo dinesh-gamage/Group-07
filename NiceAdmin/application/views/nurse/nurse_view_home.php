@@ -203,7 +203,7 @@
 										              </div>
 			                        </div>
 			                    </div>
-
+                          
 
 			                    <div id="newReg" class="tab-pane  ">
 			                        <div class="white_back" style="overflow-x:auto; ">
@@ -213,7 +213,6 @@
                                         <tr>
                                             <th>NO</th>
                                             <th>Month</th>
-                                            <th>Color</th>
                                             <th>Female</th>
                                             <th>Male</th>
                                             <th>Total</th>  
@@ -236,9 +235,9 @@
                                         <tr>
                                           <th scope="row"><?php echo $m?></th>
                                           <td><?php echo $months[$m-1]?></td>
-                                          <td>
+                                          <!-- <td>
                                             <div class="col-lg-6">
-                                            <select name="" class="form-control" id="">
+                                            <select name="" class="form-control" id="patientcolor<?php echo $m;?>">
                                                  <option value="" >Choose</option>
                                                  <option style="color:#0071c5;" value="#0071c5">&#9724; Dark blue</option>
                                                  <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
@@ -248,10 +247,22 @@
                                                  <option style="color:#FF0000;" value="#FF0000">&#9724; Red</option>
                                                  <option style="color:#000;" value="#000">&#9724; Black</option>
                                             </select>
-                                            </div>
+                                            </div> -->
                                           </td>
-                                          <td ><?php echo $female[$j]; ?></td>
-                                          <td ><?php echo $male[$m]; ?></td>
+                                          <td >
+                                            <div class="row">
+                                                <div class="col-lg-1 color-box" style="height: 35px;width: 15px"></div>
+                                                <div class="col-lg-1" style="background-color: pink; height: 35px;width: 15px;"></div>
+                                                <div class="col-lg-1"><?php echo $female[$j]; ?></div>
+                                            </div> 
+                                          </td>
+                                          <td >
+                                              <div class="row">
+                                                <div class="col-lg-1 color-box" style="height: 35px;width: 15px"></div>
+                                                <div class="col-lg-1" style="background-color: blue; height: 35px;width: 15px;"></div>
+                                                <div class="col-lg-1"><?php echo $male[$m]; ?></div>
+                                              </div>   
+                                          </td>
                                           <td ><?php echo ($male[$m]+$female[$j]); ?></td>
                                          
                                         </tr>
@@ -517,20 +528,129 @@
                                         <tr>
                                             <th>No</th>
                                             <th></th>
-                                            <?php  for ($i=0; $i < count($months); $i++) { ?>
-                                              <th><?php echo $months[$i]?></th>
+                                            <?php  
+                                             $atten= array("Newly diagnosed patients","Follow up patients visit","Total");
+                                            for ($i=0; $i < count($atten); $i++) { ?>
+                                              <th><?php echo $atten[$i]?></th>
                                             <?php }?>
                                         </tr>
                                       </thead>
-                                      <?php
-                                        $atten= array("Newly diagnosed patients","Without any diagnosis","Peviously diagnose newly registered","Follow up patients visit","Total");
+                                      <?php 
+                                        $r1=$r2=$r3=$r4=$r5=$r6=$r7=$r8=$r9=$r10=$r11=$r12=$p1=$p2=$p3=$p4=$p5=$p6=$p7=$p8=$p9=$p10=$p11=$p12=0;
+                                        $arrayr =[];
+                                        $arrayp = [];
+                                        foreach ($allreg as $all) {
+                                             if(substr($all->regitration_date,5,2) =="1" && $all->status == 0){
+                                                $r1++;
+                                             }else if(substr($all->regitration_date,5,2) =="2" && $all->status == 0){
+                                                $r2++;
+                                             }else if(substr($all->regitration_date,5,2) =="3" && $all->status == 0){
+                                                $r3++;
+                                             }else if(substr($all->regitration_date,5,2) =="4" && $all->status == 0){
+                                                $r4++;
+                                             }else if(substr($all->regitration_date,5,2) =="5" && $all->status == 0){
+                                                $r5++;
+                                             }else if(substr($all->regitration_date,5,2) =="6" && $all->status == 0){
+                                                $r6++;
+                                             }else if(substr($all->regitration_date,5,2) =="7" && $all->status == 0){
+                                                $r7++;
+                                             }else if(substr($all->regitration_date,5,2) =="8" && $all->status == 0){
+                                                $r8++;
+                                             }else if(substr($all->regitration_date,5,2) =="9" && $all->status == 0){
+                                                $r9++;
+                                             }else if(substr($all->regitration_date,5,2) =="10" && $all->status == 0){
+                                                $r10++;
+                                             }else if(substr($all->regitration_date,5,2) =="11" && $all->status == 0){
+                                                $r11++;
+                                             }else if(substr($all->regitration_date,5,2) =="12" && $all->status == 0){
+                                                $r12++;
+                                             }
 
-                                       for($i=0;$i<5;$i++){?>
-                                      <tr>
-                                      <td><?php echo ($i+1)?></td>
-                                      <td><?php echo $atten[$i];?></td>
-                                      </tr>
-                                      <?php };?>
+                                             else if(substr($all->regitration_date,5,2) =="1" && $all->status == 1){
+                                                $p1++;
+                                             }else if(substr($all->regitration_date,5,2) =="2" && $all->status == 1){
+                                                $p2++;
+                                             }else if(substr($all->regitration_date,5,2) =="3" && $all->status == 1){
+                                                $p3++;
+                                             }else if(substr($all->regitration_date,5,2) =="4" && $all->status == 1){
+                                                $p4++;
+                                             }else if(substr($all->regitration_date,5,2) =="5" && $all->status == 1){
+                                                $p5++;
+                                             }else if(substr($all->regitration_date,5,2) =="6" && $all->status == 1){
+                                                $p6++;
+                                             }else if(substr($all->regitration_date,5,2) =="7" && $all->status == 1){
+                                                $p7++;
+                                             }else if(substr($all->regitration_date,5,2) =="8" && $all->status == 1){
+                                                $p8++;
+                                             }else if(substr($all->regitration_date,5,2) =="9" && $all->status == 1){
+                                                $p9++;
+                                             }else if(substr($all->regitration_date,5,2) =="10" && $all->status == 1){
+                                                $p10++;
+                                             }else if(substr($all->regitration_date,5,2) =="11" && $all->status == 1){
+                                                $p11++;
+                                             }else if(substr($all->regitration_date,5,2) =="12" && $all->status == 1){
+                                                $p12++;
+                                             }
+                                          }
+
+                                          $arrayr[1]=$r1;
+                                          $arrayr[2]=$r2;
+                                          $arrayr[3]=$r3;
+                                          $arrayr[4]=$r4;
+                                          $arrayr[5]=$r5;
+                                          $arrayr[6]=$r6;
+                                          $arrayr[7]=$r7;
+                                          $arrayr[8]=$r8;
+                                          $arrayr[9]=$r9; 
+                                          $arrayr[10]=$r10;
+                                          $arrayr[11]=$r11;
+                                          $arrayr[12]=$r12;
+
+                                          $arrayp[1]=$p1;
+                                          $arrayp[2]=$p2;
+                                          $arrayp[3]=$p3;
+                                          $arrayp[4]=$p4;
+                                          $arrayp[5]=$p5;
+                                          $arrayp[6]=$p6;
+                                          $arrayp[7]=$p7;
+                                          $arrayp[8]=$p8;
+                                          $arrayp[9]=$p9;
+                                          $arrayp[10]=$p10; 
+                                          $arrayp[11]=$p11;
+                                          $arrayp[12]=$p12;
+
+
+
+                                          
+
+
+                                      ?>  
+
+                                      <?php
+                                       
+                                         for($m=1,$j=13; $m<13 && $j<25;$m++,$j++){ 
+                                              ?>
+                                        <tr>
+                                          <th scope="row"><?php echo $m?></th>
+                                          <td ><?php echo $months[$m-1]?></td>
+                                          
+                                          <td class="text-center">
+                                              <?php echo $arrayr[$m]; ?>
+                                          </td>
+                                          
+                                          <td class="text-center">
+                                              <?php echo $arrayp[$m]; ?>   
+                                          </td>
+                                          <td class="text-center">
+                                              <?php echo $arrayp[$m]+$arrayr[$m]; ?>   
+                                          </td>
+                                         
+                                        </tr>
+                                       <?php
+                                          
+
+                                        }; ?>
+                                      
                                     </table>
                                   </div>  
                               </div>

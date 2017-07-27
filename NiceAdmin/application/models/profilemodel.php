@@ -24,7 +24,7 @@ class Profilemodel extends CI_Model {
     public function update_doc1($doc_name,$pass,$contact,$email,$special,$image){
         $setvalue = array(
             'doc_name'=>$doc_name,
-            'password'=>$pass,
+            'password'=>sha1($pass),
             'telephone'=>$contact,
             'email'=>$email,
             'speciality'=>$special,
@@ -66,7 +66,7 @@ class Profilemodel extends CI_Model {
     public function update_doc2($doc_name,$pass,$contact,$email,$special){
         $setvalue = array(
             'doc_name'=>$doc_name,
-            'password'=>$pass,
+            'password'=>sha1($pass),
             'telephone'=>$contact,
             'email'=>$email,
             'speciality'=>$special
@@ -215,7 +215,7 @@ class Profilemodel extends CI_Model {
     public function update_nur1($nur_name,$pass,$contact,$email,$image){
         $setvalue = array(
             'nurse_name'=>$nur_name,
-            'password'=>$pass,
+            'password'=>sha1($pass),
             'telephone'=>$contact,
             'email'=>$email,
             'nur_image'=>"asserts/images/doc_img/".$image
@@ -234,7 +234,7 @@ class Profilemodel extends CI_Model {
     public function update_nur2($nur_name,$pass,$contact,$email){
         $setvalue = array(
             'nurse_name'=>$nur_name,
-            'password'=>$pass,
+            'password'=>sha1($pass),
             'telephone'=>$contact,
             'email'=>$email
         );
