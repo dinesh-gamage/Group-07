@@ -1354,7 +1354,7 @@
             }
         });
         $('#register_btn').click(function(){
-
+            alert("in");
             var cpass =  $('#cpass').val();
             var pname = $('#pname').val();
             var page =  $('#age').val();
@@ -1380,6 +1380,8 @@
                 data: {regbtn: "regbtn",pname:pname,age:page,dob:pdob,tel:ptel,lan:plan,gender:pgen,sch:psch,address:paddre,gur:pgur,rel:prel,ref:pref,pass:ppass,div:pdiv,date:pdate},
                 success: function (data) {
                     if(data){
+                        alert("one");
+                        alert(data);
                         $('#pname').val("");
                         $('#age').val("");
                         $('#dob').val("");

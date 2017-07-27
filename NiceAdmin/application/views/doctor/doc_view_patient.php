@@ -3788,7 +3788,7 @@
                         <?php
                             $disch =0;
                             foreach($discharge as $discharges):
-                            //print_r($discharges);
+                           
                                 if($patient_id == $discharges->patient_id){
                                     $disch +=1;
                             ?>
@@ -3818,7 +3818,7 @@
                                     </tbody>
                                 </table>
                                 <table class="table table-condensed table-bordered">
-                                    <tr class="info"> <!-- active -->
+                                    <tr class="info">  active 
                                         <td><?php echo "Dr. ".$discharges->doc_name; ?></td>
                                         <td><?php echo $discharges->date; ?></td>
                                         <td><?php echo $discharges->time; ?></td>
@@ -3830,6 +3830,7 @@
                                 $disch +=0;
                             }
                         endforeach;
+                        
                         if($disch == 0){
                             $attri = array('class'=>'form-horizontal');
                             echo form_open('DoctorView/add_discharge_plan',$attri);   

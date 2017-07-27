@@ -30,7 +30,7 @@ class Form2 extends CI_Controller {
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
 
-	$pdf->Image(base_url().'asserts/images/refletters/head.jpg',60,0);
+	$pdf->Image(base_url().'asserts/images/refletters/head.png',60,0);
 	$pdf->SetFont('Times','',12);
 	$pdf->Cell(0,0,'Date :- '. $data['date'],0,1,'R');
 	//$pdf->Ln();
