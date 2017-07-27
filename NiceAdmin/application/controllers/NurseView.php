@@ -33,7 +33,10 @@ class NurseView extends CI_Controller {
         $data['mfvisit'] = $this->doc_model->mfvisit();
         $data['msvisit'] = $this->doc_model->msvisit();
 
+
+        $data['allreg'] = $this->doc_model->allreg();
         $data['diagnose'] = $this->doc_model->diagnoseProblem();
+        
 
         $data['goals'] = $this->doc_model->getAllGoals();
         $data1['nur_data'] = $this->profilemodel->get_nur_data();

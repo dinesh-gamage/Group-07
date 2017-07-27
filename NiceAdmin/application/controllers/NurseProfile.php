@@ -52,7 +52,7 @@ class NurseProfile extends CI_Controller {
                 $this->nur_name = $_POST['nur_name'];
             }
             if(isset($_POST['nur_pass'])) {
-                $this->nur_pass = sha1($_POST['nur_pass']);
+                $this->nur_pass = $_POST['nur_pass'];
             }
             if(isset($_POST['contact'])) {
                 $this->contact = $_POST['contact'];

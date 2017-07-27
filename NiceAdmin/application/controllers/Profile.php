@@ -54,7 +54,7 @@ class Profile extends CI_Controller {
                 $this->doc_name = $_POST['doc_name'];
             }
             if(isset($_POST['doc_pass'])) {
-                $this->doc_pass = sha1($_POST['doc_pass']);
+                $this->doc_pass = $_POST['doc_pass'];
             }
             if(isset($_POST['contact'])) {
                 $this->contact = $_POST['contact'];

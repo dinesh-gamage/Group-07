@@ -21,10 +21,10 @@ class Header extends CI_Controller{
             $result = $this->indexmodel->get_new_patients();
 
                 foreach($result as $newpatient){
-                    $pati = $newpatient->patient_name;
+                    $pati = $newpatient->patient_id;
                     $res = '
                             <li  >
-                                    <a id="newpatient" onclick="patient(this)" >
+                                    <a id="newpatient'.$pati.'" onclick="patient(\''. $pati . '\')" >
                                         <span class="label label-primary"><i class="icon_profile"></i></span>
                                         '.$newpatient->patient_name.'
                                         <span class="small italic pull-right"></span>
