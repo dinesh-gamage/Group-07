@@ -13,6 +13,8 @@ class DoctorView extends CI_Controller {
         $this->load->model('indexmodel');
         $this->load->model('calendarmodel');
         $this->session->userdata('doc_session');
+        $this->load->model('cognitive_test_model');
+        
     }
     
     
@@ -63,6 +65,12 @@ class DoctorView extends CI_Controller {
         $this->load->view('admin/admin_view_admin',$data);
     }
     
+//    public function getActivities(){
+//        $data1['doc_data'] = $this->profilemodel->get_doc_data();
+//        $this->load->view('main/doc_header',$data1);
+//        $this->load->view('activities');
+//    }
+    
     public function getPatient()
     {
         
@@ -88,11 +96,22 @@ class DoctorView extends CI_Controller {
         $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
         $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
         $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
-        $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        $data['finalmarks'] = $this->doc_model->getAllCogMars();
         
         $data1['doc_data'] = $this->profilemodel->get_doc_data();
+        
+        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        
+        
         $this->load->view('main/doc_header',$data1);
 		$this->load->view('doctor/doc_view_patient',$data);
+    }
+
+    public function getActivities(){
+        $data1['doc_data'] = $this->profilemodel->get_doc_data();
+        $this->load->view('main/doc_header',$data1);
+        $this->load->view('activities');
     }
       
     public function add_family_history()
@@ -850,6 +869,205 @@ class DoctorView extends CI_Controller {
             $this->load->view('doctor/doc_view_patient',$data);
         }
     }
+    
+    public function add_medication(){
+         $patient_id = $this->input->post('patientid');
+        
+        if(!empty($this->input->post('medicine1')) || !empty($this->input->post('medicine2')) ||!empty($this->input->post('medicine3'))||!empty($this->input->post('medicine4'))||!empty($this->input->post('medicine5')))
+        {
+            if(!empty($this->input->post('medicine1')) && !empty($this->input->post('dose1')) && !empty($this->input->post('frequency1')) )
+            {                    
+                $data[] = array(
+                  'patient_id' => $this->input->post('patientid') ,
+                  'doc_name' => $this->input->post('doc_name') ,
+                  'date' => $this->input->post('date') ,
+                  'time' => $this->input->post('time') ,
+                  'medicine' => $this->input->post('medicine1') ,
+                  'dose' => $this->input->post('dose1'),
+                  'frequency' => $this->input->post('frequency1')
+               );
+        
+            }
+            if(!empty($this->input->post('medicine2')) && !empty($this->input->post('dose2')) && !empty($this->input->post('frequency2')) ){
+                
+                $data[] = array(
+                    'patient_id' => $this->input->post('patientid') ,
+                  'doc_name' => $this->input->post('doc_name') ,
+                  'date' => $this->input->post('date') ,
+                  'time' => $this->input->post('time') ,
+                  'medicine' => $this->input->post('medicine2') ,
+                  'dose' => $this->input->post('dose2'),
+                  'frequency' => $this->input->post('frequency2') 
+                   );
+                   
+            }
+            if(!empty($this->input->post('medicine3')) && !empty($this->input->post('dose3')) && !empty($this->input->post('frequency3'))){
+                   
+               $data[] = array(
+                  'patient_id' => $this->input->post('patientid') ,
+                  'doc_name' => $this->input->post('doc_name') ,
+                  'date' => $this->input->post('date') ,
+                  'time' => $this->input->post('time') ,
+                  'medicine' => $this->input->post('medicine3') ,
+                  'dose' => $this->input->post('dose3'),
+                  'frequency' => $this->input->post('frequency3')
+               );
+
+            }
+	        if(!empty($this->input->post('medicine4')) && !empty($this->input->post('dose4')) && !empty($this->input->post('frequency4'))){
+	            $data[] = array(
+	              'patient_id' => $this->input->post('patientid') ,
+                  'doc_name' => $this->input->post('doc_name') ,
+                  'date' => $this->input->post('date') ,
+                  'time' => $this->input->post('time') ,
+                  'medicine' => $this->input->post('medicine4') ,
+                  'dose' => $this->input->post('dose4'),
+                  'frequency' => $this->input->post('frequency4')
+	           );
+	        }
+	        if(!empty($this->input->post('medicine5')) && !empty($this->input->post('dose5')) && !empty($this->input->post('frequency5'))){
+	        
+	            $data[] = array(
+	              'patient_id' => $this->input->post('patientid') ,
+                  'doc_name' => $this->input->post('doc_name') ,
+                  'date' => $this->input->post('date') ,
+                  'time' => $this->input->post('time') ,
+                  'medicine' => $this->input->post('medicine5') ,
+                  'dose' => $this->input->post('dose5'),
+                  'frequency' => $this->input->post('frequency5')
+	           );
+	        }
+
+            if(isset($data)){
+                $this->db->insert_batch('Patient_medicine', $data);
+                if ($this->db->affected_rows() > 0) {
+                    $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+                    $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+                    $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+                    $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+                    $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+                    $data['patient_id'] = $patient_id;
+                    $data['successMessage'] = 'Medications added Successfully !';
+                    $data['patients'] = $this->doc_model->getAllPatients();
+                    $data['goals'] = $this->doc_model->getAllGoals();
+                    $data['refernces'] = $this->doc_model->get_All_references();
+                    $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+                    $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+                    $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+                    $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+
+                    $data1['doc_data'] = $this->profilemodel->get_doc_data();
+                    $this->load->view('main/doc_header',$data1);
+                    $this->load->view('doctor/doc_view_patient',$data);
+                }else {
+                    $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+                    $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+                    $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+                    $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+                    $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+                    $data['patient_id'] = $patient_id;
+                    $data['errorMessage'] = 'Medications added failed !';
+                    $data['patients'] = $this->doc_model->getAllPatients();
+                    $data['goals'] = $this->doc_model->getAllGoals();
+                    $data['refernces'] = $this->doc_model->get_All_references();
+                    $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+                    $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+                    $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+                    $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+
+                    $data1['doc_data'] = $this->profilemodel->get_doc_data();
+                    $this->load->view('main/doc_header',$data1);
+                    $this->load->view('doctor/doc_view_patient',$data);
+                }
+            }else
+            {
+                $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+                    $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+                    $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+                    $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+                    $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+                    $data['patient_id'] = $patient_id;
+                    $data['errorMessage'] = 'Medications added failed !';
+                    $data['patients'] = $this->doc_model->getAllPatients();
+                    $data['goals'] = $this->doc_model->getAllGoals();
+                    $data['refernces'] = $this->doc_model->get_All_references();
+                    $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+                    $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+                    $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+                    $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+
+                    $data1['doc_data'] = $this->profilemodel->get_doc_data();
+                    $this->load->view('main/doc_header',$data1);
+                    $this->load->view('doctor/doc_view_patient',$data);
+            }
+	        
+        }else{
+        	redirect('DoctorView/getPatient');
+        }
+        
+    }
+    
+    public function add_discharge_plan(){
+        $patient_id = $this->input->post('patientid');
+        $data = array(
+            'patient_id' => $this->input->post('patientid'),
+            'doc_name' => $this->input->post('doctorid'),
+            'date' => $this->input->post('date'),
+            'time' => $this->input->post('time'),
+            'diagnosis' => $this->input->post('diagnosis'),
+            'status' => $this->input->post('status'),
+            'other' => $this->input->post('other'),
+            'notes' => $this->input->post('dischargenote')
+        );
+        $data2 = array(
+            'status' => '2'
+        );
+        
+        $query = $this->doc_model->updateStatus($data2,$patient_id);
+        $result = $this->doc_model->discharge($data);
+        if ($result == TRUE) {
+            
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id); 
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['successMessage'] = 'Patient discharged Successfully !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+            
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        } else {
+            
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id); 
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['errorMessage'] = 'Patient discharge Failed !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+            
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        }
+    }
+    
     
     public function add_final_marks(){
         $patient_id = $this->input->post('patientid');

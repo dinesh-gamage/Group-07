@@ -199,6 +199,25 @@ class doc_model extends CI_Model{
                 }
     }
     
+    public function discharge($data){
+        $this->db->insert('discharge',$data);
+        if ($this->db->affected_rows() > 0) {
+                    return true;                
+                }else {
+                    return false;
+                }
+    }
+    
+    public function updateStatus($data2,$patient_id){
+        $this->db->where('patient_id', $patient_id);
+        $this->db->update('patient_register', $data2);
+        if ($this->db->affected_rows() > 0) {
+                    return true;                
+                }else {
+                    return false;
+                }
+    }
+    
     public function get_All_references(){
         //$condition = "patient_id =" . "'" . $patient_id . "'";
         $this->db->select('*');
@@ -297,9 +316,9 @@ class doc_model extends CI_Model{
     public function getFinalMarks($patient_id){
         $condition = "patient_id ="."'".$patient_id."'";
         $this->db->select('*');
-        $this->db->from('cognitive_final');
+        $this->db->from('patient_mark');
         $this->db->where($condition);
-        $this->db->order_by('test_type','ASC');
+        //$this->db->order_by('type','ASC');
         $query = $this->db->get();
         return $query->result();
     }
@@ -438,6 +457,29 @@ class doc_model extends CI_Model{
     }
     
     
+    public function getAllMedicine(){
+        $this->db->select('*');
+        $query = $this->db->get('patient_medicine');
+        return $query->result();
+        
+    }
+    
+    public function getAllDischarge(){
+        $this->db->select('*');
+        $query = $this->db->get('discharge');
+        return $query->result();
+    }
+    
+    public function getAllCogMars(){
+        //$condition = "patient_id =" . "'" . $patient_id . "'";
+        $this->db->select('*');
+        $this->db->from('patient_mark');
+        //$this->db->where($condition);
+        $this->db->order_by('question_id','ASC');
+        $query = $this->db->get();
+        return $query->result();
+        
+    }
 }
 
 ?>
