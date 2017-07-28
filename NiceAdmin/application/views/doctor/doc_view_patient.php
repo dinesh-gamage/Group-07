@@ -82,10 +82,7 @@
                     </li>					  	
                 </ol>
             </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <!-- | display error messages or success messages | -->
                 <?php
                     echo "<div class='error_msg'>";
@@ -96,23 +93,37 @@
                         if(isset($successMessage))
                         {
                 ?>
-                        <script>
-                            swal('', '<?php  echo $successMessage ?>','success') // | Success message |
-                        </script>
+                <div class="alert success">
+                    <span class="closebtn">&times;</span>
+                    <?php  echo $successMessage ?>
+                </div>
+                        <!--script>
+                            swal('', '<1?php  echo $successMessage ?>','success') // | Success message |
+                        </script-->
                 <?php 
                         }
                         if(isset($errorMessage))
                         {
                 ?>
-                        <script>
-                            swal('Oops... sorry','<?php  echo $errorMessage ?>','error') // | error message |
-                        </script>
+                        <!--script>
+                            swal('Oops... sorry','<1?php  echo $errorMessage ?>','error') // | error message |
+                        </script-->
+                <div class="alert">
+                    <span class="closebtn">&times;</span>  
+                    <?php  echo $errorMessage ?>
+                </div>
                 <?php 
 
                         }
                         echo "</div>";
                 ?>
                 
+                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-8">
                 
 <!-- | Content | -->
                 
@@ -342,6 +353,80 @@
                                 <div id="caseNotes" class="tab-pane fade">
                                     <div class="white_back">
                                         <h3 class="text-center">Case Notes</h3><hr>
+                                         <?php  
+                                            $casec = 0;
+                                            foreach($case_notes_begin as $notes_begin):
+                                            if($patient_id == $notes_begin->patient_id){
+                                                $casec += 1;
+                                        ?>
+                                            <table class="table table-condensed table-bordered">
+                                                <tr>
+                                                    <td>Referel Source </td>
+                                                    <td><?php echo $notes_begin->refer; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Presenting Complaint </td>
+                                                    <td><?php echo $notes_begin->presenting_complaint; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>History of Presenting Complaint </td>
+                                                    <td><?php echo $notes_begin->history_resen_complaint; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Developmental History</td>
+                                                    <td><?php echo $notes_begin->development; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mental State </td>
+                                                    <td><?php echo $notes_begin->mental; ?></td>
+                                                </tr>
+                                            </table>
+                                            <table class="table table-condensed table-bordered">
+                                                <tr class="info"> <!-- active -->
+                                                    <td><?php echo "Dr. ".$notes_begin->doc_name; ?></td>
+                                                    <td><?php echo $notes_begin->date; ?></td>
+                                                    <td><?php echo $notes_begin->time; ?></td>
+                                                </tr>
+                                            </table>
+                                        <?php
+                                            }else{
+                                                $casec +=0;
+                                            }
+                                            endforeach;
+                                            if($casec == 0){
+                                        ?>
+                                            <div class="warning">
+                                                <p style="color:gray"><b> No notes to display</b></p>
+                                            </div>
+                                        <?php
+                                            }
+                                        ?>
+                                    </div>
+                                     <div class="white_back">
+                                         <h3 class="text-center">Follow-up Notes</h3><hr>
+                                            <?php
+                                                foreach($followupnotes as $followupNotes):
+                                                if($patient_id == $followupNotes->patient_id){
+                                            ?>
+                                                <div class="panel-group" id="accordion">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h4 class="panel-title">
+                                                                <a data-toggle="collapse" href="#<?php echo $followupNotes->date; ?>" > Follow-up Note on <?php echo $followupNotes->date; ?></a>
+                                                            </h4>
+                                                        </div>
+                                                        <div id="<?php echo $followupNotes->date; ?>" class="panel-collapse collapse">
+                                                            <div class="panel-body">
+                                                                <p><?php echo $followupNotes->note; ?></p>
+                                                            </div>
+                                                            <div class="panel-footer"><?php echo "Dr. ".$followupNotes->doc_name; ?></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php
+                                                }
+                                            endforeach;
+                                            ?>
                                     </div>
                                 </div>
 
@@ -1379,7 +1464,28 @@
                                 <div id="otherHistory" class="tab-pane fade">
                                     <div class="white_back">
                                         <h3 class="text-center">Other Records</h3><hr>
-
+                                        <?php
+                                        $rec =0;
+                                            foreach($records as $record):
+                                            if($patient_id == $record->patient_id){
+                                                $rec +=1;
+                                        ?>
+                                            <a href="<?php echo base_url($record->record_path); ?>" target="_blank" > <div class="success"><?php echo $record->test_name." on ".$record->date; ?></div></a>
+                                        
+                                        <?php
+                                                
+                                            }else{
+                                                $rec +=0;
+                                            }
+                                            endforeach; 
+                                            if ($rec == 0){
+                                        ?>
+                                            <div class="warning">
+                                                <p style="color:gray"><b>No Records to display</b></p>
+                                            </div>
+                                        <?php
+                                            }
+                                        ?>
                                     </div>
                                 </div>
                                 
@@ -1452,6 +1558,137 @@
                 <div id="caseNotess" style="display: none" >
                     <div class="white_back">
                         <h3 class="text-center">Case Notes</h3><hr>
+                        <?php  
+                            $case = 0;
+                            foreach($case_notes_begin as $notes_begin):
+                            if($patient_id == $notes_begin->patient_id){
+                                $case += 1;
+                        ?>
+                            <table class="table table-condensed table-bordered">
+                                <tr>
+                                    <td>Referel Source </td>
+                                    <td><?php echo $notes_begin->refer; ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Presenting Complaint </td>
+                                    <td><?php echo $notes_begin->presenting_complaint; ?></td>
+                                </tr>
+                                <tr>
+                                    <td>History of Presenting Complaint </td>
+                                    <td><?php echo $notes_begin->history_resen_complaint; ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Developmental History</td>
+                                    <td><?php echo $notes_begin->development; ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Mental State </td>
+                                    <td><?php echo $notes_begin->mental; ?></td>
+                                </tr>
+                            </table>
+                            <table class="table table-condensed table-bordered">
+                                <tr class="info"> <!-- active -->
+                                    <td><?php echo "Dr. ".$notes_begin->doc_name; ?></td>
+                                    <td><?php echo $notes_begin->date; ?></td>
+                                    <td><?php echo $notes_begin->time; ?></td>
+                                </tr>
+                            </table>
+                        <?php
+                            }else{
+                                $case +=0;
+                            }
+                            endforeach;
+                            if($case == 0){
+                            $attri = array('class'=>'form-horizontal');
+                            echo form_open('DoctorView/case_notes_begin',$attri);   
+                        ?>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Referal Source </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="refer" value="" class="form-control"   placeholder="" required />
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Presenting Complaint </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="pc" value="" class="form-control"   placeholder="" required />
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">History of Presenting Complaint </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="hpc" value="" class="form-control"   placeholder="" required />
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Developmental History </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="dh" value="" class="form-control"   placeholder="" required />
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Mental State </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="ms" value="" class="form-control"   placeholder="" required />
+                                </div>
+
+                            </div>
+                            <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
+                            <input type="hidden" name="time" id="id" value="<?php echo date('H:i:s'); ?>" />
+                            <input type="hidden" name="date" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                            <input type="hidden" name="doctorid" id="id" value="<?php echo $name; ?>" />
+
+                            <div class="form-group">
+                                <div class="col-sm-7"></div>
+                                <div class="col-sm-2">
+                                    <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button type="submit" name='save' class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+
+                        <?php 
+                            echo form_close();
+                            }
+                        ?>
+                    </div>
+                     <div class="white_back">
+                         <h3 class="text-center">Follow-up Notes</h3><hr>
+                        <?php  
+                            $attri = array('class'=>'form-horizontal');
+                            echo form_open('DoctorView/follow_up_notes',$attri);   
+                        ?>
+                           
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Follow-up Notes </label>
+                                <div class="col-sm-9">
+                                    <textarea name="followup" class="form-control"   placeholder=""  ></textarea>
+                                </div>
+                            </div>
+
+                            <input type="hidden" name="patientid" id="id" value="<?php echo $patient_id; ?>" />
+                            <input type="hidden" name="time" id="id" value="<?php echo date('H:i:s'); ?>" />
+                            <input type="hidden" name="date" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                            <input type="hidden" name="doctorid" id="id" value="<?php echo $name; ?>" />
+
+                            <div class="form-group">
+                                <div class="col-sm-7"></div>
+                                <div class="col-sm-2">
+                                    <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button type="submit" name='save' class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+
+                        <?php 
+                            echo form_close();
+                        ?>
                         
                     </div>
                 </div>
@@ -1462,7 +1699,7 @@
                         <div class="white_back">                      
                             <ul class="nav nav-pills nav-justified">
                                 <li class="active"><a data-toggle="pill" href="#family">Family/Medical</a></li>
-                                <li><a data-toggle="pill" href="#comm">communicationn</a></li>
+                                <li><a data-toggle="pill" href="#comm">communication</a></li>
                                 <li><a data-toggle="pill" href="#mortor">Mortor</a></li>
                                 <li><a data-toggle="pill" href="#cog">Cognitive</a></li>
                                 <li><a data-toggle="pill" href="#case_notes">Notes</a></li>
@@ -3726,20 +3963,40 @@
                         <h3 class="text-center">Upload Records</h3>
                         <div class="col-lg-10">
                             
-                            <form method="post" id="upload_form" align="center" enctype="multipart/form-data">
+                            <form method="post" id="upload_form" align="center" enctype="multipart/form-data" class="form-horizontal">
                                 <input type="hidden" name="pa_id" value="<?php echo $patient_id; ?>">
-                                <input type="text" class="form-control" placeholder="Type or Select" name="description" list="description" required >
-                                <datalist id="description" name="desc">
-                                    <option value="Blood test"> Blood test</option>
-                                    <option value="Urine test"> Urine test</option>
-                                    <option value="CTC scan"> CTC scan</option>
-                                    <option value="ECG"> ECG</option>
-                                    <option value="X-ray"> X-ray</option>
-                                </datalist>  
-                                <input type="file" name="image_file" id="image_file" />  
-                                <br />  
-                                <br />  
-                                <input type="submit" name="upload" id="upload" value="Upload" class="btn btn-info" />  
+                                <input type="hidden" name="date" id="id" value="<?php echo date('Y-m-d'); ?>" />
+                                
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Type of Record </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" placeholder="Type or Select" name="description" list="description" required >
+                                        <datalist id="description" name="desc">
+                                            <option value="Blood test"> Blood test</option>
+                                            <option value="Urine test"> Urine test</option>
+                                            <option value="CTC scan"> CTC scan</option>
+                                            <option value="ECG"> ECG</option>
+                                            <option value="X-ray"> X-ray</option>
+                                        </datalist>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Select File </label>
+                                    <div class="col-sm-9">
+                                        <input type="file" name="image_file" id="image_file" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-7"></div>
+                                    <div class="col-sm-2">
+                                        <button type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="submit" name="upload" id="upload" value="Upload" class="btn btn-info" /> 
+                                    </div>
+                                </div>
+                                 
                             </form>  
                             <br />  
                             <br />  
@@ -3785,53 +4042,8 @@
                 <div id="discharge" style="display: none" >
                     <div class="white_back">
                         <h3 class="text-center">Discharge Plan</h3><hr>
-                        <?php
-                            $disch =0;
-                            foreach($discharge as $discharges):
-                           
-                                if($patient_id == $discharges->patient_id){
-                                    $disch +=1;
-                            ?>
-                                <table class="table table-condensed table-bordered">
-
-                                    <tbody>
-                                        <tr>
-                                            <td>Discharge Date</td>
-                                            <td><?php echo $discharges->date; ?> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Diagnosis on Discharge</td>
-                                            <td><?php echo $discharges->diagnosis; ?> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Patient status on Discharge</td>
-                                            <td><?php echo $discharges->status; ?> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Suggested Other treatments</td>
-                                            <td><?php echo $discharges->other; ?> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Notes on Discharge</td>
-                                            <td><?php echo $discharges->notes; ?> </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <table class="table table-condensed table-bordered">
-                                    <tr class="info">  active 
-                                        <td><?php echo "Dr. ".$discharges->doc_name; ?></td>
-                                        <td><?php echo $discharges->date; ?></td>
-                                        <td><?php echo $discharges->time; ?></td>
-                                    </tr>
-                                </table>
                         
                         <?php  
-                            }else{
-                                $disch +=0;
-                            }
-                        endforeach;
-                        
-                        if($disch == 0){
                             $attri = array('class'=>'form-horizontal');
                             echo form_open('DoctorView/add_discharge_plan',$attri);   
                         ?>
@@ -3918,7 +4130,6 @@
 
                         <?php 
                             echo form_close();
-                        }
                         ?>
                         
                                                                                 
@@ -4306,5 +4517,18 @@ $("#calculateB").click(function() {
     $( "#datepicker" ).datepicker();
   } );
   </script>
+    
+    <script>
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+for (i = 0; i < close.length; i++) {
+    close[i].onclick = function(){
+        var div = this.parentElement;
+        div.style.opacity = "0";
+        setTimeout(function(){ div.style.display = "none"; }, 600);
+    }
+}
+</script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </section>

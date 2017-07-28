@@ -102,6 +102,9 @@ class DoctorView extends CI_Controller {
         
         $data['medicine'] = $this->doc_model->getAllMedicine();
         $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
         
         
         $this->load->view('main/doc_header',$data1);
@@ -114,6 +117,134 @@ class DoctorView extends CI_Controller {
         $this->load->view('activities');
     }
       
+    public function case_notes_begin(){
+        $patient_id = $this->input->post('patientid');
+        $data = array(
+            'patient_id' => $this->input->post('patientid'),
+            'doc_name' => $this->input->post('doctorid'),
+            'date' => $this->input->post('date'),
+            'time' => $this->input->post('time'),
+            'refer' => $this->input->post('refer'),
+            'presenting_complaint' => $this->input->post('pc'),
+            'history_resen_complaint' => $this->input->post('hpc'),
+            'development' => $this->input->post('dh'),
+            'mental' => $this->input->post('ms')
+            );
+        $result = $this->doc_model->add_case_notes_begin($data);
+        if ($result == TRUE) {
+            
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['successMessage'] = 'Case note added Successfully !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $data['medicine'] = $this->doc_model->getAllMedicine();
+            $data['discharge'] = $this->doc_model->getAllDischarge();
+            $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+            $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+            $data['records'] = $this->doc_model->getAllRecords();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        } else {
+            
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['errorMessage'] = 'case note added failed !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+            $data['medicine'] = $this->doc_model->getAllMedicine();
+            $data['discharge'] = $this->doc_model->getAllDischarge();
+            $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+            $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+            $data['records'] = $this->doc_model->getAllRecords();
+        
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        }
+    }
+    
+    public function follow_up_notes(){
+        $patient_id = $this->input->post('patientid');
+        $data = array(
+            'patient_id' => $this->input->post('patientid'),
+            'doc_name' => $this->input->post('doctorid'),
+            'date' => $this->input->post('date'),
+            'time' => $this->input->post('time'),
+            'note' => $this->input->post('followup')
+            );
+        $result = $this->doc_model->add_followup($data);
+        if ($result == TRUE) {
+            
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['successMessage'] = 'Follow-up note added Successfully !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+            $data['medicine'] = $this->doc_model->getAllMedicine();
+            $data['discharge'] = $this->doc_model->getAllDischarge();
+            $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+            $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+            $data['records'] = $this->doc_model->getAllRecords();
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        } else {
+            
+            $data['getFamily'] = $this->doc_model->get_family_by_patient_id($patient_id);
+            $data['getComm'] = $this->doc_model->get_comm_by_patient_id($patient_id);
+            $data['getMotor'] = $this->doc_model->get_mortor_by_patient_id($patient_id);
+            $data['getCog'] = $this->doc_model->get_cog_by_patient_id($patient_id);
+            $data['getNotes'] = $this->doc_model->get_notes_by_patient_id($patient_id);
+            $data['patient_id'] = $patient_id;
+            $data['errorMessage'] = 'Follow-up note added failed !';
+            $data['patients'] = $this->doc_model->getAllPatients();
+            $data['goals'] = $this->doc_model->getAllGoals();
+            $data['refernces'] = $this->doc_model->get_All_references();
+            $data['doc_notes'] = $this->doc_model->get_doc_notes_by_id($patient_id);
+            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
+            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
+            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
+        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
+            $data1['doc_data'] = $this->profilemodel->get_doc_data();
+            $this->load->view('main/doc_header',$data1);
+            $this->load->view('doctor/doc_view_patient',$data);
+        }
+    }
+    
     public function add_family_history()
     {
         $patient_id = $this->input->post('patientid');
@@ -162,7 +293,11 @@ class DoctorView extends CI_Controller {
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
             $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-        
+        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -182,7 +317,11 @@ class DoctorView extends CI_Controller {
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
             $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-        
+        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -245,7 +384,11 @@ class DoctorView extends CI_Controller {
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
             $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-        
+        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
         $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -265,7 +408,11 @@ class DoctorView extends CI_Controller {
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
             $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-        
+        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -310,7 +457,11 @@ class DoctorView extends CI_Controller {
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
             $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-        
+        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -330,7 +481,11 @@ class DoctorView extends CI_Controller {
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
             $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-        
+        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -382,7 +537,11 @@ class DoctorView extends CI_Controller {
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
             $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-        
+        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
         $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -402,7 +561,11 @@ class DoctorView extends CI_Controller {
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
             $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-        
+        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -439,7 +602,11 @@ class DoctorView extends CI_Controller {
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
             $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-        
+        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -459,7 +626,11 @@ class DoctorView extends CI_Controller {
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
             $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-        
+        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -582,7 +753,11 @@ class DoctorView extends CI_Controller {
 	            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
 	            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
 	            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-	        
+	        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
 	            $data1['doc_data'] = $this->profilemodel->get_doc_data();
 	            $this->load->view('main/doc_header',$data1);
 	            $this->load->view('doctor/doc_view_patient',$data);
@@ -601,7 +776,11 @@ class DoctorView extends CI_Controller {
 	            $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
 	            $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
 	            $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-	        
+	        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
 	            $data1['doc_data'] = $this->profilemodel->get_doc_data();
 	            $this->load->view('main/doc_header',$data1);
 	            $this->load->view('doctor/doc_view_patient',$data);
@@ -649,7 +828,11 @@ class DoctorView extends CI_Controller {
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
             $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-
+            $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -668,7 +851,11 @@ class DoctorView extends CI_Controller {
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
             $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-
+            $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -738,7 +925,11 @@ class DoctorView extends CI_Controller {
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
             $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-        
+        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -758,7 +949,11 @@ class DoctorView extends CI_Controller {
             $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
             $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-        
+        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -792,6 +987,11 @@ class DoctorView extends CI_Controller {
             $data['successMessage'] = 'Diagnosis added Successfully !';
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
+            $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
@@ -812,7 +1012,11 @@ class DoctorView extends CI_Controller {
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-            
+            $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -844,7 +1048,11 @@ class DoctorView extends CI_Controller {
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-            
+            $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -863,7 +1071,11 @@ class DoctorView extends CI_Controller {
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-            
+            $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -955,7 +1167,11 @@ class DoctorView extends CI_Controller {
                     $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
                     $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
                     $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-
+                        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
                     $data1['doc_data'] = $this->profilemodel->get_doc_data();
                     $this->load->view('main/doc_header',$data1);
                     $this->load->view('doctor/doc_view_patient',$data);
@@ -974,7 +1190,11 @@ class DoctorView extends CI_Controller {
                     $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
                     $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
                     $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-
+                        $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
                     $data1['doc_data'] = $this->profilemodel->get_doc_data();
                     $this->load->view('main/doc_header',$data1);
                     $this->load->view('doctor/doc_view_patient',$data);
@@ -995,7 +1215,11 @@ class DoctorView extends CI_Controller {
                     $data['getDiagnosis'] = $this->doc_model->get_diagnosis_by_id($patient_id);
                     $data['goalEvaluation'] = $this->doc_model->get_goal_marks_by_patient_id($patient_id);
                     $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-
+                    $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
                     $data1['doc_data'] = $this->profilemodel->get_doc_data();
                     $this->load->view('main/doc_header',$data1);
                     $this->load->view('doctor/doc_view_patient',$data);
@@ -1041,7 +1265,11 @@ class DoctorView extends CI_Controller {
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-            
+            $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -1061,7 +1289,11 @@ class DoctorView extends CI_Controller {
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-            
+            $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -1100,7 +1332,11 @@ class DoctorView extends CI_Controller {
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-            
+            $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);
@@ -1120,7 +1356,11 @@ class DoctorView extends CI_Controller {
             $data['patients'] = $this->doc_model->getAllPatients();
             $data['goals'] = $this->doc_model->getAllGoals();
             $data['finalmarks'] = $this->doc_model->getFinalMarks($patient_id);
-            
+            $data['medicine'] = $this->doc_model->getAllMedicine();
+        $data['discharge'] = $this->doc_model->getAllDischarge();
+        $data['case_notes_begin'] = $this->doc_model->getAllCaseNotes();
+        $data['followupnotes'] = $this->doc_model->getAllFollowUp();
+        $data['records'] = $this->doc_model->getAllRecords();
             $data1['doc_data'] = $this->profilemodel->get_doc_data();
             $this->load->view('main/doc_header',$data1);
             $this->load->view('doctor/doc_view_patient',$data);

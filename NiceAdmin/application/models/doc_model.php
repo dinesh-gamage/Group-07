@@ -471,14 +471,59 @@ class doc_model extends CI_Model{
     }
     
     public function getAllCogMars(){
-        //$condition = "patient_id =" . "'" . $patient_id . "'";
         $this->db->select('*');
         $this->db->from('patient_mark');
-        //$this->db->where($condition);
         $this->db->order_by('question_id','ASC');
         $query = $this->db->get();
         return $query->result();
         
+    }
+    public function add_case_notes_begin($data){
+        $this->db->insert('patient_case_notes',$data);
+        if ($this->db->affected_rows() > 0) 
+        {
+            return true;                
+        }
+        else 
+        {
+            return false;
+        }
+        
+    }
+    
+    public function getAllCaseNotes(){
+        $this->db->select('*');
+        $this->db->from('patient_case_notes');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    
+    public function add_followup($data){
+        $this->db->insert('follow_up',$data);
+        if ($this->db->affected_rows() > 0) 
+        {
+            return true;                
+        }
+        else 
+        {
+            return false;
+        }
+    }
+    
+    public function getAllFollowUp(){
+        $this->db->select('*');
+        $this->db->from('follow_up');
+        $this->db->order_by('date','ASC');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    
+    public function getAllRecords(){
+        $this->db->select('*');
+        $this->db->from('checkup');
+        $this->db->order_by('date','ASC');
+        $query = $this->db->get();
+        return $query->result();
     }
 }
 

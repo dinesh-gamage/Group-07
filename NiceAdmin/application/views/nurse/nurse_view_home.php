@@ -936,7 +936,7 @@
                                      <div class="text-center" id="checkage"></div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11"><input type="text" class="form-control" id="dob" onfocus="(this.type='date')" name="dob"  placeholder="Date Of Birth" required></div></div>
+                                    <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11"><input type="text" class="form-control" id="dob" onfocus="(this.type='date')" name="dob"  placeholder="Ex : 2017-01-01 " required></div></div>
                                 </div>
                                 <div class="form-group">
                                     <div class="row"><div class="col-xs-1"><span style="color:red;">*</span></div><div class="col-xs-11"><input type="text" class="form-control" id="tel" name="tel" placeholder="Phone Number" required></div></div>
@@ -1317,6 +1317,10 @@
 
         //validate password and confirm password
         $('#cpass').keyup(function(){
+            var cpass =  $('#cpass').val();
+           if(cpass!==""){
+              $('#cpass').removeClass("bordercolor");
+            } 
             if($(this).val()== $('#pass').val()){
                 $('#checkpass').html('Matching!!!').css('color', 'green');
                  document.getElementById('register_btn').disabled = false ;
@@ -1328,6 +1332,10 @@
 
         //validate age;
         $('#age').keyup(function(){
+            var page =  $('#age').val();
+            if(page!==""){
+              $('#age').removeClass("bordercolor");  
+            }
             var reg = /^[1-9]{0,3}$/;
             if(!(reg.test($(this).val()))){
                 document.getElementById('register_btn').disabled = true ;
@@ -1340,6 +1348,10 @@
 
         //validate phone number
         $('#tel').keyup(function(){
+            var ptel =  $('#tel').val();
+            if(ptel!==""){
+              $('#tel').removeClass("bordercolor"); 
+            }
             var reg1 = /^[0-9]{10}$/;
             if((reg1.test($(this).val()))){
                 $('#checktel').html('');
@@ -1353,8 +1365,57 @@
                 }
             }
         });
+        $('#pname').keyup(function(){
+            var pname = $('#pname').val();
+            if(pname!==""){
+              $('#pname').removeClass("bordercolor");
+            }
+        })
+        $('#sch').keyup(function(){
+            var psch =  $('#sch').val();
+            if(psch!==""){
+              $('#sch').removeClass("bordercolor");
+            }
+        });  
+        $('#gur').keyup(function(){
+            var pgur =  $('#gur').val();
+            if(pgur!==""){
+              $('#gur').removeClass("bordercolor");
+            }
+        });  
+        $('#rel').keyup(function(){
+            var prel =  $('#rel').val();
+            if(prel!==""){
+              $('#rel').removeClass("bordercolor");
+            }
+        });  
+        $('#ref').keyup(function(){
+           var pref =  $('#ref').val();
+           if(pref!==""){
+              $('#ref').removeClass("bordercolor");
+            }
+        });  
+        $('#pass').keyup(function(){
+            var ppass =  $('#pass').val();
+            if(ppass!==""){
+              $('#pass').removeClass("bordercolor");
+            } 
+        });  
+        $('#address').keyup(function(){
+            var paddre =  $('#address').val();
+            if(paddre!==""){
+              $('#address').removeClass("bordercolor");
+            } 
+        });  
+
+         $('#dob').keyup(function(){
+            var pdob =  $('#dob').val();
+             if(pdob!==""){
+              $('#dob').removeClass("bordercolor"); 
+            }
+        });  
+        
         $('#register_btn').click(function(){
-            alert("in");
             var cpass =  $('#cpass').val();
             var pname = $('#pname').val();
             var page =  $('#age').val();
@@ -1380,8 +1441,6 @@
                 data: {regbtn: "regbtn",pname:pname,age:page,dob:pdob,tel:ptel,lan:plan,gender:pgen,sch:psch,address:paddre,gur:pgur,rel:prel,ref:pref,pass:ppass,div:pdiv,date:pdate},
                 success: function (data) {
                     if(data){
-                        alert("one");
-                        alert(data);
                         $('#pname').val("");
                         $('#age').val("");
                         $('#dob').val("");

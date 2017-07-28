@@ -330,18 +330,18 @@
         </header>      
   
   <script type="text/javascript">
-     function  patient(one){
-      alert(one);
-      $.ajax({
-         url: 'http://[::1]/project/Group-07/NiceAdmin/DoctorView/getPatient',
-         type: "POST",
-         data: {patientheader:one},
-         success: function(data) {
-            window.location.href = "http://[::1]/project/Group-07/NiceAdmin/DoctorView/getPatient"+one;
-            reload();
-         }
-      });
-     }
+//     function  patient(one){
+//      alert(one);
+//      $.ajax({
+//         url: 'http://[::1]/project/Group-07/NiceAdmin/DoctorView/getPatient',
+//         type: "POST",
+//         data: {patientheader:one},
+//         success: function(data) {
+//            window.location.href = "http://[::1]/project/Group-07/NiceAdmin/DoctorView/getPatient"+one;
+//            reload();
+//         }
+//      });
+//     }
 
   </script>      
    
